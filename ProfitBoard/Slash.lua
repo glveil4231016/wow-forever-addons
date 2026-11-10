@@ -8,7 +8,11 @@ local function fmtResult(r)
   local rp = r.recipe
   local name = rp.name or ("配方#" .. tostring(rp.id))
   if r.missing then
-    return string.format("%s |cff999999缺价 %d|r", name, r.missingCount or 0)
+    local names = {}
+    local list = r.missingItems or {}
+    for i = 1, math.min(3, #list) do names[#names + 1] = PB.Util.ItemName(list[i]) end
+    local suffix = #names > 0 and (" 缺价：" .. table.concat(names, "、")) or ""
+    return string.format("%s |cff999999缺价 %d%s|r", name, r.missingCount or 0, suffix)
   end
   return string.format("%s → %s | 成本 %s | 售价 %s | 利润 %s | 利润率 %.0f%%",
     name, PB.Util.ItemName(rp.result.itemID),

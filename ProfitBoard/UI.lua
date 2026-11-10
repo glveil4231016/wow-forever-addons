@@ -115,6 +115,11 @@ local function ensure()
       local r = self.recipe
       if not r then return end
       print("|cff516cefProfitBoard|r " .. tostring(r.recipe.name or r.recipe.id))
+      if r.missing and r.missingItems and #r.missingItems > 0 then
+        local names = {}
+        for k = 1, #r.missingItems do names[#names + 1] = PB.Util.ItemName(r.missingItems[k]) end
+        print("   缺价物品：" .. table.concat(names, "、"))
+      end
       if r.details then
         for k = 1, #r.details do
           local d = r.details[k]

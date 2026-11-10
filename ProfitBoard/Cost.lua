@@ -28,13 +28,14 @@ end
 
 function Cost.CraftCost(recipe, depth, visiting, ctx)
   local total, missing = 0, 0
-  local details = {}
+  local details, missingItems = {}, {}
   for i = 1, #recipe.reagents do
     local re = recipe.reagents[i]
     if not re.optional then
       local unit, src = itemCost(re.itemID, depth + 1, visiting, ctx)
       if not unit then
         missing = missing + 1
+        missingItems[#missingItems + 1] = re.itemID
       else
         total = total + unit * re.count
         details[#details + 1] = {
@@ -44,16 +45,18 @@ function Cost.CraftCost(recipe, depth, visiting, ctx)
       end
     end
   end
-  if missing > 0 then return nil, missing end
-  if total <= 0 then return nil, 0 end
+  if missing > 0 then return nil, missing, missingItems end
+  if total <= 0 then return nil, 0, {} end
   local count = (recipe.result and recipe.result.count) or 1
   if count <= 0 then count = 1 end
   return { total = total, unit = total / count, details = details }
 end
 
 function Cost.CraftProfit(recipe, ctx)
-  local mat, missingCount = Cost.CraftCost(recipe, 0, {}, ctx)
-  if not mat then return { missing = true, missingCount = missingCount or 1 } end
+  local mat, missingCount, missingItems = Cost.CraftCost(recipe, 0, {}, ctx)
+  if not mat then
+    return { missing = true, missingCount = missingCount or 1, missingItems = missingItems or {} }
+  end
 
   local p = ctx.priceOf(recipe.result.itemID) or {}
   local count = recipe.result.count or 1
@@ -68,7 +71,7 @@ function Cost.CraftProfit(recipe, ctx)
   elseif vendor then
     value, channel = vendor, "vendor"
   else
-    return { missing = true, missingCount = 1 }
+    return { missing = true, missingCount = 1, missingItems = { recipe.result.itemID } }
   end
 
   local profit = value - mat.total
