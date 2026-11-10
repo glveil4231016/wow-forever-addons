@@ -118,7 +118,7 @@ local function ensure()
       if r.details then
         for k = 1, #r.details do
           local d = r.details[k]
-          print(string.format("   材料 %d × %d @ %s（%s）", d.itemID, d.count,
+          print(string.format("   材料 %s × %d @ %s（%s）", PB.Util.ItemName(d.itemID), d.count,
             PB.Util.FormatMoney(PB.Util.Round(d.unit or 0)), tostring(d.from)))
         end
       end
@@ -146,7 +146,7 @@ local function cellText(r, key, market)
   if key == "name" then return r.recipe.name or ("配方#" .. tostring(r.recipe.id)) end
   if key == "prof" then return r.recipe.profession or "?" end
   if key == "result" then
-    return string.format("%d×%d", r.recipe.result.itemID, r.recipe.result.count or 1)
+    return string.format("%s×%d", PB.Util.ItemName(r.recipe.result.itemID), r.recipe.result.count or 1)
   end
   if key == "cost" then return r.missing and "缺价" or PB.Util.FormatMoney(r.cost) end
   if key == "value" then return r.missing and "-" or PB.Util.FormatMoney(r.value) end

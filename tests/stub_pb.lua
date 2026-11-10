@@ -38,6 +38,9 @@ function time() return 1762732800 end
 function date(fmt, t) return os.date(fmt, t) end
 function UnitFactionGroup() return "Alliance", "联盟" end
 
+C_Item = {
+  GetItemNameByID = function(id) return id == 2589 and "亚麻布" or nil end,
+}
 UIParent = {}
 SlashCmdList = {}
 function CreateFrame()

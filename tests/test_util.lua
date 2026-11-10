@@ -19,3 +19,12 @@ PB.Test.it("day number consecutive", function()
   PB.Test.eq(U.DayNumber(20260101) - U.DayNumber(20251231), 1)
   PB.Test.eq(U.DayNumber(0), nil)
 end)
+
+PB.Test.it("item name from C_Item", function()
+  PB.Test.eq(U.ItemName(2589), "亚麻布")
+end)
+
+PB.Test.it("item name fallback", function()
+  U.ClearNameCache()
+  PB.Test.eq(U.ItemName(999999), "物品#999999")
+end)

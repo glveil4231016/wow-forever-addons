@@ -29,7 +29,7 @@ end
 
 function E.CSV()
   ensureFrame()
-  local lines = { "配方ID,配方名,专业,产物ID,产物数量,材料成本,成品价,利润,利润率,渠道,缺价" }
+  local lines = { "配方ID,配方名,专业,产物ID,产物名,产物数量,材料成本,成品价,利润,利润率,渠道,缺价" }
   local results = PB.Compute.results or {}
   for i = 1, #results do
     local r = results[i]
@@ -39,6 +39,7 @@ function E.CSV()
       (rp.name or ""):gsub(",", "，"),
       rp.profession or "",
       tostring(rp.result.itemID),
+      (PB.Util.ItemName(rp.result.itemID) or ""):gsub(",", "，"),
       tostring(rp.result.count or 1),
       tostring(PB.Util.Round(r.cost or 0)),
       tostring(PB.Util.Round(r.value or 0)),

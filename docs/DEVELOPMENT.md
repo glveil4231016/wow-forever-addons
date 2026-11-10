@@ -13,7 +13,7 @@ git clone https://github.com/glveil4231016/wow-forever-addons.git
 cd wow-forever-addons
 
 python -m pip install lupa      # 唯一依赖，测试用
-python tests/run_pb.py          # 期望：PASS 48  FAIL 0
+python tests/run_pb.py          # 期望：PASS 50  FAIL 0
 python tests/syntax_check.py    # 期望：syntax ok: 13 files
 ```
 
@@ -68,7 +68,7 @@ wow-forever-addons/
 │  ├─ run_be.py                   BlackEvidence 冒烟测试（硬编码了本机路径，见 §14）
 │  ├─ stub_be.lua
 │  ├─ syntax_check.py             全部 .lua 语法检查
-│  ├─ test_util.lua               14 例
+│  ├─ test_util.lua               16 例
 │  ├─ test_config.lua             4 例
 │  ├─ test_market.lua             9 例
 │  ├─ test_market_history.lua     5 例
@@ -86,7 +86,7 @@ wow-forever-addons/
 | 项 | 状态 |
 |---|---|
 | 代码完整度 | ProfitBoard 13 个模块全部写完，可加载 |
-| 单测 | 48 例全绿；13 个 Lua 文件语法检查通过 |
+| 单测 | 50 例全绿；13 个 Lua 文件语法检查通过 |
 | 包体 | `ProfitBoard.zip` ≈ 19 KB，`ProfitProbe.zip` ≈ 2 KB（本地，未入库） |
 | 客户端实测 | **未做**。这台开发机只有正式服客户端，没有无限客户端 |
 | 配方条数 | **0 条**（配方源尚未确认，`StaticRecipes.lua` 为空壳） |
@@ -176,7 +176,7 @@ wow-forever-addons/
 | `Round(v)` | number/nil | `floor(v+0.5)`，传给 `%d` 之前必须过它 |
 | `FormatMoney(copper)` | string | `1金 23银 45铜`；0 → `0铜`；负数带前导 `-` |
 | `ParseMoney(text)` | number/nil | 支持 `12345`、`1金23银45铜`、`1金45铜` |
-| `Today()` | number | `YYYYMMDD` |
+| `Today()` | number | `YYYYMMDD` |`n| `DayNumber(v)` | number/nil | `YYYYMMDD` → 连续日序号，用于跨月/跨年天数差 |`n| `ItemName(itemID)` | string | 物品名解析：`C_Item.GetItemNameByID` → `C_Item.GetItemInfo` → 全局 `GetItemInfo` → `物品#ID`，带缓存 |`n| `ClearNameCache()` | — | 清空物品名缓存 |
 | `Median(list)` | number/nil | 不修改入参，内部复制后排序 |
 | `Copy(t)` | table | 浅拷贝 |
 
@@ -595,4 +595,4 @@ git -c http.proxy=http://127.0.0.1:10809 -c http.version=HTTP/1.1 push origin ma
 
 | 日期 | 变更 |
 |---|---|
-| 2026-11-10 | ProfitBoard 首个完整实现；48 例单测；字段自检；静态库生成器；本文件 |
+| 2026-11-10 | ProfitBoard 首个完整实现；字段自检；静态库生成器；本文件 |`n| 2026-11-10 | 中位价改用连续日序号；UI 挂单筛选；物品名解析（UI/Slash/CSV）；50 例单测 |

@@ -10,8 +10,9 @@ local function fmtResult(r)
   if r.missing then
     return string.format("%s |cff999999缺价 %d|r", name, r.missingCount or 0)
   end
-  return string.format("%s | 成本 %s | 售价 %s | 利润 %s | 利润率 %.0f%%",
-    name, PB.Util.FormatMoney(r.cost), PB.Util.FormatMoney(r.value),
+  return string.format("%s → %s | 成本 %s | 售价 %s | 利润 %s | 利润率 %.0f%%",
+    name, PB.Util.ItemName(rp.result.itemID),
+    PB.Util.FormatMoney(r.cost), PB.Util.FormatMoney(r.value),
     PB.Util.FormatMoney(r.profit), r.margin or 0)
 end
 
@@ -49,7 +50,7 @@ function handlers.price(rest)
   if not market then return say("尚未初始化") end
   local p = market:PriceOf(itemID)
   if not p.min then return say("物品 %d 没有价格数据", itemID) end
-  say("物品 %d：最低 %s · 深度 %s · 挂单 %s · 总量 %s · 卖店 %s", itemID,
+  say("%s（%d）：最低 %s · 深度 %s · 挂单 %s · 总量 %s · 卖店 %s", PB.Util.ItemName(itemID), itemID,
     PB.Util.FormatMoney(p.min), PB.Util.FormatMoney(PB.Util.Round(p.ah or 0)),
     tostring(p.num or 0), tostring(p.qty or 0),
     p.vendor and PB.Util.FormatMoney(p.vendor) or "无")

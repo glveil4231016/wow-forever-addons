@@ -86,3 +86,34 @@ function U.Copy(t)
   for k, v in pairs(t or {}) do out[k] = v end
   return out
 end
+
+local nameCache = {}
+
+function U.ClearNameCache()
+  nameCache = {}
+end
+
+-- 物品名解析：C_Item.GetItemNameByID → C_Item.GetItemInfo → 全局 GetItemInfo → 物品#ID
+function U.ItemName(itemID)
+  if itemID == nil then return "" end
+  local cached = nameCache[itemID]
+  if cached then return cached end
+
+  local name
+  if type(C_Item) == "table" and type(C_Item.GetItemNameByID) == "function" then
+    local ok, v = pcall(C_Item.GetItemNameByID, itemID)
+    if ok and type(v) == "string" and v ~= "" then name = v end
+  end
+  if not name and type(C_Item) == "table" and type(C_Item.GetItemInfo) == "function" then
+    local ok, v = pcall(C_Item.GetItemInfo, itemID)
+    if ok and type(v) == "string" and v ~= "" then name = v end
+  end
+  if not name and type(GetItemInfo) == "function" then
+    local ok, v = pcall(GetItemInfo, itemID)
+    if ok and type(v) == "string" and v ~= "" then name = v end
+  end
+
+  name = name or ("物品#" .. tostring(itemID))
+  nameCache[itemID] = name
+  return name
+end
