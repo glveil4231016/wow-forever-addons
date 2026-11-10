@@ -13,7 +13,7 @@ git clone https://github.com/glveil4231016/wow-forever-addons.git
 cd wow-forever-addons
 
 python -m pip install lupa      # 唯一依赖，测试用
-python tests/run_pb.py          # 期望：PASS 46  FAIL 0
+python tests/run_pb.py          # 期望：PASS 48  FAIL 0
 python tests/syntax_check.py    # 期望：syntax ok: 13 files
 ```
 
@@ -68,10 +68,10 @@ wow-forever-addons/
 │  ├─ run_be.py                   BlackEvidence 冒烟测试（硬编码了本机路径，见 §14）
 │  ├─ stub_be.lua
 │  ├─ syntax_check.py             全部 .lua 语法检查
-│  ├─ test_util.lua               13 例
+│  ├─ test_util.lua               14 例
 │  ├─ test_config.lua             4 例
 │  ├─ test_market.lua             9 例
-│  ├─ test_market_history.lua     4 例
+│  ├─ test_market_history.lua     5 例
 │  ├─ test_cost.lua               7 例
 │  ├─ test_recipes.lua            6 例
 │  └─ test_compute.lua            4 例
@@ -86,7 +86,7 @@ wow-forever-addons/
 | 项 | 状态 |
 |---|---|
 | 代码完整度 | ProfitBoard 13 个模块全部写完，可加载 |
-| 单测 | 46 例全绿；13 个 Lua 文件语法检查通过 |
+| 单测 | 48 例全绿；13 个 Lua 文件语法检查通过 |
 | 包体 | `ProfitBoard.zip` ≈ 19 KB，`ProfitProbe.zip` ≈ 2 KB（本地，未入库） |
 | 客户端实测 | **未做**。这台开发机只有正式服客户端，没有无限客户端 |
 | 配方条数 | **0 条**（配方源尚未确认，`StaticRecipes.lua` 为空壳） |
@@ -222,7 +222,7 @@ clamp 区间见 `Config.lua` 的 `CLAMP` 表（例如 `ahCutPercent` 0–50、`m
 | `m:Scanning()` | 是否扫描中 |
 | `m:PriceOf(itemID)` | `{ ah=depth, min, num, qty, vendor, updatedAt, truncated }` |
 | `m:AppendHistory(itemID, day, value)` | 同日覆盖，跨日追加，最多 `historyDays*2` 个数字 |
-| `m:MedianPrice(itemID, windowDays)` | 窗口内 <3 天返回 nil |
+| `m:MedianPrice(itemID, windowDays)` | 窗口内 <3 天返回 nil；日期用 `Util.DayNumber` 的连续日序号比较，跨月/跨年正确 |
 | `m:SnapshotText()` / `m:RestoreFromText(text)` | `id:min:depth:num:qty;…` 文本快照 |
 
 ### 5.5 `RecipeSource.lua` → `PB.RecipeSource`
@@ -549,8 +549,8 @@ git -c http.proxy=http://127.0.0.1:10809 -c http.version=HTTP/1.1 push origin ma
 3. 价格单位（单价 vs 整堆总价）未确认。
 4. 配方 0 条，静态库未生成。
 5. `ladders` 每物品最多 200 条，超了 depth 是近似值（标 `truncated`）。
-6. `MedianPrice` 用 `Today() - windowDays` 近似日期窗口，跨月有偏差（可接受）。
-7. UI 不提供挂单筛选输入框（只能 `/pb filter listings N`）。
+6. ~~`MedianPrice` 跨月偏差~~ 已修：改用 `Util.DayNumber` 连续日序号。
+7. ~~UI 无挂单筛选~~ 已修：标题栏右侧「挂单≤」输入框，回车生效（等价 `/pb filter listings N`）。
 8. `Compute.Filter` 依赖 `market` 实例，不传则跳过 `maxListings`。
 9. 多角色合并、采购清单（P4）未做。
 10. `tests/run_be.py` 硬编码本机路径，跨机器不可用。
@@ -595,4 +595,4 @@ git -c http.proxy=http://127.0.0.1:10809 -c http.version=HTTP/1.1 push origin ma
 
 | 日期 | 变更 |
 |---|---|
-| 2026-11-10 | ProfitBoard 首个完整实现；46 例单测；字段自检；静态库生成器；本文件 |
+| 2026-11-10 | ProfitBoard 首个完整实现；48 例单测；字段自检；静态库生成器；本文件 |

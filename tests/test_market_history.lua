@@ -38,3 +38,10 @@ PB.Test.it("snapshot round trip", function()
   PB.Test.eq(it.depth, 12)
   PB.Test.eq(it.qty, 50)
 end)
+
+PB.Test.it("median skips invalid days", function()
+  local db = { markets = { [KEY] = { items = {} } } }
+  local M = PB.Market.New(db, KEY)
+  M.market.items[5] = { min = 1, h = { 0, 999, 20260101, 10, 20260102, 20, 20260103, 30 } }
+  PB.Test.near(M:MedianPrice(5, 4000), 20)
+end)

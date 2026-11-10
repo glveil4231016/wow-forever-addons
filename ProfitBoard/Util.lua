@@ -54,6 +54,23 @@ function U.Today()
   return tonumber(date("%Y%m%d")) or 0
 end
 
+-- YYYYMMDD → 连续日序号（用于跨月/跨年的天数差）
+function U.DayNumber(yyyymmdd)
+  local n = tonumber(yyyymmdd)
+  if not n or n <= 0 then return nil end
+  local y = math.floor(n / 10000)
+  local m = math.floor((n % 10000) / 100)
+  local d = n % 100
+  if m < 1 or m > 12 or d < 1 or d > 31 then return nil end
+  if m <= 2 then
+    y = y - 1
+    m = m + 12
+  end
+  local a = math.floor(y / 100)
+  local b = 2 - a + math.floor(a / 4)
+  return math.floor(365.25 * (y + 4716)) + math.floor(30.6001 * (m + 1)) + d + b - 1524
+end
+
 function U.Median(list)
   local n = #list
   if n == 0 then return nil end

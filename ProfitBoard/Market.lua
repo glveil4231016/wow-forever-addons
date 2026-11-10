@@ -101,10 +101,13 @@ end
 function M:MedianPrice(itemID, windowDays)
   local it = self.market.items[itemID]
   if not it or not it.h then return nil end
-  local cutoff = PB.Util.Today() - (windowDays or 7)
+  local todayNum = PB.Util.DayNumber(PB.Util.Today())
+  if not todayNum then return nil end
+  local cutoff = todayNum - (windowDays or 7)
   local values = {}
   for i = 1, #it.h, 2 do
-    if it.h[i] >= cutoff then values[#values + 1] = it.h[i + 1] end
+    local dayNum = PB.Util.DayNumber(it.h[i])
+    if dayNum and dayNum >= cutoff then values[#values + 1] = it.h[i + 1] end
   end
   if #values < 3 then return nil end
   return PB.Util.Median(values)

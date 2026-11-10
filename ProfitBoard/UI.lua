@@ -15,7 +15,7 @@ local COLS = {
 }
 
 local ROW_H, VISIBLE = 21, 24
-local frame, rows, statusText, searchBox, scrollBar
+local frame, rows, statusText, searchBox, scrollBar, listingsBox
 local sortKey, sortAsc = "profit", false
 local offset = 0
 
@@ -44,6 +44,27 @@ local function ensure()
   searchBox:SetAutoFocus(false)
   searchBox:SetScript("OnEscapePressed", function() searchBox:ClearFocus() end)
   searchBox:SetScript("OnTextChanged", function()
+    offset = 0
+    UI.Refresh()
+  end)
+
+  local listingLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  listingLabel:SetPoint("TOPRIGHT", -92, -34)
+  listingLabel:SetText("挂单≤")
+  listingLabel:SetJustifyH("RIGHT")
+
+  listingsBox = CreateFrame("EditBox", nil, frame, "InputBoxTemplate")
+  listingsBox:SetSize(60, 20)
+  listingsBox:SetPoint("TOPRIGHT", -24, -34)
+  listingsBox:SetAutoFocus(false)
+  listingsBox:SetNumeric(false)
+  listingsBox:SetScript("OnEscapePressed", function(self)
+    self:ClearFocus()
+  end)
+  listingsBox:SetScript("OnEnterPressed", function(self)
+    local cfg = PB.ConfigInstance
+    if cfg then cfg:Set("maxListings", tonumber(self:GetText()) or 0) end
+    self:ClearFocus()
     offset = 0
     UI.Refresh()
   end)
@@ -217,6 +238,9 @@ end
 
 function UI.Open()
   ensure()
+  if listingsBox and PB.ConfigInstance then
+    listingsBox:SetText(tostring(PB.ConfigInstance:Get("maxListings") or 0))
+  end
   frame:Show()
   UI.Refresh()
 end
