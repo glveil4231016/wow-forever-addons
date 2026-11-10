@@ -14,7 +14,7 @@ cd wow-forever-addons
 
 python -m pip install lupa      # 唯一依赖，测试用
 python tests/run_pb.py          # 期望：PASS 51  FAIL 0
-python tests/syntax_check.py    # 期望：syntax ok: 13 files
+python tests/syntax_check.py    # 期望：syntax ok: 28 files（三插件）
 ```
 
 安装到游戏：把 `ProfitBoard/` 整个文件夹复制到
@@ -86,7 +86,7 @@ wow-forever-addons/
 | 项 | 状态 |
 |---|---|
 | 代码完整度 | ProfitBoard 13 个模块全部写完，可加载 |
-| 单测 | 51 例全绿；13 个 Lua 文件语法检查通过 |
+| 单测 | 51 例全绿；28 个 Lua 文件（三插件）语法检查通过 |
 | 包体 | `ProfitBoard.zip` ≈ 19 KB，`ProfitProbe.zip` ≈ 2 KB（本地，未入库） |
 | 客户端实测 | **未做**。这台开发机只有正式服客户端，没有无限客户端 |
 | 配方条数 | **0 条**（配方源尚未确认，`StaticRecipes.lua` 为空壳） |
@@ -379,7 +379,7 @@ Cost(item, depth, visiting):
 
 ```
 tests/run_pb.py      加载 stub → 13 个模块 → 7 个 test_*.lua → 打印 PASS/FAIL，失败时退出码 1
-tests/syntax_check.py 逐个 load() 全部 .lua（含 ProfitProbe），只查语法
+tests/syntax_check.py 逐个 load() 全部 .lua（ProfitBoard + ProfitProbe + BlackEvidence，共 28 个文件），只查语法，失败退出码 1
 ```
 
 - 断言工具：`PB.Test.it/eat/near/truthy`，见 `tests/stub_pb.lua`。
@@ -556,7 +556,7 @@ git -c http.proxy=http://127.0.0.1:10809 -c http.version=HTTP/1.1 push origin ma
 7. ~~UI 无挂单筛选~~ 已修：标题栏右侧「挂单≤」输入框，回车生效（等价 `/pb filter listings N`）。
 8. `Compute.Filter` 依赖 `market` 实例，不传则跳过 `maxListings`。
 9. 多角色合并、采购清单（P4）未做。
-10. `tests/run_be.py` 硬编码本机路径，跨机器不可用。
+10. `tests/run_be.py` 硬编码本机路径，且依赖 `lupa.lua51`（当前环境只有 lua55），跨机器跑不起来；BlackEvidence 目前只被 `syntax_check.py` 覆盖语法层。
 11. CI 已配置（`.github/workflows/tests.yml`），但尚未在 GitHub 实际跑过一次。
 12. `ProfitProbe` 的 `/probe` 输出可能很长，聊天框会截断，必要时用 `/dump` 或分次执行。
 
@@ -600,3 +600,4 @@ git -c http.proxy=http://127.0.0.1:10809 -c http.version=HTTP/1.1 push origin ma
 |---|---|
 | 2026-11-10 | ProfitBoard 首个完整实现；字段自检；静态库生成器；本文件 |
 | 2026-11-10 | 中位价改用连续日序号；UI 挂单筛选；物品名解析（UI/Slash/CSV）；缺价物品明细；51 例单测 |
+| 2026-11-10 | `syntax_check.py` 扩展到三插件（28 文件），CI 一并覆盖 BlackEvidence 语法 |
