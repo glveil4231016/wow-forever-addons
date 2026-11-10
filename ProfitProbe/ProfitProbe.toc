@@ -1,0 +1,7 @@
+## Interface: 16001
+## Title: ProfitProbe
+## Notes: ProfitBoard 探针
+## Notes-zhCN: ProfitBoard 探针（无限服）
+## AllowLoadGameType: forever
+## ExcludeLoadGameType: standard, classic
+ProfitProbe.lua

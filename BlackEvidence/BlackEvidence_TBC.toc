@@ -1,0 +1,26 @@
+## Interface: 20504
+## Title: BlackEvidence
+## Notes: 黑名单 / 进队预警 / 证据快照
+## Notes-zhCN: 黑名单 / 进队预警 / 证据快照
+## Author: you
+## Version: 0.1.0
+## SavedVariables: BlackEvidenceDB
+## SavedVariables: BlackEvidenceLog
+## SavedVariables: BlackEvidenceSnapshots
+## X-Category: Interface Enhancements
+Core.lua
+Profile.lua
+Config.lua
+Logger.lua
+Util.lua
+Identity.lua
+Blacklist.lua
+Timeline.lua
+Trigger.lua
+Comms.lua
+Export.lua
+NoteDialog.lua
+ManagerUI.lua
+Menu.lua
+Slash.lua
+

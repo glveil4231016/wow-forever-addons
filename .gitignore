@@ -1,0 +1,21 @@
+*.zip
+*.rar
+*.7z
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+.svn/
+.git/
+
+.vscode/
+.idea/
+
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+
+# 本地测试产物
+/tmp/

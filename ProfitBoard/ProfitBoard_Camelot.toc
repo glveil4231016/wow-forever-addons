@@ -1,0 +1,23 @@
+## Interface: 16001
+## Title: ProfitBoard
+## Notes: 全专业配方利润统计
+## Notes-zhCN: 全专业配方利润统计（无限服）
+## Author: you
+## Version: 0.1.0
+## SavedVariables: ProfitBoardDB
+## SavedVariables: ProfitBoardCache
+## AllowLoadGameType: forever
+## ExcludeLoadGameType: standard, classic
+## X-Category: Auction & Economy
+Core.lua
+Profile.lua
+Config.lua
+Util.lua
+Market.lua
+StaticRecipes.lua
+RecipeSource.lua
+Cost.lua
+Compute.lua
+UI.lua
+Export.lua
+Slash.lua
