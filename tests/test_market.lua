@@ -45,3 +45,24 @@ PB.Test.it("ladder truncation flagged", function()
   local items = M.Aggregate(list, { [103] = true }, { maxLadder = 3 })
   PB.Test.eq(items[103].truncated, true)
 end)
+
+PB.Test.it("parse item link id", function()
+  PB.Test.eq(M.ParseItemLinkID("|cff9d9d9d|Hitem:2589::::::::::|h[亚麻布]|h|r"), 2589)
+  PB.Test.eq(M.ParseItemLinkID(nil), nil)
+end)
+
+PB.Test.it("resolve fields from record", function()
+  local vals = { n = 13 }
+  vals[10] = 500
+  vals[11] = 40
+  vals[12] = 2589
+  local ok, fields = M.ResolveFields(vals, 2589)
+  PB.Test.truthy(ok)
+  PB.Test.eq(fields.id, 12)
+  PB.Test.eq(fields.qty, 11)
+  PB.Test.eq(fields.price, 10)
+end)
+
+PB.Test.it("resolve fields fails on mismatch", function()
+  PB.Test.eq(M.ResolveFields({ n = 3, 1, 2, 3 }, 999), false)
+end)

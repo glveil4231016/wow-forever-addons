@@ -151,6 +151,33 @@ end
 
 local scanDriver, scanState
 
+local function pack(...)
+  return { n = select("#", ...), ... }
+end
+
+function M.ParseItemLinkID(link)
+  if type(link) ~= "string" then return nil end
+  return tonumber(link:match("item:(%d+)"))
+end
+
+-- 用第一条记录反推字段位置：itemID 必须等于链接里的 ID；零售布局里
+-- price 与 totalQuantity 紧挨在 itemID 之前，所以相对位置可推导。
+function M.ResolveFields(values, linkID)
+  if type(values) ~= "table" or not linkID then return false, "缺少物品链接 ID" end
+  local n = values.n or #values
+  local idIdx
+  for i = 1, n do
+    if values[i] == linkID then
+      idIdx = i
+      break
+    end
+  end
+  if not idIdx then return false, "记录中找不到 itemID" end
+  local fields = { id = idIdx, qty = idIdx - 1, price = idIdx - 2 }
+  if fields.qty < 1 or fields.price < 1 then return false, "记录字段不足" end
+  return true, fields
+end
+
 local function yieldFrame(co)
   if scanDriver then return end
   scanDriver = CreateFrame("Frame")
@@ -204,16 +231,38 @@ function M:Scan(callback)
 
     local total = C_AuctionHouse.GetNumReplicateItems()
     scanState.total = total
-    local listings = {}
+
+    -- 字段自检：字段顺序错位时宁可停，也不写入错误价格
+    local firstRec = pack(pcall(C_AuctionHouse.GetReplicateItemInfo, 1))
+    local vals = { n = firstRec.n - 1 }
+    for i = 2, firstRec.n do vals[i - 1] = firstRec[i] end
+    local linkOk, link = pcall(C_AuctionHouse.GetReplicateItemLink, 1)
+    local linkID = linkOk and M.ParseItemLinkID(link) or nil
+    if linkID then
+      local okFields, fields = M.ResolveFields(vals, linkID)
+      if not okFields then
+        scanState = nil
+        print("|cffff5555ProfitBoard|r 拍卖行字段无法识别：" .. tostring(fields))
+        print("|cffff5555ProfitBoard|r 未写入任何价格。请把 /probe 输出发回。")
+        if callback then callback(false, "字段映射无法识别") end
+        return
+      end
+      M.REPLICATE_FIELDS = fields
+    end
+
     local F = M.REPLICATE_FIELDS
+    local listings = {}
     for i = 1, total do
-      local ok, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13 = pcall(C_AuctionHouse.GetReplicateItemInfo, i)
-      if ok then
-        local id, qty, price = a13, a12, a11
-        if F.id ~= 13 then id, qty, price = a3, a2, a1 end
-        if type(id) == "number" and type(price) == "number" and price > 0 then
-          listings[#listings + 1] = { itemID = id, qty = qty or 1, unit = price }
-        end
+      local rec = pack(pcall(C_AuctionHouse.GetReplicateItemInfo, i))
+      local id = rec[1 + F.id]
+      local qty = rec[1 + F.qty]
+      local price = rec[1 + F.price]
+      if rec[1] and type(id) == "number" and type(price) == "number" and price > 0 then
+        listings[#listings + 1] = {
+          itemID = id,
+          qty = (type(qty) == "number" and qty > 0) and qty or 1,
+          unit = price,
+        }
       end
       if i % 200 == 0 then coroutine.yield() end
     end

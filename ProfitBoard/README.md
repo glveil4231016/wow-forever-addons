@@ -72,5 +72,5 @@ python tests/syntax_check.py # 全部 Lua 文件语法检查
 
 ## 已知未完成
 
-- 探针（`ProfitProbe`）尚未在真实无限客户端跑过，`Market.REPLICATE_FIELDS` 与 `Profile.SELL_PRICE_INDEX` 仍是零售默认值，需要按探针报告校准。
+- 探针（`ProfitProbe`）尚未在真实无限客户端跑过。`Market.REPLICATE_FIELDS` 默认按零售布局，但扫描前会用第一条记录的物品链接反查 itemID 位置自检；识别失败会中止并提示，不会写入错误价格。`Profile.SELL_PRICE_INDEX` 仍待探针校准。
 - 静态配方表尚未生成。
