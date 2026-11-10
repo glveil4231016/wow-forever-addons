@@ -44,6 +44,7 @@ python tools/gen_static_recipes.py recipes.json --out ProfitBoard/StaticRecipes.
 
 ## 文档
 
+- **`docs/DEVELOPMENT.md`** —— 开发文档：架构、模块契约、算法、探针校准手册、调试手册、续作清单（**接手先读这个**）
 - `ProfitBoard/README.md` —— 安装、命令、限制
 - `BlackEvidence/README.md` —— 插件说明
 - `docs/BlackEvidence-实施方案.md` —— 黑名单插件规格
