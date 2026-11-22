@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.9.9"
+ns.VERSION = "1.10.1"
 
 local F = ns.F
 
@@ -86,6 +86,38 @@ ns.SOURCE_KINDS = {
 ns.UNAVAILABLE_ZONES = {
     ["纳克萨玛斯"] = true,
     ["Naxxramas"] = true,
+    ["熔火之心"] = true,
+    ["Molten Core"] = true,
+    ["黑翼之巢"] = true,
+    ["Blackwing Lair"] = true,
+    ["祖尔格拉布"] = true,
+    ["Zul'Gurub"] = true,
+    ["安其拉废墟"] = true,
+    ["Ruins of Ahn'Qiraj"] = true,
+    ["安其拉神庙"] = true,
+    ["安其拉神殿"] = true,
+    ["Temple of Ahn'Qiraj"] = true,
+    ["奥妮克希亚的巢穴"] = true,
+    ["Onyxia's Lair"] = true,
+    ["梦魇林地"] = true,
+    ["Nightmare Grove"] = true,
+}
+
+-- QuestFull dungeon keys that are in the client but not playable in the
+-- current Forever phase (launch + first tier only: three raids on Dec 9).
+ns.UNAVAILABLE_DUNGEONS = {
+    naxx = true, aq40 = true, aq20 = true, mc = true, bwl = true, zg = true, ony = true,
+}
+
+-- AreaTable IDs of the raids that are in the client but not playable yet.
+ns.UNAVAILABLE_AREAS = {
+    [3456] = true, [16394] = true, -- Naxxramas
+    [2717] = true,                 -- Molten Core
+    [2677] = true,                 -- Blackwing Lair
+    [1977] = true,                 -- Zul'Gurub
+    [3428] = true,                 -- Temple of Ahn'Qiraj
+    [3429] = true,                 -- Ruins of Ahn'Qiraj
+    [2159] = true,                 -- Onyxia's Lair
 }
 
 ns.defaults = {
@@ -230,7 +262,18 @@ function ns:IsSourceUnavailable(src)
     local kind = src[1]
     if kind == "quest" then
         local info = self:GetQuestInfo(tonumber(src[5]))
-        return (info and info.zoneName and self:IsZoneUnavailable(info.zoneName)) or false
+        if info then
+            local ex = info.extra
+            if ex and ex.d and self.UNAVAILABLE_DUNGEONS and self.UNAVAILABLE_DUNGEONS[ex.d] then
+                return true
+            end
+            local zsort = info.zoneOrSort
+            if zsort and self.UNAVAILABLE_AREAS and self.UNAVAILABLE_AREAS[math.abs(zsort)] then
+                return true
+            end
+            if info.zoneName and self:IsZoneUnavailable(info.zoneName) then return true end
+        end
+        return false
     end
     return self:IsZoneUnavailable(src[3])
 end
@@ -702,6 +745,8 @@ function ns:GetQuestInfo(questID)
             local okL, lvl = pcall(db.Get, db, questID, "questLevel")
             if okL then info.level = tonumber(lvl) end
         end
+        local okZ, zsort = pcall(db.Get, db, questID, "zoneOrSort")
+        if okZ then info.zoneOrSort = tonumber(zsort) end
         local ok2, sb = pcall(db.Get, db, questID, "startedBy")
         if ok2 and type(sb) == "table" then started = sb end
         local okF, fin = pcall(db.Get, db, questID, "finishedBy")
@@ -961,6 +1006,11 @@ function ns:FormatSource(src)
     return out
 end
 
+ns.RECIPE_VENDOR_FACTION = {
+    [256730] = "Alliance", [256734] = "Alliance", [256735] = "Alliance",
+    [248197] = "Horde", [248201] = "Horde", [248202] = "Horde",
+}
+
 function ns:GetRecipeVendors(recipeID)
     recipeID = tonumber(recipeID)
     if not recipeID then return {} end
@@ -1005,6 +1055,7 @@ function ns:GetRecipeVendors(recipeID)
                 y = y,
                 mapID = mapID,
                 kind = kind,
+                faction = self.RECIPE_VENDOR_FACTION and self.RECIPE_VENDOR_FACTION[v[1]],
             }
         end
     end
@@ -1034,6 +1085,15 @@ function ns:GetRecipeVendors(recipeID)
         end
     end
 
+    local playerFaction = UnitFactionGroup and UnitFactionGroup("player")
+    if playerFaction then
+        table.sort(out, function(a, b)
+            local af = (a.faction == playerFaction)
+            local bf = (b.faction == playerFaction)
+            if af ~= bf then return af end
+            return false
+        end)
+    end
     self.recipeVendorCache[recipeID] = out
     return out
 end

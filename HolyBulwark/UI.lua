@@ -506,7 +506,11 @@ local function BuildDetailBody(item)
                         local tail = {}
                         if v.zone then tail[#tail + 1] = v.zone end
                         if v.x and v.y then tail[#tail + 1] = string.format("%.1f, %.1f", v.x * 100, v.y * 100) end
-                        local line = "    · " .. NpcLink(v.npcID, v.name) .. "  " .. PinLink("npc", v.npcID, "标出")
+                        local prefix = ""
+                        if v.faction then
+                            prefix = ((v.faction == "Horde") and "|cffff6666[部落]|r " or "|cff66aaff[联盟]|r ")
+                        end
+                        local line = prefix .. "· " .. NpcLink(v.npcID, v.name) .. "  " .. PinLink("npc", v.npcID, "标出")
                         if #tail > 0 then line = line .. "  |cffbbbbbb" .. table.concat(tail, " · ") .. "|r" end
                         lines[#lines + 1] = line
                     end

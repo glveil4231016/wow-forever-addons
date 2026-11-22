@@ -29,6 +29,13 @@ $manual = @{
 }
 foreach ($k in $manual.Keys) { $zh[[int]$k] = $manual[$k] }
 
+# Horde Merchant's Favor vendors in The Barrens sell the same new recipes.
+$counterparts = @{
+    256730 = @{ npc = 248197; en = "Gor'mak"; zh = "戈尔马克"; zone = "The Barrens"; x = 0.498; y = 0.297 }
+    256734 = @{ npc = 248201; en = "Pawani"; zh = "帕瓦妮"; zone = "The Barrens"; x = 0.496; y = 0.296 }
+    256735 = @{ npc = 248202; en = "Jim'bek"; zh = "吉姆贝克"; zone = "The Barrens"; x = 0.496; y = 0.294 }
+}
+
 function Esc([string]$s) {
     if ($null -eq $s) { return '' }
     return $s.Replace('\', '\\').Replace('"', '\"')
@@ -61,6 +68,11 @@ foreach ($p in ($cards.PSObject.Properties | Sort-Object { [int]$_.Name })) {
         [int]$c.npc, (Esc $en), $zoneLua, $xLua, $yLua, $cnLua, [string]$c.kind
     $rows.Add('    [' + $id + '] = {')
     $rows.Add($row)
+    $cp = $counterparts[[int]$c.npc]
+    if ($cp) {
+        $rows.Add(('        {{ {0}, "{1}", "{2}", {3}, {4}, nil, "{5}", "Vendor" }},' -f `
+            $cp.npc, (Esc $cp.en), (Esc $cp.zone), $cp.x, $cp.y, (Esc $cp.zh)))
+    }
     $rows.Add('    },')
     $count++
 }
