@@ -516,7 +516,22 @@ local function BuildDetailBody(item)
                     end
                 end
                 if vendorCount == 0 then
-                    if rsrc then
+                    local drops = rid and ns:GetRecipeDrops(rid) or {}
+                    if #drops > 0 then
+                        lines[#lines + 1] = "  配方掉落："
+                        for di = 1, math.min(#drops, 8) do
+                            local d = drops[di]
+                            local tail = {}
+                            if d.zone then tail[#tail + 1] = d.zone end
+                            if d.x and d.y then tail[#tail + 1] = string.format("%.1f, %.1f", d.x * 100, d.y * 100) end
+                            local line = "    · " .. NpcLink(d.npcID, d.name) .. "  " .. PinLink("npc", d.npcID, "标出")
+                            if #tail > 0 then line = line .. "  |cffbbbbbb" .. table.concat(tail, " · ") .. "|r" end
+                            lines[#lines + 1] = line
+                        end
+                        if #drops > 8 then
+                            lines[#lines + 1] = "    |cff888888等 " .. #drops .. " 个掉落记录|r"
+                        end
+                    elseif rsrc then
                         lines[#lines + 1] = "  图纸来源：" .. rsrc
                     else
                         lines[#lines + 1] = "  |cff888888图纸来源：暂无可靠数据|r"

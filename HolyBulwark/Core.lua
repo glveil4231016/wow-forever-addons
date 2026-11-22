@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.10.1"
+ns.VERSION = "1.10.2"
 
 local F = ns.F
 
@@ -1011,6 +1011,20 @@ ns.RECIPE_VENDOR_FACTION = {
     [248197] = "Horde", [248201] = "Horde", [248202] = "Horde",
 }
 
+function ns:GetRecipeDrops(recipeID)
+    local list = recipeID and self.recipeDrop and self.recipeDrop[tonumber(recipeID)]
+    if not list then return {} end
+    local out = {}
+    for i = 1, #list do
+        local npcID = tonumber(list[i])
+        if npcID then
+            local mapID, x, y, name, zone = self:GetNpcPoint(npcID)
+            out[#out + 1] = { npcID = npcID, name = name or ("人物 #" .. npcID), zone = zone, x = x, y = y, mapID = mapID }
+        end
+    end
+    return out
+end
+
 function ns:GetRecipeVendors(recipeID)
     recipeID = tonumber(recipeID)
     if not recipeID then return {} end
@@ -1227,6 +1241,14 @@ function ns:GetMapPoints(item)
                     add(v.mapID, v.x, v.y,
                         string.format("%s %s（%s）", prefix, tostring(v.name), s[11] or ("配方 #" .. tostring(s[12]))),
                         v.zone)
+                end
+            end
+            local drops = self:GetRecipeDrops(s[12])
+            for _, d in ipairs(drops) do
+                if d.mapID then
+                    add(d.mapID, d.x, d.y,
+                        string.format("配方掉落 %s（%s）", tostring(d.name), s[11] or ("配方 #" .. tostring(s[12]))),
+                        d.zone)
                 end
             end
         end
