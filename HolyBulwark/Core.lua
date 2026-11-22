@@ -261,6 +261,11 @@ function ns:GetNpcPoint(npcID)
     local name = self:GetNpcName(npcID)
     local sub = NpcField(npcID, "subName")
 
+    local qp = self.questNpcPointCache and self.questNpcPointCache[npcID]
+    if qp and qp[2] and qp[3] then
+        return qp[1], qp[2], qp[3], qp[4] or name, qp[5], sub
+    end
+
     local dqaMap, dqaX, dqaY, dqaName = self:GetDQABossPoint(npcID)
     if dqaMap then
         if not name or name == ("人物 #" .. tostring(npcID)) then name = dqaName end
@@ -334,6 +339,11 @@ function ns:GetNpcPoint(npcID)
             end
             if mapID then break end
         end
+    end
+    if not mapID and qp then
+        mapID = qp[1]
+        if not zoneName then zoneName = qp[5] end
+        if qp[4] then name = qp[4] end
     end
     return mapID, x, y, name, zoneName, sub
 end
@@ -761,6 +771,13 @@ function ns:GetQuestInfo(questID)
             if not info.enderZone and zname then info.enderZone = zname end
             if (not info.enderX or not info.enderY) and px and py then info.enderX, info.enderY = px, py end
         end
+    end
+    self.questNpcPointCache = self.questNpcPointCache or {}
+    if info.npcID and info.mapID then
+        self.questNpcPointCache[info.npcID] = { info.mapID, info.x, info.y, info.npcName, info.zoneName }
+    end
+    if info.enderID and info.enderMapID then
+        self.questNpcPointCache[info.enderID] = { info.enderMapID, info.enderX, info.enderY, info.enderName, info.enderZone }
     end
     self.questInfoCache[questID] = info
     return info
