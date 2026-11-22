@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.9.7"
+ns.VERSION = "1.9.8"
 
 local F = ns.F
 
@@ -80,9 +80,18 @@ ns.SOURCE_KINDS = {
     world  = { label = "世界掉落", short = "世", r = 0.70, g = 0.70, b = 0.70 },
 }
 
+-- Content that exists in the item database but is not open in the current
+-- Forever phase. Sources in these zones are shown as unavailable and do not
+-- try to open a world map.
+ns.UNAVAILABLE_ZONES = {
+    ["纳克萨玛斯"] = true,
+    ["Naxxramas"] = true,
+}
+
 ns.defaults = {
     search = "", slot = {}, armor = { "tank" }, sort = "level",
     minLevel = 10, maxLevel = 60, tanky = true, knownOnly = true,
+    hideUnavailable = true,
     source = {}, quality = {},
 }
 
@@ -208,6 +217,22 @@ function ns:ZhZone(zone)
     if not zone or zone == "" then return zone end
     local raw = zone:match("^(.-)%s*·") or zone
     return (self.zoneZh and self.zoneZh[raw]) or raw
+end
+
+function ns:IsZoneUnavailable(zone)
+    if not zone or zone == "" then return false end
+    local raw = zone:match("^(.-)%s*·") or zone
+    return (self.UNAVAILABLE_ZONES and self.UNAVAILABLE_ZONES[raw]) or false
+end
+
+function ns:IsSourceUnavailable(src)
+    if not src then return false end
+    local kind = src[1]
+    if kind == "quest" then
+        local info = self:GetQuestInfo(tonumber(src[5]))
+        return (info and info.zoneName and self:IsZoneUnavailable(info.zoneName)) or false
+    end
+    return self:IsZoneUnavailable(src[3])
 end
 
 function ns:GetDQABossPoint(npcID)
@@ -900,6 +925,9 @@ function ns:FormatSource(src)
         elseif zone and zone ~= "" then
             out = out .. " · " .. zone
         end
+        if info and info.zoneName and self:IsZoneUnavailable(info.zoneName) then
+            out = out .. " · 当前版本未开放"
+        end
         return out
     elseif kind == "vendor" then
         if zhName and zhName ~= "" then name = zhName end
@@ -927,6 +955,9 @@ function ns:FormatSource(src)
     local c = self:FormatChance(chance)
     if c and kind ~= "world" then out = out .. " · " .. c end
     if kind == "vendor" and note and note ~= "" then out = out .. " · " .. note end
+    if zone and self:IsZoneUnavailable(zone) then
+        out = out .. " · 当前版本未开放"
+    end
     return out
 end
 
@@ -1009,6 +1040,9 @@ end
 
 function ns:GetSourceMap(src)
     local kind = src[1]
+    if self:IsSourceUnavailable(src) then
+        return nil
+    end
     if kind == "vendor" and src[7] and src[8] and src[9] then
         return src[7], src[8], src[9], (src[6] or src[2] or "商人"), src[3]
     elseif kind == "craft" and src[12] then
@@ -1337,9 +1371,19 @@ local function ListHas(list, value)
     return false
 end
 
+function ns:IsItemUnavailable(item)
+    local srcs = item and item[F.SOURCES]
+    if not srcs or #srcs == 0 then return false end
+    for i = 1, #srcs do
+        if not self:IsSourceUnavailable(srcs[i]) then return false end
+    end
+    return true
+end
+
 function ns:Matches(item, f)
     local wantsUnknown = ListHas(f.source, "unknown")
     if f.knownOnly and not wantsUnknown and item[F.KNOWN] == 0 then return false end
+    if f.hideUnavailable and self:IsItemUnavailable(item) then return false end
     if #f.slot > 0 and not ListHas(f.slot, item[F.SLOT]) then return false end
 
     if #f.quality > 0 and not ListHas(f.quality, tostring(item[F.QUALITY])) then return false end
@@ -1472,6 +1516,8 @@ function ns:Init()
     if f.minLevel > f.maxLevel then f.minLevel, f.maxLevel = f.maxLevel, f.minLevel end
     f.tanky = f.tanky and true or false
     f.knownOnly = f.knownOnly and true or false
+    if f.hideUnavailable == nil then f.hideUnavailable = true end
+    f.hideUnavailable = f.hideUnavailable and true or false
     f.search = tostring(f.search or "")
     if type(f.sort) ~= "string" then f.sort = "level" end
     f.slot = NormalizeList(f.slot)

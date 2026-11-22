@@ -5,7 +5,7 @@ local ROWS = 17
 local ROW_H = 25
 
 local frame, rows, listFrame, countLabel, pageLabel
-local searchBox, minBox, maxBox, tankyCB, knownCB, noteLabel
+local searchBox, minBox, maxBox, tankyCB, knownCB, unavailCB, noteLabel
 local detail, detailIcon, detailName, detailEn, detailSub1, detailSub2, detailBody, detailScroll, detailContent
 local detailMap
 local HandleSpgLink
@@ -522,9 +522,12 @@ local function BuildDetailBody(item)
             elseif s[1] == "drop" and s[14] then
                 local mapID, x, y, name, zone = ns:GetNpcPoint(tonumber(s[14]))
                 if not zone and s[3] and s[3] ~= "" then zone = s[3] end
+                local unavailable = ns:IsZoneUnavailable(zone or s[3])
                 local fallbackMap = mapID or (s[3] and ns.zoneToMap and ns.zoneToMap[s[3]])
                 local nameLink
-                if mapID and x and y then
+                if unavailable then
+                    nameLink = NpcLink(s[14], name)
+                elseif mapID and x and y then
                     nameLink = NpcLink(s[14], name)
                 elseif fallbackMap then
                     nameLink = MapOnlyLink(fallbackMap, name or "地图")
@@ -532,14 +535,17 @@ local function BuildDetailBody(item)
                     nameLink = NpcLink(s[14], name)
                 end
                 local pinLink = ""
-                if mapID and x and y then
-                    pinLink = PinLink("npc", s[14], "标出")
-                elseif fallbackMap then
-                    pinLink = MapOnlyLink(fallbackMap, "打开地图")
+                if not unavailable then
+                    if mapID and x and y then
+                        pinLink = PinLink("npc", s[14], "标出")
+                    elseif fallbackMap then
+                        pinLink = MapOnlyLink(fallbackMap, "打开地图")
+                    end
                 end
                 lines[#lines + 1] = "|cffffd200掉落|r  " .. nameLink .. "  " .. pinLink
                 local tail = {}
                 if zone then tail[#tail + 1] = zone end
+                if unavailable then tail[#tail + 1] = "|cffff5555当前版本未开放|r" end
                 if x and y then tail[#tail + 1] = string.format("%.1f, %.1f", x * 100, y * 100) end
                 if #tail > 0 then
                     lines[#lines + 1] = "  |cffbbbbbb" .. table.concat(tail, " · ") .. "|r"
@@ -628,11 +634,20 @@ local function UpdateRows()
                     row.source:SetText("未知")
                     row.source:SetTextColor(0.5, 0.5, 0.5)
                 else
-                    local info = ns.SOURCE_KINDS[srcs[1][1]]
-                    local label = (info and info.label) or "未知"
-                    if #srcs > 1 then label = label .. "+" .. (#srcs - 1) end
-                    row.source:SetText(label)
-                    row.source:SetTextColor((info and info.r or 0.8), (info and info.g or 0.8), (info and info.b or 0.8))
+                    local allUnavailable = true
+                    for t = 1, #srcs do
+                        if not ns:IsSourceUnavailable(srcs[t]) then allUnavailable = false; break end
+                    end
+                    if allUnavailable then
+                        row.source:SetText("未开放")
+                        row.source:SetTextColor(1.0, 0.35, 0.35)
+                    else
+                        local info = ns.SOURCE_KINDS[srcs[1][1]]
+                        local label = (info and info.label) or "未知"
+                        if #srcs > 1 then label = label .. "+" .. (#srcs - 1) end
+                        row.source:SetText(label)
+                        row.source:SetTextColor((info and info.r or 0.8), (info and info.g or 0.8), (info and info.b or 0.8))
+                    end
                 end
                 if selectedItem == item then row.sel:Show() else row.sel:Hide() end
                 row:Show()
@@ -696,6 +711,7 @@ local function SyncControls()
     maxBox:SetText(tostring(f.maxLevel or 60))
     tankyCB:SetChecked(f.tanky and true or false)
     knownCB:SetChecked(f.knownOnly and true or false)
+    if unavailCB then unavailCB:SetChecked(f.hideUnavailable and true or false) end
     for _, b in ipairs(ns.dropdowns or {}) do SetDropdownValue(b.btn, f[b.key]) end
     for _, d in ipairs(ns.multiDropdowns or {}) do
         if d.btn.refresh then d.btn.refresh() end
@@ -782,6 +798,7 @@ local function CreateControls(parent)
     end
     tankyCB = MakeCheck(140, "只看有耐力", "tanky")
     knownCB = MakeCheck(260, "只看有来源", "knownOnly")
+    unavailCB = MakeCheck(390, "隐藏未开放", "hideUnavailable")
 
     countLabel = parent:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     countLabel:SetPoint("TOPRIGHT", parent, "TOPRIGHT", -28, -80)
