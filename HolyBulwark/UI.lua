@@ -28,6 +28,12 @@ local function PinLink(kind, id, label)
     return "|cff33ff99|Hspg:" .. kind .. ":" .. tostring(id) .. "|h[" .. tostring(label or "标出") .. "]|h|r"
 end
 
+local function MapPointLink(mapID, x, y, label)
+    if not (mapID and x and y) then return "" end
+    return string.format("|cff33ff99|Hspg:point:%d:%d:%d|h[%s]|h|r",
+        mapID, math.floor(x * 1000 + 0.5), math.floor(y * 1000 + 0.5), tostring(label or "标出"))
+end
+
 local function QLocLink(id, which, label)
     return "|cff9cd6ff|Hspg:qloc:" .. tostring(id) .. ":" .. tostring(which) .. "|h[" .. tostring(label) .. "]|h|r"
 end
@@ -332,7 +338,7 @@ local function EnsureMapPin()
 
     mapPinHolder = CreateFrame("Frame", nil, canvas)
     mapPinHolder:SetSize(1, 1)
-    mapPinHolder:SetFrameStrata("DIALOG")
+    mapPinHolder:SetFrameStrata("TOOLTIP")
 
     mapPinDot = mapPinHolder:CreateTexture(nil, "ARTWORK")
     mapPinDot:SetSize(12, 12)
@@ -508,6 +514,26 @@ local function BuildDetailBody(item)
                     end
                 end
 
+            elseif s[1] == "drop" and s[14] then
+                local mapID, x, y, name, zone = ns:GetNpcPoint(tonumber(s[14]))
+                if not zone and s[3] and s[3] ~= "" then zone = s[3] end
+                lines[#lines + 1] = "|cffffd200掉落|r  " .. NpcLink(s[14], name) .. "  " .. PinLink("npc", s[14], "标出")
+                local tail = {}
+                if zone then tail[#tail + 1] = zone end
+                if x and y then tail[#tail + 1] = string.format("%.1f, %.1f", x * 100, y * 100) end
+                if #tail > 0 then
+                    lines[#lines + 1] = "  |cffbbbbbb" .. table.concat(tail, " · ") .. "|r"
+                end
+
+            elseif s[1] == "vendor" and s[7] then
+                lines[#lines + 1] = "|cffffd200出售|r  " .. tostring(s[6] or s[2] or "商人") .. "  " .. MapPointLink(s[7], s[8], s[9], "标出")
+                local tail = {}
+                if s[3] and s[3] ~= "" then tail[#tail + 1] = s[3] end
+                if s[8] and s[9] then tail[#tail + 1] = string.format("%.1f, %.1f", s[8] * 100, s[9] * 100) end
+                if #tail > 0 then
+                    lines[#lines + 1] = "  |cffbbbbbb" .. table.concat(tail, " · ") .. "|r"
+                end
+
             else
                 lines[#lines + 1] = ns:FormatSource(s)
             end
@@ -569,6 +595,8 @@ local function UpdateRows()
         if item then
             ns.lastRowId = item[F.ID]
             local rowOk, rowErr = pcall(function()
+                row.baseAlpha = (i % 2 == 0) and 0.050 or 0.018
+                row.bg:SetColorTexture(1, 1, 1, row.baseAlpha)
                 SetItemButtonIcon(row.icon, item)
                 row.name:SetText(ns:ColorName(item))
                 row.req:SetText(item[F.REQ] == 0 and "—" or tostring(item[F.REQ]))
@@ -861,11 +889,11 @@ local function CreateRow(parent, index)
         UpdateRows()
     end)
     row:SetScript("OnEnter", function(self)
-        self.bg:SetColorTexture(1, 1, 1, 0.09)
+        self.bg:SetColorTexture(1, 1, 1, 0.11)
         if self.item then ShowItemTooltip(self, self.item) end
     end)
     row:SetScript("OnLeave", function(self)
-        self.bg:SetColorTexture(1, 1, 1, 0.025)
+        self.bg:SetColorTexture(1, 1, 1, self.baseAlpha or 0.025)
         GameTooltip:Hide()
     end)
     row:SetScript("OnClick", function(self)
@@ -954,6 +982,11 @@ local function CreateWindow()
         fs:SetTextColor(0.65, 0.65, 0.65)
         fs:SetText(h.text)
     end
+    local headerLine = listFrame:CreateTexture(nil, "ARTWORK")
+    headerLine:SetColorTexture(1, 1, 1, 0.12)
+    headerLine:SetPoint("TOPLEFT", listFrame, "TOPLEFT", 8, -23)
+    headerLine:SetPoint("TOPRIGHT", listFrame, "TOPRIGHT", -8, -23)
+    headerLine:SetHeight(1)
 
     -- detail
     detail = CreateFrame("Frame", nil, frame, "BackdropTemplate")
@@ -1248,14 +1281,28 @@ local function CreateWindow()
         elseif kind == "step" then
             local qid, index = id:match("^(%d+):(%d+)$")
             if qid then ns:PinQuestStep(tonumber(qid), tonumber(index)) end
+        elseif kind == "point" then
+            local mapID, x, y = id:match("^(%d+):(%d+):(%d+)$")
+            if mapID then
+                ns:PinPoint({ mapID = tonumber(mapID), x = tonumber(x) / 1000, y = tonumber(y) / 1000, title = "地图位置" })
+            end
         end
     end
 
     ns.lowerForMap = function()
-        if frame then frame:SetFrameStrata("BACKGROUND") end
-        if questFrame then questFrame:SetFrameStrata("BACKGROUND") end
+        local wm = _G.WorldMapFrame
+        if wm then
+            if not wm.hbOriginalStrata then wm.hbOriginalStrata = wm:GetFrameStrata() end
+            pcall(wm.SetFrameStrata, wm, "FULLSCREEN_DIALOG")
+        end
+        if frame then frame:SetFrameStrata("MEDIUM") end
+        if questFrame then questFrame:SetFrameStrata("MEDIUM") end
     end
     ns.restoreForMap = function()
+        local wm = _G.WorldMapFrame
+        if wm and wm.hbOriginalStrata then
+            pcall(wm.SetFrameStrata, wm, wm.hbOriginalStrata)
+        end
         if frame then frame:SetFrameStrata("MEDIUM") end
         if questFrame then questFrame:SetFrameStrata("MEDIUM") end
     end

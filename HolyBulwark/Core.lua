@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.9.1"
+ns.VERSION = "1.9.2"
 
 local F = ns.F
 
@@ -1144,20 +1144,56 @@ function ns:FindMapSource(item)
     return self:GetMapPoints(item)[1]
 end
 
+function ns:OpenMapAt(mapID)
+    mapID = tonumber(mapID)
+    if not mapID then return false end
+    local wm = _G.WorldMapFrame
+    local opened = false
+
+    if C_Map and C_Map.OpenWorldMap then
+        opened = pcall(C_Map.OpenWorldMap, mapID) or opened
+    elseif _G.OpenWorldMap then
+        opened = pcall(_G.OpenWorldMap, mapID) or opened
+    end
+
+    if wm then
+        if not wm:IsShown() then
+            if ShowUIPanel then pcall(ShowUIPanel, wm) end
+        end
+        if wm.SetMapID then pcall(wm.SetMapID, wm, mapID) end
+    end
+
+    if wm and wm.GetMapID then
+        local cur = wm:GetMapID()
+        if cur ~= mapID then
+            if C_Map and C_Map.OpenMap then pcall(C_Map.OpenMap, mapID) end
+            if wm.SetMapID then pcall(wm.SetMapID, wm, mapID) end
+        end
+    end
+
+    if not (wm and wm:IsShown()) then
+        if C_Map and C_Map.OpenMap then
+            pcall(C_Map.OpenMap, mapID)
+        elseif ToggleWorldMap then
+            pcall(ToggleWorldMap)
+        end
+    end
+    return (wm and wm:IsShown()) or opened
+end
+
 function ns:PinPoint(point)
     if not point then
         self:Print("没有可标记的位置。")
         return
     end
-    if self.lowerForMap then self.lowerForMap() end
     local mapID, x, y = point.mapID, point.x, point.y
-    local mapInfo = C_Map and C_Map.GetMapInfo and C_Map.GetMapInfo(mapID)
-    if not mapInfo then
-        self:Print("地图 ID 无效：" .. tostring(mapID))
+    if not mapID then
+        self:Print("没有可标记的地图。")
         return
     end
     local title = tostring(point.title or "位置")
     if point.zone and point.zone ~= "" then title = title .. " · " .. point.zone end
+
     if x and y then
         if TomTom and TomTom.AddWaypoint then
             pcall(TomTom.AddWaypoint, TomTom, mapID, x, y, { title = title, persistent = false })
@@ -1166,12 +1202,23 @@ function ns:PinPoint(point)
             pcall(C_Map.SetUserWaypoint, { uiMapID = mapID, position = { x = x, y = y } })
         end
     end
-    if C_Map and C_Map.OpenMap then
-        pcall(C_Map.OpenMap, mapID)
-    elseif ToggleWorldMap then
-        pcall(ToggleWorldMap)
+
+    local opened = self:OpenMapAt(mapID)
+    if opened and self.lowerForMap then
+        self.lowerForMap()
+        if C_Timer and C_Timer.After then
+            C_Timer.After(0.8, function()
+                local wm = _G.WorldMapFrame
+                if not (wm and wm:IsShown()) and self.restoreForMap then self:restoreForMap() end
+            end)
+        end
     end
     if x and y and self.ShowMapPin then self:ShowMapPin(mapID, x, y) end
+    if not opened then
+        if self.restoreForMap then self:restoreForMap() end
+        self:Print("无法打开地图：" .. tostring(mapID) .. "（" .. title .. "）")
+        return
+    end
     if x and y then
         self:Print(string.format("已标记：%s（%.1f, %.1f）", title, x * 100, y * 100))
     else
