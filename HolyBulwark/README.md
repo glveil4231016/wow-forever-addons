@@ -40,9 +40,12 @@ D:\game\World of Warcraft\_forever_\Interface\AddOns\HolyBulwark
 - **商人**：中文名 + 区域 + 坐标 + 备注
 - **制造**：配方物品 + 贩卖图纸的 NPC 中文名、区域、坐标
 - **任务**：中文任务名、接取/交付 NPC、区域、坐标、**整条任务链**
-- **任务链可点击**：点任务名查看目标、所需物品、任务品掉落；点 NPC 名直接在地图标点
+- **任务链状态**：每一步标记 `[已完成] / [当前] / [未完成]`，并标出本物品任务
+- **任务详情**：任务描述/目标、任务品、击杀目标、任务对象、任务品位置与掉落 NPC
+- **任务链可点击**：点任务名查看详情；点 NPC、任务品位置、任务对象、掉落怪物直接在地图标点
 - **物品触发任务**：起始物品 + 掉落怪物列表（怪物可点击标图）
-- **地图标记**：打开对应地图，用 TomTom / 暴雪路径点标出位置；多个位置时弹菜单选择
+- **地图标记**：打开对应地图，用 TomTom / 暴雪路径点标出位置；世界地图始终在插件窗口上方
+- **全中文**：物品英文名、英文区域名不再显示；NPC/物品/任务名优先使用客户端中文数据
 - **Ctrl+左键**列表物品打开试穿；**Shift+左键**插入可点击物品链接到聊天框
 - 物品没有物品等级时，显示**任务等级**
 - 鼠标悬停任意物品（含聊天链接）自动追加来源
@@ -56,6 +59,7 @@ D:\game\World of Warcraft\_forever_\Interface\AddOns\HolyBulwark
 | 区域中文名 / 地图 ID | 客户端 `AreaTable`、QuestieDB Forever 映射 |
 | 任务中文名 | [forever.damijing.com](https://forever.damijing.com)（410 个任务） |
 | 任务链、接取 NPC、坐标 | [WarcraftMaps](https://warcraftmaps.com) |
+| 完整任务链、任务品位置、掉落怪物 | Completao（本地安装的 Forever 任务库） |
 | BOSS / 任务 NPC / 商人中文名 | forever.damijing.com（478 个 NPC） |
 | 图纸贩卖 NPC、区域、坐标 | [WoW Forever](https://wow-forever.gg) 物品页 |
 | 首领刷新点 | QuestieDB Forever 元数据 |
@@ -76,6 +80,7 @@ D:\game\World of Warcraft\_forever_\Interface\AddOns\HolyBulwark
 | `NpcLoc.lua` | 世界首领刷新坐标 |
 | `QuestZh.lua` | 410 个任务中文名 |
 | `QuestInfo.lua` | 任务等级、接取 NPC、坐标、任务链 |
+| `QuestFull.lua` | 从 Completao 提取的 556 个任务：接取/交付地点、任务品步骤、掉落怪物、前置关系 |
 | `RecipeVendor.lua` | 图纸/配方贩卖 NPC、区域、坐标 |
 
 QuestieDB 是可选增强：装了可以补全更多 NPC/任务中文名与位置；没装也能用本地库。
@@ -124,6 +129,7 @@ holy-bulwark/
 │  ├─ NpcLoc.lua
 │  ├─ QuestZh.lua
 │  ├─ QuestInfo.lua
+│  ├─ QuestFull.lua
 │  ├─ RecipeVendor.lua
 │  ├─ Core.lua
 │  ├─ Tooltip.lua

@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.8.0"
+ns.VERSION = "1.9.0"
 
 local F = ns.F
 
@@ -194,8 +194,20 @@ function ns:GetNpcName(npcID)
     local zh = self.npcZh and self.npcZh[npcID]
     if zh and zh ~= "" then return zh end
     local name = NpcField(npcID, "name")
-    if name and name ~= "" then return name end
+    if name and name ~= "" then
+        local loc = GetLocale and GetLocale() or ""
+        if loc:sub(1, 2) == "zh" and not name:find("[\128-\255]") then
+            return "NPC #" .. tostring(npcID)
+        end
+        return name
+    end
     return "NPC #" .. tostring(npcID)
+end
+
+function ns:ZhZone(zone)
+    if not zone or zone == "" then return zone end
+    local raw = zone:match("^(.-)%s*·") or zone
+    return (self.zoneZh and self.zoneZh[raw]) or raw
 end
 
 function ns:GetDQABossPoint(npcID)
@@ -269,7 +281,7 @@ function ns:GetNpcPoint(npcID)
     local rvMap, rvX, rvY, rvName, rvZone = self:FindRecipeVendorPoint(npcID)
     if rvMap then
         if rvName and rvName ~= "" then name = rvName end
-        return rvMap, rvX, rvY, name, rvZone, sub
+        return rvMap, rvX, rvY, name, self:ZhZone(rvZone), sub
     end
 
     local zoneID = tonumber(NpcField(npcID, "zoneID"))
@@ -314,7 +326,7 @@ function ns:GetNpcPoint(npcID)
                     local m = z and self.zoneToMap and self.zoneToMap[z]
                     if m then
                         mapID = m
-                        if not zoneName then zoneName = z end
+                        if not zoneName then zoneName = self:ZhZone(z) end
                         if v[7] or v[2] then name = v[7] or v[2] end
                         break
                     end
@@ -332,6 +344,8 @@ function ns:GetQuestChain(questID)
         local chain = dqa.Quests[questID].chain
         if type(chain) == "table" and #chain > 1 then return chain end
     end
+    local full = self:BuildChainFromFull(questID)
+    if type(full) == "table" and #full > 1 then return full end
     local best
     if self.questInfo then
         for _, q in pairs(self.questInfo) do
@@ -348,31 +362,302 @@ function ns:GetQuestChain(questID)
     end
     if best then return best end
     local own = self.questInfo and self.questInfo[questID]
-    return own and own.chain
+    if own and type(own.chain) == "table" and #own.chain > 1 then return own.chain end
+    return self:BuildChainFromFull(questID)
+end
+
+function ns:PointFromArea(area, x, y)
+    area = tonumber(area)
+    if not area then return nil end
+    local mapID = self.areaToMap and self.areaToMap[area]
+    local zoneName
+    if C_Map and C_Map.GetAreaInfo then
+        local ok, name = pcall(C_Map.GetAreaInfo, area)
+        if ok and name and name ~= "" then zoneName = name end
+    end
+    if not zoneName and mapID and C_Map and C_Map.GetMapInfo then
+        local mi = C_Map.GetMapInfo(mapID)
+        if mi and mi.name then zoneName = mi.name end
+    end
+    local fx, fy
+    if tonumber(x) and tonumber(y) then
+        fx, fy = tonumber(x) / 100, tonumber(y) / 100
+    end
+    return mapID, fx, fy, zoneName
+end
+
+function ns:GetObjectName(objectID)
+    local db = _G.ObjectDB
+    if db and db.Get and objectID then
+        local ok, name = pcall(db.Get, db, objectID, "name")
+        if ok and type(name) == "string" and name ~= "" then
+            local loc = GetLocale and GetLocale() or ""
+            if loc:sub(1, 2) == "zh" and not name:find("[\128-\255]") then
+                return "任务对象 #" .. tostring(objectID)
+            end
+            return name
+        end
+    end
+    return "任务对象 #" .. tostring(objectID)
+end
+
+function ns:GetObjectPoint(objectID)
+    local db = _G.ObjectDB
+    if not (db and db.Get) then return nil end
+    local name = self:GetObjectName(objectID)
+    local okS, spawns = pcall(db.Get, db, objectID, "spawns")
+    local zoneID = nil
+    local okZ, z = pcall(db.Get, db, objectID, "zoneID")
+    if okZ then zoneID = tonumber(z) end
+    local list
+    if okS and type(spawns) == "table" then
+        if zoneID then list = spawns[zoneID] or spawns[tostring(zoneID)] end
+        if not list then
+            for k, v in pairs(spawns) do
+                if type(v) == "table" and v[1] then
+                    list = v
+                    zoneID = tonumber(k) or zoneID
+                    break
+                end
+            end
+        end
+    end
+    local mapID = zoneID and self.areaToMap and self.areaToMap[zoneID]
+    local zoneName
+    if mapID and C_Map and C_Map.GetMapInfo then
+        local mi = C_Map.GetMapInfo(mapID)
+        if mi and mi.name then zoneName = mi.name end
+    end
+    local x, y
+    if list and list[1] then
+        x, y = list[1][1], list[1][2]
+        if x and y and (x > 1 or y > 1) then x, y = x / 100, y / 100 end
+    end
+    return mapID, x, y, name, zoneName
+end
+
+function ns:PinObject(objectID)
+    local mapID, x, y, name, zone = self:GetObjectPoint(tonumber(objectID))
+    if not mapID then
+        self:Print("没有这个任务对象的位置记录。")
+        return
+    end
+    self:PinPoint({ mapID = mapID, x = x, y = y, title = name or ("任务对象 #" .. tostring(objectID)), zone = zone })
+end
+
+function ns:GetQuestStatus(questID)
+    local completed, inLog = false, false
+    if C_QuestLog then
+        if C_QuestLog.IsQuestFlaggedCompleted then
+            local ok, res = pcall(C_QuestLog.IsQuestFlaggedCompleted, questID)
+            if ok then completed = res and true or false end
+        end
+        if C_QuestLog.GetLogIndexForQuestID then
+            local ok, res = pcall(C_QuestLog.GetLogIndexForQuestID, questID)
+            if ok and res then inLog = true end
+        end
+    end
+    if not completed and _G.IsQuestFlaggedCompleted then
+        local ok, res = pcall(_G.IsQuestFlaggedCompleted, questID)
+        if ok then completed = res and true or false end
+    end
+    return completed, inLog
+end
+
+function ns:BuildRawNameIndex(db, cacheKey)
+    if self[cacheKey] then return self[cacheKey] end
+    if not (db and db.GetAllIds and db.GetRaw) then return {} end
+    local ok, ids = pcall(db.GetAllIds, db)
+    if not (ok and type(ids) == "table" and #ids > 0) then return {} end
+    local index = {}
+    for i = 1, #ids do
+        local okN, name = pcall(db.GetRaw, db, ids[i], "name")
+        if okN and type(name) == "string" and name ~= "" and not index[name] then
+            index[name] = ids[i]
+        end
+    end
+    self[cacheKey] = index
+    return index
+end
+
+function ns:FindNpcIdByName(name)
+    if not name then return nil end
+    local db = _G.NpcDB
+    if db and db.IdsByName then
+        local ok, ids = pcall(db.IdsByName, db, name)
+        if ok and type(ids) == "table" and ids[1] then return ids[1] end
+    end
+    if not db then return nil end
+    return self:BuildRawNameIndex(db, "rawNpcNameIndex")[name]
+end
+
+function ns:FindItemIdByName(name)
+    if not name then return nil end
+    local db = _G.ItemDB
+    if db and db.IdsByName then
+        local ok, ids = pcall(db.IdsByName, db, name)
+        if ok and type(ids) == "table" and ids[1] then return ids[1] end
+    end
+    if not db then return nil end
+    return self:BuildRawNameIndex(db, "rawItemNameIndex")[name]
+end
+
+function ns:PinQuestStep(questID, index)
+    local info = self:GetQuestInfo(tonumber(questID))
+    local st = info and info.steps and info.steps[tonumber(index)]
+    if not st then
+        self:Print("没有这个任务品的位置记录。")
+        return
+    end
+    local mapID, x, y, zoneName = self:PointFromArea(st.a, st.x, st.y)
+    if not mapID then
+        self:Print("任务品没有可用地图。")
+        return
+    end
+    local title = "任务品位置"
+    if st.n then
+        local loc = GetLocale and GetLocale() or ""
+        if loc:sub(1, 2) == "en" or st.n:find("[\128-\255]") then title = st.n end
+    end
+    local itemID = self:FindItemIdByName(st.n)
+    if itemID then
+        local db = _G.ItemDB
+        if db and db.Get then
+            local ok, n = pcall(db.Get, db, itemID, "name")
+            if ok and type(n) == "string" then title = n end
+        end
+    end
+    self:PinPoint({ mapID = mapID, x = x, y = y, title = title, zone = zoneName })
+end
+
+function ns:PinQuestLoc(questID, which)
+    local info = self:GetQuestInfo(tonumber(questID))
+    local ex = info and info.extra
+    local loc = ex and ((which == "e") and ex.e or ex.s)
+    if not loc then
+        if info and info.mapID then
+            self:PinPoint({ mapID = info.mapID, x = info.x, y = info.y,
+                title = (which == "e" and "交付地点" or "接取地点"), zone = info.zoneName })
+        else
+            self:Print("没有这个任务 NPC 的位置记录。")
+        end
+        return
+    end
+    local mapID, x, y, zoneName = self:PointFromArea(loc.a, loc.x, loc.y)
+    if not mapID then
+        self:Print("任务 NPC 没有可用地图。")
+        return
+    end
+    self:PinPoint({ mapID = mapID, x = x, y = y, title = (which == "e" and "交付地点" or "接取地点"), zone = zoneName })
+end
+
+function ns:BuildChainFromFull(questID)
+    local all = self.questFull
+    if not all or not all[questID] then return nil end
+    if not self.questFullRev then
+        local rev = {}
+        for id, q in pairs(all) do
+            if q.r then
+                for i = 1, #q.r do
+                    local r = q.r[i]
+                    rev[r] = rev[r] or {}
+                    rev[r][#rev[r] + 1] = id
+                end
+            end
+        end
+        self.questFullRev = rev
+    end
+    local rev = self.questFullRev
+    local set = { [questID] = true }
+    local stack = { questID }
+    while #stack > 0 do
+        local x = table.remove(stack)
+        local q = all[x]
+        if q and q.r then
+            for i = 1, #q.r do
+                local r = q.r[i]
+                if not set[r] then set[r] = true; stack[#stack + 1] = r end
+            end
+        end
+        local kids = rev[x]
+        if kids then
+            for i = 1, #kids do
+                local k = kids[i]
+                if not set[k] then set[k] = true; stack[#stack + 1] = k end
+            end
+        end
+    end
+
+    local faction = UnitFactionGroup and UnitFactionGroup("player")
+    local filtered = {}
+    for id in pairs(set) do
+        local q = all[id]
+        local ok = true
+        if q then
+            if q.f and faction and q.f ~= faction then ok = false end
+            if ok and q.cl and math.floor(q.cl / 2) % 2 == 0 then ok = false end
+        end
+        if ok or id == questID then filtered[id] = true end
+    end
+
+    local depth = {}
+    for id in pairs(filtered) do depth[id] = 1 end
+    for _ = 1, 40 do
+        local changed = false
+        for id in pairs(filtered) do
+            local q = all[id]
+            if q and q.r then
+                for i = 1, #q.r do
+                    local r = q.r[i]
+                    if filtered[r] and depth[r] + 1 > depth[id] then
+                        depth[id] = depth[r] + 1
+                        changed = true
+                    end
+                end
+            end
+        end
+        if not changed then break end
+    end
+
+    local list = {}
+    for id in pairs(filtered) do list[#list + 1] = id end
+    table.sort(list, function(a, b)
+        if depth[a] ~= depth[b] then return depth[a] < depth[b] end
+        local qa, qb = all[a], all[b]
+        local la = (qa and qa.l) or 0
+        local lb = (qb and qb.l) or 0
+        if la ~= lb then return la < lb end
+        return a < b
+    end)
+    return list
 end
 
 function ns:GetQuestInfo(questID)
     if not questID then return nil end
     local db = _G.QuestDB
     local localQ = self.questInfo and self.questInfo[questID]
-    if not (localQ or (db and db.Get)) then return nil end
+    local ex = self.questFull and self.questFull[questID]
+    if not (localQ or ex or (db and db.Get)) then return nil end
     self.questInfoCache = self.questInfoCache or {}
     local cached = self.questInfoCache[questID]
     if cached ~= nil then return cached end
 
     local info = {}
-    if localQ then
-        if localQ.level then info.level = localQ.level end
-        local chain = self:GetQuestChain(questID) or localQ.chain
-        if type(chain) == "table" then info.chain = chain end
-    end
+    if localQ and localQ.level then info.level = localQ.level end
+    local chain = self:GetQuestChain(questID)
+    if type(chain) == "table" and #chain > 1 then info.chain = chain end
     if self.questZh and self.questZh[questID] then info.name = self.questZh[questID] end
 
     local started
     if db and db.Get then
         if not info.name then
             local ok, name = pcall(db.Get, db, questID, "name")
-            if ok and type(name) == "string" then info.name = name end
+            if ok and type(name) == "string" and name ~= "" then
+                local loc = GetLocale and GetLocale() or ""
+                if loc:sub(1, 2) ~= "zh" or name:find("[\128-\255]") then
+                    info.name = name
+                end
+            end
         end
         if not info.level then
             local okL, lvl = pcall(db.Get, db, questID, "questLevel")
@@ -384,8 +669,17 @@ function ns:GetQuestInfo(questID)
         if okF and type(fin) == "table" and fin.npcIds and fin.npcIds[1] then info.enderID = fin.npcIds[1] end
         local okO, obj = pcall(db.Get, db, questID, "objectivesText")
         if okO and type(obj) == "table" then info.objectives = obj end
+        local okRaw, raw = pcall(db.Get, db, questID, "objectives")
+        if okRaw and type(raw) == "table" then info.objectivesRaw = raw end
     end
 
+    if ex then
+        info.extra = ex
+        if not info.level and ex.l then info.level = ex.l end
+        info.steps = ex.st
+        info.objectiveEn = ex.o
+        info.requires = ex.r
+    end
     local npcID = started and started.npcIds and started.npcIds[1]
     if not npcID and localQ and localQ.giver then npcID = localQ.giver end
 
@@ -444,10 +738,26 @@ function ns:GetQuestInfo(questID)
             info.objectID = started.objectIds[1]
         end
     end
+    if ex and ex.s then
+        if not info.mapID or not info.x or not info.y then
+            local m, px, py, zname = self:PointFromArea(ex.s.a, ex.s.x, ex.s.y)
+            if not info.mapID and m then info.mapID = m end
+            if not info.zoneName and zname then info.zoneName = zname end
+            if (not info.x or not info.y) and px and py then info.x, info.y = px, py end
+        end
+    end
     if info.enderID then
-        local em, ex, ey, en, ez = self:GetNpcPoint(info.enderID)
+        local em, exx, eyy, en, ez = self:GetNpcPoint(info.enderID)
         info.enderName = en or self:GetNpcName(info.enderID)
-        if em then info.enderMapID = em; info.enderX = ex; info.enderY = ey; info.enderZone = ez end
+        if em then info.enderMapID = em; info.enderX = exx; info.enderY = eyy; info.enderZone = ez end
+    end
+    if ex and ex.e then
+        if not info.enderMapID or not info.enderX or not info.enderY then
+            local m, px, py, zname = self:PointFromArea(ex.e.a, ex.e.x, ex.e.y)
+            if not info.enderMapID and m then info.enderMapID = m end
+            if not info.enderZone and zname then info.enderZone = zname end
+            if (not info.enderX or not info.enderY) and px and py then info.enderX, info.enderY = px, py end
+        end
     end
     self.questInfoCache[questID] = info
     return info
@@ -490,7 +800,7 @@ function ns:FormatSource(src)
     local info = self.SOURCE_KINDS[kind]
     local label = info and info.label or kind or "来源"
     if kind == "drop" and src[14] then
-        local cn = NpcField(src[14], "name")
+        local cn = self:GetNpcName(src[14])
         if cn and cn ~= "" then name = cn end
     end
     if kind == "quest" then
@@ -558,16 +868,17 @@ function ns:GetRecipeVendors(recipeID)
     if list then
         for i = 1, #list do
             local v = list[i]
-            local zone = v[3]
-            if zone then zone = zone:match("^(.-)%s*·") or zone end
-            local mapID = v[6] or (self.zoneToMap and self.zoneToMap[zone])
+            local zoneRaw = v[3]
+            if zoneRaw then zoneRaw = zoneRaw:match("^(.-)%s*·") or zoneRaw end
+            local mapID = v[6] or (self.zoneToMap and self.zoneToMap[zoneRaw])
             local x, y = v[4], v[5]
+            local zoneName = zoneRaw and self:ZhZone(zoneRaw) or nil
             if (not mapID or not x or not y) and v[1] then
                 local m2, x2, y2, n2, z2 = self:GetNpcPoint(v[1])
                 if m2 then
                     if not mapID then mapID = m2 end
                     if x2 and y2 then x, y = x2, y2 end
-                    if not zone then zone = z2 end
+                    if not zoneName and z2 then zoneName = z2 end
                 end
             end
             local resolved = v[7]
@@ -582,7 +893,7 @@ function ns:GetRecipeVendors(recipeID)
                 npcID = v[1],
                 name = resolved or v[2] or ("NPC #" .. tostring(v[1])),
                 enName = v[2],
-                zone = zone,
+                zone = zoneName,
                 x = x,
                 y = y,
                 mapID = mapID,
@@ -623,7 +934,7 @@ end
 function ns:GetSourceMap(src)
     local kind = src[1]
     if kind == "vendor" and src[7] and src[8] and src[9] then
-        return src[7], src[8], src[9], (src[6] or src[2] or "商人")
+        return src[7], src[8], src[9], (src[6] or src[2] or "商人"), src[3]
     elseif kind == "craft" and src[12] then
         local vendors = self:GetRecipeVendors(src[12])
         local v
@@ -638,15 +949,15 @@ function ns:GetSourceMap(src)
     elseif kind == "quest" then
         local info = self:GetQuestInfo(tonumber(src[5]))
         if info and info.mapID then
-            return info.mapID, info.x, info.y, (info.npcName or info.name or "任务")
+            return info.mapID, info.x, info.y, (info.npcName or info.name or "任务"), info.zoneName
         end
     elseif kind == "drop" and src[14] then
-        local mapID, x, y, name = self:GetNpcPoint(src[14])
+        local mapID, x, y, name, zone = self:GetNpcPoint(src[14])
         if not mapID and src[3] and self.zoneToMap then
             mapID = self.zoneToMap[src[3]]
         end
         if mapID then
-            return mapID, x, y, name
+            return mapID, x, y, name, zone or src[3]
         end
     end
 end
@@ -665,8 +976,8 @@ function ns:GetMapPoints(item)
     local srcs = item[F.SOURCES] or {}
     for i = 1, #srcs do
         local s = srcs[i]
-        local mapID, x, y, title = self:GetSourceMap(s)
-        if mapID then add(mapID, x, y, title, s[3]) end
+        local mapID, x, y, title, zone = self:GetSourceMap(s)
+        if mapID then add(mapID, x, y, title, zone or s[3]) end
         if s[1] == "quest" then
             local info = self:GetQuestInfo(tonumber(s[5]))
             if info and type(info.chain) == "table" then
@@ -682,6 +993,58 @@ function ns:GetMapPoints(item)
                     local mID, mx, my, mname, mzone = self:GetNpcPoint(m.id)
                     if mID then
                         add(mID, mx, my, (mname or m.name or "怪物") .. "（怪物）", mzone)
+                    end
+                end
+            end
+            if info and info.objectivesRaw then
+                local raw = info.objectivesRaw
+                for _, o in pairs(raw[1] or {}) do
+                    local id = tonumber(o[1])
+                    if id then
+                        local mID, mx, my, mname, mzone = self:GetNpcPoint(id)
+                        if mID then add(mID, mx, my, (mname or ("NPC #" .. id)) .. "（击杀）", mzone) end
+                    end
+                end
+                for _, o in pairs(raw[2] or {}) do
+                    local id = tonumber(o[1])
+                    if id then
+                        local mID, mx, my, mname, mzone = self:GetObjectPoint(id)
+                        if mID then add(mID, mx, my, (mname or ("对象 #" .. id)) .. "（任务对象）", mzone) end
+                    end
+                end
+                for _, o in pairs(raw[3] or {}) do
+                    local iid = tonumber(o[1])
+                    local idb = _G.ItemDB
+                    if iid and idb and idb.Get then
+                        local okN, drops = pcall(idb.Get, idb, iid, "npcDrops")
+                        if okN and type(drops) == "table" then
+                            for _, mid in ipairs(drops) do
+                                local mID, mx, my, mname, mzone = self:GetNpcPoint(tonumber(mid))
+                                if mID then add(mID, mx, my, (mname or "怪物") .. "（任务品掉落）", mzone) end
+                            end
+                        end
+                        local okO, odrops = pcall(idb.Get, idb, iid, "objectDrops")
+                        if okO and type(odrops) == "table" then
+                            for _, oid in ipairs(odrops) do
+                                local mID, mx, my, mname, mzone = self:GetObjectPoint(tonumber(oid))
+                                if mID then add(mID, mx, my, (mname or "任务对象") .. "（任务品）", mzone) end
+                            end
+                        end
+                    end
+                end
+            end
+            if info and info.steps then
+                for i, st in ipairs(info.steps) do
+                    local mapID, sx, sy, zname = self:PointFromArea(st.a, st.x, st.y)
+                    if mapID then
+                        local title = "任务品位置 " .. i
+                        local iid = st.n and self:FindItemIdByName(st.n)
+                        local idb = _G.ItemDB
+                        if iid and idb and idb.Get then
+                            local ok, n = pcall(idb.Get, idb, iid, "name")
+                            if ok and type(n) == "string" and n ~= "" then title = n end
+                        end
+                        add(mapID, sx, sy, title, zname)
                     end
                 end
             end
@@ -713,6 +1076,7 @@ function ns:PinPoint(point)
         self:Print("没有可标记的位置。")
         return
     end
+    if self.lowerForMap then self.lowerForMap() end
     local mapID, x, y = point.mapID, point.x, point.y
     local mapInfo = C_Map and C_Map.GetMapInfo and C_Map.GetMapInfo(mapID)
     if not mapInfo then

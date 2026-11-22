@@ -20,13 +20,50 @@ local function QuestLink(id, name)
     return "|cffffd200|Hspg:quest:" .. tostring(id) .. "|h[" .. tostring(name or id) .. "]|h|r"
 end
 
+local function ObjectLink(id, name)
+    return "|cff9cd6ff|Hspg:object:" .. tostring(id) .. "|h[" .. tostring(name or ("对象 #" .. tostring(id))) .. "]|h|r"
+end
+
+local function PinLink(kind, id, label)
+    return "|cff33ff99|Hspg:" .. kind .. ":" .. tostring(id) .. "|h[" .. tostring(label or "标出") .. "]|h|r"
+end
+
+local function QLocLink(id, which, label)
+    return "|cff9cd6ff|Hspg:qloc:" .. tostring(id) .. ":" .. tostring(which) .. "|h[" .. tostring(label) .. "]|h|r"
+end
+
+local function StepLink(id, index, label)
+    return "|cff9cd6ff|Hspg:step:" .. tostring(id) .. ":" .. tostring(index) .. "|h[" .. tostring(label) .. "]|h|r"
+end
+
 local function ItemName(id)
     local idb = _G.ItemDB
     if idb and idb.Get then
         local ok, name = pcall(idb.Get, idb, tonumber(id) or id, "name")
-        if ok and type(name) == "string" and name ~= "" then return name end
+        if ok and type(name) == "string" and name ~= "" then
+            local loc = GetLocale and GetLocale() or ""
+            if loc:sub(1, 2) == "zh" and not name:find("[\128-\255]") then
+                return "物品 #" .. tostring(id)
+            end
+            return name
+        end
     end
     return "物品 #" .. tostring(id)
+end
+
+local function ChineseItemFromEnglish(name)
+    if not name then return nil end
+    local id = ns:FindItemIdByName(name)
+    if id then return ItemName(id), id end
+end
+
+local function MobLinks(names, limit)
+    local out = {}
+    for i = 1, math.min(#names, limit or 8) do
+        local id = ns:FindNpcIdByName(names[i])
+        if id then out[#out + 1] = NpcLink(id, ns:GetNpcName(id)) end
+    end
+    return out
 end
 local filtered = {}
 local selectedItem
@@ -308,11 +345,15 @@ local function BuildDetailBody(item)
                     if info.zoneName then tail = tail .. " · " .. info.zoneName end
                     if info.x and info.y then tail = tail .. string.format(" · %.1f, %.1f", info.x * 100, info.y * 100) end
                     lines[#lines + 1] = "|cff999999  接取 NPC：|r" .. NpcLink(info.npcID, info.npcName) .. tail
+                elseif info and info.extra and info.extra.s then
+                    lines[#lines + 1] = "|cff999999  接取地点：|r" .. QLocLink(tonumber(srcs[i][5]), "s", "地图标点")
                 end
                 if info and info.enderID then
                     local tail = ""
                     if info.enderZone then tail = tail .. " · " .. info.enderZone end
                     lines[#lines + 1] = "|cff999999  交付 NPC：|r" .. NpcLink(info.enderID, info.enderName) .. tail
+                elseif info and info.extra and info.extra.e then
+                    lines[#lines + 1] = "|cff999999  交付地点：|r" .. QLocLink(tonumber(srcs[i][5]), "e", "地图标点")
                 end
                 if info and info.itemID then
                     lines[#lines + 1] = "|cff999999  起始物品：" .. (info.itemName or ("#" .. info.itemID)) .. "|r"
@@ -329,18 +370,30 @@ local function BuildDetailBody(item)
                 if type(chain) == "table" and #chain > 1 then
                     lines[#lines + 1] = ""
                     lines[#lines + 1] = "|cffffd200任务链（" .. #chain .. " 步）|r"
+                    local currentMarked = false
                     for idx, cid in ipairs(chain) do
                         local ci = ns:GetQuestInfo(cid)
                         local cname = (ci and ci.name) or ("任务 #" .. cid)
-                        local line = string.format("%d. %s", idx, QuestLink(cid, cname))
+                        local completed, inLog = ns:GetQuestStatus(cid)
+                        local mark
+                        if completed then
+                            mark = "|cff33ff99[已完成]|r"
+                        elseif not currentMarked then
+                            mark = "|cffffd200[当前]|r"
+                            if inLog then mark = mark .. "|cffffd200(已接)|r" end
+                            currentMarked = true
+                        else
+                            mark = "|cff777777[未完成]|r"
+                        end
+                        local line = string.format("%s %d. %s", mark, idx, QuestLink(cid, cname))
                         local extra = {}
                         if ci and ci.npcID then extra[#extra + 1] = NpcLink(ci.npcID, ci.npcName or ("NPC #" .. ci.npcID)) end
                         if ci and ci.zoneName then extra[#extra + 1] = ci.zoneName end
                         if #extra > 0 then line = line .. " · " .. table.concat(extra, " · ") end
-                        if cid == tonumber(srcs[i][5]) then line = line .. "  |cff33ff99← 本物品任务|r" end
+                        if cid == tonumber(srcs[i][5]) then line = line .. "  |cff33ff99· 本物品任务|r" end
                         lines[#lines + 1] = line
                     end
-                    lines[#lines + 1] = "|cff777777点击任务名查看目标、接取/交付 NPC 与任务品掉落；点击 NPC 名可直接标图。|r"
+                    lines[#lines + 1] = "|cff777777点击任务名查看描述、目标、接取/交付 NPC 与任务品位置；点击 NPC 名可直接标图。|r"
                 end
             end
             if srcs[i][1] == "craft" then
@@ -359,7 +412,7 @@ local function BuildDetailBody(item)
                         local tail = {}
                         if v.zone then tail[#tail + 1] = v.zone end
                         if v.x and v.y then tail[#tail + 1] = string.format("%.1f, %.1f", v.x * 100, v.y * 100) end
-                        local line = "    " .. NpcLink(v.npcID, v.name)
+                        local line = "    " .. NpcLink(v.npcID, v.name) .. " " .. PinLink("npc", v.npcID, "标出")
                         if #tail > 0 then line = line .. " · " .. table.concat(tail, " · ") end
                         lines[#lines + 1] = line
                     end
@@ -392,7 +445,7 @@ local function BuildDetailBody(item)
         end
     end
     lines[#lines + 1] = ""
-    lines[#lines + 1] = string.format("|cff777777物品ID %d · 数据来自 The Forever Era|r", item[F.ID])
+    lines[#lines + 1] = string.format("|cff777777物品ID %d · 数据来自永远纪元数据库|r", item[F.ID])
     return table.concat(lines, "\n")
 end
 
@@ -412,7 +465,7 @@ local function ShowDetail(item)
     end
     detailIcon:SetTexture(ns:GetIcon(item))
     detailName:SetText(ns:ColorName(item))
-    detailEn:SetText("|cff888888" .. (item[F.ENAME] or "") .. "|r")
+    detailEn:SetText("")
     local rl = item[F.REQ]
     local qlv = ns:GetItemQuestLevel(item)
     local ilvlText
@@ -772,7 +825,7 @@ local function CreateWindow()
         local point, _, relPoint, x, y = self:GetPoint()
         ns.db.position = { point = point, relPoint = relPoint, x = x, y = y }
     end)
-    frame:SetFrameStrata("DIALOG")
+    frame:SetFrameStrata("MEDIUM")
     frame:SetClampedToScreen(true)
     frame:SetToplevel(true)
     tinsert(UISpecialFrames, "HolyBulwarkFrame")
@@ -914,7 +967,7 @@ local function CreateWindow()
     questFrame = CreateFrame("Frame", "HolyBulwarkQuestFrame", UIParent, "BasicFrameTemplate")
     questFrame:SetSize(392, 348)
     questFrame:SetPoint("CENTER")
-    questFrame:SetFrameStrata("DIALOG")
+    questFrame:SetFrameStrata("MEDIUM")
     questFrame:SetToplevel(true)
     questFrame.TitleText:SetText("任务详情")
     if UISpecialFrames then
@@ -959,6 +1012,11 @@ local function CreateWindow()
             if ci.zoneName then tail = tail .. " · " .. ci.zoneName end
             if ci.x and ci.y then tail = tail .. string.format(" · %.1f, %.1f", ci.x * 100, ci.y * 100) end
             L[#L + 1] = "|cffffd200接取 NPC|r  " .. NpcLink(ci.npcID, ci.npcName) .. tail
+        elseif ci and ci.extra and ci.extra.s then
+            local mapID, x, y, zoneName = ns:PointFromArea(ci.extra.s.a, ci.extra.s.x, ci.extra.s.y)
+            local tail = zoneName and (" · " .. zoneName) or ""
+            if x and y then tail = tail .. string.format(" · %.1f, %.1f", x * 100, y * 100) end
+            L[#L + 1] = "|cffffd200接取地点|r  " .. QLocLink(questID, "s", "地图标点") .. tail
         elseif ci and ci.itemID then
             L[#L + 1] = "|cffffd200起始物品|r  " .. tostring(ci.itemName or ("#" .. ci.itemID))
         elseif ci and ci.objectID then
@@ -968,28 +1026,113 @@ local function CreateWindow()
         if ci and ci.enderID then
             local tail = ""
             if ci.enderZone then tail = tail .. " · " .. ci.enderZone end
+            if ci.enderX and ci.enderY then tail = tail .. string.format(" · %.1f, %.1f", ci.enderX * 100, ci.enderY * 100) end
             L[#L + 1] = "|cffffd200交付 NPC|r  " .. NpcLink(ci.enderID, ci.enderName) .. tail
+        elseif ci and ci.extra and ci.extra.e then
+            local mapID, x, y, zoneName = ns:PointFromArea(ci.extra.e.a, ci.extra.e.x, ci.extra.e.y)
+            local tail = zoneName and (" · " .. zoneName) or ""
+            if x and y then tail = tail .. string.format(" · %.1f, %.1f", x * 100, y * 100) end
+            L[#L + 1] = "|cffffd200交付地点|r  " .. QLocLink(questID, "e", "地图标点") .. tail
         end
 
         L[#L + 1] = ""
-        L[#L + 1] = "|cffffd200任务目标|r"
-        if ci and ci.objectives and #ci.objectives > 0 then
+        L[#L + 1] = "|cffffd200任务描述 / 目标|r"
+        local objHasZh = false
+        if ci and ci.objectives then
+            for _, s in ipairs(ci.objectives) do
+                if tostring(s):find("[\128-\255]") then objHasZh = true; break end
+            end
+        end
+        if ci and ci.objectives and #ci.objectives > 0 and (objHasZh or (GetLocale and GetLocale():sub(1, 2) == "en")) then
             for _, s in ipairs(ci.objectives) do
                 L[#L + 1] = "· " .. tostring(s)
             end
+        elseif ci and ci.objectiveEn and GetLocale and GetLocale():sub(1, 2) == "en" then
+            L[#L + 1] = "· " .. tostring(ci.objectiveEn)
         else
-            L[#L + 1] = "|cff888888暂无目标文本（QuestieDB 未提供）|r"
+            L[#L + 1] = "|cff888888暂无中文任务目标文本（需要 QuestieDB）|r"
         end
 
-        if ci and ci.monsters and #ci.monsters > 0 then
-            L[#L + 1] = ""
-            L[#L + 1] = "|cffffd200任务品掉落|r"
-            for _, m in ipairs(ci.monsters) do
-                L[#L + 1] = "· " .. NpcLink(m.id, m.name)
+        local raw = ci and ci.objectivesRaw
+        if raw then
+            local items = raw[3] or {}
+            if next(items) then
+                L[#L + 1] = ""
+                L[#L + 1] = "|cffffd200任务品|r"
+                for _, o in pairs(items) do
+                    local iid = tonumber(o[1])
+                    if iid then
+                        L[#L + 1] = "· " .. ItemName(iid)
+                        local idb = _G.ItemDB
+                        if idb and idb.Get then
+                            local okN, drops = pcall(idb.Get, idb, iid, "npcDrops")
+                            if okN and type(drops) == "table" and #drops > 0 then
+                                local links = {}
+                                for i = 1, math.min(#drops, 10) do
+                                    local mid = tonumber(drops[i])
+                                    if mid then links[#links + 1] = NpcLink(mid, ns:GetNpcName(mid)) end
+                                end
+                                if #links > 0 then L[#L + 1] = "  |cff999999掉落：|r" .. table.concat(links, "、") end
+                            end
+                            local okO, odrops = pcall(idb.Get, idb, iid, "objectDrops")
+                            if okO and type(odrops) == "table" and #odrops > 0 then
+                                local links = {}
+                                for i = 1, math.min(#odrops, 6) do
+                                    local oid = tonumber(odrops[i])
+                                    if oid then links[#links + 1] = ObjectLink(oid, ns:GetObjectName(oid)) end
+                                end
+                                if #links > 0 then L[#L + 1] = "  |cff999999容器：|r" .. table.concat(links, "、") end
+                            end
+                        end
+                    end
+                end
+            end
+
+            local creatures = raw[1] or {}
+            if next(creatures) then
+                L[#L + 1] = ""
+                L[#L + 1] = "|cffffd200击杀目标|r"
+                local links = {}
+                for _, o in pairs(creatures) do
+                    local id = tonumber(o[1])
+                    if id then links[#links + 1] = NpcLink(id, ns:GetNpcName(id)) end
+                end
+                if #links > 0 then L[#L + 1] = table.concat(links, "、") end
+            end
+
+            local objects = raw[2] or {}
+            if next(objects) then
+                L[#L + 1] = ""
+                L[#L + 1] = "|cffffd200任务对象|r"
+                local links = {}
+                for _, o in pairs(objects) do
+                    local id = tonumber(o[1])
+                    if id then links[#links + 1] = ObjectLink(id, ns:GetObjectName(id)) end
+                end
+                if #links > 0 then L[#L + 1] = table.concat(links, "、") end
             end
         end
 
-        if ci and ci.need and #ci.need > 0 then
+        if ci and ci.steps and #ci.steps > 0 then
+            L[#L + 1] = ""
+            L[#L + 1] = "|cffffd200任务品位置|r"
+            for i, st in ipairs(ci.steps) do
+                local mapID, sx, sy, zoneName = ns:PointFromArea(st.a, st.x, st.y)
+                local label = ChineseItemFromEnglish(st.n) or ("任务品位置 " .. i)
+                local tail = {}
+                if zoneName then tail[#tail + 1] = zoneName end
+                if sx and sy then tail[#tail + 1] = string.format("%.1f, %.1f", sx * 100, sy * 100) end
+                local line = "· " .. StepLink(questID, i, label)
+                if #tail > 0 then line = line .. " · " .. table.concat(tail, " · ") end
+                L[#L + 1] = line
+                if st.m and #st.m > 0 then
+                    local links = MobLinks(st.m, 8)
+                    if #links > 0 then L[#L + 1] = "  |cff999999掉落：|r" .. table.concat(links, "、") end
+                end
+            end
+        end
+
+        if ci and ci.need and #ci.need > 0 and not (raw and raw[3] and next(raw[3])) then
             L[#L + 1] = ""
             L[#L + 1] = "|cffffd200所需物品|r"
             for _, n in ipairs(ci.need) do
@@ -999,7 +1142,7 @@ local function CreateWindow()
         end
 
         L[#L + 1] = ""
-        L[#L + 1] = "|cff777777点击蓝色 NPC 名称可直接打开地图并标点；按 Esc 关闭。|r"
+        L[#L + 1] = "|cff777777点击蓝色名称打开地图并标点；点击任务名继续查看下一段任务；按 Esc 关闭。|r"
 
         questBody:SetText(table.concat(L, "\n"))
         local h = questBody:GetStringHeight() or 0
@@ -1011,15 +1154,64 @@ local function CreateWindow()
 
     HandleSpgLink = function(link)
         if not link then return end
-        local kind, id = tostring(link):match("^spg:(%w+):(%d+)")
+        local kind, id = tostring(link):match("^spg:(%w+):(.+)$")
         if not kind then return end
-        id = tonumber(id)
         if kind == "npc" then
-            ns:PinNpc(id)
+            ns:PinNpc(tonumber(id))
         elseif kind == "quest" then
-            ShowQuestDetail(id)
+            ShowQuestDetail(tonumber(id))
+        elseif kind == "object" then
+            ns:PinObject(tonumber(id))
+        elseif kind == "qloc" then
+            local qid, which = id:match("^(%d+):(%a+)$")
+            if qid then ns:PinQuestLoc(tonumber(qid), which) end
+        elseif kind == "step" then
+            local qid, index = id:match("^(%d+):(%d+)$")
+            if qid then ns:PinQuestStep(tonumber(qid), tonumber(index)) end
         end
     end
+
+    ns.lowerForMap = function()
+        if frame then frame:SetFrameStrata("BACKGROUND") end
+        if questFrame then questFrame:SetFrameStrata("BACKGROUND") end
+    end
+    ns.restoreForMap = function()
+        if frame then frame:SetFrameStrata("MEDIUM") end
+        if questFrame then questFrame:SetFrameStrata("MEDIUM") end
+    end
+
+    local function HookWorldMap()
+        local wm = WorldMapFrame
+        if not wm or wm.hbHooked then return end
+        wm.hbHooked = true
+        wm:HookScript("OnShow", function() ns.lowerForMap() end)
+        wm:HookScript("OnHide", function() ns.restoreForMap() end)
+    end
+    HookWorldMap()
+    if C_Timer and C_Timer.After then
+        C_Timer.After(2, HookWorldMap)
+        C_Timer.After(5, function()
+            if ns.BuildRawNameIndex and _G.NpcDB then ns:BuildRawNameIndex(_G.NpcDB, "rawNpcNameIndex") end
+        end)
+        C_Timer.After(8, function()
+            if ns.BuildRawNameIndex and _G.ItemDB then ns:BuildRawNameIndex(_G.ItemDB, "rawItemNameIndex") end
+        end)
+    end
+    local hookFrame = CreateFrame("Frame")
+    hookFrame:RegisterEvent("ADDON_LOADED")
+    hookFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
+    hookFrame:SetScript("OnEvent", function(_, event, name)
+        if event == "ADDON_LOADED" then
+            if name == "Blizzard_WorldMap" then HookWorldMap() end
+            if name == "QuestieDB" or name == "Questie" then
+                ns.questInfoCache = nil
+                ns.rawNpcNameIndex = nil
+                ns.rawItemNameIndex = nil
+            end
+        elseif event == "PLAYER_ENTERING_WORLD" then
+            ns.questInfoCache = nil
+        end
+    end)
 
     -- footer
     local prev = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
