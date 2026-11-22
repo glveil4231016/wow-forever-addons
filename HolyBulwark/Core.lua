@@ -656,7 +656,7 @@ function ns:GetMapPoints(item)
     local seen = {}
     local function add(mapID, x, y, title, zone)
         if not mapID then return end
-        local key = table.concat({ mapID, x and math.floor(x * 1000) or -1, y and math.floor(y * 1000) or -1, tostring(title) }, ":")
+        local key = table.concat({ mapID, x and math.floor(x * 1000) or -1, y and math.floor(y * 1000) or -1 }, ":")
         if seen[key] then return end
         seen[key] = true
         points[#points + 1] = { mapID = mapID, x = x, y = y, title = title or "位置", zone = zone }
