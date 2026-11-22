@@ -1,4 +1,4 @@
-# Generate HolyBulwark/RecipeVendor.lua from wow-forever.gg recipe pages.
+﻿# Generate HolyBulwark/RecipeVendor.lua from wow-forever.gg recipe pages.
 #
 # Input:
 #   data/recipe_cards.json      - { [recipeID] = { { npc, kind, name, zone, x, y } } }
@@ -24,6 +24,8 @@ $manual = @{
     256730 = '斯通德里·暗锤'
     256734 = '丹尼尔·缝歌'
     256735 = '米文·影织'
+    258306 = '钢轴奶奶'
+    15179  = '米什塔'
 }
 foreach ($k in $manual.Keys) { $zh[[int]$k] = $manual[$k] }
 

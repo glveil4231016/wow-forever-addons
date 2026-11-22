@@ -305,13 +305,13 @@ ns.recipeVendor = {
         { 777, "Amy Davenport", "Redridge Mountains", 0.24, 0.473, nil, "艾米·达文波特", "Vendor" },
     },
     [22772] = {
-        { 15179, "Mishta", "Silithus", 0.499, 0.363, nil, nil, "Vendor" },
+        { 15179, "Mishta", "Silithus", 0.499, 0.363, nil, "米什塔", "Vendor" },
     },
     [22773] = {
-        { 15179, "Mishta", "Silithus", 0.499, 0.363, nil, nil, "Vendor" },
+        { 15179, "Mishta", "Silithus", 0.499, 0.363, nil, "米什塔", "Vendor" },
     },
     [22774] = {
-        { 15179, "Mishta", "Silithus", 0.499, 0.363, nil, nil, "Vendor" },
+        { 15179, "Mishta", "Silithus", 0.499, 0.363, nil, "米什塔", "Vendor" },
     },
     [251357] = {
         { 256730, "Stondry Darkhammer", "Redridge Mountains", 0.101, 0.728, nil, "斯通德里·暗锤", "Vendor" },
@@ -416,10 +416,10 @@ ns.recipeVendor = {
         { 256730, "Stondry Darkhammer", "Redridge Mountains", 0.101, 0.728, nil, "斯通德里·暗锤", "Vendor" },
     },
     [252761] = {
-        { 258306, "Granny Finespindle", "Ironforge", 0.395, 0.338, nil, nil, "Vendor" },
+        { 258306, "Granny Finespindle", "Ironforge", 0.395, 0.338, nil, "钢轴奶奶", "Vendor" },
     },
     [252764] = {
-        { 258306, "Granny Finespindle", "Ironforge", 0.395, 0.338, nil, nil, "Vendor" },
+        { 258306, "Granny Finespindle", "Ironforge", 0.395, 0.338, nil, "钢轴奶奶", "Vendor" },
     },
     [252768] = {
         { 256734, "Daniel Stitchsong", "Redridge Mountains", 0.101, 0.728, nil, "丹尼尔·缝歌", "Vendor" },
@@ -473,13 +473,13 @@ ns.recipeVendor = {
         { 256734, "Daniel Stitchsong", "Redridge Mountains", 0.101, 0.728, nil, "丹尼尔·缝歌", "Vendor" },
     },
     [252830] = {
-        { 258306, "Granny Finespindle", "Ironforge", 0.395, 0.338, nil, nil, "Vendor" },
+        { 258306, "Granny Finespindle", "Ironforge", 0.395, 0.338, nil, "钢轴奶奶", "Vendor" },
     },
     [252831] = {
-        { 258306, "Granny Finespindle", "Ironforge", 0.395, 0.338, nil, nil, "Vendor" },
+        { 258306, "Granny Finespindle", "Ironforge", 0.395, 0.338, nil, "钢轴奶奶", "Vendor" },
     },
     [252832] = {
-        { 258306, "Granny Finespindle", "Ironforge", 0.395, 0.338, nil, nil, "Vendor" },
+        { 258306, "Granny Finespindle", "Ironforge", 0.395, 0.338, nil, "钢轴奶奶", "Vendor" },
     },
     [252840] = {
         { 256734, "Daniel Stitchsong", "Redridge Mountains", 0.101, 0.728, nil, "丹尼尔·缝歌", "Vendor" },
