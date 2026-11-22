@@ -174,10 +174,34 @@ function ns:GetNpcName(npcID)
     return "NPC #" .. tostring(npcID)
 end
 
+function ns:GetDQABossPoint(npcID)
+    local dqa = _G.DungeonQuestAtlas
+    if not (dqa and dqa.Bosses and dqa.Maps) then return nil end
+    for key, bosses in pairs(dqa.Bosses) do
+        for idx, boss in ipairs(bosses) do
+            if tonumber(boss.npcID) == npcID then
+                for _, floor in ipairs(dqa.Maps[key] or {}) do
+                    for _, pin in ipairs(floor.pins or {}) do
+                        if pin[1] == idx and floor.id then
+                            return floor.id, pin[2], pin[3], boss.name
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
 function ns:GetNpcPoint(npcID)
     if not npcID then return nil end
     local name = self:GetNpcName(npcID)
     local sub = NpcField(npcID, "subName")
+
+    local dqaMap, dqaX, dqaY, dqaName = self:GetDQABossPoint(npcID)
+    if dqaMap then
+        if not name or name == ("NPC #" .. tostring(npcID)) then name = dqaName end
+        return dqaMap, dqaX, dqaY, name, nil, sub
+    end
 
     local loc = self.npcLoc and self.npcLoc[npcID]
     if loc and loc.spots and loc.spots[1] then
