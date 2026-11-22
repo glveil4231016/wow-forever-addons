@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.10.5"
+ns.VERSION = "1.10.6"
 
 local F = ns.F
 
@@ -1395,6 +1395,18 @@ function ns:PinPoint(point)
         if self.restoreForMap then self:restoreForMap() end
         self:Print("无法打开地图：" .. tostring(mapID) .. "（" .. title .. "）")
         return
+    end
+    if entrance and entrance[5] then
+        local dqa = _G.DungeonQuestAtlas
+        local d = dqa and dqa.DungeonByKey and dqa.DungeonByKey[entrance[5]]
+        if not d and dqa and dqa.Dungeons then
+            for _, dd in ipairs(dqa.Dungeons) do
+                if dd.key == entrance[5] then d = dd; break end
+            end
+        end
+        if d and dqa.ShowDungeonOnWorldMap then
+            pcall(dqa.ShowDungeonOnWorldMap, d)
+        end
     end
     if x and y then
         self:Print(string.format("已标记：%s（%.1f, %.1f）", title, x * 100, y * 100))

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.10.6
+
+- 副本内部地图改由 DungeonQuestAtlas 的自定义副本地图覆盖层显示。
+- 点击副本 BOSS 时先打开副本入口所在区域，再调用 DQA `ShowDungeonOnWorldMap` 显示副本平面图和 BOSS 位置。
+- 客户端没有副本 `C_Map` ID 时，不再只停在入口，而是显示 DQA 的副本地图。
+- `DungeonEntrance.lua` 现在包含 DQA 副本 key，便于调用覆盖层。
+
 ## 1.10.5
 
 - 根据 `/hb mapdiag` 确认：这个 Forever 客户端只暴露区域地图，不暴露副本内部地图。166、291、317 等副本 ID 全部为 `nil`。
