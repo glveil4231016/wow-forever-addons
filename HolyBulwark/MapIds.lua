@@ -3398,3 +3398,9 @@ for en, zh in pairs(ns.zoneZh) do
     local m = ns.zoneToMapEnglish and ns.zoneToMapEnglish[en]
     if m and zh and ns.zoneToMap[zh] ~= m then ns.zoneToMap[zh] = m end
 end
+-- Naxxramas is map 533 ("Stratholme Raid" internally) in the Forever client.
+ns.areaToMap[3456] = 533
+ns.areaToMap[16394] = 533
+ns.zoneToMap["纳克萨玛斯"] = 533
+ns.zoneToMap["Naxxramas"] = 533
+if ns.zoneToMapEnglish then ns.zoneToMapEnglish["Naxxramas"] = 533 end
