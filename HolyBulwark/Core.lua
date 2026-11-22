@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.9.5"
+ns.VERSION = "1.9.6"
 
 local F = ns.F
 
@@ -1144,41 +1144,86 @@ function ns:FindMapSource(item)
     return self:GetMapPoints(item)[1]
 end
 
-function ns:OpenMapAt(mapID)
+ns.MAP_CANDIDATES = {
+    ["纳克萨玛斯"] = { 166, 533, 1557, 162, 163, 164, 165, 166, 167 },
+    ["Naxxramas"] = { 166, 533, 1557, 162, 163, 164, 165, 166, 167 },
+}
+
+function ns:FindMapIdByName(name)
+    if not name or name == "" then return nil end
+    if not self.mapNameIndex then
+        local idx = {}
+        if C_Map and C_Map.GetMapInfo then
+            for id = 1, 3000 do
+                local mi = C_Map.GetMapInfo(id)
+                if mi and type(mi.name) == "string" and mi.name ~= "" then
+                    if not idx[mi.name] then idx[mi.name] = id end
+                    local base = mi.name:match("^(.-)%s+%-%s+") or mi.name
+                    if not idx[base] then idx[base] = id end
+                end
+            end
+        end
+        self.mapNameIndex = idx
+    end
+    local hit = self.mapNameIndex[name]
+    if hit then return hit end
+    for mapName, id in pairs(self.mapNameIndex) do
+        if mapName:find(name, 1, true) then return id end
+    end
+end
+
+function ns:OpenMapAt(mapID, zone)
     mapID = tonumber(mapID)
-    if not mapID then return false end
+    if not mapID then
+        if zone then mapID = self:FindMapIdByName(zone) end
+        if not mapID then return false end
+    end
     local wm = _G.WorldMapFrame
     local opened = false
 
-    if C_Map and C_Map.OpenWorldMap then
-        opened = pcall(C_Map.OpenWorldMap, mapID) or opened
-    elseif _G.OpenWorldMap then
-        opened = pcall(_G.OpenWorldMap, mapID) or opened
-    end
-
-    if wm then
-        if not wm:IsShown() then
-            if ShowUIPanel then pcall(ShowUIPanel, wm) end
+    local function tryOpen(id)
+        if C_Map and C_Map.OpenWorldMap then
+            pcall(C_Map.OpenWorldMap, id)
+        elseif _G.OpenWorldMap then
+            pcall(_G.OpenWorldMap, id)
         end
-        if wm.SetMapID then pcall(wm.SetMapID, wm, mapID) end
-    end
-
-    if wm and wm.GetMapID then
-        local cur = wm:GetMapID()
-        if cur ~= mapID then
-            if C_Map and C_Map.OpenMap then pcall(C_Map.OpenMap, mapID) end
-            if wm.SetMapID then pcall(wm.SetMapID, wm, mapID) end
+        if wm then
+            if not wm:IsShown() and ShowUIPanel then pcall(ShowUIPanel, wm) end
+            if wm.SetMapID then pcall(wm.SetMapID, wm, id) end
         end
     end
 
-    if not (wm and wm:IsShown()) then
+    tryOpen(mapID)
+    if not (wm and wm.IsShown and wm:IsShown()) then
         if C_Map and C_Map.OpenMap then
             pcall(C_Map.OpenMap, mapID)
         elseif ToggleWorldMap then
             pcall(ToggleWorldMap)
         end
     end
-    return (wm and wm:IsShown()) or opened
+
+    if zone and wm and wm.GetMapID and wm:GetMapID() ~= mapID then
+        local alt = self:FindMapIdByName(zone)
+        if alt and alt ~= mapID then
+            mapID = alt
+            tryOpen(mapID)
+        end
+        if wm:GetMapID() ~= mapID then
+            local cands = self.MAP_CANDIDATES and self.MAP_CANDIDATES[zone]
+            if cands then
+                for i = 1, #cands do
+                    local id = cands[i]
+                    if id ~= mapID then
+                        tryOpen(id)
+                        if wm:GetMapID() == id then mapID = id; break end
+                    end
+                end
+            end
+        end
+    end
+
+    opened = (wm and wm:IsShown()) or opened
+    return opened, mapID
 end
 
 function ns:PinPoint(point)
@@ -1203,7 +1248,8 @@ function ns:PinPoint(point)
         end
     end
 
-    local opened = self:OpenMapAt(mapID)
+    local opened, actualMap = self:OpenMapAt(mapID, point.zone)
+    if actualMap then mapID = actualMap end
     if opened and self.lowerForMap then
         self.lowerForMap()
         if C_Timer and C_Timer.After then
