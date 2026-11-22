@@ -344,14 +344,14 @@ local function BuildDetailBody(item)
                     local tail = ""
                     if info.zoneName then tail = tail .. " · " .. info.zoneName end
                     if info.x and info.y then tail = tail .. string.format(" · %.1f, %.1f", info.x * 100, info.y * 100) end
-                    lines[#lines + 1] = "|cff999999  接取 NPC：|r" .. NpcLink(info.npcID, info.npcName) .. tail
+                    lines[#lines + 1] = "|cff999999  接取人物：|r" .. NpcLink(info.npcID, info.npcName) .. tail
                 elseif info and info.extra and info.extra.s then
                     lines[#lines + 1] = "|cff999999  接取地点：|r" .. QLocLink(tonumber(srcs[i][5]), "s", "地图标点")
                 end
                 if info and info.enderID then
                     local tail = ""
                     if info.enderZone then tail = tail .. " · " .. info.enderZone end
-                    lines[#lines + 1] = "|cff999999  交付 NPC：|r" .. NpcLink(info.enderID, info.enderName) .. tail
+                    lines[#lines + 1] = "|cff999999  交付人物：|r" .. NpcLink(info.enderID, info.enderName) .. tail
                 elseif info and info.extra and info.extra.e then
                     lines[#lines + 1] = "|cff999999  交付地点：|r" .. QLocLink(tonumber(srcs[i][5]), "e", "地图标点")
                 end
@@ -400,7 +400,7 @@ local function BuildDetailBody(item)
                         if cid == tonumber(srcs[i][5]) then line = line .. "  |cff33ff99· 本物品任务|r" end
                         lines[#lines + 1] = line
                     end
-                    lines[#lines + 1] = "|cff777777点击任务名查看描述、目标、接取/交付 NPC 与任务品位置；点击 NPC 名可直接标图。|r"
+                    lines[#lines + 1] = "|cff777777点击任务名查看描述、目标、接取/交付人物 与任务品位置；点击 人物名可直接标图。|r"
                 end
             end
             if srcs[i][1] == "craft" then
@@ -962,7 +962,7 @@ local function CreateWindow()
     detailMap:SetScript("OnEnter", function(self)
         GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
         if self:IsEnabled() then
-            GameTooltip:AddLine("在地图上标出商人 / 图纸商人 / 任务 NPC 的位置")
+            GameTooltip:AddLine("在地图上标出商人 / 图纸商人 / 任务人物 的位置")
         else
             GameTooltip:AddLine("没有可用的商人、图纸或任务位置")
         end
@@ -1018,7 +1018,7 @@ local function CreateWindow()
             local tail = ""
             if ci.zoneName then tail = tail .. " · " .. ci.zoneName end
             if ci.x and ci.y then tail = tail .. string.format(" · %.1f, %.1f", ci.x * 100, ci.y * 100) end
-            L[#L + 1] = "|cffffd200接取 NPC|r  " .. NpcLink(ci.npcID, ci.npcName) .. tail
+            L[#L + 1] = "|cffffd200接取人物|r  " .. NpcLink(ci.npcID, ci.npcName) .. tail
         elseif ci and ci.extra and ci.extra.s then
             local mapID, x, y, zoneName = ns:PointFromArea(ci.extra.s.a, ci.extra.s.x, ci.extra.s.y)
             local tail = zoneName and (" · " .. zoneName) or ""
@@ -1034,7 +1034,7 @@ local function CreateWindow()
             local tail = ""
             if ci.enderZone then tail = tail .. " · " .. ci.enderZone end
             if ci.enderX and ci.enderY then tail = tail .. string.format(" · %.1f, %.1f", ci.enderX * 100, ci.enderY * 100) end
-            L[#L + 1] = "|cffffd200交付 NPC|r  " .. NpcLink(ci.enderID, ci.enderName) .. tail
+            L[#L + 1] = "|cffffd200交付人物|r  " .. NpcLink(ci.enderID, ci.enderName) .. tail
         elseif ci and ci.extra and ci.extra.e then
             local mapID, x, y, zoneName = ns:PointFromArea(ci.extra.e.a, ci.extra.e.x, ci.extra.e.y)
             local tail = zoneName and (" · " .. zoneName) or ""
@@ -1268,7 +1268,7 @@ local function CreateWindow()
     noteLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
     noteLabel:SetPoint("BOTTOMRIGHT", -22, 18)
     noteLabel:SetJustifyH("RIGHT")
-    noteLabel:SetText("数据：The Forever Era · 1.60.1.70959 · 客户端 1.60.1")
+    noteLabel:SetText("数据：永远纪元数据库 · 1.60.1.70959 · 客户端 1.60.1")
 
     frame:SetScript("OnShow", function()
         local ok, err = pcall(function()

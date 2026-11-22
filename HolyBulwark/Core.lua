@@ -543,13 +543,13 @@ function ns:PinQuestLoc(questID, which)
             self:PinPoint({ mapID = info.mapID, x = info.x, y = info.y,
                 title = (which == "e" and "交付地点" or "接取地点"), zone = info.zoneName })
         else
-            self:Print("没有这个任务 NPC 的位置记录。")
+            self:Print("没有这个任务人物 的位置记录。")
         end
         return
     end
     local mapID, x, y, zoneName = self:PointFromArea(loc.a, loc.x, loc.y)
     if not mapID then
-        self:Print("任务 NPC 没有可用地图。")
+        self:Print("任务人物 没有可用地图。")
         return
     end
     self:PinPoint({ mapID = mapID, x = x, y = y, title = (which == "e" and "交付地点" or "接取地点"), zone = zoneName })
@@ -1106,7 +1106,7 @@ function ns:GetMapPoints(item)
             end
             if info and info.enderID and info.enderMapID then
                 add(info.enderMapID, info.enderX, info.enderY,
-                    (info.enderName or "交付 NPC") .. "（交付）", info.enderZone)
+                    (info.enderName or "交付人物") .. "（交付）", info.enderZone)
             end
         elseif s[1] == "craft" and s[12] then
             local vendors = self:GetRecipeVendors(s[12])
@@ -1168,7 +1168,7 @@ end
 function ns:PinNpc(npcID)
     local mapID, x, y, name, zone = self:GetNpcPoint(tonumber(npcID))
     if not mapID then
-        self:Print("没有这个 NPC 的位置记录。")
+        self:Print("没有这个人物或怪物的位置记录。")
         return
     end
     self:PinPoint({ mapID = mapID, x = x, y = y, title = name or ("人物 #" .. tostring(npcID)), zone = zone })
