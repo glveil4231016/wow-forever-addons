@@ -3404,3 +3404,11 @@ ns.areaToMap[16394] = 533
 ns.zoneToMap["纳克萨玛斯"] = 533
 ns.zoneToMap["Naxxramas"] = 533
 if ns.zoneToMapEnglish then ns.zoneToMapEnglish["Naxxramas"] = 533 end
+
+-- Temple of Ahn'Qiraj (AQ40): client uses the Ahn'Qiraj temple-gates map.
+ns.zoneToMap["安其拉神庙"] = 320
+ns.zoneToMap["安其拉神殿"] = 320
+ns.zoneToMap["Temple of Ahn'Qiraj"] = 320
+if ns.zoneToMapEnglish then ns.zoneToMapEnglish["Temple of Ahn'Qiraj"] = 320 end
+-- Alternate Chinese name used by the gear database.
+ns.zoneToMap["沉没的神庙"] = 220
