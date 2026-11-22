@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.0.0"
+ns.VERSION = "1.8.0"
 
 local F = ns.F
 
@@ -81,9 +81,9 @@ ns.SOURCE_KINDS = {
 }
 
 ns.defaults = {
-    search = "", slot = "all", armor = "tank", sort = "level",
+    search = "", slot = {}, armor = { "tank" }, sort = "level",
     minLevel = 10, maxLevel = 60, tanky = true, knownOnly = true,
-    source = "all", quality = "all",
+    source = {}, quality = {},
 }
 
 local function Num(v)
@@ -136,10 +136,33 @@ function ns:GetName(item)
     return item[F.NAME]
 end
 
+function ns:GetRawLink(item)
+    local ok, _, link = pcall(GetItemInfo, item[F.ID])
+    if ok and link then
+        local raw = link:match("|H(item:[^|]+)|h")
+        return raw or link
+    end
+    return "item:" .. item[F.ID] .. ":::::::::"
+end
+
 function ns:GetLink(item)
     local ok, _, link = pcall(GetItemInfo, item[F.ID])
-    if ok and link then return link end
-    return "item:" .. item[F.ID] .. ":::::::::"
+    if ok and link and link:sub(1, 2) == "|H" then return link end
+    return "|H" .. self:GetRawLink(item) .. "|h[" .. self:GetName(item) .. "]|h"
+end
+
+function ns:InsertLink(item)
+    local link = self:GetLink(item)
+    local edit = ChatEdit_GetActiveWindow and ChatEdit_GetActiveWindow()
+    if not edit and ChatFrame_OpenChat then
+        ChatFrame_OpenChat("")
+        edit = ChatEdit_GetActiveWindow and ChatEdit_GetActiveWindow()
+    end
+    if edit and ChatEdit_InsertLink then
+        ChatEdit_InsertLink(link)
+    elseif HandleModifiedItemClick then
+        HandleModifiedItemClick(link)
+    end
 end
 
 function ns:GetIcon(item)
@@ -164,6 +187,7 @@ local function NpcField(npcID, key)
         local ok, value = pcall(db.Get, db, npcID, key)
         if ok then return value end
     end
+    return nil
 end
 
 function ns:GetNpcName(npcID)
@@ -192,6 +216,34 @@ function ns:GetDQABossPoint(npcID)
     end
 end
 
+function ns:FindRecipeVendorPoint(npcID)
+    npcID = tonumber(npcID)
+    if not npcID or not self.recipeVendor then return nil end
+    self.recipeVendorNpcCache = self.recipeVendorNpcCache or {}
+    local cached = self.recipeVendorNpcCache[npcID]
+    if cached ~= nil then
+        if cached == false then return nil end
+        return cached[1], cached[2], cached[3], cached[4], cached[5]
+    end
+    for _, list in pairs(self.recipeVendor) do
+        for i = 1, #list do
+            local v = list[i]
+            if v[1] == npcID then
+                local zone = v[3]
+                if zone then zone = zone:match("^(.-)%s*·") or zone end
+                local mapID = zone and self.zoneToMap and self.zoneToMap[zone]
+                if mapID and v[4] and v[5] then
+                    local hit = { mapID, v[4], v[5], v[7] or v[2], zone }
+                    self.recipeVendorNpcCache[npcID] = hit
+                    return hit[1], hit[2], hit[3], hit[4], hit[5]
+                end
+            end
+        end
+    end
+    self.recipeVendorNpcCache[npcID] = false
+    return nil
+end
+
 function ns:GetNpcPoint(npcID)
     if not npcID then return nil end
     local name = self:GetNpcName(npcID)
@@ -212,6 +264,12 @@ function ns:GetNpcPoint(npcID)
             if mi and mi.name then zoneName = mi.name end
         end
         return mapID, loc.spots[1][1] / 100, loc.spots[1][2] / 100, name, zoneName, sub
+    end
+
+    local rvMap, rvX, rvY, rvName, rvZone = self:FindRecipeVendorPoint(npcID)
+    if rvMap then
+        if rvName and rvName ~= "" then name = rvName end
+        return rvMap, rvX, rvY, name, rvZone, sub
     end
 
     local zoneID = tonumber(NpcField(npcID, "zoneID"))
@@ -246,15 +304,39 @@ function ns:GetNpcPoint(npcID)
             if x > 1 or y > 1 then x, y = x / 100, y / 100 end
         end
     end
+    if not mapID then
+        for _, rlist in pairs(self.recipeVendor or {}) do
+            for i = 1, #rlist do
+                local v = rlist[i]
+                if v[1] == npcID then
+                    local z = v[3]
+                    if z then z = z:match("^(.-)%s*·") or z end
+                    local m = z and self.zoneToMap and self.zoneToMap[z]
+                    if m then
+                        mapID = m
+                        if not zoneName then zoneName = z end
+                        if v[7] or v[2] then name = v[7] or v[2] end
+                        break
+                    end
+                end
+            end
+            if mapID then break end
+        end
+    end
     return mapID, x, y, name, zoneName, sub
 end
 
 function ns:GetQuestChain(questID)
+    local dqa = _G.DungeonQuestAtlas
+    if dqa and dqa.Quests and dqa.Quests[questID] and dqa.Quests[questID].chain then
+        local chain = dqa.Quests[questID].chain
+        if type(chain) == "table" and #chain > 1 then return chain end
+    end
     local best
     if self.questInfo then
         for _, q in pairs(self.questInfo) do
             local chain = q.chain
-            if chain and #chain > 1 then
+            if type(chain) == "table" and #chain > 1 then
                 for _, cid in ipairs(chain) do
                     if cid == questID then
                         if not best or #chain > #best then best = chain end
@@ -281,7 +363,8 @@ function ns:GetQuestInfo(questID)
     local info = {}
     if localQ then
         if localQ.level then info.level = localQ.level end
-        info.chain = self:GetQuestChain(questID) or localQ.chain
+        local chain = self:GetQuestChain(questID) or localQ.chain
+        if type(chain) == "table" then info.chain = chain end
     end
     if self.questZh and self.questZh[questID] then info.name = self.questZh[questID] end
 
@@ -297,10 +380,34 @@ function ns:GetQuestInfo(questID)
         end
         local ok2, sb = pcall(db.Get, db, questID, "startedBy")
         if ok2 and type(sb) == "table" then started = sb end
+        local okF, fin = pcall(db.Get, db, questID, "finishedBy")
+        if okF and type(fin) == "table" and fin.npcIds and fin.npcIds[1] then info.enderID = fin.npcIds[1] end
+        local okO, obj = pcall(db.Get, db, questID, "objectivesText")
+        if okO and type(obj) == "table" then info.objectives = obj end
     end
 
     local npcID = started and started.npcIds and started.npcIds[1]
     if not npcID and localQ and localQ.giver then npcID = localQ.giver end
+
+    local dqa = _G.DungeonQuestAtlas
+    local dq = dqa and dqa.Quests and dqa.Quests[questID]
+    if dq then
+        if not info.level then info.level = dq.level end
+        if dq.need then info.need = dq.need end
+        if not npcID and type(dq.starts) == "table" then
+            for _, s in ipairs(dq.starts) do
+                local id = tostring(s):match("^npc:(%d+)")
+                if id then npcID = tonumber(id); break end
+            end
+        end
+        if not info.enderID and type(dq.ends) == "table" then
+            for _, s in ipairs(dq.ends) do
+                local id = tostring(s):match("^npc:(%d+)")
+                if id then info.enderID = tonumber(id); break end
+            end
+        end
+    end
+
     if npcID then
         local mapID, x, y, name, zoneName, sub = self:GetNpcPoint(npcID)
         info.npcID = npcID
@@ -336,6 +443,11 @@ function ns:GetQuestInfo(questID)
         elseif started and started.objectIds and started.objectIds[1] then
             info.objectID = started.objectIds[1]
         end
+    end
+    if info.enderID then
+        local em, ex, ey, en, ez = self:GetNpcPoint(info.enderID)
+        info.enderName = en or self:GetNpcName(info.enderID)
+        if em then info.enderMapID = em; info.enderX = ex; info.enderY = ey; info.enderZone = ez end
     end
     self.questInfoCache[questID] = info
     return info
@@ -432,10 +544,97 @@ function ns:FormatSource(src)
     return out
 end
 
+function ns:GetRecipeVendors(recipeID)
+    recipeID = tonumber(recipeID)
+    if not recipeID then return {} end
+    self.recipeVendorCache = self.recipeVendorCache or {}
+    local cached = self.recipeVendorCache[recipeID]
+    if cached then return cached end
+
+    local out = {}
+    local seenNpc = {}
+    local hasVendor = false
+    local list = self.recipeVendor and self.recipeVendor[recipeID]
+    if list then
+        for i = 1, #list do
+            local v = list[i]
+            local zone = v[3]
+            if zone then zone = zone:match("^(.-)%s*·") or zone end
+            local mapID = v[6] or (self.zoneToMap and self.zoneToMap[zone])
+            local x, y = v[4], v[5]
+            if (not mapID or not x or not y) and v[1] then
+                local m2, x2, y2, n2, z2 = self:GetNpcPoint(v[1])
+                if m2 then
+                    if not mapID then mapID = m2 end
+                    if x2 and y2 then x, y = x2, y2 end
+                    if not zone then zone = z2 end
+                end
+            end
+            local resolved = v[7]
+            if not resolved then
+                local n = self:GetNpcName(v[1])
+                if n and n ~= ("NPC #" .. tostring(v[1])) then resolved = n end
+            end
+            local kind = v[8] or "Vendor"
+            if kind == "Vendor" then hasVendor = true end
+            seenNpc[v[1]] = true
+            out[#out + 1] = {
+                npcID = v[1],
+                name = resolved or v[2] or ("NPC #" .. tostring(v[1])),
+                enName = v[2],
+                zone = zone,
+                x = x,
+                y = y,
+                mapID = mapID,
+                kind = kind,
+            }
+        end
+    end
+
+    if not hasVendor then
+        local idb = _G.ItemDB
+        if idb and idb.Get then
+            local ok, npcs = pcall(idb.Get, idb, recipeID, "vendors")
+            if ok and type(npcs) == "table" then
+                for i = 1, #npcs do
+                    local npcID = tonumber(npcs[i])
+                    if npcID and not seenNpc[npcID] then
+                        seenNpc[npcID] = true
+                        local mapID, x, y, name, zone = self:GetNpcPoint(npcID)
+                        out[#out + 1] = {
+                            npcID = npcID,
+                            name = name or ("NPC #" .. npcID),
+                            zone = zone,
+                            x = x,
+                            y = y,
+                            mapID = mapID,
+                            kind = "Vendor",
+                        }
+                    end
+                end
+            end
+        end
+    end
+
+    self.recipeVendorCache[recipeID] = out
+    return out
+end
+
 function ns:GetSourceMap(src)
     local kind = src[1]
     if kind == "vendor" and src[7] and src[8] and src[9] then
         return src[7], src[8], src[9], (src[6] or src[2] or "商人")
+    elseif kind == "craft" and src[12] then
+        local vendors = self:GetRecipeVendors(src[12])
+        local v
+        for _, c in ipairs(vendors) do
+            if c.kind == "Vendor" then v = c; break end
+        end
+        v = v or vendors[1]
+        if v and v.mapID then
+            local prefix = (v.kind == "Vendor") and "图纸商人 " or "图纸来源 "
+            return v.mapID, v.x, v.y, (prefix .. tostring(v.name)), v.zone
+        end
     elseif kind == "quest" then
         local info = self:GetQuestInfo(tonumber(src[5]))
         if info and info.mapID then
@@ -470,7 +669,7 @@ function ns:GetMapPoints(item)
         if mapID then add(mapID, x, y, title, s[3]) end
         if s[1] == "quest" then
             local info = self:GetQuestInfo(tonumber(s[5]))
-            if info and info.chain then
+            if info and type(info.chain) == "table" then
                 for idx, cid in ipairs(info.chain) do
                     local ci = self:GetQuestInfo(cid)
                     if ci and ci.mapID then
@@ -484,6 +683,20 @@ function ns:GetMapPoints(item)
                     if mID then
                         add(mID, mx, my, (mname or m.name or "怪物") .. "（怪物）", mzone)
                     end
+                end
+            end
+            if info and info.enderID and info.enderMapID then
+                add(info.enderMapID, info.enderX, info.enderY,
+                    (info.enderName or "交付 NPC") .. "（交付）", info.enderZone)
+            end
+        elseif s[1] == "craft" and s[12] then
+            local vendors = self:GetRecipeVendors(s[12])
+            for _, v in ipairs(vendors) do
+                if v.mapID then
+                    local prefix = (v.kind == "Vendor") and "图纸商人" or (v.kind == "Chest" and "图纸宝箱" or "图纸掉落")
+                    add(v.mapID, v.x, v.y,
+                        string.format("%s %s（%s）", prefix, tostring(v.name), s[11] or ("配方 #" .. tostring(s[12]))),
+                        v.zone)
                 end
             end
         end
@@ -532,6 +745,15 @@ function ns:SetMapPin(item)
     self:PinPoint(self:GetMapPoints(item)[1])
 end
 
+function ns:PinNpc(npcID)
+    local mapID, x, y, name, zone = self:GetNpcPoint(tonumber(npcID))
+    if not mapID then
+        self:Print("没有这个 NPC 的位置记录。")
+        return
+    end
+    self:PinPoint({ mapID = mapID, x = x, y = y, title = name or ("NPC #" .. tostring(npcID)), zone = zone })
+end
+
 function ns:GetSourceText(item, limit)
     local srcs = item[F.SOURCES]
     if not srcs or #srcs == 0 then return nil end
@@ -549,34 +771,54 @@ local function IsJewel(item)
     return s == "neck" or s == "finger" or s == "trinket" or s == "back"
 end
 
+local function ListHas(list, value)
+    if type(list) ~= "table" then return false end
+    for i = 1, #list do
+        if list[i] == value then return true end
+    end
+    return false
+end
+
 function ns:Matches(item, f)
-    if f.knownOnly and f.source ~= "unknown" and item[F.KNOWN] == 0 then return false end
-    if f.slot ~= "all" and item[F.SLOT] ~= f.slot then return false end
+    local wantsUnknown = ListHas(f.source, "unknown")
+    if f.knownOnly and not wantsUnknown and item[F.KNOWN] == 0 then return false end
+    if #f.slot > 0 and not ListHas(f.slot, item[F.SLOT]) then return false end
 
-    if f.quality and f.quality ~= "all" and item[F.QUALITY] ~= tonumber(f.quality) then return false end
+    if #f.quality > 0 and not ListHas(f.quality, tostring(item[F.QUALITY])) then return false end
 
-    if f.source and f.source ~= "all" then
-        if f.source == "unknown" then
-            if item[F.KNOWN] ~= 0 then return false end
-        else
-            local found = false
-            local srcs = item[F.SOURCES] or {}
-            for i = 1, #srcs do
-                if srcs[i][1] == f.source then found = true; break end
+    if #f.source > 0 then
+        local found = false
+        for i = 1, #f.source do
+            local want = f.source[i]
+            if want == "unknown" then
+                if item[F.KNOWN] == 0 then found = true; break end
+            else
+                local srcs = item[F.SOURCES] or {}
+                for j = 1, #srcs do
+                    if srcs[j][1] == want then found = true; break end
+                end
+                if found then break end
             end
-            if not found then return false end
         end
+        if not found then return false end
     end
 
     local t = item[F.TYPE]
-    if f.armor == "tank" then
-        if not (t == "Plate" or t == "Mail" or t == "Shield" or IsJewel(item)) then return false end
-    elseif f.armor == "jewel" then
-        if not IsJewel(item) then return false end
-    elseif f.armor == "weapon" then
-        if item[F.SLOT] ~= "weapon" then return false end
-    elseif f.armor ~= "all" then
-        if t ~= f.armor then return false end
+    if #f.armor > 0 then
+        local matched = false
+        for i = 1, #f.armor do
+            local a = f.armor[i]
+            if a == "tank" then
+                if t == "Plate" or t == "Mail" or t == "Shield" or IsJewel(item) then matched = true; break end
+            elseif a == "jewel" then
+                if IsJewel(item) then matched = true; break end
+            elseif a == "weapon" then
+                if item[F.SLOT] == "weapon" then matched = true; break end
+            elseif t == a then
+                matched = true; break
+            end
+        end
+        if not matched then return false end
     end
 
     local rl = item[F.REQ]
@@ -629,7 +871,7 @@ function ns:GetFiltered()
     return out
 end
 
-ns.DB_VERSION = 3
+ns.DB_VERSION = 4
 
 function ns:Init()
     self.questCache = {}
@@ -644,8 +886,25 @@ function ns:Init()
         self.db.filters = {}
     end
     self.db.filters = self.db.filters or {}
+    local function CopyList(t)
+        local out = {}
+        for i = 1, #t do out[i] = t[i] end
+        return out
+    end
+    local function NormalizeList(v)
+        if type(v) == "table" then
+            local out = {}
+            for i = 1, #v do out[#out + 1] = tostring(v[i]) end
+            return out
+        end
+        if v == nil or v == "all" then return {} end
+        return { tostring(v) }
+    end
+
     for k, v in pairs(self.defaults) do
-        if self.db.filters[k] == nil then self.db.filters[k] = v end
+        if self.db.filters[k] == nil then
+            if type(v) == "table" then self.db.filters[k] = CopyList(v) else self.db.filters[k] = v end
+        end
     end
     local f = self.db.filters
     f.minLevel = tonumber(f.minLevel) or 10
@@ -657,11 +916,10 @@ function ns:Init()
     f.knownOnly = f.knownOnly and true or false
     f.search = tostring(f.search or "")
     if type(f.sort) ~= "string" then f.sort = "level" end
-    if type(f.slot) ~= "string" then f.slot = "all" end
-    if type(f.armor) ~= "string" then f.armor = "tank" end
-    if type(f.source) ~= "string" then f.source = "all" end
-    if type(f.quality) ~= "string" and type(f.quality) ~= "number" then f.quality = "all" end
-    if f.quality ~= "all" then f.quality = tostring(f.quality) end
+    f.slot = NormalizeList(f.slot)
+    f.armor = NormalizeList(f.armor)
+    f.source = NormalizeList(f.source)
+    f.quality = NormalizeList(f.quality)
 
     if type(self.data) ~= "table" or type(self.data.items) ~= "table" or #self.data.items == 0 then
         self.dataError = "数据库没有加载：Data.lua 缺失或为空"

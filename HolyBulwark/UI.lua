@@ -8,6 +8,26 @@ local frame, rows, listFrame, countLabel, pageLabel
 local searchBox, minBox, maxBox, tankyCB, knownCB, noteLabel
 local detail, detailIcon, detailName, detailEn, detailSub1, detailSub2, detailBody, detailScroll, detailContent
 local detailLink, detailMap
+local HandleSpgLink
+local ShowQuestDetail
+local questFrame, questScroll, questContent, questBody
+
+local function NpcLink(id, name)
+    return "|cff9cd6ff|Hspg:npc:" .. tostring(id) .. "|h[" .. tostring(name or id) .. "]|h|r"
+end
+
+local function QuestLink(id, name)
+    return "|cffffd200|Hspg:quest:" .. tostring(id) .. "|h[" .. tostring(name or id) .. "]|h|r"
+end
+
+local function ItemName(id)
+    local idb = _G.ItemDB
+    if idb and idb.Get then
+        local ok, name = pcall(idb.Get, idb, tonumber(id) or id, "name")
+        if ok and type(name) == "string" and name ~= "" then return name end
+    end
+    return "物品 #" .. tostring(id)
+end
 local filtered = {}
 local selectedItem
 
@@ -30,7 +50,7 @@ end
 
 local function ShowItemTooltip(owner, item)
     GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
-    local ok = pcall(GameTooltip.SetHyperlink, GameTooltip, ns:GetLink(item))
+    local ok = pcall(GameTooltip.SetHyperlink, GameTooltip, ns:GetRawLink(item))
     if not ok then
         GameTooltip:AddLine(ns:ColorName(item))
         GameTooltip:AddLine("物品等级 " .. item[F.ILVL] .. " · 需要等级 " .. (item[F.REQ] == 0 and "—" or item[F.REQ]), 0.8, 0.8, 0.8)
@@ -97,7 +117,7 @@ local function ShowMenu(anchor, options, currentValue, onSelect)
         btn:ClearAllPoints()
         btn:SetPoint("TOPLEFT", 6, -4 - (i - 1) * 22)
         btn:SetPoint("TOPRIGHT", -6, -4 - (i - 1) * 22)
-        local mark = (opt.value == currentValue) and "|cff33ff99•|r " or "   "
+        local mark = (opt.value == currentValue) and "|cff33ff99*|r " or "  "
         btn.text:SetText(mark .. opt.label)
         btn:SetScript("OnClick", function()
             HideMenu()
@@ -152,6 +172,110 @@ local function SetDropdownValue(btn, value)
     btn.valueText:SetText(btn.prefix .. "：" .. FindLabel(btn.options, value))
 end
 
+local function ListHas(list, value)
+    if type(list) ~= "table" then return false end
+    for i = 1, #list do
+        if list[i] == value then return true end
+    end
+    return false
+end
+
+local function MultiLabel(prefix, options, list)
+    if #list == 0 then return prefix .. "：全部" end
+    if #list == 1 then return prefix .. "：" .. FindLabel(options, list[1]) end
+    return prefix .. "：" .. #list .. "项"
+end
+
+local function ShowMultiMenu(anchor, options, selected, onChange)
+    EnsureMenu()
+    local width = math.max(anchor:GetWidth(), 190)
+    menu:SetWidth(width)
+    local height = 8
+    local RefreshAll
+    for i, opt in ipairs(options) do
+        local b = menu.buttons[i]
+        if not b then
+            b = CreateFrame("Button", nil, menu)
+            b:SetHeight(22)
+            b.text = b:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+            b.text:SetPoint("LEFT", 8, 0)
+            b.text:SetPoint("RIGHT", -8, 0)
+            b.text:SetJustifyH("LEFT")
+            b.bg = b:CreateTexture(nil, "BACKGROUND")
+            b.bg:SetAllPoints()
+            b.bg:SetColorTexture(1, 1, 1, 0)
+            b:SetScript("OnEnter", function(self) self.bg:SetColorTexture(1, 1, 1, 0.12) end)
+            b:SetScript("OnLeave", function(self) self.bg:SetColorTexture(1, 1, 1, 0) end)
+            menu.buttons[i] = b
+        end
+        local btn = b
+        btn:ClearAllPoints()
+        btn:SetPoint("TOPLEFT", 6, -4 - (i - 1) * 22)
+        btn:SetPoint("TOPRIGHT", -6, -4 - (i - 1) * 22)
+        btn:SetScript("OnClick", function()
+            if opt.value == "all" then
+                for j = #selected, 1, -1 do table.remove(selected, j) end
+            elseif ListHas(selected, opt.value) then
+                for j = #selected, 1, -1 do
+                    if selected[j] == opt.value then table.remove(selected, j) end
+                end
+            else
+                selected[#selected + 1] = opt.value
+            end
+            RefreshAll()
+            onChange()
+        end)
+        btn:Show()
+        height = height + 22
+    end
+    for i = #options + 1, #menu.buttons do menu.buttons[i]:Hide() end
+    RefreshAll = function()
+        for i, opt in ipairs(options) do
+            local btn = menu.buttons[i]
+            local checked
+            if opt.value == "all" then
+                checked = (#selected == 0)
+            else
+                checked = ListHas(selected, opt.value)
+            end
+            btn.text:SetText((checked and "|cff33ff99[x]|r " or "[ ] ") .. opt.label)
+        end
+    end
+    RefreshAll()
+    menu:SetHeight(height)
+    menu:ClearAllPoints()
+    menu:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -2)
+    menu:Show()
+    menuOverlay:Show()
+    menu:Raise()
+end
+
+local function CreateMultiDropdown(parent, x, y, width, prefix, options, getList, onChange)
+    local b = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
+    b:SetSize(width, 24)
+    b:SetPoint("TOPLEFT", parent, "TOPLEFT", x, y)
+    b:SetText("")
+    b.prefix = prefix
+    b.options = options
+    b.valueText = b:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    b.valueText:SetPoint("LEFT", 10, 0)
+    b.valueText:SetPoint("RIGHT", -10, 0)
+    b.valueText:SetJustifyH("LEFT")
+    b.valueText:SetWordWrap(false)
+    b.valueText:SetFontObject(GameFontNormalSmall)
+    b.valueText:SetText(MultiLabel(prefix, options, getList()))
+    b:SetScript("OnClick", function(self)
+        ShowMultiMenu(self, options, getList(), function()
+            self.valueText:SetText(MultiLabel(prefix, options, getList()))
+            onChange()
+        end)
+    end)
+    b.refresh = function()
+        b.valueText:SetText(MultiLabel(prefix, options, getList()))
+    end
+    return b
+end
+
 -- ------------------------------------------------------------------ refresh
 local function BuildDetailBody(item)
     local lines = {}
@@ -179,45 +303,90 @@ local function BuildDetailBody(item)
             lines[#lines + 1] = ns:FormatSource(srcs[i])
             if srcs[i][1] == "quest" then
                 local info = ns:GetQuestInfo(tonumber(srcs[i][5]))
+                if info and info.npcID then
+                    local tail = ""
+                    if info.zoneName then tail = tail .. " · " .. info.zoneName end
+                    if info.x and info.y then tail = tail .. string.format(" · %.1f, %.1f", info.x * 100, info.y * 100) end
+                    lines[#lines + 1] = "|cff999999  接取 NPC：|r" .. NpcLink(info.npcID, info.npcName) .. tail
+                end
+                if info and info.enderID then
+                    local tail = ""
+                    if info.enderZone then tail = tail .. " · " .. info.enderZone end
+                    lines[#lines + 1] = "|cff999999  交付 NPC：|r" .. NpcLink(info.enderID, info.enderName) .. tail
+                end
                 if info and info.itemID then
                     lines[#lines + 1] = "|cff999999  起始物品：" .. (info.itemName or ("#" .. info.itemID)) .. "|r"
                     if info.monsters and #info.monsters > 0 then
                         local names = {}
-                        for m = 1, math.min(#info.monsters, 8) do
-                            names[#names + 1] = info.monsters[m].name
+                        for m = 1, math.min(#info.monsters, 12) do
+                            local mon = info.monsters[m]
+                            names[#names + 1] = NpcLink(mon.id, mon.name)
                         end
                         lines[#lines + 1] = "|cff999999  掉落怪物：" .. table.concat(names, "、") .. "|r"
-                        lines[#lines + 1] = "|cff999999  点“地图标记”可选择任务 NPC 或怪物位置|r"
                     end
                 end
                 local chain = info and info.chain
-                if chain and #chain > 1 then
+                if type(chain) == "table" and #chain > 1 then
                     lines[#lines + 1] = ""
                     lines[#lines + 1] = "|cffffd200任务链（" .. #chain .. " 步）|r"
                     for idx, cid in ipairs(chain) do
                         local ci = ns:GetQuestInfo(cid)
                         local cname = (ci and ci.name) or ("任务 #" .. cid)
+                        local line = string.format("%d. %s", idx, QuestLink(cid, cname))
                         local extra = {}
-                        if ci and ci.npcName then extra[#extra + 1] = ci.npcName end
+                        if ci and ci.npcID then extra[#extra + 1] = NpcLink(ci.npcID, ci.npcName or ("NPC #" .. ci.npcID)) end
                         if ci and ci.zoneName then extra[#extra + 1] = ci.zoneName end
-                        local line = string.format("%d. %s", idx, cname)
                         if #extra > 0 then line = line .. " · " .. table.concat(extra, " · ") end
-                        if cid == tonumber(srcs[i][5]) then line = line .. "  |cff33ff99← 当前|r" end
+                        if cid == tonumber(srcs[i][5]) then line = line .. "  |cff33ff99← 本物品任务|r" end
                         lines[#lines + 1] = line
                     end
+                    lines[#lines + 1] = "|cff777777点击任务名查看目标、接取/交付 NPC 与任务品掉落；点击 NPC 名可直接标图。|r"
                 end
             end
             if srcs[i][1] == "craft" then
                 local rname, rid, rsrc = srcs[i][11], srcs[i][12], srcs[i][13]
                 if rname then
                     lines[#lines + 1] = "|cff999999  配方物品：" .. rname .. (rid and (" #" .. rid) or "") .. "|r"
-                    if rsrc then
-                        lines[#lines + 1] = "|cff999999  配方来源：" .. rsrc .. "|r"
-                    else
-                        lines[#lines + 1] = "|cff999999  配方来源：训练师/专业供应商（数据库暂缺）|r"
-                    end
                 else
                     lines[#lines + 1] = "|cff999999  配方来源：训练师学习（未找到配方物品）|r"
+                end
+                local vendors = rid and ns:GetRecipeVendors(rid) or {}
+                local vendorCount = 0
+                for _, v in ipairs(vendors) do
+                    if v.kind == "Vendor" then
+                        if vendorCount == 0 then lines[#lines + 1] = "|cff999999  图纸商人：|r" end
+                        vendorCount = vendorCount + 1
+                        local tail = {}
+                        if v.zone then tail[#tail + 1] = v.zone end
+                        if v.x and v.y then tail[#tail + 1] = string.format("%.1f, %.1f", v.x * 100, v.y * 100) end
+                        local line = "    " .. NpcLink(v.npcID, v.name)
+                        if #tail > 0 then line = line .. " · " .. table.concat(tail, " · ") end
+                        lines[#lines + 1] = line
+                    end
+                end
+                if vendorCount == 0 then
+                    local shown = 0
+                    for _, v in ipairs(vendors) do
+                        if shown >= 4 then break end
+                        local label = (v.kind == "Chest") and "图纸宝箱" or "图纸掉落"
+                        if shown == 0 then
+                            lines[#lines + 1] = "|cff999999  " .. (rsrc or "图纸来源") .. "：|r"
+                        end
+                        shown = shown + 1
+                        local tail = {}
+                        if v.zone then tail[#tail + 1] = v.zone end
+                        if v.x and v.y then tail[#tail + 1] = string.format("%.1f, %.1f", v.x * 100, v.y * 100) end
+                        local line = "    " .. label .. " " .. NpcLink(v.npcID, v.name)
+                        if #tail > 0 then line = line .. " · " .. table.concat(tail, " · ") end
+                        lines[#lines + 1] = line
+                    end
+                    if shown == 0 then
+                        if rsrc then
+                            lines[#lines + 1] = "|cff999999  图纸来源：" .. rsrc .. "|r"
+                        else
+                            lines[#lines + 1] = "|cff888888  图纸商人：暂无可靠数据（点击“地图标记”可查看已记录位置）|r"
+                        end
+                    end
                 end
             end
         end
@@ -356,6 +525,9 @@ local function SyncControls()
     tankyCB:SetChecked(f.tanky and true or false)
     knownCB:SetChecked(f.knownOnly and true or false)
     for _, b in ipairs(ns.dropdowns or {}) do SetDropdownValue(b.btn, f[b.key]) end
+    for _, d in ipairs(ns.multiDropdowns or {}) do
+        if d.btn.refresh then d.btn.refresh() end
+    end
 end
 
 local function CreateControls(parent)
@@ -392,7 +564,6 @@ local function CreateControls(parent)
         b:SetMaxLetters(2)
         b:SetNumeric(true)
         b:SetScript("OnEnterPressed", function(self) self:ClearFocus(); ApplyLevels() end)
-        b:SetScript("OnEditFocusLost", function() ApplyLevels() end)
         b:SetScript("OnEscapePressed", function(self) self:ClearFocus() end)
         return b
     end
@@ -416,6 +587,12 @@ local function CreateControls(parent)
     local dash = parent:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     dash:SetPoint("TOPLEFT", parent, "TOPLEFT", 783, -50)
     dash:SetText("—")
+
+    local queryBtn = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
+    queryBtn:SetSize(54, 24)
+    queryBtn:SetPoint("TOPLEFT", parent, "TOPLEFT", 842, -44)
+    queryBtn:SetText("查询")
+    queryBtn:SetScript("OnClick", function() ApplyLevels() end)
 
     -- checkboxes
     local function MakeCheck(x, label, key)
@@ -479,30 +656,27 @@ local function CreateControls(parent)
         { value = "sp", label = "法强" },
         { value = "name", label = "名称" },
     }
-    local slotBtn = CreateDropdown(parent, 216, -44, 110, "部位", slotOptions, function(v)
-        ns.db.filters.slot = v; ResetPageAndRefresh()
-    end)
-    local armorBtn = CreateDropdown(parent, 332, -44, 134, "护甲", armorOptions, function(v)
-        ns.db.filters.armor = v; ResetPageAndRefresh()
-    end)
-    local sourceBtn = CreateDropdown(parent, 472, -44, 112, "来源", sourceOptions, function(v)
-        ns.db.filters.source = v
-        if v == "unknown" then
-            ns.db.filters.knownOnly = false
-            if knownCB then knownCB:SetChecked(false) end
-        end
-        ResetPageAndRefresh()
-    end)
-    local qualityBtn = CreateDropdown(parent, 590, -44, 110, "品质", qualityOptions, function(v)
-        ns.db.filters.quality = v; ResetPageAndRefresh()
-    end)
+    local slotBtn = CreateMultiDropdown(parent, 216, -44, 110, "部位", slotOptions,
+        function() return ns.db.filters.slot end, ResetPageAndRefresh)
+    local armorBtn = CreateMultiDropdown(parent, 332, -44, 134, "护甲", armorOptions,
+        function() return ns.db.filters.armor end, ResetPageAndRefresh)
+    local sourceBtn = CreateMultiDropdown(parent, 472, -44, 112, "来源", sourceOptions,
+        function() return ns.db.filters.source end, function()
+            if ListHas(ns.db.filters.source, "unknown") then
+                ns.db.filters.knownOnly = false
+                if knownCB then knownCB:SetChecked(false) end
+            end
+            ResetPageAndRefresh()
+        end)
+    local qualityBtn = CreateMultiDropdown(parent, 590, -44, 110, "品质", qualityOptions,
+        function() return ns.db.filters.quality end, ResetPageAndRefresh)
     local sortBtn = CreateDropdown(parent, 20, -74, 110, "排序", sortOptions, function(v)
         ns.db.filters.sort = v; ResetPageAndRefresh()
     end)
-    ns.dropdowns = {
+    ns.dropdowns = { { key = "sort", btn = sortBtn } }
+    ns.multiDropdowns = {
         { key = "slot", btn = slotBtn }, { key = "armor", btn = armorBtn },
         { key = "source", btn = sourceBtn }, { key = "quality", btn = qualityBtn },
-        { key = "sort", btn = sortBtn },
     }
 end
 
@@ -571,11 +745,16 @@ local function CreateRow(parent, index)
     end)
     row:SetScript("OnClick", function(self)
         if not self.item then return end
+        if IsControlKeyDown and IsControlKeyDown() then
+            DressUpItemLink(ns:GetLink(self.item))
+            return
+        end
+        if IsShiftKeyDown and IsShiftKeyDown() then
+            ns:InsertLink(self.item)
+            return
+        end
         ShowDetail(self.item)
         UpdateRows()
-        if IsModifiedClick() then
-            HandleModifiedItemClick(ns:GetLink(self.item))
-        end
     end)
     return row
 end
@@ -680,6 +859,12 @@ local function CreateWindow()
     detailScroll:SetPoint("BOTTOMRIGHT", -32, 40)
     detailContent = CreateFrame("Frame", nil, detailScroll)
     detailContent:SetWidth(272)
+    if detailContent.SetHyperlinksEnabled then
+        detailContent:SetHyperlinksEnabled(true)
+        detailContent:SetScript("OnHyperlinkClick", function(_, link)
+            if HandleSpgLink then HandleSpgLink(link) end
+        end)
+    end
     detailScroll:SetScrollChild(detailContent)
     detailBody = detailContent:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
     detailBody:SetPoint("TOPLEFT", 0, 0)
@@ -692,7 +877,7 @@ local function CreateWindow()
     detailLink:SetPoint("BOTTOMLEFT", 10, 10)
     detailLink:SetText("插入链接")
     detailLink:SetScript("OnClick", function()
-        if selectedItem then HandleModifiedItemClick(ns:GetLink(selectedItem)) end
+        if selectedItem then ns:InsertLink(selectedItem) end
     end)
 
     detailMap = CreateFrame("Button", nil, detail, "UIPanelButtonTemplate")
@@ -717,14 +902,124 @@ local function CreateWindow()
     detailMap:SetScript("OnEnter", function(self)
         GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
         if self:IsEnabled() then
-            GameTooltip:AddLine("在地图上标出商人 / 任务接取 NPC 的位置")
+            GameTooltip:AddLine("在地图上标出商人 / 图纸商人 / 任务 NPC 的位置")
         else
-            GameTooltip:AddLine("没有可用的商人或任务接取位置")
-            GameTooltip:AddLine("任务需要 QuestieDB 的中文数据", 0.7, 0.7, 0.7)
+            GameTooltip:AddLine("没有可用的商人、图纸或任务位置")
         end
         GameTooltip:Show()
     end)
     detailMap:SetScript("OnLeave", function() GameTooltip:Hide() end)
+
+    -- quest detail popup
+    questFrame = CreateFrame("Frame", "HolyBulwarkQuestFrame", UIParent, "BasicFrameTemplate")
+    questFrame:SetSize(392, 348)
+    questFrame:SetPoint("CENTER")
+    questFrame:SetFrameStrata("DIALOG")
+    questFrame:SetToplevel(true)
+    questFrame.TitleText:SetText("任务详情")
+    if UISpecialFrames then
+        local found = false
+        for _, name in ipairs(UISpecialFrames) do
+            if name == "HolyBulwarkQuestFrame" then found = true; break end
+        end
+        if not found then table.insert(UISpecialFrames, "HolyBulwarkQuestFrame") end
+    end
+
+    questScroll = CreateFrame("ScrollFrame", "HolyBulwarkQuestScroll", questFrame, "UIPanelScrollFrameTemplate")
+    questScroll:SetPoint("TOPLEFT", 14, -34)
+    questScroll:SetPoint("BOTTOMRIGHT", -32, 14)
+    questContent = CreateFrame("Frame", nil, questScroll)
+    questContent:SetWidth(322)
+    if questContent.SetHyperlinksEnabled then
+        questContent:SetHyperlinksEnabled(true)
+        questContent:SetScript("OnHyperlinkClick", function(_, link)
+            if HandleSpgLink then HandleSpgLink(link) end
+        end)
+    end
+    questScroll:SetScrollChild(questContent)
+    questBody = questContent:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+    questBody:SetPoint("TOPLEFT", 0, 0)
+    questBody:SetWidth(322)
+    questBody:SetJustifyH("LEFT")
+    questBody:SetSpacing(3)
+    questFrame:Hide()
+
+    ShowQuestDetail = function(questID)
+        questID = tonumber(questID)
+        if not questID then return end
+        local ci = ns:GetQuestInfo(questID)
+        local L = {}
+        local level = ci and ci.level
+        L[#L + 1] = "|cffffd200" .. tostring((ci and ci.name) or ("任务 #" .. questID)) .. "|r"
+            .. (level and ("  |cff888888等级 " .. tostring(level) .. "|r") or "")
+        L[#L + 1] = ""
+
+        if ci and ci.npcID then
+            local tail = ""
+            if ci.zoneName then tail = tail .. " · " .. ci.zoneName end
+            if ci.x and ci.y then tail = tail .. string.format(" · %.1f, %.1f", ci.x * 100, ci.y * 100) end
+            L[#L + 1] = "|cffffd200接取 NPC|r  " .. NpcLink(ci.npcID, ci.npcName) .. tail
+        elseif ci and ci.itemID then
+            L[#L + 1] = "|cffffd200起始物品|r  " .. tostring(ci.itemName or ("#" .. ci.itemID))
+        elseif ci and ci.objectID then
+            L[#L + 1] = "|cffffd200任务对象|r  #" .. tostring(ci.objectID)
+        end
+
+        if ci and ci.enderID then
+            local tail = ""
+            if ci.enderZone then tail = tail .. " · " .. ci.enderZone end
+            L[#L + 1] = "|cffffd200交付 NPC|r  " .. NpcLink(ci.enderID, ci.enderName) .. tail
+        end
+
+        L[#L + 1] = ""
+        L[#L + 1] = "|cffffd200任务目标|r"
+        if ci and ci.objectives and #ci.objectives > 0 then
+            for _, s in ipairs(ci.objectives) do
+                L[#L + 1] = "· " .. tostring(s)
+            end
+        else
+            L[#L + 1] = "|cff888888暂无目标文本（QuestieDB 未提供）|r"
+        end
+
+        if ci and ci.monsters and #ci.monsters > 0 then
+            L[#L + 1] = ""
+            L[#L + 1] = "|cffffd200任务品掉落|r"
+            for _, m in ipairs(ci.monsters) do
+                L[#L + 1] = "· " .. NpcLink(m.id, m.name)
+            end
+        end
+
+        if ci and ci.need and #ci.need > 0 then
+            L[#L + 1] = ""
+            L[#L + 1] = "|cffffd200所需物品|r"
+            for _, n in ipairs(ci.need) do
+                local cnt = tonumber(n[2])
+                L[#L + 1] = "· " .. ItemName(n[1]) .. (cnt and cnt > 1 and (" ×" .. cnt) or "")
+            end
+        end
+
+        L[#L + 1] = ""
+        L[#L + 1] = "|cff777777点击蓝色 NPC 名称可直接打开地图并标点；按 Esc 关闭。|r"
+
+        questBody:SetText(table.concat(L, "\n"))
+        local h = questBody:GetStringHeight() or 0
+        questContent:SetHeight(math.max(h + 8, 10))
+        questScroll:SetVerticalScroll(0)
+        questFrame:Show()
+        questFrame:Raise()
+    end
+
+    HandleSpgLink = function(link)
+        if not link then return end
+        local kind, id = tostring(link):match("^spg:(%w+):(%d+)")
+        if not kind then return end
+        id = tonumber(id)
+        if kind == "npc" then
+            ns:PinNpc(id)
+        elseif kind == "quest" then
+            ShowQuestDetail(id)
+        end
+    end
 
     -- footer
     local prev = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
@@ -754,7 +1049,15 @@ local function CreateWindow()
     reset:SetPoint("BOTTOMLEFT", 240, 14)
     reset:SetText("重置筛选")
     reset:SetScript("OnClick", function()
-        for k, v in pairs(ns.defaults) do ns.db.filters[k] = v end
+        for k, v in pairs(ns.defaults) do
+            if type(v) == "table" then
+                local t = {}
+                for i = 1, #v do t[i] = v[i] end
+                ns.db.filters[k] = t
+            else
+                ns.db.filters[k] = v
+            end
+        end
         SyncControls()
         ResetPageAndRefresh()
     end)

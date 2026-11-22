@@ -32,14 +32,18 @@ D:\game\World of Warcraft\_forever_\Interface\AddOns\HolyBulwark
 功能：
 
 - 搜索名称、物品 ID、英文名、来源名
-- 按 **部位 / 护甲 / 来源 / 品质 / 等级 / 排序** 筛选
+- 按 **部位 / 护甲 / 来源 / 品质 / 等级 / 排序** 筛选；部位、护甲、来源、品质支持**多选**
+- 等级范围修改后点“查询”或按回车才应用，避免输入过程中列表闪空
 - 默认视图：**防骑向（板/锁/盾+首饰）、有耐力、有来源**，共 312 件
 - 列表右侧来源字分色：掉=红、任=金、售=绿、制=蓝、箱=紫、容=青、世=灰
 - 详情显示完整属性、护甲、武器伤害、绑定、来源
 - **商人**：中文名 + 区域 + 坐标 + 备注
-- **任务**：中文任务名、接取 NPC、区域、坐标、**整条任务链**（每步 NPC/区域）
-- **物品触发任务**：起始物品 + 掉落怪物列表
+- **制造**：配方物品 + 贩卖图纸的 NPC 中文名、区域、坐标
+- **任务**：中文任务名、接取/交付 NPC、区域、坐标、**整条任务链**
+- **任务链可点击**：点任务名查看目标、所需物品、任务品掉落；点 NPC 名直接在地图标点
+- **物品触发任务**：起始物品 + 掉落怪物列表（怪物可点击标图）
 - **地图标记**：打开对应地图，用 TomTom / 暴雪路径点标出位置；多个位置时弹菜单选择
+- **Ctrl+左键**列表物品打开试穿；**Shift+左键**插入可点击物品链接到聊天框
 - 物品没有物品等级时，显示**任务等级**
 - 鼠标悬停任意物品（含聊天链接）自动追加来源
 
@@ -52,7 +56,8 @@ D:\game\World of Warcraft\_forever_\Interface\AddOns\HolyBulwark
 | 区域中文名 / 地图 ID | 客户端 `AreaTable`、QuestieDB Forever 映射 |
 | 任务中文名 | [forever.damijing.com](https://forever.damijing.com)（410 个任务） |
 | 任务链、接取 NPC、坐标 | [WarcraftMaps](https://warcraftmaps.com) |
-| BOSS / 任务 NPC 中文名 | forever.damijing.com（478 个 NPC） |
+| BOSS / 任务 NPC / 商人中文名 | forever.damijing.com（478 个 NPC） |
+| 图纸贩卖 NPC、区域、坐标 | [WoW Forever](https://wow-forever.gg) 物品页 |
 | 首领刷新点 | QuestieDB Forever 元数据 |
 | BOSS 副本内位置 | 运行时可读取 DungeonQuestAtlas（本地已安装） 的 `Maps.pins` |
 | 交叉核对 | [Bind on Forever](https://bindonforever.com)、Completao（本地已安装） |
@@ -71,6 +76,7 @@ D:\game\World of Warcraft\_forever_\Interface\AddOns\HolyBulwark
 | `NpcLoc.lua` | 世界首领刷新坐标 |
 | `QuestZh.lua` | 410 个任务中文名 |
 | `QuestInfo.lua` | 任务等级、接取 NPC、坐标、任务链 |
+| `RecipeVendor.lua` | 图纸/配方贩卖 NPC、区域、坐标 |
 
 QuestieDB 是可选增强：装了可以补全更多 NPC/任务中文名与位置；没装也能用本地库。
 
@@ -118,6 +124,7 @@ holy-bulwark/
 │  ├─ NpcLoc.lua
 │  ├─ QuestZh.lua
 │  ├─ QuestInfo.lua
+│  ├─ RecipeVendor.lua
 │  ├─ Core.lua
 │  ├─ Tooltip.lua
 │  └─ UI.lua
@@ -131,13 +138,15 @@ holy-bulwark/
 ## 已知限制
 
 - 副本 BOSS 如果没有世界刷新坐标，会打开副本地图但不放精确点；装了 DungeonQuestAtlas 时会读取它的 `Maps.pins` 精确标记。
-- 部分 Forever 新增配方没有来源记录，会显示“训练师/专业供应商（数据库暂缺）”。
+- 少数配方在公开数据库里完全没有来源记录，会显示“暂无可靠数据”；经典配方会自动读取 QuestieDB 的商人列表兜底。
+- Forever 新增 NPC 的官方中文名通常不存在，插件使用 damijing 译名或音译名；坐标以 Wow Forever 数据为准。
 - 商人中文名是译名；PvP 军需官坐标为近似值。
 - 数据以 1.60.1.70959 快照为准，客户端更新后可能有细微差异，以游戏内 tooltip 为准。
 
 ## 致谢
 
 - [The Forever Era](https://theforeverera.com)
+- [WoW Forever](https://wow-forever.gg)
 - [WarcraftMaps](https://warcraftmaps.com)
 - [forever.damijing.com](https://forever.damijing.com)
 - [Bind on Forever](https://bindonforever.com)
