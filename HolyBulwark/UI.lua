@@ -327,7 +327,7 @@ local function BuildDetailBody(item)
     local dmg = item[F.DMG]
     if dmg then
         lines[#lines + 1] = ""
-        lines[#lines + 1] = string.format("|cffffd200武器|r  %s-%s  速度 %s  DPS %s",
+        lines[#lines + 1] = string.format("|cffffd200武器|r  %s-%s  速度 %s  秒伤 %s",
             ns.Num(dmg[1] or 0), ns.Num(dmg[2] or 0), ns.Num(dmg[3] or 0), ns.Num(dmg[4] or 0))
     end
     lines[#lines + 1] = ""
@@ -394,7 +394,7 @@ local function BuildDetailBody(item)
                         end
                         local line = string.format("%s %d. %s", mark, idx, QuestLink(cid, cname))
                         local extra = {}
-                        if ci and ci.npcID then extra[#extra + 1] = NpcLink(ci.npcID, ci.npcName or ("NPC #" .. ci.npcID)) end
+                        if ci and ci.npcID then extra[#extra + 1] = NpcLink(ci.npcID, ci.npcName or ("人物 #" .. ci.npcID)) end
                         if ci and ci.zoneName then extra[#extra + 1] = ci.zoneName end
                         if #extra > 0 then line = line .. " · " .. table.concat(extra, " · ") end
                         if cid == tonumber(srcs[i][5]) then line = line .. "  |cff33ff99· 本物品任务|r" end
@@ -452,7 +452,7 @@ local function BuildDetailBody(item)
         end
     end
     lines[#lines + 1] = ""
-    lines[#lines + 1] = string.format("|cff777777物品ID %d · 数据来自永远纪元数据库|r", item[F.ID])
+    lines[#lines + 1] = string.format("|cff777777物品编号 %d · 数据来自永远纪元数据库|r", item[F.ID])
     return table.concat(lines, "\n")
 end
 
@@ -1203,6 +1203,9 @@ local function CreateWindow()
         C_Timer.After(8, function()
             if ns.BuildRawNameIndex and _G.ItemDB then ns:BuildRawNameIndex(_G.ItemDB, "rawItemNameIndex") end
         end)
+        C_Timer.After(11, function()
+            if ns.BuildRawNameIndex and _G.ObjectDB then ns:BuildRawNameIndex(_G.ObjectDB, "rawObjectNameIndex") end
+        end)
     end
     local hookFrame = CreateFrame("Frame")
     hookFrame:RegisterEvent("ADDON_LOADED")
@@ -1214,6 +1217,7 @@ local function CreateWindow()
                 ns.questInfoCache = nil
                 ns.rawNpcNameIndex = nil
                 ns.rawItemNameIndex = nil
+                ns.rawObjectNameIndex = nil
             end
         elseif event == "PLAYER_ENTERING_WORLD" then
             ns.questInfoCache = nil

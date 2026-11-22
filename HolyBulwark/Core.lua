@@ -197,11 +197,11 @@ function ns:GetNpcName(npcID)
     if name and name ~= "" then
         local loc = GetLocale and GetLocale() or ""
         if loc:sub(1, 2) == "zh" and not name:find("[\128-\255]") then
-            return "NPC #" .. tostring(npcID)
+            return "人物 #" .. tostring(npcID)
         end
         return name
     end
-    return "NPC #" .. tostring(npcID)
+    return "人物 #" .. tostring(npcID)
 end
 
 function ns:ZhZone(zone)
@@ -263,7 +263,7 @@ function ns:GetNpcPoint(npcID)
 
     local dqaMap, dqaX, dqaY, dqaName = self:GetDQABossPoint(npcID)
     if dqaMap then
-        if not name or name == ("NPC #" .. tostring(npcID)) then name = dqaName end
+        if not name or name == ("人物 #" .. tostring(npcID)) then name = dqaName end
         return dqaMap, dqaX, dqaY, name, nil, sub
     end
 
@@ -528,11 +528,8 @@ function ns:PinQuestStep(questID, index)
     end
     local itemID = self:FindItemIdByName(st.n)
     if itemID then
-        local db = _G.ItemDB
-        if db and db.Get then
-            local ok, n = pcall(db.Get, db, itemID, "name")
-            if ok and type(n) == "string" then title = n end
-        end
+        local iname = self:GetItemNameSafe(itemID)
+        if iname then title = iname end
     end
     self:PinPoint({ mapID = mapID, x = x, y = y, title = title, zone = zoneName })
 end
@@ -728,10 +725,9 @@ function ns:GetQuestInfo(questID)
         end
         if itemID then
             info.itemID = itemID
+            info.itemName = self:GetItemNameSafe(itemID) or ("物品 #" .. tostring(itemID))
             local idb = _G.ItemDB
             if idb and idb.Get then
-                local okI, iname = pcall(idb.Get, idb, itemID, "name")
-                if okI and type(iname) == "string" then info.itemName = iname end
                 local okD, drops = pcall(idb.Get, idb, itemID, "npcDrops")
                 if okD and type(drops) == "table" then
                     info.monsters = {}
@@ -801,6 +797,34 @@ function ns:GetQuestTitle(qid, fallback)
     return title or fallback
 end
 
+function ns:GetItemNameSafe(itemID)
+    itemID = tonumber(itemID)
+    if not itemID then return nil end
+    local idb = _G.ItemDB
+    if idb and idb.Get then
+        local ok, name = pcall(idb.Get, idb, itemID, "name")
+        if ok and type(name) == "string" and name ~= "" then
+            local loc = GetLocale and GetLocale() or ""
+            if loc:sub(1, 2) == "zh" and not name:find("[\128-\255]") then
+                return "物品 #" .. itemID
+            end
+            return name
+        end
+    end
+    return "物品 #" .. itemID
+end
+
+function ns:FindObjectIdByName(name)
+    if not name then return nil end
+    local db = _G.ObjectDB
+    if db and db.IdsByName then
+        local ok, ids = pcall(db.IdsByName, db, name)
+        if ok and type(ids) == "table" and ids[1] then return ids[1] end
+    end
+    if not db then return nil end
+    return self:BuildRawNameIndex(db, "rawObjectNameIndex")[name]
+end
+
 function ns:FormatSource(src)
     local kind, name, zone, chance, extra = src[1], src[2], src[3], src[4], src[5]
     local zhName, mapID, x, y, note, recipeName = src[6], src[7], src[8], src[9], src[10], src[11]
@@ -809,11 +833,35 @@ function ns:FormatSource(src)
     if kind == "drop" and src[14] then
         local cn = self:GetNpcName(src[14])
         if cn and cn ~= "" then name = cn end
+    elseif kind == "item" then
+        local iid = tonumber(extra)
+        local cn = self:GetItemNameSafe(iid)
+        if cn then name = cn end
+    elseif kind == "object" then
+        local oid = self:FindObjectIdByName(name)
+        if oid then
+            name = self:GetObjectName(oid)
+        else
+            local loc = GetLocale and GetLocale() or ""
+            if loc:sub(1, 2) == "zh" and name and not name:find("[\128-\255]") then
+                name = "任务对象"
+            end
+        end
+    end
+    if kind == "drop" and not src[14] then
+        local loc = GetLocale and GetLocale() or ""
+        if loc:sub(1, 2) == "zh" and name and not name:find("[\128-\255]") then
+            name = "小怪"
+        end
     end
     if kind == "quest" then
         local qid = tonumber(extra)
         local info = self:GetQuestInfo(qid)
         local qname = (info and info.name) or self:GetQuestTitle(qid, name)
+        local loc = GetLocale and GetLocale() or ""
+        if qname and loc:sub(1, 2) == "zh" and not qname:find("[\128-\255]") then
+            qname = "任务 #" .. tostring(qid)
+        end
         local out = "任务 · " .. tostring(qname)
         if info and info.npcName then
             out = out .. " · 接取：" .. info.npcName
@@ -840,6 +888,10 @@ function ns:FormatSource(src)
         if zhName and zhName ~= "" then name = zhName end
         if extra and extra ~= "" then
             name = (name ~= "" and (name .. "（" .. extra .. "）")) or extra
+        end
+        local loc = GetLocale and GetLocale() or ""
+        if loc:sub(1, 2) == "zh" and name and not name:find("[\128-\255]") then
+            name = "商人"
         end
     end
     local out = label
@@ -891,14 +943,14 @@ function ns:GetRecipeVendors(recipeID)
             local resolved = v[7]
             if not resolved then
                 local n = self:GetNpcName(v[1])
-                if n and n ~= ("NPC #" .. tostring(v[1])) then resolved = n end
+                if n and n ~= ("人物 #" .. tostring(v[1])) then resolved = n end
             end
             local kind = v[8] or "Vendor"
             if kind == "Vendor" then hasVendor = true end
             seenNpc[v[1]] = true
             out[#out + 1] = {
                 npcID = v[1],
-                name = resolved or v[2] or ("NPC #" .. tostring(v[1])),
+                name = resolved or v[2] or ("人物 #" .. tostring(v[1])),
                 enName = v[2],
                 zone = zoneName,
                 x = x,
@@ -921,7 +973,7 @@ function ns:GetRecipeVendors(recipeID)
                         local mapID, x, y, name, zone = self:GetNpcPoint(npcID)
                         out[#out + 1] = {
                             npcID = npcID,
-                            name = name or ("NPC #" .. npcID),
+                            name = name or ("人物 #" .. npcID),
                             zone = zone,
                             x = x,
                             y = y,
@@ -1009,7 +1061,7 @@ function ns:GetMapPoints(item)
                     local id = type(o) == "table" and tonumber(o[1]) or nil
                     if id then
                         local mID, mx, my, mname, mzone = self:GetNpcPoint(id)
-                        if mID then add(mID, mx, my, (mname or ("NPC #" .. id)) .. "（击杀）", mzone) end
+                        if mID then add(mID, mx, my, (mname or ("人物 #" .. id)) .. "（击杀）", mzone) end
                     end
                 end
                 for _, o in pairs(raw[2] or {}) do
@@ -1046,11 +1098,8 @@ function ns:GetMapPoints(item)
                     if mapID then
                         local title = "任务品位置 " .. i
                         local iid = st.n and self:FindItemIdByName(st.n)
-                        local idb = _G.ItemDB
-                        if iid and idb and idb.Get then
-                            local ok, n = pcall(idb.Get, idb, iid, "name")
-                            if ok and type(n) == "string" and n ~= "" then title = n end
-                        end
+                        local iname = iid and self:GetItemNameSafe(iid)
+                        if iname then title = iname end
                         add(mapID, sx, sy, title, zname)
                     end
                 end
@@ -1122,7 +1171,7 @@ function ns:PinNpc(npcID)
         self:Print("没有这个 NPC 的位置记录。")
         return
     end
-    self:PinPoint({ mapID = mapID, x = x, y = y, title = name or ("NPC #" .. tostring(npcID)), zone = zone })
+    self:PinPoint({ mapID = mapID, x = x, y = y, title = name or ("人物 #" .. tostring(npcID)), zone = zone })
 end
 
 function ns:GetSourceText(item, limit)

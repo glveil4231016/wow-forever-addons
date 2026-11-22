@@ -392,7 +392,8 @@ foreach ($r in $sorted) {
 [void]$sb.AppendLine('    count = ' + $records.Count + ',')
 [void]$sb.AppendLine('}')
 $utf8 = New-Object System.Text.UTF8Encoding($false)
-[System.IO.File]::WriteAllText($outLua, $sb.ToString(), $utf8)
+$outText = $sb.ToString().Replace('"Trash mobs"', '"小怪"')
+[System.IO.File]::WriteAllText($outLua, $outText, $utf8)
 
 # ---------------------------------------------------------------- report
 $sorted | Select-Object id, name, nameEn, q, il, rl, slot, type, armor, known,
