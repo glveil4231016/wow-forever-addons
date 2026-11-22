@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.9.0"
+ns.VERSION = "1.9.1"
 
 local F = ns.F
 
@@ -1154,6 +1154,7 @@ function ns:PinPoint(point)
     elseif ToggleWorldMap then
         pcall(ToggleWorldMap)
     end
+    if x and y and self.ShowMapPin then self:ShowMapPin(mapID, x, y) end
     if x and y then
         self:Print(string.format("已标记：%s（%.1f, %.1f）", title, x * 100, y * 100))
     else

@@ -1,13 +1,13 @@
 local addonName, ns = ...
 
 local F = ns.F
-local ROWS = 18
+local ROWS = 17
 local ROW_H = 25
 
 local frame, rows, listFrame, countLabel, pageLabel
 local searchBox, minBox, maxBox, tankyCB, knownCB, noteLabel
 local detail, detailIcon, detailName, detailEn, detailSub1, detailSub2, detailBody, detailScroll, detailContent
-local detailLink, detailMap
+local detailMap
 local HandleSpgLink
 local ShowQuestDetail
 local questFrame, questScroll, questContent, questBody
@@ -126,6 +126,7 @@ local function EnsureMenu()
     menu:SetBackdropColor(0.03, 0.03, 0.03, 0.98)
     menu:SetBackdropBorderColor(0.55, 0.55, 0.55, 1)
     menu.buttons = {}
+    menu.checks = {}
 end
 
 local function ShowMenu(anchor, options, currentValue, onSelect)
@@ -164,6 +165,7 @@ local function ShowMenu(anchor, options, currentValue, onSelect)
         height = height + 22
     end
     for i = #options + 1, #menu.buttons do menu.buttons[i]:Hide() end
+    for i = 1, #menu.checks do menu.checks[i]:Hide() end
     menu:SetHeight(height)
     menu:ClearAllPoints()
     menu:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -2)
@@ -230,52 +232,53 @@ local function ShowMultiMenu(anchor, options, selected, onChange)
     local height = 8
     local RefreshAll
     for i, opt in ipairs(options) do
-        local b = menu.buttons[i]
-        if not b then
-            b = CreateFrame("Button", nil, menu)
-            b:SetHeight(22)
-            b.text = b:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-            b.text:SetPoint("LEFT", 8, 0)
-            b.text:SetPoint("RIGHT", -8, 0)
-            b.text:SetJustifyH("LEFT")
-            b.bg = b:CreateTexture(nil, "BACKGROUND")
-            b.bg:SetAllPoints()
-            b.bg:SetColorTexture(1, 1, 1, 0)
-            b:SetScript("OnEnter", function(self) self.bg:SetColorTexture(1, 1, 1, 0.12) end)
-            b:SetScript("OnLeave", function(self) self.bg:SetColorTexture(1, 1, 1, 0) end)
-            menu.buttons[i] = b
+        local cb = menu.checks[i]
+        if not cb then
+            cb = CreateFrame("CheckButton", nil, menu, "UICheckButtonTemplate")
+            cb:SetSize(22, 22)
+            cb.text = cb:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+            cb.text:SetPoint("LEFT", 26, 0)
+            cb.text:SetPoint("RIGHT", -8, 0)
+            cb.text:SetJustifyH("LEFT")
+            cb.bg = cb:CreateTexture(nil, "BACKGROUND")
+            cb.bg:SetAllPoints()
+            cb.bg:SetColorTexture(1, 1, 1, 0)
+            cb:SetScript("OnEnter", function(self) self.bg:SetColorTexture(1, 1, 1, 0.10) end)
+            cb:SetScript("OnLeave", function(self) self.bg:SetColorTexture(1, 1, 1, 0) end)
+            menu.checks[i] = cb
         end
-        local btn = b
-        btn:ClearAllPoints()
-        btn:SetPoint("TOPLEFT", 6, -4 - (i - 1) * 22)
-        btn:SetPoint("TOPRIGHT", -6, -4 - (i - 1) * 22)
-        btn:SetScript("OnClick", function()
+        cb:ClearAllPoints()
+        cb:SetPoint("TOPLEFT", 6, -3 - (i - 1) * 22)
+        cb:SetPoint("TOPRIGHT", -6, -3 - (i - 1) * 22)
+        cb:SetScript("OnClick", function(self)
             if opt.value == "all" then
                 for j = #selected, 1, -1 do table.remove(selected, j) end
-            elseif ListHas(selected, opt.value) then
+            elseif self:GetChecked() then
+                if not ListHas(selected, opt.value) then selected[#selected + 1] = opt.value end
+            else
                 for j = #selected, 1, -1 do
                     if selected[j] == opt.value then table.remove(selected, j) end
                 end
-            else
-                selected[#selected + 1] = opt.value
             end
             RefreshAll()
             onChange()
         end)
-        btn:Show()
+        cb:Show()
         height = height + 22
     end
-    for i = #options + 1, #menu.buttons do menu.buttons[i]:Hide() end
+    for i = #options + 1, #menu.checks do menu.checks[i]:Hide() end
+    for i = 1, #menu.buttons do menu.buttons[i]:Hide() end
     RefreshAll = function()
         for i, opt in ipairs(options) do
-            local btn = menu.buttons[i]
+            local cb = menu.checks[i]
             local checked
             if opt.value == "all" then
                 checked = (#selected == 0)
             else
                 checked = ListHas(selected, opt.value)
             end
-            btn.text:SetText((checked and "|cff33ff99[x]|r " or "[ ] ") .. opt.label)
+            cb:SetChecked(checked)
+            cb.text:SetText(opt.label)
         end
     end
     RefreshAll()
@@ -313,7 +316,74 @@ local function CreateMultiDropdown(parent, x, y, width, prefix, options, getList
     return b
 end
 
--- ------------------------------------------------------------------ refresh
+-- ------------------------------------------------------------------ world map pin
+local mapPinState, mapPinHolder, mapPinDot, mapPinIcon
+
+local function GetMapCanvas()
+    if not WorldMapFrame then return nil end
+    return (WorldMapFrame.GetCanvas and WorldMapFrame:GetCanvas())
+        or (WorldMapFrame.ScrollContainer and WorldMapFrame.ScrollContainer.Child)
+end
+
+local function EnsureMapPin()
+    if mapPinHolder then return true end
+    local canvas = GetMapCanvas()
+    if not canvas then return false end
+
+    mapPinHolder = CreateFrame("Frame", nil, canvas)
+    mapPinHolder:SetSize(1, 1)
+    mapPinHolder:SetFrameStrata("DIALOG")
+
+    mapPinDot = mapPinHolder:CreateTexture(nil, "ARTWORK")
+    mapPinDot:SetSize(12, 12)
+    mapPinDot:SetPoint("CENTER", 0, 0)
+    mapPinDot:SetTexture("Interface\\Buttons\\WHITE8X8")
+    mapPinDot:SetVertexColor(1, 0.82, 0.15, 1)
+
+    mapPinIcon = mapPinHolder:CreateTexture(nil, "OVERLAY")
+    mapPinIcon:SetSize(24, 24)
+    mapPinIcon:SetPoint("BOTTOM", mapPinHolder, "CENTER", 0, 8)
+    mapPinIcon:SetTexture("Interface\\Icons\\INV_Misc_Map_01")
+
+    mapPinHolder:SetScript("OnUpdate", function(self)
+        local st = mapPinState
+        local canvasNow = GetMapCanvas()
+        if not (st and canvasNow and WorldMapFrame and WorldMapFrame:GetMapID() == st.map) then
+            self:SetAlpha(0)
+            return
+        end
+        self:SetAlpha(1)
+        local w, h = canvasNow:GetWidth(), canvasNow:GetHeight()
+        if w ~= self.w or h ~= self.h or st ~= self.st then
+            self.w, self.h, self.st = w, h, st
+            self:ClearAllPoints()
+            self:SetPoint("CENTER", canvasNow, "TOPLEFT", st.x / 100 * w, -st.y / 100 * h)
+        end
+        local scale = WorldMapFrame.GetCanvasScale and WorldMapFrame:GetCanvasScale() or 1
+        if scale and scale > 0 and scale ~= self.scale then
+            self.scale = scale
+            mapPinDot:SetScale(1 / scale)
+            mapPinIcon:SetScale(1 / scale)
+        end
+    end)
+    if WorldMapFrame then
+        WorldMapFrame:HookScript("OnHide", function() mapPinState = nil end)
+    end
+    return true
+end
+
+function ns.ShowMapPin(mapID, x, y)
+    if not (mapID and x and y) then return end
+    mapPinState = { map = mapID, x = x * 100, y = y * 100 }
+    if not EnsureMapPin() then
+        if C_Timer and C_Timer.After then C_Timer.After(0.2, EnsureMapPin) end
+    end
+end
+
+function ns.ClearMapPin()
+    mapPinState = nil
+end
+
 local function BuildDetailBody(item)
     local lines = {}
     lines[#lines + 1] = "|cffffd200属性|r"
@@ -330,6 +400,7 @@ local function BuildDetailBody(item)
         lines[#lines + 1] = string.format("|cffffd200武器|r  %s-%s  速度 %s  秒伤 %s",
             ns.Num(dmg[1] or 0), ns.Num(dmg[2] or 0), ns.Num(dmg[3] or 0), ns.Num(dmg[4] or 0))
     end
+
     lines[#lines + 1] = ""
     lines[#lines + 1] = "|cffffd200来源|r"
     local srcs = item[F.SOURCES]
@@ -337,39 +408,47 @@ local function BuildDetailBody(item)
         lines[#lines + 1] = "|cff888888数据库暂缺（可能尚未开放或尚未记录）|r"
     else
         for i = 1, #srcs do
-            lines[#lines + 1] = ns:FormatSource(srcs[i])
-            if srcs[i][1] == "quest" then
-                local info = ns:GetQuestInfo(tonumber(srcs[i][5]))
+            local s = srcs[i]
+            if i > 1 then
+                lines[#lines + 1] = "|cff444444" .. string.rep("-", 30) .. "|r"
+            end
+
+            if s[1] == "quest" then
+                local qid = tonumber(s[5])
+                local info = ns:GetQuestInfo(qid)
+                local qname = (info and info.name) or ns:GetQuestTitle(qid, s[2]) or ("任务 #" .. tostring(qid))
+                lines[#lines + 1] = "|cffffd200任务|r  " .. QuestLink(qid, qname)
+
                 if info and info.npcID then
                     local tail = ""
                     if info.zoneName then tail = tail .. " · " .. info.zoneName end
                     if info.x and info.y then tail = tail .. string.format(" · %.1f, %.1f", info.x * 100, info.y * 100) end
-                    lines[#lines + 1] = "|cff999999  接取人物：|r" .. NpcLink(info.npcID, info.npcName) .. tail
+                    lines[#lines + 1] = "  接取：" .. NpcLink(info.npcID, info.npcName) .. tail
                 elseif info and info.extra and info.extra.s then
-                    lines[#lines + 1] = "|cff999999  接取地点：|r" .. QLocLink(tonumber(srcs[i][5]), "s", "地图标点")
+                    lines[#lines + 1] = "  接取地点：" .. QLocLink(qid, "s", "地图标点")
                 end
                 if info and info.enderID then
                     local tail = ""
                     if info.enderZone then tail = tail .. " · " .. info.enderZone end
-                    lines[#lines + 1] = "|cff999999  交付人物：|r" .. NpcLink(info.enderID, info.enderName) .. tail
+                    lines[#lines + 1] = "  交付：" .. NpcLink(info.enderID, info.enderName) .. tail
                 elseif info and info.extra and info.extra.e then
-                    lines[#lines + 1] = "|cff999999  交付地点：|r" .. QLocLink(tonumber(srcs[i][5]), "e", "地图标点")
+                    lines[#lines + 1] = "  交付地点：" .. QLocLink(qid, "e", "地图标点")
                 end
                 if info and info.itemID then
-                    lines[#lines + 1] = "|cff999999  起始物品：" .. (info.itemName or ("#" .. info.itemID)) .. "|r"
+                    lines[#lines + 1] = "  起始物品：" .. (info.itemName or ("物品 #" .. tostring(info.itemID)))
                     if info.monsters and #info.monsters > 0 then
                         local names = {}
-                        for m = 1, math.min(#info.monsters, 12) do
-                            local mon = info.monsters[m]
-                            names[#names + 1] = NpcLink(mon.id, mon.name)
+                        for m = 1, math.min(#info.monsters, 8) do
+                            names[#names + 1] = NpcLink(info.monsters[m].id, info.monsters[m].name)
                         end
-                        lines[#lines + 1] = "|cff999999  掉落怪物：" .. table.concat(names, "、") .. "|r"
+                        lines[#lines + 1] = "  掉落：" .. table.concat(names, "、")
                     end
                 end
+
                 local chain = info and info.chain
                 if type(chain) == "table" and #chain > 1 then
                     lines[#lines + 1] = ""
-                    lines[#lines + 1] = "|cffffd200任务链（" .. #chain .. " 步）|r"
+                    lines[#lines + 1] = "|cffffd200任务链|r  |cff888888共 " .. #chain .. " 步|r"
                     local flags, anyCompleted = {}, false
                     for idx, cid in ipairs(chain) do
                         local c, l = ns:GetQuestStatus(cid)
@@ -383,74 +462,58 @@ local function BuildDetailBody(item)
                         local st = flags[idx]
                         local mark
                         if st.c then
-                            mark = "|cff33ff99[已完成]|r"
+                            mark = "|cff33ff99[完成]|r"
                         elseif st.l then
-                            mark = "|cffffd200[当前（已接）]|r"
+                            mark = "|cffffd200[当前]|r"
                         elseif anyCompleted and not nextMarked then
                             mark = "|cffffd200[下一步]|r"
                             nextMarked = true
                         else
-                            mark = "|cff777777[未完成]|r"
+                            mark = "|cff666666[ ]|r"
                         end
-                        local line = string.format("%s %d. %s", mark, idx, QuestLink(cid, cname))
-                        local extra = {}
-                        if ci and ci.npcID then extra[#extra + 1] = NpcLink(ci.npcID, ci.npcName or ("人物 #" .. ci.npcID)) end
-                        if ci and ci.zoneName then extra[#extra + 1] = ci.zoneName end
-                        if #extra > 0 then line = line .. " · " .. table.concat(extra, " · ") end
-                        if cid == tonumber(srcs[i][5]) then line = line .. "  |cff33ff99· 本物品任务|r" end
+                        local line = string.format("%s %2d. %s", mark, idx, QuestLink(cid, cname))
+                        if cid == qid then line = line .. "  |cff33ff99· 本物品|r" end
                         lines[#lines + 1] = line
                     end
-                    lines[#lines + 1] = "|cff777777点击任务名查看描述、目标、接取/交付人物 与任务品位置；点击 人物名可直接标图。|r"
+                    lines[#lines + 1] = "|cff777777点击任务名查看描述、目标、接取/交付人物与任务品位置。|r"
                 end
-            end
-            if srcs[i][1] == "craft" then
-                local rname, rid, rsrc = srcs[i][11], srcs[i][12], srcs[i][13]
+
+            elseif s[1] == "craft" then
+                local rname, rid, rsrc = s[11], s[12], s[13]
+                lines[#lines + 1] = "|cffffd200制造|r  " .. tostring(s[2] or "")
                 if rname then
-                    lines[#lines + 1] = "|cff999999  配方物品：" .. rname .. (rid and (" #" .. rid) or "") .. "|r"
+                    lines[#lines + 1] = "  配方：" .. rname .. (rid and ("  |cff888888(#" .. rid .. ")|r") or "")
                 else
-                    lines[#lines + 1] = "|cff999999  配方来源：训练师学习（未找到配方物品）|r"
+                    lines[#lines + 1] = "  配方：训练师学习（未记录配方物品）"
                 end
                 local vendors = rid and ns:GetRecipeVendors(rid) or {}
                 local vendorCount = 0
                 for _, v in ipairs(vendors) do
                     if v.kind == "Vendor" then
-                        if vendorCount == 0 then lines[#lines + 1] = "|cff999999  图纸商人：|r" end
+                        if vendorCount == 0 then lines[#lines + 1] = "  图纸商人：" end
                         vendorCount = vendorCount + 1
                         local tail = {}
                         if v.zone then tail[#tail + 1] = v.zone end
                         if v.x and v.y then tail[#tail + 1] = string.format("%.1f, %.1f", v.x * 100, v.y * 100) end
-                        local line = "    " .. NpcLink(v.npcID, v.name) .. " " .. PinLink("npc", v.npcID, "标出")
-                        if #tail > 0 then line = line .. " · " .. table.concat(tail, " · ") end
+                        local line = "    · " .. NpcLink(v.npcID, v.name) .. "  " .. PinLink("npc", v.npcID, "标出")
+                        if #tail > 0 then line = line .. "  |cffbbbbbb" .. table.concat(tail, " · ") .. "|r" end
                         lines[#lines + 1] = line
                     end
                 end
                 if vendorCount == 0 then
-                    local shown = 0
-                    for _, v in ipairs(vendors) do
-                        if shown >= 4 then break end
-                        local label = (v.kind == "Chest") and "图纸宝箱" or "图纸掉落"
-                        if shown == 0 then
-                            lines[#lines + 1] = "|cff999999  " .. (rsrc or "图纸来源") .. "：|r"
-                        end
-                        shown = shown + 1
-                        local tail = {}
-                        if v.zone then tail[#tail + 1] = v.zone end
-                        if v.x and v.y then tail[#tail + 1] = string.format("%.1f, %.1f", v.x * 100, v.y * 100) end
-                        local line = "    " .. label .. " " .. NpcLink(v.npcID, v.name)
-                        if #tail > 0 then line = line .. " · " .. table.concat(tail, " · ") end
-                        lines[#lines + 1] = line
-                    end
-                    if shown == 0 then
-                        if rsrc then
-                            lines[#lines + 1] = "|cff999999  图纸来源：" .. rsrc .. "|r"
-                        else
-                            lines[#lines + 1] = "|cff888888  图纸商人：暂无可靠数据（点击“地图标记”可查看已记录位置）|r"
-                        end
+                    if rsrc then
+                        lines[#lines + 1] = "  图纸来源：" .. rsrc
+                    else
+                        lines[#lines + 1] = "  |cff888888图纸来源：暂无可靠数据|r"
                     end
                 end
+
+            else
+                lines[#lines + 1] = ns:FormatSource(s)
             end
         end
     end
+
     lines[#lines + 1] = ""
     lines[#lines + 1] = string.format("|cff777777物品编号 %d · 数据来自永远纪元数据库|r", item[F.ID])
     return table.concat(lines, "\n")
@@ -508,19 +571,20 @@ local function UpdateRows()
             local rowOk, rowErr = pcall(function()
                 SetItemButtonIcon(row.icon, item)
                 row.name:SetText(ns:ColorName(item))
-                row.level:SetText(item[F.REQ] == 0 and "—" or tostring(item[F.REQ]))
-                row.stats:SetText(ns:RowStats(item, 3))
+                row.req:SetText(item[F.REQ] == 0 and "—" or tostring(item[F.REQ]))
+                local ilvl = item[F.ILVL]
+                row.ilvl:SetText((ilvl and ilvl > 0) and tostring(ilvl) or "—")
+                row.stats:SetText(ns:RowStats(item, 2))
                 local srcs = item[F.SOURCES] or {}
-                for t = 1, 3 do row.tags[t]:SetText("") end
                 if #srcs == 0 then
-                    row.tags[1]:SetText("?")
-                    row.tags[1]:SetTextColor(0.5, 0.5, 0.5)
+                    row.source:SetText("未知")
+                    row.source:SetTextColor(0.5, 0.5, 0.5)
                 else
-                    for t = 1, math.min(#srcs, 3) do
-                        local info = ns.SOURCE_KINDS[srcs[t][1]]
-                        row.tags[t]:SetText(info and info.short or "?")
-                        row.tags[t]:SetTextColor((info and info.r or 0.8), (info and info.g or 0.8), (info and info.b or 0.8))
-                    end
+                    local info = ns.SOURCE_KINDS[srcs[1][1]]
+                    local label = (info and info.label) or "未知"
+                    if #srcs > 1 then label = label .. "+" .. (#srcs - 1) end
+                    row.source:SetText(label)
+                    row.source:SetTextColor((info and info.r or 0.8), (info and info.g or 0.8), (info and info.b or 0.8))
                 end
                 if selectedItem == item then row.sel:Show() else row.sel:Hide() end
                 row:Show()
@@ -744,8 +808,8 @@ end
 local function CreateRow(parent, index)
     local row = CreateFrame("Button", nil, parent)
     row:SetHeight(ROW_H - 1)
-    row:SetPoint("TOPLEFT", parent, "TOPLEFT", 4, -4 - (index - 1) * ROW_H)
-    row:SetPoint("TOPRIGHT", parent, "TOPRIGHT", -4, -4 - (index - 1) * ROW_H)
+    row:SetPoint("TOPLEFT", parent, "TOPLEFT", 4, -26 - (index - 1) * ROW_H)
+    row:SetPoint("TOPRIGHT", parent, "TOPRIGHT", -4, -26 - (index - 1) * ROW_H)
 
     row.bg = row:CreateTexture(nil, "BACKGROUND")
     row.bg:SetAllPoints()
@@ -763,30 +827,31 @@ local function CreateRow(parent, index)
 
     row.name = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     row.name:SetPoint("LEFT", 28, 0)
-    row.name:SetWidth(205)
+    row.name:SetWidth(168)
     row.name:SetJustifyH("LEFT")
     row.name:SetWordWrap(false)
 
-    row.level = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    row.level:SetPoint("LEFT", 238, 0)
-    row.level:SetWidth(36)
-    row.level:SetJustifyH("RIGHT")
+    row.req = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    row.req:SetPoint("LEFT", 200, 0)
+    row.req:SetWidth(34)
+    row.req:SetJustifyH("RIGHT")
+
+    row.ilvl = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    row.ilvl:SetPoint("LEFT", 242, 0)
+    row.ilvl:SetWidth(34)
+    row.ilvl:SetJustifyH("RIGHT")
 
     row.stats = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    row.stats:SetPoint("LEFT", 284, 0)
-    row.stats:SetWidth(238)
+    row.stats:SetPoint("LEFT", 286, 0)
+    row.stats:SetWidth(150)
     row.stats:SetJustifyH("LEFT")
     row.stats:SetWordWrap(false)
 
-    row.tags = {}
-    for i = 1, 3 do
-        local fs = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        fs:SetPoint("RIGHT", -6 - (3 - i) * 20, 0)
-        fs:SetWidth(20)
-        fs:SetJustifyH("CENTER")
-        fs:SetWordWrap(false)
-        row.tags[i] = fs
-    end
+    row.source = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    row.source:SetPoint("RIGHT", -8, 0)
+    row.source:SetWidth(150)
+    row.source:SetJustifyH("RIGHT")
+    row.source:SetWordWrap(false)
 
     row:EnableMouseWheel(true)
     row:SetScript("OnMouseWheel", function(_, delta)
@@ -855,7 +920,7 @@ local function CreateWindow()
     -- list
     listFrame = CreateFrame("Frame", nil, frame, "BackdropTemplate")
     listFrame:SetPoint("TOPLEFT", 16, -104)
-    listFrame:SetSize(600, ROWS * ROW_H + 8)
+    listFrame:SetSize(600, ROWS * ROW_H + 30)
     listFrame:SetBackdrop({
         bgFile = "Interface\\Buttons\\WHITE8X8",
         edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
@@ -874,10 +939,26 @@ local function CreateWindow()
     rows = {}
     for i = 1, ROWS do rows[i] = CreateRow(listFrame, i) end
 
+    local headers = {
+        { text = "名称", x = 28, width = 168, align = "LEFT" },
+        { text = "需要等级", x = 200, width = 34, align = "RIGHT" },
+        { text = "物品等级", x = 242, width = 34, align = "RIGHT" },
+        { text = "属性", x = 286, width = 150, align = "LEFT" },
+        { text = "来源", x = 450, width = 142, align = "RIGHT" },
+    }
+    for _, h in ipairs(headers) do
+        local fs = listFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+        fs:SetPoint("TOPLEFT", listFrame, "TOPLEFT", h.x, -8)
+        fs:SetWidth(h.width)
+        fs:SetJustifyH(h.align)
+        fs:SetTextColor(0.65, 0.65, 0.65)
+        fs:SetText(h.text)
+    end
+
     -- detail
     detail = CreateFrame("Frame", nil, frame, "BackdropTemplate")
     detail:SetPoint("TOPLEFT", 628, -104)
-    detail:SetSize(316, ROWS * ROW_H + 8)
+    detail:SetSize(316, ROWS * ROW_H + 30)
     detail:SetBackdrop({
         bgFile = "Interface\\Buttons\\WHITE8X8",
         edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
@@ -932,17 +1013,9 @@ local function CreateWindow()
     detailBody:SetJustifyH("LEFT")
     detailBody:SetSpacing(3)
 
-    detailLink = CreateFrame("Button", nil, detail, "UIPanelButtonTemplate")
-    detailLink:SetSize(92, 22)
-    detailLink:SetPoint("BOTTOMLEFT", 10, 10)
-    detailLink:SetText("插入链接")
-    detailLink:SetScript("OnClick", function()
-        if selectedItem then ns:InsertLink(selectedItem) end
-    end)
-
     detailMap = CreateFrame("Button", nil, detail, "UIPanelButtonTemplate")
-    detailMap:SetSize(92, 22)
-    detailMap:SetPoint("BOTTOMLEFT", detailLink, "BOTTOMLEFT", 100, 0)
+    detailMap:SetSize(110, 22)
+    detailMap:SetPoint("BOTTOMLEFT", 10, 10)
     detailMap:SetText("地图标记")
     detailMap:SetScript("OnClick", function(self)
         if not selectedItem then return end
