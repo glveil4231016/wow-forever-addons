@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.9.8"
+ns.VERSION = "1.9.9"
 
 local F = ns.F
 
@@ -1529,6 +1529,27 @@ function ns:Init()
         self.dataError = "数据库没有加载：Data.lua 缺失或为空"
         self.data = { items = {} }
         return
+    end
+    local canPrune = GetItemInfoInstant and GetItemInfoInstant(6948) ~= nil
+    if canPrune then
+        local kept, removed = {}, 0
+        for i = 1, #self.data.items do
+            local item = self.data.items[i]
+            local exists = true
+            if C_Item and C_Item.DoesItemExist then
+                local ok, res = pcall(C_Item.DoesItemExist, item[F.ID])
+                if ok and res == false then exists = false end
+            end
+            if exists then
+                local id = GetItemInfoInstant(item[F.ID])
+                if not id then exists = false end
+            end
+            if exists then kept[#kept + 1] = item else removed = removed + 1 end
+        end
+        if removed > 0 then
+            self.data.items = kept
+            self.removedMissing = removed
+        end
     end
     for i = 1, #self.data.items do
         local item = self.data.items[i]

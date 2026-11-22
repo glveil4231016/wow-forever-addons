@@ -1625,6 +1625,9 @@ boot:SetScript("OnEvent", function(_, event, name)
         if name ~= addonName then return end
         ns:Init()
         if ns.dataError then ns:Print("|cffff5555" .. ns.dataError .. "|r") end
+        if ns.removedMissing and ns.removedMissing > 0 then
+            ns:Print(string.format("已过滤 %d 件当前客户端不存在的物品。", ns.removedMissing))
+        end
         CreateMinimapButton()
         RegisterCompartment()
     elseif event == "PLAYER_LOGIN" then
