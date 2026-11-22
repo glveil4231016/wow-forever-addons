@@ -34,6 +34,11 @@ local function MapPointLink(mapID, x, y, label)
         mapID, math.floor(x * 1000 + 0.5), math.floor(y * 1000 + 0.5), tostring(label or "标出"))
 end
 
+local function MapOnlyLink(mapID, label)
+    if not mapID then return "" end
+    return "|cff33ff99|Hspg:map:" .. tostring(mapID) .. "|h[" .. tostring(label or "打开地图") .. "]|h|r"
+end
+
 local function QLocLink(id, which, label)
     return "|cff9cd6ff|Hspg:qloc:" .. tostring(id) .. ":" .. tostring(which) .. "|h[" .. tostring(label) .. "]|h|r"
 end
@@ -517,7 +522,22 @@ local function BuildDetailBody(item)
             elseif s[1] == "drop" and s[14] then
                 local mapID, x, y, name, zone = ns:GetNpcPoint(tonumber(s[14]))
                 if not zone and s[3] and s[3] ~= "" then zone = s[3] end
-                lines[#lines + 1] = "|cffffd200掉落|r  " .. NpcLink(s[14], name) .. "  " .. PinLink("npc", s[14], "标出")
+                local fallbackMap = mapID or (s[3] and ns.zoneToMap and ns.zoneToMap[s[3]])
+                local nameLink
+                if mapID and x and y then
+                    nameLink = NpcLink(s[14], name)
+                elseif fallbackMap then
+                    nameLink = MapOnlyLink(fallbackMap, name or "地图")
+                else
+                    nameLink = NpcLink(s[14], name)
+                end
+                local pinLink = ""
+                if mapID and x and y then
+                    pinLink = PinLink("npc", s[14], "标出")
+                elseif fallbackMap then
+                    pinLink = MapOnlyLink(fallbackMap, "打开地图")
+                end
+                lines[#lines + 1] = "|cffffd200掉落|r  " .. nameLink .. "  " .. pinLink
                 local tail = {}
                 if zone then tail[#tail + 1] = zone end
                 if x and y then tail[#tail + 1] = string.format("%.1f, %.1f", x * 100, y * 100) end
@@ -1286,6 +1306,9 @@ local function CreateWindow()
             if mapID then
                 ns:PinPoint({ mapID = tonumber(mapID), x = tonumber(x) / 1000, y = tonumber(y) / 1000, title = "地图位置" })
             end
+        elseif kind == "map" then
+            local mapID = tonumber(id)
+            if mapID then ns:PinPoint({ mapID = mapID, title = "地图位置" }) end
         end
     end
 

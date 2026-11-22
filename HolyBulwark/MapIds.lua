@@ -3393,3 +3393,8 @@ ns.zoneZh = {
     ["Zun'watha"] = "祖瓦沙",
     ["Zuuldaia Ruins"] = "祖丹亚废墟",
 }
+-- Prefer the instance/city UiMapID when an English zone has a Chinese name.
+for en, zh in pairs(ns.zoneZh) do
+    local m = ns.zoneToMapEnglish and ns.zoneToMapEnglish[en]
+    if m and zh and ns.zoneToMap[zh] ~= m then ns.zoneToMap[zh] = m end
+end
