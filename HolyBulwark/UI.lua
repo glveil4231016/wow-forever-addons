@@ -370,18 +370,25 @@ local function BuildDetailBody(item)
                 if type(chain) == "table" and #chain > 1 then
                     lines[#lines + 1] = ""
                     lines[#lines + 1] = "|cffffd200任务链（" .. #chain .. " 步）|r"
-                    local currentMarked = false
+                    local flags, anyCompleted = {}, false
+                    for idx, cid in ipairs(chain) do
+                        local c, l = ns:GetQuestStatus(cid)
+                        flags[idx] = { c = c, l = l }
+                        if c then anyCompleted = true end
+                    end
+                    local nextMarked = false
                     for idx, cid in ipairs(chain) do
                         local ci = ns:GetQuestInfo(cid)
                         local cname = (ci and ci.name) or ("任务 #" .. cid)
-                        local completed, inLog = ns:GetQuestStatus(cid)
+                        local st = flags[idx]
                         local mark
-                        if completed then
+                        if st.c then
                             mark = "|cff33ff99[已完成]|r"
-                        elseif not currentMarked then
-                            mark = "|cffffd200[当前]|r"
-                            if inLog then mark = mark .. "|cffffd200(已接)|r" end
-                            currentMarked = true
+                        elseif st.l then
+                            mark = "|cffffd200[当前（已接）]|r"
+                        elseif anyCompleted and not nextMarked then
+                            mark = "|cffffd200[下一步]|r"
+                            nextMarked = true
                         else
                             mark = "|cff777777[未完成]|r"
                         end
@@ -1060,7 +1067,7 @@ local function CreateWindow()
                 L[#L + 1] = ""
                 L[#L + 1] = "|cffffd200任务品|r"
                 for _, o in pairs(items) do
-                    local iid = tonumber(o[1])
+                    local iid = type(o) == "table" and tonumber(o[1]) or nil
                     if iid then
                         L[#L + 1] = "· " .. ItemName(iid)
                         local idb = _G.ItemDB
@@ -1094,7 +1101,7 @@ local function CreateWindow()
                 L[#L + 1] = "|cffffd200击杀目标|r"
                 local links = {}
                 for _, o in pairs(creatures) do
-                    local id = tonumber(o[1])
+                    local id = type(o) == "table" and tonumber(o[1]) or nil
                     if id then links[#links + 1] = NpcLink(id, ns:GetNpcName(id)) end
                 end
                 if #links > 0 then L[#L + 1] = table.concat(links, "、") end
@@ -1106,7 +1113,7 @@ local function CreateWindow()
                 L[#L + 1] = "|cffffd200任务对象|r"
                 local links = {}
                 for _, o in pairs(objects) do
-                    local id = tonumber(o[1])
+                    local id = type(o) == "table" and tonumber(o[1]) or nil
                     if id then links[#links + 1] = ObjectLink(id, ns:GetObjectName(id)) end
                 end
                 if #links > 0 then L[#L + 1] = table.concat(links, "、") end

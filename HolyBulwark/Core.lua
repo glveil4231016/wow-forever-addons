@@ -461,6 +461,13 @@ function ns:GetQuestStatus(questID)
         local ok, res = pcall(_G.IsQuestFlaggedCompleted, questID)
         if ok then completed = res and true or false end
     end
+    if not inLog and C_QuestLog and C_QuestLog.GetNumQuestLogEntries and C_QuestLog.GetInfo then
+        local n = C_QuestLog.GetNumQuestLogEntries()
+        for i = 1, n do
+            local info = C_QuestLog.GetInfo(i)
+            if info and info.questID == questID then inLog = true; break end
+        end
+    end
     return completed, inLog
 end
 
@@ -999,21 +1006,21 @@ function ns:GetMapPoints(item)
             if info and info.objectivesRaw then
                 local raw = info.objectivesRaw
                 for _, o in pairs(raw[1] or {}) do
-                    local id = tonumber(o[1])
+                    local id = type(o) == "table" and tonumber(o[1]) or nil
                     if id then
                         local mID, mx, my, mname, mzone = self:GetNpcPoint(id)
                         if mID then add(mID, mx, my, (mname or ("NPC #" .. id)) .. "（击杀）", mzone) end
                     end
                 end
                 for _, o in pairs(raw[2] or {}) do
-                    local id = tonumber(o[1])
+                    local id = type(o) == "table" and tonumber(o[1]) or nil
                     if id then
                         local mID, mx, my, mname, mzone = self:GetObjectPoint(id)
                         if mID then add(mID, mx, my, (mname or ("对象 #" .. id)) .. "（任务对象）", mzone) end
                     end
                 end
                 for _, o in pairs(raw[3] or {}) do
-                    local iid = tonumber(o[1])
+                    local iid = type(o) == "table" and tonumber(o[1]) or nil
                     local idb = _G.ItemDB
                     if iid and idb and idb.Get then
                         local okN, drops = pcall(idb.Get, idb, iid, "npcDrops")
