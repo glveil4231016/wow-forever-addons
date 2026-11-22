@@ -1349,19 +1349,10 @@ local function CreateWindow()
     end
 
     ns.lowerForMap = function()
-        local wm = _G.WorldMapFrame
-        if wm then
-            if not wm.hbOriginalStrata then wm.hbOriginalStrata = wm:GetFrameStrata() end
-            pcall(wm.SetFrameStrata, wm, "FULLSCREEN_DIALOG")
-        end
         if frame then frame:SetFrameStrata("MEDIUM") end
         if questFrame then questFrame:SetFrameStrata("MEDIUM") end
     end
     ns.restoreForMap = function()
-        local wm = _G.WorldMapFrame
-        if wm and wm.hbOriginalStrata then
-            pcall(wm.SetFrameStrata, wm, wm.hbOriginalStrata)
-        end
         if frame then frame:SetFrameStrata("MEDIUM") end
         if questFrame then questFrame:SetFrameStrata("MEDIUM") end
     end

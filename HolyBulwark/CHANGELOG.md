@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.10.4
+
+- 打开地图逻辑恢复为 DungeonQuestAtlas 同款：`C_Map.OpenWorldMap` + `WorldMapFrame:SetMapID`。
+- 移除了额外的 `C_Map.OpenMap` 二次调用和 `GetMapID` 比较，避免真实地图被覆盖或打不开。
+- 不再修改世界地图窗口的 FrameStrata，只让插件窗口保持 MEDIUM。
+- 纳克萨玛斯入口兜底保留，但不会影响普通地图。
+
 ## 1.10.3
 
 - 补全配方掉落 NPC 的中文名：斯尼德、曲奇、重拳先生、绿皮船长、基尔尼格、矿工约翰森、克雷什、考布莱恩、安娜科德拉、暗影军马、变异精灵龙等。

@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.10.3"
+ns.VERSION = "1.10.4"
 
 local F = ns.F
 
@@ -1312,56 +1312,26 @@ end
 
 function ns:OpenMapAt(mapID, zone)
     mapID = tonumber(mapID)
-    if not mapID then
-        if zone then mapID = self:FindMapIdByName(zone) end
-        if not mapID then return false end
-    end
+    if not mapID and zone then mapID = self:FindMapIdByName(zone) end
+    if not mapID then return false end
+
     local wm = _G.WorldMapFrame
-    local opened = false
-
-    local function tryOpen(id)
-        if C_Map and C_Map.OpenWorldMap then
-            pcall(C_Map.OpenWorldMap, id)
-        elseif _G.OpenWorldMap then
-            pcall(_G.OpenWorldMap, id)
-        end
-        if wm then
-            if not wm:IsShown() and ShowUIPanel then pcall(ShowUIPanel, wm) end
-            if wm.SetMapID then pcall(wm.SetMapID, wm, id) end
-        end
+    if C_Map and C_Map.OpenWorldMap then
+        pcall(C_Map.OpenWorldMap, mapID)
+    elseif _G.OpenWorldMap then
+        pcall(_G.OpenWorldMap, mapID)
+    elseif C_Map and C_Map.OpenMap then
+        pcall(C_Map.OpenMap, mapID)
+    elseif ToggleWorldMap then
+        pcall(ToggleWorldMap)
     end
 
-    tryOpen(mapID)
-    if not (wm and wm.IsShown and wm:IsShown()) then
-        if C_Map and C_Map.OpenMap then
-            pcall(C_Map.OpenMap, mapID)
-        elseif ToggleWorldMap then
-            pcall(ToggleWorldMap)
-        end
+    if wm then
+        if not wm:IsShown() and ShowUIPanel then pcall(ShowUIPanel, wm) end
+        if wm.SetMapID then pcall(wm.SetMapID, wm, mapID) end
+        return wm:IsShown()
     end
-
-    if zone and wm and wm.GetMapID and wm:GetMapID() ~= mapID then
-        local alt = self:FindMapIdByName(zone)
-        if alt and alt ~= mapID then
-            mapID = alt
-            tryOpen(mapID)
-        end
-        if wm:GetMapID() ~= mapID then
-            local cands = self.MAP_CANDIDATES and self.MAP_CANDIDATES[zone]
-            if cands then
-                for i = 1, #cands do
-                    local id = cands[i]
-                    if id ~= mapID then
-                        tryOpen(id)
-                        if wm:GetMapID() == id then mapID = id; break end
-                    end
-                end
-            end
-        end
-    end
-
-    opened = (wm and wm:IsShown()) or opened
-    return opened, mapID
+    return false
 end
 
 function ns:PinPoint(point)
