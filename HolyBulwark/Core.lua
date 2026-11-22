@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.10.2"
+ns.VERSION = "1.10.3"
 
 local F = ns.F
 
@@ -233,6 +233,7 @@ end
 
 function ns:GetNpcName(npcID)
     local zh = self.npcZh and self.npcZh[npcID]
+    if not zh and self.recipeDropNames then zh = self.recipeDropNames[npcID] end
     if zh and zh ~= "" then return zh end
     local name = NpcField(npcID, "name")
     if name and name ~= "" then
@@ -286,7 +287,7 @@ function ns:GetDQABossPoint(npcID)
             if tonumber(boss.npcID) == npcID then
                 for _, floor in ipairs(dqa.Maps[key] or {}) do
                     for _, pin in ipairs(floor.pins or {}) do
-                        if pin[1] == idx and floor.id then
+                        if pin[1] == idx and floor.id and tonumber(floor.id) then
                             return floor.id, pin[2], pin[3], boss.name
                         end
                     end
@@ -412,6 +413,11 @@ function ns:GetNpcPoint(npcID)
         mapID = qp[1]
         if not zoneName then zoneName = qp[5] end
         if qp[4] then name = qp[4] end
+    end
+    if not mapID and self.npcMapFallback and self.npcMapFallback[npcID] then
+        local fb = self.npcMapFallback[npcID]
+        mapID = fb[1]
+        if not zoneName then zoneName = fb[2] end
     end
     return mapID, x, y, name, zoneName, sub
 end
