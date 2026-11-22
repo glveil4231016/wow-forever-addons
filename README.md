@@ -9,9 +9,10 @@
 | `BlackEvidence/` | **BlackEvidence** | 黑名单、进队预警、拉黑瞬间证据快照（时间线 + 截图） | 可用 |
 | `ProfitBoard/` | **ProfitBoard** | 全量扫拍卖行、按「规则集 × 阵营」建价格库、全专业配方利润统计 | 待客户端校准 |
 | `ProfitProbe/` | **ProfitProbe** | 开发用探针：dump AH / 专业 / 物品 API 能力，不随插件发布 | 开发工具 |
+| `HolyBulwark/` | **圣光壁垒 / HolyBulwark** | 10-60 级防骑法伤装备库：属性、来源、任务链、NPC 中文名、地图标记 | 可用 |
 
 命名约定：插件目录名 = TOC 文件名 = 斜杠命令前缀来源。
-`ProfitProbe` 是诊断工具，正式安装只需 `BlackEvidence` 与 `ProfitBoard`。
+`ProfitProbe` 是诊断工具，正式安装只需 `BlackEvidence`、`ProfitBoard` 与 `HolyBulwark`。
 
 ## 安装
 
@@ -48,6 +49,8 @@ python tools/gen_static_recipes.py recipes.json --out ProfitBoard/StaticRecipes.
 - `ProfitBoard/README.md` —— 安装、命令、限制
 - `BlackEvidence/README.md` —— 插件说明
 - `docs/BlackEvidence-实施方案.md` —— 黑名单插件规格
+- `HolyBulwark/README.md` —— 圣光壁垒安装/用法/数据来源
+- `docs/HolyBulwark-装备清单.md` —— 312 件防骑向法伤装备清单
 - `docs/superpowers/specs/2026-11-10-profitboard-design.md` —— ProfitBoard 设计
 - `docs/superpowers/plans/2026-11-10-profitboard.md` —— ProfitBoard 实施计划
 

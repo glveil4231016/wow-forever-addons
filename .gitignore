@@ -19,3 +19,6 @@ Desktop.ini
 
 # 本地测试产物
 /tmp/
+
+# HolyBulwark 下载缓存
+/data/
