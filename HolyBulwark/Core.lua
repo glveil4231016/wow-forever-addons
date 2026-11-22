@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.9.6"
+ns.VERSION = "1.9.7"
 
 local F = ns.F
 
@@ -1149,6 +1149,22 @@ ns.MAP_CANDIDATES = {
     ["Naxxramas"] = { 166, 533, 1557, 162, 163, 164, 165, 166, 167 },
 }
 
+-- Used when the client has no usable world map for the instance.
+ns.MAP_FALLBACK = {
+    ["纳克萨玛斯"] = { mapID = 1423, x = 0.343, y = 0.195, title = "纳克萨玛斯入口" },
+    ["Naxxramas"] = { mapID = 1423, x = 0.343, y = 0.195, title = "Naxxramas entrance" },
+}
+
+function ns:IsZoneMap(zone, mapID)
+    local cands = self.MAP_CANDIDATES and self.MAP_CANDIDATES[zone]
+    if cands then
+        for i = 1, #cands do
+            if cands[i] == mapID then return true end
+        end
+    end
+    return false
+end
+
 function ns:FindMapIdByName(name)
     if not name or name == "" then return nil end
     if not self.mapNameIndex then
@@ -1250,6 +1266,17 @@ function ns:PinPoint(point)
 
     local opened, actualMap = self:OpenMapAt(mapID, point.zone)
     if actualMap then mapID = actualMap end
+    local wm = _G.WorldMapFrame
+    local cur = wm and wm.GetMapID and wm:GetMapID()
+    local fallback = self.MAP_FALLBACK and self.MAP_FALLBACK[point.zone]
+    if fallback and not self:IsZoneMap(point.zone, cur) then
+        mapID = fallback.mapID
+        self:OpenMapAt(mapID)
+        if self.lowerForMap then self:lowerForMap() end
+        if self.ShowMapPin then self:ShowMapPin(mapID, fallback.x, fallback.y) end
+        self:Print("|cffffd200客户端没有纳克萨玛斯世界地图，已打开东瘟疫之地的副本入口。|r")
+        return
+    end
     if opened and self.lowerForMap then
         self.lowerForMap()
         if C_Timer and C_Timer.After then
@@ -1461,6 +1488,36 @@ function ns:Init()
         local item = self.data.items[i]
         self.byId[item[F.ID]] = item
     end
+end
+
+function ns:MapDiag()
+    local out = {}
+    local function add(s) out[#out + 1] = s end
+    add("圣光壁垒地图诊断 v" .. tostring(self.VERSION))
+    local ids = { 166, 533, 1557, 162, 163, 164, 165, 166, 167, 3456, 531, 1423 }
+    for i = 1, #ids do
+        local id = ids[i]
+        local mi = C_Map and C_Map.GetMapInfo and C_Map.GetMapInfo(id)
+        add(string.format("ID %s = %s", tostring(id), mi and tostring(mi.name) or "nil"))
+    end
+    if C_Map and C_Map.GetMapInfo then
+        for id = 1, 3000 do
+            local mi = C_Map.GetMapInfo(id)
+            if mi and mi.name and (mi.name:find("纳克", 1, true) or mi.name:find("Naxx", 1, true)) then
+                add(string.format("FOUND %d = %s (type %s, parent %s)", id, mi.name, tostring(mi.mapType), tostring(mi.parentMapID)))
+            end
+        end
+    end
+    local wm = _G.WorldMapFrame
+    add("WorldMapFrame shown = " .. tostring(wm and wm:IsShown()))
+    add("WorldMapFrame mapID = " .. tostring(wm and wm.GetMapID and wm:GetMapID()))
+    if C_Map and C_Map.GetBestMapForUnit then
+        add("player mapID = " .. tostring(C_Map.GetBestMapForUnit("player")))
+    end
+    local text = table.concat(out, "\n")
+    self.mapDiag = text
+    for i = 1, #out do print("|cff33ff99[HB]|r " .. out[i]) end
+    return text
 end
 
 function ns:Diag()

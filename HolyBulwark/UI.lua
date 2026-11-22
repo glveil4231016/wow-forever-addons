@@ -1582,6 +1582,10 @@ SlashCmdList["SPELLPOWERGEAR"] = function(msg)
         ns:Diag()
         return
     end
+    if msg == "mapdiag" then
+        ns:MapDiag()
+        return
+    end
     if msg ~= "" then
         local id = tonumber(msg)
         if id and ns.byId[id] then
