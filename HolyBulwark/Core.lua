@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.10.4"
+ns.VERSION = "1.10.5"
 
 local F = ns.F
 
@@ -1344,8 +1344,20 @@ function ns:PinPoint(point)
         self:Print("没有可标记的地图。")
         return
     end
+    local zoneName = point.zone
+    local entrance = nil
+    if C_Map and C_Map.GetMapInfo and not C_Map.GetMapInfo(mapID) then
+        entrance = self.dungeonEntrance and self.dungeonEntrance[mapID]
+        if entrance then
+            mapID = entrance[1]
+            x = entrance[2] and entrance[2] / 100 or nil
+            y = entrance[3] and entrance[3] / 100 or nil
+            zoneName = self:ZhZone(entrance[4]) or zoneName
+        end
+    end
     local title = tostring(point.title or "位置")
-    if point.zone and point.zone ~= "" then title = title .. " · " .. point.zone end
+    if zoneName and zoneName ~= "" then title = title .. " · " .. zoneName end
+    if entrance then title = title .. "（副本入口）" end
 
     if x and y then
         if TomTom and TomTom.AddWaypoint then

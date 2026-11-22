@@ -84,6 +84,8 @@ D:\game\World of Warcraft\_forever_\Interface\AddOns\HolyBulwark
 | `QuestInfo.lua` | 任务等级、接取 NPC、坐标、任务链 |
 | `QuestFull.lua` | 从 Completao 提取的 556 个任务：接取/交付地点、任务品步骤、掉落怪物、前置关系 |
 | `RecipeVendor.lua` | 图纸/配方贩卖 NPC、区域、坐标 |
+| `RecipeDrop.lua` | 新配方图纸的副本掉落 NPC |
+| `DungeonEntrance.lua` | 副本地图 ID → 入口区域地图与坐标 |
 
 QuestieDB 是可选增强：装了可以补全更多 NPC/任务中文名与位置；没装也能用本地库。
 
