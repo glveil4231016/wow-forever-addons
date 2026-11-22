@@ -5,7 +5,7 @@ ns.F = {
     ID = 1, NAME = 2, QUALITY = 3, ILVL = 4, REQ = 5, SLOT = 6, TYPE = 7,
     ARMOR = 8, STATS = 9, SOURCES = 10, KNOWN = 11, BIND = 12, DMG = 13, ENAME = 14, ICON = 15,
 }
-ns.VERSION = "1.10.6"
+ns.VERSION = "1.10.7"
 
 local F = ns.F
 
@@ -1316,22 +1316,23 @@ function ns:OpenMapAt(mapID, zone)
     if not mapID then return false end
 
     local wm = _G.WorldMapFrame
+    local opened = false
     if C_Map and C_Map.OpenWorldMap then
-        pcall(C_Map.OpenWorldMap, mapID)
+        opened = pcall(C_Map.OpenWorldMap, mapID) or opened
     elseif _G.OpenWorldMap then
-        pcall(_G.OpenWorldMap, mapID)
+        opened = pcall(_G.OpenWorldMap, mapID) or opened
     elseif C_Map and C_Map.OpenMap then
-        pcall(C_Map.OpenMap, mapID)
+        opened = pcall(C_Map.OpenMap, mapID) or opened
     elseif ToggleWorldMap then
-        pcall(ToggleWorldMap)
+        opened = pcall(ToggleWorldMap) or opened
     end
 
     if wm then
         if not wm:IsShown() and ShowUIPanel then pcall(ShowUIPanel, wm) end
         if wm.SetMapID then pcall(wm.SetMapID, wm, mapID) end
-        return wm:IsShown()
+        opened = opened or wm:IsShown()
     end
-    return false
+    return opened
 end
 
 function ns:PinPoint(point)
@@ -1397,15 +1398,22 @@ function ns:PinPoint(point)
         return
     end
     if entrance and entrance[5] then
-        local dqa = _G.DungeonQuestAtlas
-        local d = dqa and dqa.DungeonByKey and dqa.DungeonByKey[entrance[5]]
-        if not d and dqa and dqa.Dungeons then
-            for _, dd in ipairs(dqa.Dungeons) do
-                if dd.key == entrance[5] then d = dd; break end
+        local function showDungeonOverlay()
+            local dqa = _G.DungeonQuestAtlas
+            local d = dqa and dqa.DungeonByKey and dqa.DungeonByKey[entrance[5]]
+            if not d and dqa and dqa.Dungeons then
+                for _, dd in ipairs(dqa.Dungeons) do
+                    if dd.key == entrance[5] then d = dd; break end
+                end
+            end
+            if d and dqa.ShowDungeonOnWorldMap then
+                pcall(dqa.ShowDungeonOnWorldMap, d)
             end
         end
-        if d and dqa.ShowDungeonOnWorldMap then
-            pcall(dqa.ShowDungeonOnWorldMap, d)
+        showDungeonOverlay()
+        if C_Timer and C_Timer.After then
+            C_Timer.After(0.6, showDungeonOverlay)
+            C_Timer.After(1.2, showDungeonOverlay)
         end
     end
     if x and y then
