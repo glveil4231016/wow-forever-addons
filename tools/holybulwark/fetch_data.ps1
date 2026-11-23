@@ -27,6 +27,7 @@ foreach ($k in $meta.chunks) {
 
 # WoW Forever client tables (Chinese names / zones)
 Get-File "https://wago.tools/db2/ItemSparse/csv?build=$Build&locale=zhCN" (Join-Path $data 'ItemSparse_zhCN.csv')
+Get-File "https://wago.tools/db2/ItemSparse/csv?build=$Build&locale=enUS" (Join-Path $data 'ItemSparse_enUS.csv')
 Get-File "https://wago.tools/db2/Item/csv?build=$Build&locale=zhCN" (Join-Path $data 'Item_zhCN.csv')
 Get-File "https://wago.tools/db2/AreaTable/csv?build=$Build&locale=zhCN" (Join-Path $data 'AreaTable_zhCN.csv')
 Get-File "https://wago.tools/db2/AreaTable/csv?build=$Build&locale=enUS" (Join-Path $data 'AreaTable_enUS.csv')

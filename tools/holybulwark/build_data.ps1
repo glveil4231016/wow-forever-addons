@@ -157,10 +157,79 @@ $armorSc = @(1, 2, 3, 4, 6)      # cloth / leather / mail / plate / shield
 $jewelSlots = @(2, 11, 12, 16)   # neck / finger / trinket / back
 $weapSc = @(0, 1, 4, 5, 6, 7, 8) # 1H axe, 2H axe, 1H mace, 2H mace, polearm, 1H sword, 2H sword
 
+# ---------------------------------------------------------------- Forever overrides
+# tools/holybulwark/data/forever_items.json 由 fetch_forever_items.py 生成：
+# wow-forever.gg 物品页的 tooltip 是 Forever 版本真值，用来覆写 TFE 的 Era 数值。
+$foreverPath = Join-Path $PSScriptRoot 'data\forever_items.json'
+$forever = @{}
+if (Test-Path $foreverPath) {
+    $fj = Read-JsonUtf8 $foreverPath
+    foreach ($p in $fj.items.PSObject.Properties) { $forever[[int]$p.Name] = $p.Value }
+}
+"forever overrides available: $($forever.Count)"
+
+# data/observed_loot.json 由 tools/recorder 记录、convert_observed_loot.py 转换：
+# 玩家实测的「物品 -> NPC/区域」，用来补 TFE 没有的来源。
+$observed = @{}
+$observedPath = Join-Path $dataDir 'observed_loot.json'
+if (Test-Path $observedPath) {
+    $oj = Read-JsonUtf8 $observedPath
+    foreach ($p in $oj.items.PSObject.Properties) { $observed[[int]$p.Name] = @($p.Value) }
+}
+"observed loot items: $($observed.Count)"
+
 $records = New-Object System.Collections.Generic.List[object]
 $zoneMiss = @{}
+$foreverApplied = 0
+$observedAdded = 0
+
+function Set-ItemField($obj, [string]$field, $value) {
+    $prop = $obj.PSObject.Properties[$field]
+    if ($null -eq $prop) {
+        $obj | Add-Member -NotePropertyName $field -NotePropertyValue $value
+    } else {
+        $prop.Value = $value
+    }
+}
+
+function Stat-Snapshot($stats) {
+    $out = @{}
+    if ($stats) {
+        foreach ($p in $stats.PSObject.Properties) { $out[$p.Name] = [double]$p.Value }
+    }
+    return $out
+}
+
+function Stat-Differs($before, $after) {
+    $keys = @{}
+    foreach ($k in $before.Keys) { $keys[$k] = $true }
+    foreach ($k in $after.Keys) { $keys[$k] = $true }
+    foreach ($k in $keys.Keys) {
+        $a = 0.0; $b = 0.0
+        if ($before.ContainsKey($k)) { $a = $before[$k] }
+        if ($after.ContainsKey($k)) { $b = $after[$k] }
+        if ([math]::Abs($a - $b) -gt 0.001) { return $true }
+    }
+    return $false
+}
+
+$statsChanged = 0
 
 foreach ($it in $all.Values) {
+    $id = [int]$it.id
+    $fv = $forever[$id]
+    if ($fv) {
+        $beforeStats = Stat-Snapshot $it.stats
+        if ($null -ne $fv.ilvl)  { Set-ItemField $it 'il' ([int]$fv.ilvl) }
+        if ($null -ne $fv.req)   { Set-ItemField $it 'rl' ([int]$fv.req) }
+        if ($null -ne $fv.q)     { Set-ItemField $it 'q' ([int]$fv.q) }
+        if ($null -ne $fv.armor) { Set-ItemField $it 'armor' ([double]$fv.armor) }
+        if ($fv.stats -and @($fv.stats.PSObject.Properties).Count -gt 0) {
+            Set-ItemField $it 'stats' $fv.stats
+        }
+        if (Stat-Differs $beforeStats (Stat-Snapshot $it.stats)) { $statsChanged++ }
+        $foreverApplied++
+    }
     $st = $it.stats
     if (-not $st) { continue }
 
@@ -340,6 +409,27 @@ foreach ($it in $all.Values) {
         $count++
     }
 
+    # ---- 玩家实测掉落（来自 tools/recorder + convert_observed_loot.py）----
+    # 这批来源比 TFE 可信：它记录的是当前版本的副本/区域实际情况。
+    if ($observed.ContainsKey($id)) {
+        foreach ($o in $observed[$id]) {
+            if ($count -ge 10) { break }
+            $on = [string]$o.npc
+            $oz = [string]$o.zone
+            $oid = [int]$o.npcID
+            $sig = 'drop|{0}|{1}|' -f $on, $oz
+            if ($seenSrc.ContainsKey($sig)) { continue }
+            $seenSrc[$sig] = $true
+            $npcLua = if ($oid -gt 0) { [string]$oid } else { 'nil' }
+            $noteLua = '"实测掉落 {0} 件（{1} → {2}）"' -f [int]$o.count, [string]$o.first, [string]$o.last
+            $srcParts.Insert(0, ('{{"drop","{0}","{1}",nil,"",nil,nil,nil,nil,{2},nil,nil,nil,{3},nil}}' -f
+                (Esc $on), (Esc $oz), $noteLua, $npcLua))
+            $srcHuman.Insert(0, ('掉落 {0} · {1} · 实测 {2} 件' -f $on, $oz, [int]$o.count))
+            $count++
+            $observedAdded++
+        }
+    }
+
     $armorLua = 'nil'
     if ($it.armor) { $armorLua = Num ([double]$it.armor) }
 
@@ -416,6 +506,8 @@ $sorted | Select-Object id, name, nameEn, q, il, rl, slot, type, armor, known,
     srcCount, srcText | Export-Csv $outCsv -NoTypeInformation -Encoding UTF8
 
 "items: $($records.Count)"
+"forever overrides applied: $foreverApplied / $($forever.Count) (stats changed: $statsChanged)"
+"observed sources added: $observedAdded"
 "known source: $(@($sorted | Where-Object { $_.known -eq 1 }).Count)"
 "unknown source: $(@($sorted | Where-Object { $_.known -eq 0 }).Count)"
 "zones missing: $(($zoneMiss.Keys | Sort-Object) -join ', ')"

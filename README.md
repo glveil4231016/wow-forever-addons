@@ -35,6 +35,20 @@ python tests/syntax_check.py
 
 # BlackEvidence 冒烟测试
 python tests/run_be.py
+
+# HolyBulwark：解析器回归（wow-forever.gg tooltip 夹具）
+python tests/check_forever_parser.py
+
+# HolyBulwark：掉落记录器语法 + 转换器
+python tests/check_lootledger.py
+```
+
+HolyBulwark 数据重建（详见 `docs/HolyBulwark-数据源.md`）：
+
+```bash
+python tools/holybulwark/fetch_forever_items.py --from-tfe   # 抓 Forever 属性
+python tools/holybulwark/convert_observed_loot.py            # 游戏内实测掉落 → JSON
+powershell -File tools/holybulwark/build_data.ps1            # 重新生成 Data.lua
 ```
 
 生成的静态配方表：

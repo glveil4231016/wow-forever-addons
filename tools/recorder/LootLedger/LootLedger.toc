@@ -1,0 +1,9 @@
+## Interface: 16001
+## Title: LootLedger
+## Notes: 掉落记录器（开发用，只记录不交互）
+## Author: glveil4231016
+## Version: 0.1.0
+## SavedVariables: LootLedgerDB
+## AllowLoadGameType: camelot
+
+LootLedger.lua

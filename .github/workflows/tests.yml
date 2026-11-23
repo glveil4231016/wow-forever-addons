@@ -23,3 +23,9 @@ jobs:
 
       - name: Lua syntax check
         run: python tests/syntax_check.py
+
+      - name: LootLedger compile + converter
+        run: python tests/check_lootledger.py
+
+      - name: wow-forever.gg tooltip parser
+        run: python tests/check_forever_parser.py
