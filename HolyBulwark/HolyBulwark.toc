@@ -2,7 +2,7 @@
 ## Title: 圣光壁垒 · 法伤防骑装备库
 ## Notes: WoW Forever 10-60 级防护骑士法伤装备：属性、来源、任务链、NPC 中文名与地图标记。点击小地图图标或输入 /spg 打开。
 ## Author: glveil4231016
-## Version: 1.10.7
+## Version: 1.11.0
 ## SavedVariables: HolyBulwarkDB
 ## AllowLoadGameType: camelot
 ## X-Data-Build: 1.60.1.70959

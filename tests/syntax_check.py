@@ -4,7 +4,7 @@ from lupa import LuaRuntime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-FOLDERS = ("ProfitBoard", "ProfitProbe", "BlackEvidence")
+FOLDERS = ("ProfitBoard", "ProfitProbe", "BlackEvidence", "HolyBulwark")
 
 lua = LuaRuntime(unpack_returned_tuples=True)
 compile_lua = lua.eval(

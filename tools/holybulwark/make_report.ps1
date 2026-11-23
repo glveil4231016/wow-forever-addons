@@ -49,7 +49,8 @@ $sb = New-Object System.Text.StringBuilder
 [void]$sb.AppendLine('- **本清单只列出有明确来源、且有耐力、且属于板/锁/盾或首饰披风的坦克向装备**；')
 [void]$sb.AppendLine('  完整数据库（含布甲/皮甲、纯输出向、来源暂缺）在插件里切换筛选即可看到。')
 [void]$sb.AppendLine('')
-[void]$sb.AppendLine(('本清单共 **{0}** 件。插件完整库共 2047 件，其中有明确来源 1054 件。' -f $filtered.Count))
+$withSource = @($rows | Where-Object { $_.known -eq '1' }).Count
+[void]$sb.AppendLine(('本清单共 **{0}** 件。插件完整库共 {1} 件，其中有明确来源 {2} 件。' -f $filtered.Count, $rows.Count, $withSource))
 [void]$sb.AppendLine('')
 [void]$sb.AppendLine('## 按部位统计')
 [void]$sb.AppendLine('')

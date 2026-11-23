@@ -33,6 +33,9 @@ python tests/run_pb.py
 # 全部 Lua 文件语法检查
 python tests/syntax_check.py
 
+# HolyBulwark 数据守门：Data.lua 里的物品必须存在于 Forever 客户端
+python tests/check_holybulwark_data.py
+
 # BlackEvidence 冒烟测试
 python tests/run_be.py
 ```

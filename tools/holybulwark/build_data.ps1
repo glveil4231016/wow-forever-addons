@@ -1,6 +1,8 @@
 ﻿# Build SpellPowerGear/Data.lua from The Forever Era item chunks + WoW Forever client tables.
-# Requires: data\chunks\chunk-*.json, data\ItemSparse_zhCN.csv, data\tfe_zh_names.json,
-#           data\AreaTable_enUS.csv, data\AreaTable_zhCN.csv
+# Only items present in the client's own ItemSparse table are emitted; Classic Era
+# fallback rows from The Forever Era dataset are dropped (see $clientIds below).
+# Requires: data\chunks\chunk-*.json, data\ItemSparse_zhCN.csv, data\ItemSparse_enUS.csv,
+#           data\tfe_zh_names.json, data\AreaTable_enUS.csv, data\AreaTable_zhCN.csv
 $ErrorActionPreference = 'Stop'
 
 $dataDir = 'D:\opencode_workspace\wow-forever-addons\data'
@@ -25,9 +27,15 @@ function Esc([string]$s) {
 # ---------------------------------------------------------------- client names
 $sparse = Import-Csv (Join-Path $dataDir 'ItemSparse_zhCN.csv') -Encoding UTF8
 $nameZh = @{}
+# The Forever client's own item table is the authority on what exists. The
+# Forever Era dataset also ships Classic Era fallback rows for items this client
+# never defines; those are the "classic content" that used to leak into Data.lua.
+$clientIds = @{}
 foreach ($r in $sparse) {
+    if ($r.ID) { $clientIds[[int]$r.ID] = $true }
     if ($r.Display_lang) { $nameZh[[int]$r.ID] = $r.Display_lang }
 }
+if ($clientIds.Count -eq 0) { throw 'ItemSparse_zhCN.csv 没有读到任何 ID，data 目录可能没同步' }
 
 $tfeZh = Read-JsonUtf8 (Join-Path $dataDir 'tfe_zh_names.json')
 $tfeName = @{}
@@ -159,6 +167,9 @@ $weapSc = @(0, 1, 4, 5, 6, 7, 8) # 1H axe, 2H axe, 1H mace, 2H mace, polearm, 1H
 
 $records = New-Object System.Collections.Generic.List[object]
 $zoneMiss = @{}
+$dropped = 0
+$droppedIds = New-Object System.Collections.Generic.List[int]
+$droppedZones = @{}
 
 foreach ($it in $all.Values) {
     $st = $it.stats
@@ -193,6 +204,16 @@ foreach ($it in $all.Values) {
     if (-not $nameEn -or $nameEn -match '^(OLD|UNUSED|unused|Test)') { continue }
 
     $id = [int]$it.id
+    if (-not $clientIds.ContainsKey($id)) {
+        $dropped++
+        if ($droppedIds.Count -lt 20) { $droppedIds.Add($id) }
+        $firstSrc = @($it.src)[0]
+        if ($firstSrc -and $firstSrc.zone -and $firstSrc.zone.en) {
+            $dz = [string]$firstSrc.zone.en
+            $droppedZones[$dz] = 1 + [int]$droppedZones[$dz]
+        }
+        continue
+    }
     $name = $nameZh[$id]
     if (-not $name) { $name = $tfeName[$id] }
     if (-not $name) { $name = $nameEn }
@@ -416,6 +437,12 @@ $sorted | Select-Object id, name, nameEn, q, il, rl, slot, type, armor, known,
     srcCount, srcText | Export-Csv $outCsv -NoTypeInformation -Encoding UTF8
 
 "items: $($records.Count)"
+"dropped (not in Forever client): $dropped"
+if ($dropped -gt 0) {
+    $top = $droppedZones.GetEnumerator() | Sort-Object Value -Descending | Select-Object -First 8 |
+        ForEach-Object { "$($_.Key)=$($_.Value)" }
+    "dropped top zones: $($top -join ', ')"
+}
 "known source: $(@($sorted | Where-Object { $_.known -eq 1 }).Count)"
 "unknown source: $(@($sorted | Where-Object { $_.known -eq 0 }).Count)"
 "zones missing: $(($zoneMiss.Keys | Sort-Object) -join ', ')"
