@@ -49,6 +49,14 @@ STAT_MAP = [
     ('healing done by magical spells', 'heal'),
     ('spell power', 'sp'),
     ('spell damage', 'sp'),
+    ('holy damage', 'holy'),
+    ('holy spell damage', 'holy'),
+    ('nature damage', 'nature'),
+    ('damage done by fire spells', 'fire'),
+    ('fire damage', 'fire'),
+    ('frost damage', 'frost'),
+    ('shadow damage', 'shadow'),
+    ('arcane damage', 'arcane'),
     ('bonus healing', 'heal'),
     ('increases healing', 'heal'),
     ('healing', 'heal'),
@@ -67,13 +75,18 @@ STAT_MAP = [
     ('bonus armor', 'bv'),
     ('spell critical strike rating', 'spellcrit'),
     ('spell crit rating', 'spellcrit'),
+    ('chance to get a critical strike with spells', 'spellcrit'),
+    ('chance to hit with spells', 'spellhit'),
+    ('attack power', 'ap'),
     ('spell hit rating', 'spellhit'),
     ('spell penetration', 'spen'),
     ('armor penetration', 'arpen'),
     ('critical strike rating', 'crit'),
+    ('crit rating', 'crit'),
     ('melee hit rating', 'hit'),
     ('hit rating', 'hit'),
     ('haste rating', 'haste'),
+    ('casting speed', 'haste'),
     ('expertise rating', 'exp'),
     ('fire resistance', 'fr'),
     ('nature resistance', 'nr'),
@@ -110,9 +123,9 @@ def fetch(url, proxy, timeout=60):
 
 def match_stat(name):
     low = name.lower().strip()
-    low = re.sub(r'\b(your|the|all|of)\b', ' ', low)
+    low = re.sub(r'\b(your|the|of)\b', ' ', low)
     low = re.sub(r'\s+', ' ', low).strip()
-    if 'stealth detection' in low or 'invisibility detection' in low:
+    if 'stealth detection' in low or 'invisibility detection' in low or 'skill' in low:
         return None
     for needle, key in STAT_MAP:
         if needle in low:
@@ -415,7 +428,7 @@ def main(argv):
             unmapped[u] = unmapped.get(u, 0) + 1
     lines = [
         'ids requested: %d' % len(ids),
-        'network fetches: %d' % fetched,
+        'pages used (cached or fetched): %d' % fetched,
         'parsed: %d (wow-forever %d, warcraftmaps %d)' % (
             len(result), by_src['wow-forever'], by_src['warcraftmaps']),
         'missing (no page on either site): %d %s' % (len(missing), missing[:20]),

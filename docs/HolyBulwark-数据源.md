@@ -136,7 +136,9 @@ powershell -File tools/holybulwark/build_data.ps1
 
 ## 9. 已知缺口
 
+- **覆盖率是硬限制**：1265 件「TFE 无 Forever 行」的物品里，630 件能在两个社区站找到页面（wow-forever 557 / warcraftmaps 73），**635 件两站都没有**——基本都是 Forever 自研 ID（20xxxx/23xxxx/27xxxx）。这些只能靠游戏内实测，或在别处找到带属性的数据。
+- **TFE 并不是全错**：这 630 件里有 103 件的属性与 TFE 不同（要么 TFE 把「在沼泽/要塞翻倍」的效果算了进去，要么把混合的 +治疗/+法伤 合并错了），其余 ilvl / 需求等级 / 护甲完全一致。所以抓 Forever 值的收益是「修 103 件」，不是「重写全部」。
+- 有 3 件物品的词条是职业专属特效（如 `the critical strike chance of your Holy Shock by 2`），解析器不认，属性保留 TFE 并计入 `stats kept from TFE`。
 - wow-forever.gg 对新物品的来源多为 `Coming soon`，抓不到就只能等实测。
-- `Equip: Increases ... by N` 之类长句属性，词条没命中 `STAT_MAP` 时会进 `unmapped`，需要人工补映射，**不会**被静默写进 stats。
 - 掉落记录依赖玩家实际打本；单人刷不出来的物品仍然缺来源。
 - TFE 的 `sources` 对 5 人本是否仍适用于 Forever，尚未验证；实测记录会排在前面，冲突时以实测为准。

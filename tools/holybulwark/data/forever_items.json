@@ -8,6 +8,7 @@
    "equip": [],
    "ilvl": 38,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "heal": 10,
     "sp": 3,
@@ -22,6 +23,7 @@
    "ilvl": 40,
    "q": 3,
    "req": 35,
+   "src": "wow-forever",
    "stats": {
     "agi": 5,
     "int": 19,
@@ -36,6 +38,7 @@
    "ilvl": 38,
    "q": 3,
    "req": 33,
+   "src": "wow-forever",
    "stats": {
     "heal": 13,
     "sp": 5,
@@ -51,6 +54,7 @@
    "ilvl": 40,
    "q": 3,
    "req": 35,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "int": 8,
@@ -67,6 +71,7 @@
    "ilvl": 50,
    "q": 3,
    "req": 45,
+   "src": "wow-forever",
    "stats": {
     "sp": 9,
     "spi": 18
@@ -80,6 +85,7 @@
    "ilvl": 51,
    "q": 3,
    "req": 46,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "int": 25,
@@ -95,6 +101,7 @@
    "ilvl": 49,
    "q": 3,
    "req": 44,
+   "src": "wow-forever",
    "stats": {
     "heal": 9,
     "int": 4,
@@ -109,6 +116,7 @@
    "equip": [],
    "ilvl": 54,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "heal": 13,
     "int": 17,
@@ -125,6 +133,7 @@
    "ilvl": 43,
    "q": 3,
    "req": 39,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 9,
@@ -140,6 +149,7 @@
    "ilvl": 41,
    "q": 3,
    "req": 36,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 8,
@@ -154,6 +164,7 @@
    "ilvl": 41,
    "q": 3,
    "req": 36,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
     "sp": 7
@@ -166,6 +177,7 @@
    "equip": [],
    "ilvl": 51,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "sp": 17,
     "sta": 15
@@ -179,6 +191,7 @@
    "ilvl": 52,
    "q": 2,
    "req": 47,
+   "src": "wow-forever",
    "stats": {
     "heal": 7,
     "sp": 2,
@@ -193,6 +206,7 @@
    "ilvl": 55,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "sp": 13,
     "spen": 3,
@@ -207,6 +221,7 @@
    "ilvl": 55,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "heal": 9,
     "int": 18,
@@ -223,6 +238,7 @@
    "ilvl": 55,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "heal": 13,
     "sp": 4,
@@ -237,6 +253,7 @@
    "ilvl": 56,
    "q": 3,
    "req": 51,
+   "src": "wow-forever",
    "stats": {
     "heal": 13,
     "sp": 4,
@@ -251,6 +268,7 @@
    "ilvl": 56,
    "q": 3,
    "req": 51,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 27,
@@ -266,6 +284,7 @@
    "ilvl": 54,
    "q": 3,
    "req": 49,
+   "src": "wow-forever",
    "stats": {
     "hit": 10,
     "sp": 8,
@@ -281,6 +300,7 @@
    "ilvl": 54,
    "q": 3,
    "req": 49,
+   "src": "wow-forever",
    "stats": {
     "heal": 9,
     "sp": 3,
@@ -295,6 +315,7 @@
    "equip": [],
    "ilvl": 20,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "sp": 4
    },
@@ -308,6 +329,7 @@
    "equip": [],
    "ilvl": 55,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "sp": 6,
@@ -324,6 +346,7 @@
    "ilvl": 52,
    "q": 3,
    "req": 47,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "sp": 6
@@ -337,6 +360,7 @@
    "ilvl": 52,
    "q": 3,
    "req": 47,
+   "src": "wow-forever",
    "stats": {
     "int": 6,
     "sp": 14,
@@ -352,6 +376,7 @@
    "ilvl": 52,
    "q": 3,
    "req": 47,
+   "src": "wow-forever",
    "stats": {
     "int": 13,
     "sp": 14,
@@ -367,6 +392,7 @@
    "ilvl": 52,
    "q": 3,
    "req": 47,
+   "src": "wow-forever",
    "stats": {
     "int": 8,
     "sp": 11,
@@ -382,6 +408,7 @@
    "ilvl": 54,
    "q": 3,
    "req": 49,
+   "src": "wow-forever",
    "stats": {
     "int": 13,
     "sp": 13,
@@ -397,15 +424,15 @@
    "ilvl": 54,
    "q": 3,
    "req": 49,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 13,
+    "mp5": 3,
     "sp": 4,
     "sta": 14
    },
-   "unmapped": [
-    "+3 Mana Per"
-   ]
+   "unmapped": []
   },
   "11662": {
    "armor": 43,
@@ -414,6 +441,7 @@
    "ilvl": 54,
    "q": 3,
    "req": 49,
+   "src": "wow-forever",
    "stats": {
     "hit": 10,
     "int": 10,
@@ -429,6 +457,7 @@
    "ilvl": 54,
    "q": 3,
    "req": 49,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 13,
@@ -444,6 +473,7 @@
    "ilvl": 55,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 9,
@@ -459,6 +489,7 @@
    "ilvl": 53,
    "q": 3,
    "req": 48,
+   "src": "wow-forever",
    "stats": {
     "fr": 10,
     "int": 4,
@@ -475,6 +506,7 @@
    "ilvl": 57,
    "q": 3,
    "req": 52,
+   "src": "wow-forever",
    "stats": {
     "frr": 10,
     "heal": 18,
@@ -492,6 +524,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "sp": 5
@@ -505,6 +538,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "int": 12,
     "sp": 20,
@@ -519,6 +553,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "int": 20,
     "sp": 22,
@@ -533,6 +568,7 @@
    "ilvl": 54,
    "q": 3,
    "req": 49,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "sp": 9,
@@ -549,6 +585,7 @@
    "ilvl": 55,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "heal": 37,
     "int": 7,
@@ -565,6 +602,7 @@
    "ilvl": 55,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "int": 14,
     "sp": 15,
@@ -579,6 +617,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 12,
     "sp": 18,
@@ -594,6 +633,7 @@
    "equip": [],
    "ilvl": 55,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
     "sp": 7
@@ -605,6 +645,7 @@
    "equip": [],
    "ilvl": 54,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "sp": 8,
@@ -618,6 +659,7 @@
    "equip": [],
    "ilvl": 58,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "fr": 6,
     "sp": 17,
@@ -631,6 +673,7 @@
    "equip": [],
    "ilvl": 58,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "sp": 14,
     "spi": 12,
@@ -645,6 +688,7 @@
    "equip": [],
    "ilvl": 58,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
     "sp": 9
@@ -657,14 +701,14 @@
    "equip": [],
    "ilvl": 58,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
+    "crit": 7,
     "heal": 16,
     "sp": 5,
     "spi": 7
    },
-   "unmapped": [
-    "+7 Crit Rating"
-   ]
+   "unmapped": []
   },
   "12462": {
    "armor": 86,
@@ -673,6 +717,7 @@
    "ilvl": 55,
    "q": 4,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "heal": 33,
     "int": 10,
@@ -689,6 +734,7 @@
    "ilvl": 53,
    "q": 3,
    "req": 48,
+   "src": "wow-forever",
    "stats": {
     "fr": 15,
     "int": 5,
@@ -704,6 +750,7 @@
    "ilvl": 53,
    "q": 3,
    "req": 48,
+   "src": "wow-forever",
    "stats": {
     "sp": 9,
     "sta": 14
@@ -717,6 +764,7 @@
    "ilvl": 53,
    "q": 3,
    "req": 48,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "int": 19,
@@ -731,6 +779,7 @@
    "ilvl": 51,
    "q": 3,
    "req": 46,
+   "src": "wow-forever",
    "stats": {
     "fr": 10,
     "heal": 26,
@@ -745,6 +794,7 @@
    "equip": [],
    "ilvl": 60,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "sp": 18,
@@ -757,6 +807,7 @@
    "equip": [],
    "ilvl": 60,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "sp": 18,
@@ -771,6 +822,7 @@
    "ilvl": 54,
    "q": 3,
    "req": 49,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 15,
@@ -785,6 +837,7 @@
    "ilvl": 56,
    "q": 3,
    "req": 51,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
     "int": 10,
@@ -801,6 +854,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "heal": 31,
     "int": 13,
@@ -816,6 +870,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 17,
     "sp": 9,
@@ -831,6 +886,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 19,
     "sp": 13,
@@ -846,6 +902,7 @@
    "ilvl": 58,
    "q": 3,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
     "heal": 9,
     "sp": 3,
@@ -861,11 +918,28 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "int": 14,
     "sp": 6,
     "sr": 7
+   },
+   "unmapped": []
+  },
+  "12756": {
+   "armor": 166,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 18."
+   ],
+   "ilvl": 62,
+   "q": 4,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 20,
+    "sp": 18,
+    "spi": 30
    },
    "unmapped": []
   },
@@ -875,14 +949,14 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "fr": 7,
     "sp": 6,
     "sta": 8
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "12930": {
    "bind": "Binds when picked up",
@@ -894,7 +968,10 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
-   "stats": {},
+   "src": "wow-forever",
+   "stats": {
+    "sp": 15
+   },
    "unmapped": []
   },
   "12945": {
@@ -903,6 +980,7 @@
    "equip": [],
    "ilvl": 62,
    "q": 4,
+   "src": "wow-forever",
    "stats": {
     "ar": 5,
     "fr": 5,
@@ -924,6 +1002,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 33,
     "int": 15,
@@ -939,6 +1018,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "int": 16,
     "sp": 19,
@@ -954,6 +1034,7 @@
    "ilvl": 25,
    "q": 3,
    "req": 20,
+   "src": "wow-forever",
    "stats": {
     "int": 9,
     "sp": 5
@@ -966,6 +1047,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "sp": 18,
@@ -980,6 +1062,7 @@
    "ilvl": 56,
    "q": 3,
    "req": 51,
+   "src": "wow-forever",
    "stats": {
     "int": 20,
     "sp": 11
@@ -993,6 +1076,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 13,
@@ -1008,6 +1092,7 @@
    "ilvl": 47,
    "q": 3,
    "req": 42,
+   "src": "wow-forever",
    "stats": {
     "heal": 44,
     "sp": 15,
@@ -1022,15 +1107,15 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "int": 11,
+    "mp5": 3,
     "sp": 5,
     "sta": 7
    },
-   "unmapped": [
-    "+3 Mana Per"
-   ]
+   "unmapped": []
   },
   "13168": {
    "armor": 627,
@@ -1039,6 +1124,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 14,
     "sp": 18,
@@ -1054,6 +1140,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 14,
     "sp": 19,
@@ -1069,6 +1156,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 12,
     "sp": 30,
@@ -1082,13 +1170,13 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 24,
+    "mp5": 6,
     "sp": 8
    },
-   "unmapped": [
-    "+6 Mana Per"
-   ]
+   "unmapped": []
   },
   "13179": {
    "armor": 155,
@@ -1097,14 +1185,14 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 8,
+    "mp5": 4,
     "sp": 8,
     "sta": 10
    },
-   "unmapped": [
-    "+4 Mana Per"
-   ]
+   "unmapped": []
   },
   "13184": {
    "armor": 107,
@@ -1113,6 +1201,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 12,
@@ -1129,6 +1218,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 17,
     "sp": 8,
@@ -1145,6 +1235,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 14,
     "sp": 12,
@@ -1159,6 +1250,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "heal": 26,
     "nr": 10,
@@ -1175,6 +1267,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "int": 9,
@@ -1189,14 +1282,14 @@
    "equip": [],
    "ilvl": 61,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "heal": 10,
     "int": 20,
+    "mp5": 6,
     "sp": 3
    },
-   "unmapped": [
-    "+6 Mana Per"
-   ]
+   "unmapped": []
   },
   "13244": {
    "armor": 221,
@@ -1205,15 +1298,15 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
     "int": 10,
+    "mp5": 4,
     "sp": 7,
     "sta": 14
    },
-   "unmapped": [
-    "+4 Mana Per"
-   ]
+   "unmapped": []
   },
   "13253": {
    "armor": 53,
@@ -1222,6 +1315,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 9,
     "sp": 23,
@@ -1236,6 +1330,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "heal": 26,
     "int": 13,
@@ -1251,6 +1346,7 @@
    "ilvl": 62,
    "q": 4,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "int": 20,
     "sp": 23,
@@ -1266,6 +1362,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 19,
@@ -1280,6 +1377,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "int": 17,
     "sp": 8
@@ -1293,6 +1391,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "heal": 40,
     "int": 8,
@@ -1308,6 +1407,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "int": 16,
     "sp": 5,
@@ -1322,15 +1422,15 @@
    "ilvl": 58,
    "q": 3,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "int": 10,
+    "mp5": 10,
     "sp": 5,
     "sta": 12
    },
-   "unmapped": [
-    "+10 Mana Per"
-   ]
+   "unmapped": []
   },
   "13384": {
    "armor": 341,
@@ -1339,6 +1439,7 @@
    "ilvl": 58,
    "q": 3,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
     "agi": 8,
     "sp": 12,
@@ -1355,6 +1456,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 20,
     "sp": 18,
@@ -1370,6 +1472,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 20,
     "sp": 13,
@@ -1385,6 +1488,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 25,
     "sp": 15,
@@ -1400,6 +1504,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
     "sp": 9,
@@ -1414,6 +1519,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 3,
     "sp": 13,
@@ -1429,6 +1535,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 12,
@@ -1445,6 +1552,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 18,
@@ -1461,6 +1569,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "int": 12,
@@ -1476,13 +1585,13 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 38,
+    "mp5": 5,
     "sp": 33
    },
-   "unmapped": [
-    "+5 Mana Per"
-   ]
+   "unmapped": []
   },
   "13958": {
    "armor": 37,
@@ -1490,6 +1599,7 @@
    "equip": [],
    "ilvl": 60,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "sp": 7,
@@ -1503,6 +1613,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
     "sp": 7,
@@ -1517,6 +1628,7 @@
    "equip": [],
    "ilvl": 60,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "ar": 5,
     "int": 19,
@@ -1531,15 +1643,15 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "heal": 29,
     "int": 7,
+    "mp5": 3,
     "sp": 10,
     "sta": 6
    },
-   "unmapped": [
-    "+3 Mana Per"
-   ]
+   "unmapped": []
   },
   "13986": {
    "armor": 73,
@@ -1547,6 +1659,7 @@
    "equip": [],
    "ilvl": 63,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "frr": 15,
     "heal": 15,
@@ -1563,6 +1676,7 @@
    "ilvl": 60,
    "q": 4,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "int": 18,
@@ -1578,6 +1692,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
     "int": 20,
@@ -1594,6 +1709,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "int": 12,
@@ -1610,14 +1726,14 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "int": 18,
+    "mp5": 8,
     "sp": 15,
     "sta": 10
    },
-   "unmapped": [
-    "+8 Mana Per"
-   ]
+   "unmapped": []
   },
   "14548": {
    "armor": 274,
@@ -1626,6 +1742,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 26,
     "sp": 9,
@@ -1641,6 +1758,7 @@
    "ilvl": 55,
    "q": 4,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "def": 10,
     "sp": 12,
@@ -1655,6 +1773,7 @@
    "ilvl": 61,
    "q": 4,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "heal": 53,
     "sp": 18,
@@ -1669,6 +1788,7 @@
    "ilvl": 64,
    "q": 4,
    "req": 59,
+   "src": "wow-forever",
    "stats": {
     "int": 19,
     "sp": 11,
@@ -1683,6 +1803,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 12,
     "sp": 15,
@@ -1698,6 +1819,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 6,
@@ -1713,6 +1835,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 13,
@@ -1728,6 +1851,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 18,
     "sp": 8,
@@ -1743,6 +1867,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 9,
@@ -1758,6 +1883,7 @@
    "ilvl": 26,
    "q": 3,
    "req": 21,
+   "src": "wow-forever",
    "stats": {
     "bv": 60,
     "sp": 13
@@ -1770,6 +1896,7 @@
    "equip": [],
    "ilvl": 63,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 12,
@@ -1784,6 +1911,7 @@
    "equip": [],
    "ilvl": 59,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "int": 20,
     "sp": 10,
@@ -1797,6 +1925,7 @@
    "equip": [],
    "ilvl": 59,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "sp": 5,
@@ -1810,14 +1939,14 @@
    "equip": [],
    "ilvl": 59,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
+    "mp5": 2,
     "sp": 7,
     "spi": 14
    },
-   "unmapped": [
-    "+2 Mana Per"
-   ]
+   "unmapped": []
   },
   "15859": {
    "armor": 179,
@@ -1825,6 +1954,7 @@
    "equip": [],
    "ilvl": 59,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "sp": 9,
     "spi": 13,
@@ -1837,6 +1967,7 @@
    "equip": [],
    "ilvl": 63,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "heal": 37,
     "int": 6,
@@ -1852,6 +1983,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "int": 20,
     "sp": 23,
@@ -1867,6 +1999,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "int": 23,
     "sp": 12,
@@ -1883,6 +2016,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
     "sp": 14,
@@ -1899,6 +2033,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "agi": 9,
     "sp": 14,
@@ -1913,6 +2048,7 @@
    "ilvl": 57,
    "q": 3,
    "req": 52,
+   "src": "wow-forever",
    "stats": {
     "hit": 3,
     "int": 8,
@@ -1929,6 +2065,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "hit": 9,
     "int": 10,
@@ -1945,6 +2082,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "int": 14,
     "sp": 9,
@@ -1960,6 +2098,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "int": 14,
     "sp": 7,
@@ -1975,6 +2114,7 @@
    "ilvl": 58,
    "q": 3,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
     "int": 21,
     "sp": 7,
@@ -1990,6 +2130,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "int": 30,
     "sp": 11,
@@ -2004,6 +2145,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "hit": 9,
     "int": 15,
@@ -2020,6 +2162,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "int": 28,
     "sp": 12,
@@ -2035,6 +2178,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 22,
     "sp": 8,
@@ -2049,6 +2193,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 24,
@@ -2065,6 +2210,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 10,
@@ -2081,6 +2227,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "int": 10,
@@ -2097,6 +2244,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 24,
@@ -2113,6 +2261,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "heal": 24,
     "int": 15,
@@ -2129,6 +2278,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 21,
@@ -2145,6 +2295,7 @@
    "ilvl": 58,
    "q": 3,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 20,
@@ -2161,6 +2312,7 @@
    "ilvl": 57,
    "q": 3,
    "req": 52,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 8,
@@ -2177,6 +2329,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "int": 23,
     "sp": 14,
@@ -2192,6 +2345,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 14,
     "sp": 12,
@@ -2207,6 +2361,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
     "sp": 11,
@@ -2221,6 +2376,7 @@
    "ilvl": 58,
    "q": 3,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
     "int": 14,
     "sp": 9,
@@ -2237,6 +2393,7 @@
    "ilvl": 57,
    "q": 3,
    "req": 52,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 5,
@@ -2252,6 +2409,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "sp": 9,
@@ -2267,6 +2425,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 20,
@@ -2283,6 +2442,7 @@
    "ilvl": 57,
    "q": 3,
    "req": 52,
+   "src": "wow-forever",
    "stats": {
     "heal": 9,
     "int": 15,
@@ -2298,6 +2458,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 9,
@@ -2314,6 +2475,7 @@
    "ilvl": 58,
    "q": 3,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 17,
@@ -2330,6 +2492,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 9,
@@ -2345,6 +2508,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 18,
@@ -2361,6 +2525,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "heal": 24,
     "int": 14,
@@ -2378,6 +2543,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "int": 20,
@@ -2395,12 +2561,183 @@
    "ilvl": 58,
    "q": 3,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
     "hit": 5,
     "int": 15,
     "sp": 7,
     "sta": 9,
     "str": 10
+   },
+   "unmapped": []
+  },
+  "16951": {
+   "armor": 375,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 7."
+   ],
+   "ilvl": 76,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 9,
+    "sp": 7,
+    "spi": 8,
+    "sta": 21,
+    "str": 9
+   },
+   "unmapped": []
+  },
+  "16952": {
+   "armor": 482,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 23."
+   ],
+   "ilvl": 76,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 20,
+    "sp": 23,
+    "spi": 6,
+    "sr": 10,
+    "sta": 14,
+    "str": 8
+   },
+   "unmapped": []
+  },
+  "16953": {
+   "armor": 642,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Restores 5 mana per 5 sec.",
+    "Increases damage and healing done by magical spells and effects by up to 13."
+   ],
+   "ilvl": 76,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "fr": 10,
+    "int": 14,
+    "mp5": 5,
+    "sp": 13,
+    "spi": 6,
+    "sta": 20,
+    "str": 13
+   },
+   "unmapped": []
+  },
+  "16954": {
+   "armor": 749,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 20.",
+    "Restores 4 mana per 5 sec."
+   ],
+   "ilvl": 76,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "ar": 10,
+    "fr": 10,
+    "int": 27,
+    "mp5": 4,
+    "sp": 20,
+    "spi": 5,
+    "sta": 26,
+    "str": 10
+   },
+   "unmapped": []
+  },
+  "16955": {
+   "armor": 696,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 32."
+   ],
+   "ilvl": 76,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "frr": 10,
+    "int": 23,
+    "sp": 32,
+    "spi": 6,
+    "sr": 10,
+    "sta": 18,
+    "str": 17
+   },
+   "unmapped": []
+  },
+  "16956": {
+   "armor": 535,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Restores 6 mana per 5 sec.",
+    "Increases damage and healing done by magical spells and effects by up to 15."
+   ],
+   "ilvl": 76,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 20,
+    "mp5": 6,
+    "sp": 15,
+    "spi": 6,
+    "sr": 10,
+    "sta": 15,
+    "str": 6
+   },
+   "unmapped": []
+  },
+  "16957": {
+   "armor": 589,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 18."
+   ],
+   "ilvl": 76,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "fr": 10,
+    "int": 14,
+    "sp": 18,
+    "spi": 8,
+    "sta": 20,
+    "str": 13
+   },
+   "unmapped": []
+  },
+  "16958": {
+   "armor": 857,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Restores 5 mana per 5 sec.",
+    "Increases damage and healing done by magical spells and effects by up to 25."
+   ],
+   "ilvl": 76,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "fr": 10,
+    "int": 21,
+    "mp5": 5,
+    "nr": 10,
+    "sp": 25,
+    "spi": 5,
+    "sta": 21,
+    "str": 16
    },
    "unmapped": []
   },
@@ -2411,6 +2748,7 @@
    "ilvl": 51,
    "q": 4,
    "req": 46,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "sp": 9,
@@ -2425,6 +2763,7 @@
    "equip": [],
    "ilvl": 38,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "sp": 11,
@@ -2437,10 +2776,64 @@
    "equip": [],
    "ilvl": 61,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 12,
     "sta": 10
+   },
+   "unmapped": []
+  },
+  "17103": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Improves your chance to get a critical strike with spells by 1%.",
+    "Increases damage and healing done by magical spells and effects by up to 40."
+   ],
+   "ilvl": 71,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 12,
+    "sp": 40,
+    "spellcrit": 1,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "17105": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Restores 5 mana per 5 sec.",
+    "Increases damage and healing done by magical spells and effects by up to 25."
+   ],
+   "ilvl": 69,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 10,
+    "mp5": 5,
+    "sp": 25,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "17109": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 18."
+   ],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 10,
+    "sp": 18,
+    "spi": 10,
+    "sta": 9
    },
    "unmapped": []
   },
@@ -2451,6 +2844,7 @@
    "ilvl": 40,
    "q": 3,
    "req": 35,
+   "src": "wow-forever",
    "stats": {
     "int": 6,
     "sp": 22,
@@ -2464,6 +2858,7 @@
    "equip": [],
    "ilvl": 40,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "sp": 6,
@@ -2478,6 +2873,7 @@
    "equip": [],
    "ilvl": 28,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "sp": 5,
     "sta": 3
@@ -2490,6 +2886,7 @@
    "ilvl": 54,
    "q": 3,
    "req": 49,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "int": 9,
@@ -2505,14 +2902,14 @@
    "ilvl": 53,
    "q": 3,
    "req": 48,
+   "src": "wow-forever",
    "stats": {
     "heal": 13,
     "int": 10,
+    "mp5": 4,
     "sp": 5
    },
-   "unmapped": [
-    "+4 Mana Per"
-   ]
+   "unmapped": []
   },
   "17732": {
    "armor": 57,
@@ -2521,6 +2918,7 @@
    "ilvl": 53,
    "q": 3,
    "req": 48,
+   "src": "wow-forever",
    "stats": {
     "int": 18,
     "sp": 13
@@ -2534,6 +2932,7 @@
    "ilvl": 52,
    "q": 3,
    "req": 47,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
     "sp": 23,
@@ -2549,12 +2948,13 @@
    "ilvl": 51,
    "q": 3,
    "req": 46,
-   "stats": {},
-   "unmapped": [
-    "+8 Mana Per",
-    "+29 Holy Damage",
-    "+29 Nature Damage"
-   ]
+   "src": "wow-forever",
+   "stats": {
+    "holy": 29,
+    "mp5": 8,
+    "nature": 29
+   },
+   "unmapped": []
   },
   "17748": {
    "armor": 50,
@@ -2563,6 +2963,7 @@
    "ilvl": 51,
    "q": 3,
    "req": 46,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "int": 9,
@@ -2579,6 +2980,7 @@
    "ilvl": 51,
    "q": 3,
    "req": 46,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "nr": 10,
@@ -2594,6 +2996,7 @@
    "ilvl": 50,
    "q": 3,
    "req": 45,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 14,
@@ -2607,6 +3010,7 @@
    "equip": [],
    "ilvl": 49,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 6
@@ -2618,6 +3022,7 @@
    "equip": [],
    "ilvl": 44,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "sp": 9,
     "sr": 6
@@ -2630,6 +3035,7 @@
    "equip": [],
    "ilvl": 49,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
     "sp": 14
@@ -2641,6 +3047,7 @@
    "equip": [],
    "ilvl": 62,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
     "sp": 7,
@@ -2656,15 +3063,15 @@
    "ilvl": 48,
    "q": 3,
    "req": 43,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "int": 7,
+    "mp5": 4,
     "sp": 6,
     "sta": 10
    },
-   "unmapped": [
-    "+4 Mana Per"
-   ]
+   "unmapped": []
   },
   "18102": {
    "armor": 61,
@@ -2673,6 +3080,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "fr": 8,
     "int": 16,
@@ -2688,6 +3096,7 @@
    "ilvl": 58,
    "q": 2,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
     "heal": 26,
     "int": 17,
@@ -2703,6 +3112,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "heal": 31,
     "int": 12,
@@ -2718,6 +3128,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "int": 12,
     "sp": 15,
@@ -2732,15 +3143,15 @@
    "ilvl": 58,
    "q": 3,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "heal": 7,
     "int": 6,
     "sp": 2,
     "spi": 6
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "18318": {
    "armor": 240,
@@ -2749,6 +3160,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 14,
@@ -2764,6 +3176,7 @@
    "ilvl": 58,
    "q": 3,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
     "int": 8,
     "sp": 22,
@@ -2778,14 +3191,14 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "heal": 29,
     "int": 9,
+    "mp5": 6,
     "sp": 10
    },
-   "unmapped": [
-    "+6 Mana Per"
-   ]
+   "unmapped": []
   },
   "18346": {
    "armor": 75,
@@ -2794,6 +3207,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "sp": 46,
     "sta": 18
@@ -2807,9 +3221,25 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "sp": 15,
     "spi": 14
+   },
+   "unmapped": []
+  },
+  "18367": {
+   "armor": 221,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "src": "wow-forever",
+   "stats": {
+    "crit": 14,
+    "int": 10,
+    "sp": 11,
+    "sta": 10
    },
    "unmapped": []
   },
@@ -2819,15 +3249,15 @@
    "equip": [],
    "ilvl": 60,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "heal": 20,
     "sp": 7,
     "spi": 10,
     "sta": 10
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "18373": {
    "armor": 174,
@@ -2836,6 +3266,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "int": 20,
     "sp": 23,
@@ -2851,6 +3282,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "agi": 6,
     "int": 16,
@@ -2868,6 +3300,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "int": 13,
     "sp": 27,
@@ -2884,14 +3317,14 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "heal": 37,
     "int": 20,
+    "mp5": 7,
     "sp": 12
    },
-   "unmapped": [
-    "+7 Mana Per"
-   ]
+   "unmapped": []
   },
   "18389": {
    "armor": 44,
@@ -2900,6 +3333,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 14,
@@ -2915,15 +3349,15 @@
    "ilvl": 61,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "heal": 29,
     "sp": 10,
     "spi": 19,
     "sta": 12
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "18391": {
    "armor": 98,
@@ -2932,6 +3366,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 31,
     "int": 18,
@@ -2946,6 +3381,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "int": 12,
@@ -2961,6 +3397,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "ar": 10,
     "int": 10,
@@ -2975,6 +3412,7 @@
    "equip": [],
    "ilvl": 63,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 11,
@@ -2992,6 +3430,7 @@
    "ilvl": 60,
    "q": 2,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 12
@@ -3005,6 +3444,7 @@
    "ilvl": 60,
    "q": 2,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
     "int": 10,
@@ -3019,8 +3459,10 @@
    ],
    "ilvl": 62,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
+    "mp5": 9,
     "nr": 15,
     "sp": 7
    },
@@ -3033,6 +3475,7 @@
    "ilvl": 60,
    "q": 2,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "sp": 16,
     "sta": 13
@@ -3046,13 +3489,13 @@
    "ilvl": 60,
    "q": 2,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 19,
+    "mp5": 4,
     "sp": 13
    },
-   "unmapped": [
-    "+4 Mana Per"
-   ]
+   "unmapped": []
   },
   "18479": {
    "armor": 262,
@@ -3061,6 +3504,7 @@
    "ilvl": 60,
    "q": 2,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "hit": 10,
     "sp": 18,
@@ -3075,6 +3519,7 @@
    "ilvl": 60,
    "q": 2,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
     "int": 17,
@@ -3090,16 +3535,16 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "heal": 24,
     "int": 15,
     "sp": 8,
     "spi": 9,
     "sta": 12
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "18494": {
    "armor": 266,
@@ -3108,6 +3553,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 18,
@@ -3123,6 +3569,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 12,
@@ -3138,6 +3585,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 26,
     "int": 12,
@@ -3154,6 +3602,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
     "int": 10,
@@ -3170,6 +3619,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "heal": 33,
     "int": 10,
@@ -3186,6 +3636,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 14,
@@ -3201,15 +3652,15 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 13,
+    "mp5": 10,
     "sp": 7,
     "sta": 12
    },
-   "unmapped": [
-    "+10 Mana Per"
-   ]
+   "unmapped": []
   },
   "18535": {
    "armor": 2026,
@@ -3217,15 +3668,15 @@
    "equip": [],
    "ilvl": 59,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "bv": 90,
     "heal": 15,
+    "hp5": 15,
     "sp": 5,
     "sta": 7
    },
-   "unmapped": [
-    "+15 Health Per"
-   ]
+   "unmapped": []
   },
   "18681": {
    "armor": 65,
@@ -3234,6 +3685,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 16,
     "sp": 20,
@@ -3248,6 +3700,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "heal": 44,
     "int": 8,
@@ -3264,6 +3717,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 11,
@@ -3279,6 +3733,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "bv": 23,
     "sp": 6,
@@ -3293,6 +3748,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 33,
     "int": 14,
@@ -3308,15 +3764,15 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
+    "holy": 17,
     "spi": 10,
     "sr": 10,
     "sta": 16,
     "str": 16
    },
-   "unmapped": [
-    "+17 Holy Damage"
-   ]
+   "unmapped": []
   },
   "18720": {
    "armor": 67,
@@ -3325,14 +3781,14 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 16,
     "sp": 7,
     "spi": 8
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "18721": {
    "armor": 202,
@@ -3341,6 +3797,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 8,
     "sp": 23,
@@ -3355,6 +3812,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 33,
     "sp": 11,
@@ -3370,6 +3828,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 30,
@@ -3385,14 +3844,14 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
+    "mp5": 3,
     "sp": 11,
     "sr": 12
    },
-   "unmapped": [
-    "+3 Mana Per"
-   ]
+   "unmapped": []
   },
   "18739": {
    "armor": 557,
@@ -3401,14 +3860,14 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
+    "holy": 7,
     "int": 20,
+    "mp5": 5,
     "sta": 20
    },
-   "unmapped": [
-    "+5 Mana Per",
-    "+7 Holy Damage"
-   ]
+   "unmapped": []
   },
   "18740": {
    "armor": 49,
@@ -3417,6 +3876,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 12,
     "sp": 12,
@@ -3432,6 +3892,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "int": 12,
@@ -3447,14 +3908,14 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "heal": 7,
     "int": 7,
+    "mp5": 6,
     "sp": 3
    },
-   "unmapped": [
-    "+6 Mana Per"
-   ]
+   "unmapped": []
   },
   "18745": {
    "armor": 71,
@@ -3463,11 +3924,71 @@
    "ilvl": 57,
    "q": 3,
    "req": 52,
+   "src": "wow-forever",
    "stats": {
     "int": 19,
     "sp": 14,
     "spi": 12,
     "sta": 12
+   },
+   "unmapped": []
+  },
+  "18808": {
+   "armor": 67,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage done by Fire spells and effects by up to 23.",
+    "Increases damage and healing done by magical spells and effects by up to 9."
+   ],
+   "ilvl": 70,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "fire": 23,
+    "int": 19,
+    "sp": 9,
+    "spi": 8,
+    "sta": 18
+   },
+   "unmapped": []
+  },
+  "19136": {
+   "armor": 61,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 25.",
+    "Improves your chance to get a critical strike with spells by 1%."
+   ],
+   "ilvl": 71,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 16,
+    "sp": 25,
+    "spellcrit": 1,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "19145": {
+   "armor": 102,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Improves your chance to get a critical strike with spells by 2%.",
+    "Increases damage and healing done by magical spells and effects by up to 23."
+   ],
+   "ilvl": 66,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 15,
+    "sp": 23,
+    "spellcrit": 2,
+    "spi": 10,
+    "sta": 10
    },
    "unmapped": []
   },
@@ -3478,9 +3999,138 @@
    "ilvl": 18,
    "q": 3,
    "req": 13,
+   "src": "wow-forever",
    "stats": {
     "agi": 5,
     "sp": 7
+   },
+   "unmapped": []
+  },
+  "19360": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 84."
+   ],
+   "ilvl": 81,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 18,
+    "sp": 84,
+    "spi": 8,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "19370": {
+   "armor": 84,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 34."
+   ],
+   "ilvl": 73,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 16,
+    "sp": 34,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "19374": {
+   "armor": 50,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Improves your chance to hit with spells by 1%.",
+    "Increases damage and healing done by magical spells and effects by up to 21."
+   ],
+   "ilvl": 75,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 12,
+    "sp": 21,
+    "spellhit": 1,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "19375": {
+   "armor": 102,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 35.",
+    "Improves your chance to get a critical strike with spells by 2%."
+   ],
+   "ilvl": 83,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 24,
+    "sp": 35,
+    "spellcrit": 2,
+    "spi": 9,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "19378": {
+   "armor": 63,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 28."
+   ],
+   "ilvl": 83,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 14,
+    "sp": 28,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "19393": {
+   "armor": 275,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 20."
+   ],
+   "ilvl": 77,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 16,
+    "sp": 20,
+    "spi": 15,
+    "sta": 13,
+    "str": 16
+   },
+   "unmapped": []
+  },
+  "19400": {
+   "armor": 64,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 35.",
+    "Restores 5 mana per 5 sec."
+   ],
+   "ilvl": 75,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 12,
+    "mp5": 5,
+    "sp": 35,
+    "sta": 12
    },
    "unmapped": []
   },
@@ -3491,10 +4141,167 @@
    "ilvl": 42,
    "q": 3,
    "req": 37,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
     "int": 13,
     "sp": 7
+   },
+   "unmapped": []
+  },
+  "19857": {
+   "armor": 52,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 23.",
+    "Improves your chance to hit with spells by 1%."
+   ],
+   "ilvl": 68,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 10,
+    "sp": 23,
+    "spellhit": 1
+   },
+   "unmapped": []
+  },
+  "19864": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 33."
+   ],
+   "ilvl": 68,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 15,
+    "sp": 33,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "19886": {
+   "armor": 81,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 41."
+   ],
+   "ilvl": 71,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 10,
+    "sp": 41,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "19893": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Improves your chance to hit with spells by 1%.",
+    "Increases damage and healing done by magical spells and effects by up to 11."
+   ],
+   "ilvl": 71,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 10,
+    "sp": 11,
+    "spellhit": 1,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "19895": {
+   "armor": 87,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 28."
+   ],
+   "ilvl": 71,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 20,
+    "sp": 28,
+    "sta": 20
+   },
+   "unmapped": []
+  },
+  "19897": {
+   "armor": 69,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 30."
+   ],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 12,
+    "sp": 30,
+    "spi": 12,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "19923": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 22.",
+    "Restores 3 mana per 5 sec."
+   ],
+   "ilvl": 68,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "mp5": 3,
+    "sp": 22
+   },
+   "unmapped": []
+  },
+  "19929": {
+   "armor": 62,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 19.",
+    "Improves your chance to hit with spells by 1%."
+   ],
+   "ilvl": 71,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 10,
+    "sp": 19,
+    "spellhit": 1,
+    "spi": 10,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "19964": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 16.",
+    "Restores 6 mana per 5 sec."
+   ],
+   "ilvl": 68,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "mp5": 6,
+    "sp": 16
    },
    "unmapped": []
   },
@@ -3503,21 +4310,78 @@
    "equip": [],
    "ilvl": 52,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
+    "holy": 21,
     "sr": 6
    },
-   "unmapped": [
-    "+21 Holy Damage"
-   ]
+   "unmapped": []
+  },
+  "20032": {
+   "armor": 100,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 22."
+   ],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 23,
+    "sp": 22,
+    "spi": 24,
+    "sta": 15
+   },
+   "unmapped": []
   },
   "20037": {
    "bind": "Binds when picked up",
    "equip": [],
    "ilvl": 52,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "int": 6,
     "sp": 16
+   },
+   "unmapped": []
+  },
+  "20260": {
+   "armor": 348,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 16."
+   ],
+   "ilvl": 68,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 15,
+    "sp": 16,
+    "spi": 14,
+    "sta": 15,
+    "str": 15
+   },
+   "unmapped": []
+  },
+  "20262": {
+   "armor": 274,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 12.",
+    "Restores 5 mana per 5 sec."
+   ],
+   "ilvl": 68,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 15,
+    "mp5": 5,
+    "sp": 12,
+    "sta": 10
    },
    "unmapped": []
   },
@@ -3528,6 +4392,7 @@
    "ilvl": 25,
    "q": 3,
    "req": 20,
+   "src": "wow-forever",
    "stats": {
     "sp": 3,
     "spi": 12
@@ -3540,20 +4405,21 @@
    "ilvl": 52,
    "q": 3,
    "req": 47,
+   "src": "wow-forever",
    "stats": {
+    "allres": 5,
+    "holy": 17,
     "sta": 12,
     "str": 12
    },
-   "unmapped": [
-    "+5 All Resistances",
-    "+17 Holy Damage"
-   ]
+   "unmapped": []
   },
   "20505": {
    "bind": "Binds when picked up",
    "equip": [],
    "ilvl": 52,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "int": 7,
@@ -3570,8 +4436,456 @@
    ],
    "ilvl": 52,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "sp": 15
+   },
+   "unmapped": []
+  },
+  "21453": {
+   "armor": 610,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 14."
+   ],
+   "ilvl": 72,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 20,
+    "sp": 14,
+    "sta": 19,
+    "str": 12
+   },
+   "unmapped": []
+  },
+  "21454": {
+   "armor": 344,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 14."
+   ],
+   "ilvl": 72,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 20,
+    "sp": 14,
+    "sta": 19,
+    "str": 12
+   },
+   "unmapped": []
+  },
+  "21461": {
+   "armor": 97,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 41.",
+    "Improves your chance to get a critical strike with spells by 1%."
+   ],
+   "ilvl": 72,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 16,
+    "sp": 41,
+    "spellcrit": 1,
+    "spi": 8,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "21464": {
+   "armor": 48,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 21.",
+    "Decreases the magical resistances of your spell targets by 3."
+   ],
+   "ilvl": 72,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 12,
+    "sp": 21,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "21466": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Improves your chance to get a critical strike with spells by 1%.",
+    "Increases damage and healing done by magical spells and effects by up to 36."
+   ],
+   "ilvl": 69,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 7,
+    "sp": 36,
+    "spellcrit": 1,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "21468": {
+   "armor": 78,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 21."
+   ],
+   "ilvl": 74,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 15,
+    "sp": 21,
+    "spi": 7,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "21469": {
+   "armor": 126,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 25."
+   ],
+   "ilvl": 74,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 13,
+    "sp": 25,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "21475": {
+   "armor": 670,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 12."
+   ],
+   "ilvl": 74,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "agi": 10,
+    "int": 18,
+    "sp": 12,
+    "sta": 18,
+    "str": 19
+   },
+   "unmapped": []
+  },
+  "21476": {
+   "armor": 377,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 19."
+   ],
+   "ilvl": 74,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "agi": 10,
+    "int": 18,
+    "sp": 19,
+    "sta": 18,
+    "str": 16
+   },
+   "unmapped": []
+  },
+  "21482": {
+   "armor": 293,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Restores 4 mana per 5 sec.",
+    "Increases damage and healing done by magical spells and effects by up to 12."
+   ],
+   "ilvl": 73,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 14,
+    "mp5": 4,
+    "sp": 12,
+    "sta": 14,
+    "str": 9
+   },
+   "unmapped": []
+  },
+  "21486": {
+   "armor": 482,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 12."
+   ],
+   "ilvl": 68,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "agi": 10,
+    "int": 18,
+    "sp": 12,
+    "sta": 18,
+    "str": 11
+   },
+   "unmapped": []
+  },
+  "21487": {
+   "armor": 271,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 12.",
+    "Improves your chance to get a critical strike with spells by 1%."
+   ],
+   "ilvl": 68,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 18,
+    "sp": 12,
+    "spellcrit": 1,
+    "sta": 18,
+    "str": 6
+   },
+   "unmapped": []
+  },
+  "21489": {
+   "armor": 70,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 16."
+   ],
+   "ilvl": 73,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 14,
+    "sp": 16,
+    "spi": 11,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "21494": {
+   "armor": 110,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 16.",
+    "Improves your chance to get a critical strike with spells by 1%."
+   ],
+   "ilvl": 71,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 13,
+    "sp": 16,
+    "spellcrit": 1,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "21499": {
+   "armor": 102,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 32.",
+    "Improves your chance to get a critical strike with spells by 1%."
+   ],
+   "ilvl": 66,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 14,
+    "sp": 32,
+    "spellcrit": 1,
+    "spi": 8,
+    "sta": 20
+   },
+   "unmapped": []
+  },
+  "21626": {
+   "armor": 432,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 11."
+   ],
+   "ilvl": 78,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "ap": 40,
+    "int": 16,
+    "nr": 28,
+    "sp": 11,
+    "sta": 28
+   },
+   "unmapped": []
+  },
+  "21668": {
+   "armor": 422,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 36.",
+    "Improves your chance to get a critical strike with spells by 1%."
+   ],
+   "ilvl": 76,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 23,
+    "sp": 36,
+    "spellcrit": 1,
+    "sta": 20
+   },
+   "unmapped": []
+  },
+  "21671": {
+   "armor": 116,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 36.",
+    "Decreases the magical resistances of your spell targets by 5."
+   ],
+   "ilvl": 76,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 17,
+    "sp": 36,
+    "spi": 8,
+    "sta": 23
+   },
+   "unmapped": []
+  },
+  "21684": {
+   "armor": 362,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 28."
+   ],
+   "ilvl": 76,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 20,
+    "sp": 28,
+    "sta": 17,
+    "str": 6
+   },
+   "unmapped": []
+  },
+  "21689": {
+   "armor": 139,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 27.",
+    "Improves your chance to get a critical strike with spells by 1%."
+   ],
+   "ilvl": 75,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 15,
+    "sp": 27,
+    "spellcrit": 1,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "21697": {
+   "armor": 57,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 21."
+   ],
+   "ilvl": 75,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 12,
+    "sp": 21,
+    "sta": 17
+   },
+   "unmapped": []
+  },
+  "21698": {
+   "armor": 190,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 39.",
+    "Restores 6 mana per 5 sec."
+   ],
+   "ilvl": 73,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 22,
+    "mp5": 6,
+    "sp": 39,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "21703": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 30."
+   ],
+   "ilvl": 73,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 22,
+    "sp": 30,
+    "sta": 26,
+    "str": 16
+   },
+   "unmapped": []
+  },
+  "21705": {
+   "armor": 319,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 20."
+   ],
+   "ilvl": 73,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "agi": 10,
+    "int": 15,
+    "sp": 20,
+    "sta": 15,
+    "str": 15
    },
    "unmapped": []
   },
@@ -3582,6 +4896,7 @@
    "ilvl": 51,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "sp": 9,
@@ -3597,6 +4912,7 @@
    "ilvl": 53,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 15,
@@ -3612,6 +4928,7 @@
    "ilvl": 53,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 15,
@@ -3627,14 +4944,14 @@
    "ilvl": 51,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "sp": 7,
     "sta": 10,
     "str": 7
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "220818": {
    "armor": 433,
@@ -3643,6 +4960,7 @@
    "ilvl": 55,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 12,
@@ -3658,6 +4976,7 @@
    "ilvl": 55,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "int": 12,
     "sp": 15,
@@ -3672,6 +4991,7 @@
    "ilvl": 58,
    "q": 3,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
     "int": 12,
     "sp": 20,
@@ -3687,6 +5007,7 @@
    "ilvl": 55,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 14,
@@ -3702,6 +5023,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
     "sp": 18,
@@ -3716,6 +5038,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "hit": 10,
     "int": 18,
@@ -3731,15 +5054,15 @@
    "ilvl": 53,
    "q": 3,
    "req": 48,
+   "src": "wow-forever",
    "stats": {
     "heal": 26,
     "int": 11,
+    "mp5": 4,
     "sp": 9,
     "sta": 5
    },
-   "unmapped": [
-    "+4 Mana Per"
-   ]
+   "unmapped": []
   },
   "22240": {
    "armor": 218,
@@ -3748,6 +5071,7 @@
    "ilvl": 53,
    "q": 3,
    "req": 48,
+   "src": "wow-forever",
    "stats": {
     "hit": 10,
     "int": 10,
@@ -3763,6 +5087,7 @@
    "ilvl": 56,
    "q": 3,
    "req": 51,
+   "src": "wow-forever",
    "stats": {
     "agi": 7,
     "int": 8,
@@ -3779,6 +5104,7 @@
    "ilvl": 56,
    "q": 3,
    "req": 51,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 9,
@@ -3795,6 +5121,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "heal": 24,
     "int": 12,
@@ -3811,6 +5138,7 @@
    "ilvl": 57,
    "q": 3,
    "req": 52,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 16,
@@ -3827,6 +5155,7 @@
    "ilvl": 57,
    "q": 3,
    "req": 52,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "int": 8,
@@ -3843,6 +5172,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "hit": 10,
     "sp": 33,
@@ -3857,6 +5187,7 @@
    "ilvl": 55,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "def": 3,
     "int": 10,
@@ -3873,14 +5204,14 @@
    "ilvl": 57,
    "q": 3,
    "req": 52,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
+    "mp5": 4,
     "sp": 16,
     "sta": 15
    },
-   "unmapped": [
-    "+4 Mana Per"
-   ]
+   "unmapped": []
   },
   "22272": {
    "armor": 151,
@@ -3888,15 +5219,15 @@
    "equip": [],
    "ilvl": 52,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "heal": 44,
     "int": 9,
+    "mp5": 6,
     "sp": 15,
     "spi": 8
    },
-   "unmapped": [
-    "+6 Mana Per"
-   ]
+   "unmapped": []
   },
   "22275": {
    "armor": 112,
@@ -3905,6 +5236,7 @@
    "ilvl": 57,
    "q": 3,
    "req": 52,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 18,
@@ -3919,6 +5251,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "int": 10,
@@ -3934,6 +5267,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "heal": 31,
     "int": 7,
@@ -3950,6 +5284,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "sp": 18,
     "sta": 7
@@ -3962,6 +5297,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "ar": 7,
     "hit": 10,
@@ -3976,6 +5312,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "hit": 10,
     "int": 8,
@@ -3991,6 +5328,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 12,
@@ -4007,6 +5345,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 14,
     "sp": 23,
@@ -4022,15 +5361,15 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 12,
     "sp": 15,
     "spi": 11,
     "sta": 14
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "22412": {
    "armor": 67,
@@ -4039,6 +5378,7 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "int": 18,
     "sp": 15,
@@ -4052,13 +5392,13 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "sp": 11,
     "sta": 10
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "226973": {
    "armor": 684,
@@ -4066,15 +5406,15 @@
    "equip": [],
    "ilvl": 60,
    "q": 4,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 17,
     "sp": 18,
     "sta": 17,
     "str": 16
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "226975": {
    "armor": 393,
@@ -4082,15 +5422,15 @@
    "equip": [],
    "ilvl": 55,
    "q": 4,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 10,
     "sp": 9,
     "sta": 10,
     "str": 9
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "226976": {
    "armor": 556,
@@ -4098,16 +5438,16 @@
    "equip": [],
    "ilvl": 60,
    "q": 4,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 17,
+    "mp5": 2,
     "sp": 14,
     "sta": 17,
     "str": 16
    },
-   "unmapped": [
-    "+14 Crit Rating",
-    "+2 Mana Per"
-   ]
+   "unmapped": []
   },
   "226981": {
    "armor": 556,
@@ -4115,16 +5455,16 @@
    "equip": [],
    "ilvl": 60,
    "q": 4,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "heal": 33,
     "int": 17,
     "sp": 11,
     "spi": 16,
     "sta": 16
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "226982": {
    "armor": 393,
@@ -4132,6 +5472,7 @@
    "equip": [],
    "ilvl": 55,
    "q": 4,
+   "src": "wow-forever",
    "stats": {
     "heal": 24,
     "int": 11,
@@ -4147,6 +5488,7 @@
    "equip": [],
    "ilvl": 60,
    "q": 4,
+   "src": "wow-forever",
    "stats": {
     "heal": 37,
     "int": 16,
@@ -4162,16 +5504,16 @@
    "equip": [],
    "ilvl": 60,
    "q": 4,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 17,
     "sp": 14,
     "spi": 12,
     "sta": 17,
     "str": 16
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "226998": {
    "armor": 393,
@@ -4179,15 +5521,15 @@
    "equip": [],
    "ilvl": 55,
    "q": 4,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 10,
     "sp": 11,
     "sta": 10,
     "str": 9
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "226999": {
    "armor": 470,
@@ -4195,16 +5537,16 @@
    "equip": [],
    "ilvl": 60,
    "q": 4,
+   "src": "wow-forever",
    "stats": {
     "int": 12,
+    "mp5": 4,
     "sp": 12,
     "spi": 10,
     "sta": 13,
     "str": 12
    },
-   "unmapped": [
-    "+4 Mana Per"
-   ]
+   "unmapped": []
   },
   "227000": {
    "armor": 684,
@@ -4212,16 +5554,33 @@
    "equip": [],
    "ilvl": 60,
    "q": 4,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 17,
     "sp": 14,
     "spi": 12,
     "sta": 17,
     "str": 16
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
+  },
+  "22711": {
+   "armor": 48,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 23."
+   ],
+   "ilvl": 68,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 6,
+    "sp": 23,
+    "sta": 6
+   },
+   "unmapped": []
   },
   "227142": {
    "armor": 706,
@@ -4230,14 +5589,14 @@
    "ilvl": 68,
    "q": 3,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "sp": 25,
     "sta": 27,
     "str": 16
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "227143": {
    "armor": 618,
@@ -4246,14 +5605,14 @@
    "ilvl": 68,
    "q": 3,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "sp": 25,
     "sta": 26,
     "str": 17
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "227144": {
    "armor": 598,
@@ -4262,6 +5621,7 @@
    "ilvl": 71,
    "q": 3,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "hit": 10,
     "sp": 26,
@@ -4277,6 +5637,7 @@
    "ilvl": 71,
    "q": 3,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "int": 8,
     "sp": 20,
@@ -4292,14 +5653,85 @@
    "ilvl": 66,
    "q": 3,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "sp": 12,
     "sta": 18,
     "str": 12
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
+  },
+  "22716": {
+   "armor": 54,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 29."
+   ],
+   "ilvl": 68,
+   "q": 3,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 7,
+    "sp": 29,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "22721": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 23."
+   ],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 9,
+    "sp": 23,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "22730": {
+   "armor": 75,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Improves your chance to get a critical strike with spells by 1%.",
+    "Increases damage and healing done by magical spells and effects by up to 41."
+   ],
+   "ilvl": 88,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 9,
+    "sp": 41,
+    "spellcrit": 1,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "22731": {
+   "armor": 66,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 30.",
+    "Improves your chance to hit with spells by 1%."
+   ],
+   "ilvl": 88,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 10,
+    "sp": 30,
+    "spellhit": 1,
+    "sta": 11
+   },
+   "unmapped": []
   },
   "227808": {
    "armor": 75,
@@ -4308,13 +5740,51 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 15,
     "sp": 27
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
+  },
+  "22807": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 95.",
+    "Improves your chance to hit with spells by 1%.",
+    "Improves your chance to get a critical strike with spells by 1%."
+   ],
+   "ilvl": 83,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 8,
+    "sp": 95,
+    "spellcrit": 1,
+    "spellhit": 1,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "22809": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Restores 8 mana per 5 sec.",
+    "Increases damage and healing done by magical spells and effects by up to 35."
+   ],
+   "ilvl": 83,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 24,
+    "mp5": 8,
+    "sp": 35,
+    "sta": 29
+   },
+   "unmapped": []
   },
   "228190": {
    "armor": 56,
@@ -4323,10 +5793,138 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "hit": 10,
     "int": 22,
     "sp": 25
+   },
+   "unmapped": []
+  },
+  "22983": {
+   "armor": 94,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 39.",
+    "Improves your chance to get a critical strike with spells by 1%."
+   ],
+   "ilvl": 83,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 12,
+    "sp": 39,
+    "spellcrit": 1,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "22988": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 83,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "ap": 305,
+    "int": 18,
+    "sta": 18
+   },
+   "unmapped": []
+  },
+  "23017": {
+   "armor": 63,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 28.",
+    "Decreases the magical resistances of your spell targets by 3."
+   ],
+   "ilvl": 83,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 10,
+    "sp": 28,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "23021": {
+   "armor": 55,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Improves your chance to get a critical strike with spells by 1%.",
+    "Increases damage and healing done by magical spells and effects by up to 21."
+   ],
+   "ilvl": 83,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 11,
+    "sp": 21,
+    "spellcrit": 1,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "23035": {
+   "armor": 102,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 51."
+   ],
+   "ilvl": 83,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 24,
+    "sp": 51,
+    "sta": 18
+   },
+   "unmapped": []
+  },
+  "23050": {
+   "armor": 68,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 26.",
+    "Improves your chance to get a critical strike with spells by 1%.",
+    "Improves your chance to hit with spells by 1%."
+   ],
+   "ilvl": 90,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 11,
+    "sp": 26,
+    "spellcrit": 1,
+    "spellhit": 1,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "23070": {
+   "armor": 112,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 44.",
+    "Improves your chance to get a critical strike with spells by 2%."
+   ],
+   "ilvl": 85,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 14,
+    "sp": 44,
+    "spellcrit": 2,
+    "sta": 20
    },
    "unmapped": []
   },
@@ -4337,15 +5935,15 @@
    "ilvl": 71,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "heal": 34,
     "int": 20,
     "sp": 17,
     "sta": 46
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "231640": {
    "armor": 679,
@@ -4354,16 +5952,16 @@
    "ilvl": 74,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "heal": 30,
     "int": 21,
+    "mp5": 3,
     "sp": 16,
     "sta": 40
    },
-   "unmapped": [
-    "+14 Crit Rating",
-    "+3 Mana Per"
-   ]
+   "unmapped": []
   },
   "231641": {
    "armor": 835,
@@ -4372,16 +5970,16 @@
    "ilvl": 74,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "heal": 30,
     "int": 21,
+    "mp5": 3,
     "sp": 16,
     "sta": 40
    },
-   "unmapped": [
-    "+14 Crit Rating",
-    "+3 Mana Per"
-   ]
+   "unmapped": []
   },
   "231643": {
    "armor": 502,
@@ -4392,14 +5990,15 @@
    "ilvl": 71,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "heal": 17,
     "int": 18,
     "sp": 9,
     "sta": 25
    },
    "unmapped": [
-    "+14 Crit Rating",
     "the critical strike chance of your Holy Shock by 2"
    ]
   },
@@ -4410,6 +6009,7 @@
    "ilvl": 74,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "heal": 28,
     "int": 16,
@@ -4425,6 +6025,7 @@
    "ilvl": 71,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
     "int": 16,
@@ -4440,15 +6041,15 @@
    "ilvl": 71,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 20,
     "sp": 27,
     "sta": 30,
     "str": 20
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "231648": {
    "armor": 679,
@@ -4457,15 +6058,15 @@
    "ilvl": 74,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 15,
     "sp": 21,
     "sta": 39,
     "str": 22
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "231649": {
    "armor": 835,
@@ -4474,15 +6075,15 @@
    "ilvl": 74,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 14,
     "sp": 23,
     "sta": 39,
     "str": 22
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "231651": {
    "armor": 626,
@@ -4491,6 +6092,7 @@
    "ilvl": 74,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
     "sp": 12,
@@ -4506,11 +6108,29 @@
    "ilvl": 71,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "int": 14,
     "sp": 13,
     "sta": 31,
     "str": 18
+   },
+   "unmapped": []
+  },
+  "23220": {
+   "armor": 128,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 53."
+   ],
+   "ilvl": 85,
+   "q": 4,
+   "req": 60,
+   "src": "warcraftmaps",
+   "stats": {
+    "int": 19,
+    "sp": 53,
+    "sta": 25
    },
    "unmapped": []
   },
@@ -4522,15 +6142,15 @@
    "ilvl": 60,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "haste": 2,
     "hit": 10,
     "int": 7,
     "sp": 21,
     "sta": 6
    },
-   "unmapped": [
-    "the casting speed of your spells by 2"
-   ]
+   "unmapped": []
   },
   "234019": {
    "bind": "Binds when picked up",
@@ -4540,15 +6160,15 @@
    "ilvl": 60,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "heal": 28,
     "int": 7,
+    "mp5": 3,
     "sp": 14,
     "sta": 6
    },
-   "unmapped": [
-    "+3 Mana Per"
-   ]
+   "unmapped": []
   },
   "234020": {
    "bind": "Binds when picked up",
@@ -4558,15 +6178,15 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "haste": 2,
     "hit": 10,
     "int": 8,
     "sp": 22,
     "sta": 7
    },
-   "unmapped": [
-    "the casting speed of your spells by 2"
-   ]
+   "unmapped": []
   },
   "234023": {
    "bind": "Binds when picked up",
@@ -4576,15 +6196,15 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "heal": 30,
     "int": 8,
+    "mp5": 3,
     "sp": 14,
     "sta": 7
    },
-   "unmapped": [
-    "+3 Mana Per"
-   ]
+   "unmapped": []
   },
   "234024": {
    "bind": "Binds when picked up",
@@ -4594,15 +6214,15 @@
    "ilvl": 70,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "haste": 2,
     "hit": 10,
     "int": 8,
     "sp": 25,
     "sta": 8
    },
-   "unmapped": [
-    "the casting speed of your spells by 2"
-   ]
+   "unmapped": []
   },
   "234025": {
    "bind": "Binds when picked up",
@@ -4612,15 +6232,15 @@
    "ilvl": 70,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "heal": 32,
     "int": 8,
+    "mp5": 4,
     "sp": 16,
     "sta": 8
    },
-   "unmapped": [
-    "+4 Mana Per"
-   ]
+   "unmapped": []
   },
   "234028": {
    "bind": "Binds when picked up",
@@ -4630,15 +6250,15 @@
    "ilvl": 75,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "haste": 2,
     "hit": 10,
     "int": 8,
     "sp": 26,
     "sta": 8
    },
-   "unmapped": [
-    "the casting speed of your spells by 2"
-   ]
+   "unmapped": []
   },
   "234029": {
    "bind": "Binds when picked up",
@@ -4648,15 +6268,15 @@
    "ilvl": 75,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "heal": 34,
     "int": 8,
+    "mp5": 4,
     "sp": 16,
     "sta": 8
    },
-   "unmapped": [
-    "+4 Mana Per"
-   ]
+   "unmapped": []
   },
   "234032": {
    "bind": "Binds when picked up",
@@ -4666,15 +6286,15 @@
    "ilvl": 80,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "haste": 2,
     "hit": 10,
     "int": 9,
     "sp": 28,
     "sta": 8
    },
-   "unmapped": [
-    "the casting speed of your spells by 2"
-   ]
+   "unmapped": []
   },
   "234033": {
    "bind": "Binds when picked up",
@@ -4684,15 +6304,15 @@
    "ilvl": 80,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "heal": 37,
     "int": 9,
+    "mp5": 5,
     "sp": 18,
     "sta": 8
    },
-   "unmapped": [
-    "+5 Mana Per"
-   ]
+   "unmapped": []
   },
   "234546": {
    "bind": "Binds when picked up",
@@ -4702,15 +6322,15 @@
    "ilvl": 80,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 20,
     "sp": 16,
     "sta": 42,
     "str": 27
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "234568": {
    "bind": "Binds when picked up",
@@ -4720,15 +6340,15 @@
    "ilvl": 80,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "int": 20,
     "sp": 16,
     "sta": 42,
     "str": 27
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "235473": {
    "armor": 3000,
@@ -4739,6 +6359,7 @@
    "ilvl": 80,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 10,
@@ -4756,6 +6377,7 @@
    "ilvl": 80,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 10,
@@ -4771,15 +6393,15 @@
    "ilvl": 78,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "bv": 100,
+    "crit": 28,
     "int": 10,
     "sp": 32,
     "sta": 39
    },
-   "unmapped": [
-    "+28 Crit Rating"
-   ]
+   "unmapped": []
   },
   "237817": {
    "armor": 201,
@@ -4788,15 +6410,15 @@
    "ilvl": 78,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "bv": 100,
+    "crit": 28,
     "int": 10,
     "sp": 32,
     "sta": 39
    },
-   "unmapped": [
-    "+28 Crit Rating"
-   ]
+   "unmapped": []
   },
   "237820": {
    "armor": 104,
@@ -4805,15 +6427,15 @@
    "ilvl": 78,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "bv": 100,
+    "crit": 28,
     "int": 10,
     "sp": 32,
     "sta": 39
    },
-   "unmapped": [
-    "+28 Crit Rating"
-   ]
+   "unmapped": []
   },
   "237821": {
    "armor": 201,
@@ -4822,15 +6444,15 @@
    "ilvl": 78,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "bv": 100,
+    "crit": 28,
     "int": 10,
     "sp": 32,
     "sta": 39
    },
-   "unmapped": [
-    "+28 Crit Rating"
-   ]
+   "unmapped": []
   },
   "240020": {
    "armor": 954,
@@ -4839,16 +6461,16 @@
    "ilvl": 98,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 42,
     "haste": 10,
     "heal": 66,
     "int": 24,
     "sp": 33,
     "sta": 17
    },
-   "unmapped": [
-    "+42 Crit Rating"
-   ]
+   "unmapped": []
   },
   "240021": {
    "armor": 818,
@@ -4857,16 +6479,16 @@
    "ilvl": 98,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 28,
     "haste": 20,
     "heal": 42,
     "int": 14,
     "sp": 22,
     "sta": 13
    },
-   "unmapped": [
-    "+28 Crit Rating"
-   ]
+   "unmapped": []
   },
   "240022": {
    "armor": 749,
@@ -4875,16 +6497,16 @@
    "ilvl": 98,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "haste": 20,
     "heal": 45,
     "int": 15,
     "sp": 23,
     "sta": 13
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "240039": {
    "armor": 1090,
@@ -4893,16 +6515,16 @@
    "ilvl": 98,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 28,
     "haste": 20,
     "heal": 73,
     "int": 20,
     "sp": 37,
     "sta": 19
    },
-   "unmapped": [
-    "+28 Crit Rating"
-   ]
+   "unmapped": []
   },
   "240040": {
    "armor": 886,
@@ -4911,16 +6533,16 @@
    "ilvl": 98,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 28,
     "haste": 20,
     "heal": 71,
     "int": 19,
     "sp": 35,
     "sta": 19
    },
-   "unmapped": [
-    "+28 Crit Rating"
-   ]
+   "unmapped": []
   },
   "240041": {
    "armor": 681,
@@ -4929,6 +6551,7 @@
    "ilvl": 98,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "haste": 30,
     "heal": 46,
@@ -4945,6 +6568,7 @@
    "ilvl": 98,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "haste": 30,
     "heal": 22,
@@ -4961,16 +6585,16 @@
    "ilvl": 98,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "haste": 30,
     "heal": 36,
     "int": 15,
     "sp": 19,
     "sta": 14
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "251962": {
    "armor": 27,
@@ -4978,6 +6602,7 @@
    "equip": [],
    "ilvl": 36,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "int": 9,
     "sp": 6
@@ -4991,6 +6616,7 @@
    "ilvl": 39,
    "q": 2,
    "req": 34,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 11,
@@ -5004,6 +6630,7 @@
    "equip": [],
    "ilvl": 18,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "heal": 2,
     "sp": 1,
@@ -5017,6 +6644,7 @@
    "equip": [],
    "ilvl": 22,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "int": 6,
     "sp": 2
@@ -5029,6 +6657,7 @@
    "equip": [],
    "ilvl": 27,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "heal": 9,
     "sp": 3,
@@ -5042,6 +6671,7 @@
    "equip": [],
    "ilvl": 28,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "sp": 3
@@ -5054,6 +6684,7 @@
    "equip": [],
    "ilvl": 28,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "heal": 9,
     "sp": 3,
@@ -5067,6 +6698,7 @@
    "equip": [],
    "ilvl": 29,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "sp": 14,
     "sta": 9
@@ -5079,6 +6711,7 @@
    "equip": [],
    "ilvl": 29,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "int": 13,
     "sp": 7
@@ -5091,6 +6724,7 @@
    "equip": [],
    "ilvl": 40,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "sp": 4,
@@ -5104,6 +6738,7 @@
    "equip": [],
    "ilvl": 44,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "int": 12,
     "sp": 5
@@ -5116,12 +6751,12 @@
    "equip": [],
    "ilvl": 49,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
+    "mp5": 8,
     "sp": 18
    },
-   "unmapped": [
-    "+8 Mana Per"
-   ]
+   "unmapped": []
   },
   "270123": {
    "armor": 117,
@@ -5129,6 +6764,7 @@
    "equip": [],
    "ilvl": 55,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "hit": 5,
     "sp": 20,
@@ -5141,6 +6777,7 @@
    "equip": [],
    "ilvl": 58,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "sp": 13,
@@ -5155,13 +6792,13 @@
    "equip": [],
    "ilvl": 57,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "int": 13,
+    "mp5": 5,
     "sp": 14
    },
-   "unmapped": [
-    "+5 Mana Per"
-   ]
+   "unmapped": []
   },
   "270261": {
    "armor": 35,
@@ -5170,6 +6807,7 @@
    "ilvl": 18,
    "q": 3,
    "req": 13,
+   "src": "wow-forever",
    "stats": {
     "sp": 8,
     "spi": 4
@@ -5183,6 +6821,7 @@
    "ilvl": 18,
    "q": 3,
    "req": 13,
+   "src": "wow-forever",
    "stats": {
     "bv": 30,
     "sp": 3
@@ -5196,6 +6835,7 @@
    "ilvl": 20,
    "q": 3,
    "req": 15,
+   "src": "wow-forever",
    "stats": {
     "agi": 4,
     "sp": 5
@@ -5209,6 +6849,7 @@
    "ilvl": 21,
    "q": 3,
    "req": 16,
+   "src": "wow-forever",
    "stats": {
     "sp": 6,
     "spi": 5
@@ -5222,6 +6863,7 @@
    "ilvl": 24,
    "q": 3,
    "req": 19,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "sp": 5,
@@ -5236,6 +6878,7 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "bv": 100,
     "int": 21,
@@ -5251,6 +6894,7 @@
    "ilvl": 55,
    "q": 4,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "bv": 80,
     "int": 17,
@@ -5266,6 +6910,7 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "int": 27,
     "sp": 12,
@@ -5280,6 +6925,7 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "int": 27,
     "sp": 12,
@@ -5294,14 +6940,14 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "heal": 37,
     "sp": 12,
     "sta": 24
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "2721": {
    "armor": 40,
@@ -5310,6 +6956,7 @@
    "ilvl": 32,
    "q": 3,
    "req": 27,
+   "src": "wow-forever",
    "stats": {
     "heal": 33,
     "sp": 11,
@@ -5324,6 +6971,7 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "bv": 100,
     "int": 21,
@@ -5339,6 +6987,7 @@
    "ilvl": 55,
    "q": 4,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "bv": 80,
     "int": 17,
@@ -5354,6 +7003,7 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "int": 27,
     "sp": 12,
@@ -5368,6 +7018,7 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "int": 27,
     "sp": 12,
@@ -5382,14 +7033,14 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "heal": 37,
     "sp": 12,
     "sta": 24
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "272411": {
    "armor": 46,
@@ -5398,6 +7049,7 @@
    "ilvl": 65,
    "q": 3,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "hit": 10,
     "int": 8,
@@ -5412,6 +7064,7 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "int": 27,
     "sp": 16,
@@ -5426,6 +7079,7 @@
    "ilvl": 65,
    "q": 4,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "int": 27,
     "sp": 16,
@@ -5440,6 +7094,7 @@
    "ilvl": 31,
    "q": 3,
    "req": 26,
+   "src": "wow-forever",
    "stats": {
     "sp": 7,
     "spi": 6,
@@ -5453,12 +7108,12 @@
    "ilvl": 33,
    "q": 3,
    "req": 28,
+   "src": "wow-forever",
    "stats": {
+    "mp5": 3,
     "sp": 6
    },
-   "unmapped": [
-    "+3 Mana Per"
-   ]
+   "unmapped": []
   },
   "273031": {
    "bind": "Binds when picked up",
@@ -5466,6 +7121,7 @@
    "ilvl": 32,
    "q": 3,
    "req": 27,
+   "src": "wow-forever",
    "stats": {
     "heal": 9,
     "int": 6,
@@ -5481,13 +7137,13 @@
    "ilvl": 31,
    "q": 3,
    "req": 26,
+   "src": "wow-forever",
    "stats": {
+    "mp5": 2,
     "sp": 5,
     "str": 6
    },
-   "unmapped": [
-    "+2 Mana Per"
-   ]
+   "unmapped": []
   },
   "273039": {
    "armor": 28,
@@ -5496,13 +7152,13 @@
    "ilvl": 34,
    "q": 3,
    "req": 29,
+   "src": "wow-forever",
    "stats": {
+    "hp5": 5,
     "int": 10,
     "sp": 7
    },
-   "unmapped": [
-    "+5 Health Per"
-   ]
+   "unmapped": []
   },
   "273044": {
    "armor": 49,
@@ -5513,6 +7169,7 @@
    "ilvl": 32,
    "q": 3,
    "req": 27,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
     "sp": 9
@@ -5526,6 +7183,7 @@
    "ilvl": 22,
    "q": 3,
    "req": 17,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "sp": 6,
@@ -5540,6 +7198,7 @@
    "ilvl": 26,
    "q": 3,
    "req": 21,
+   "src": "wow-forever",
    "stats": {
     "sp": 6,
     "sta": 6
@@ -5553,6 +7212,7 @@
    "ilvl": 29,
    "q": 3,
    "req": 24,
+   "src": "wow-forever",
    "stats": {
     "sp": 9,
     "str": 8
@@ -5566,6 +7226,7 @@
    "ilvl": 29,
    "q": 3,
    "req": 24,
+   "src": "wow-forever",
    "stats": {
     "fr": 7,
     "heal": 9,
@@ -5580,6 +7241,7 @@
    "ilvl": 30,
    "q": 3,
    "req": 25,
+   "src": "wow-forever",
    "stats": {
     "sp": 7,
     "str": 6
@@ -5593,13 +7255,13 @@
    "ilvl": 31,
    "q": 3,
    "req": 26,
+   "src": "wow-forever",
    "stats": {
     "heal": 9,
+    "mp5": 3,
     "sp": 3
    },
-   "unmapped": [
-    "+3 Mana Per"
-   ]
+   "unmapped": []
   },
   "273841": {
    "bind": "Binds when picked up",
@@ -5609,6 +7271,7 @@
    "ilvl": 28,
    "q": 3,
    "req": 23,
+   "src": "wow-forever",
    "stats": {
     "sp": 12
    },
@@ -5621,6 +7284,7 @@
    "ilvl": 30,
    "q": 3,
    "req": 25,
+   "src": "wow-forever",
    "stats": {
     "sp": 7,
     "spi": 6
@@ -5634,6 +7298,7 @@
    "ilvl": 30,
    "q": 3,
    "req": 25,
+   "src": "wow-forever",
    "stats": {
     "heal": 13,
     "sp": 4,
@@ -5650,6 +7315,7 @@
    "ilvl": 34,
    "q": 3,
    "req": 29,
+   "src": "wow-forever",
    "stats": {
     "heal": 13,
     "sp": 5,
@@ -5664,6 +7330,7 @@
    "ilvl": 39,
    "q": 2,
    "req": 34,
+   "src": "wow-forever",
    "stats": {
     "heal": 13,
     "int": 9,
@@ -5677,6 +7344,7 @@
    "ilvl": 42,
    "q": 3,
    "req": 37,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "sp": 6,
@@ -5691,6 +7359,7 @@
    "ilvl": 40,
    "q": 3,
    "req": 35,
+   "src": "wow-forever",
    "stats": {
     "bv": 30,
     "heal": 26,
@@ -5706,6 +7375,7 @@
    "ilvl": 42,
    "q": 3,
    "req": 37,
+   "src": "wow-forever",
    "stats": {
     "agi": 13,
     "sp": 8,
@@ -5720,14 +7390,14 @@
    "ilvl": 40,
    "q": 3,
    "req": 35,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 9,
+    "mp5": 4,
     "sp": 4
    },
-   "unmapped": [
-    "+4 Mana Per"
-   ]
+   "unmapped": []
   },
   "274638": {
    "armor": 213,
@@ -5736,6 +7406,7 @@
    "ilvl": 47,
    "q": 3,
    "req": 42,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "sp": 15,
@@ -5750,12 +7421,12 @@
    "ilvl": 48,
    "q": 3,
    "req": 43,
+   "src": "wow-forever",
    "stats": {
+    "mp5": 3,
     "sp": 14
    },
-   "unmapped": [
-    "+3 Mana Per"
-   ]
+   "unmapped": []
   },
   "274653": {
    "armor": 163,
@@ -5764,6 +7435,7 @@
    "ilvl": 48,
    "q": 3,
    "req": 43,
+   "src": "wow-forever",
    "stats": {
     "heal": 16,
     "sp": 6,
@@ -5778,13 +7450,13 @@
    "ilvl": 47,
    "q": 3,
    "req": 43,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "heal": 47,
     "sp": 16
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "274657": {
    "armor": 124,
@@ -5793,6 +7465,7 @@
    "ilvl": 48,
    "q": 3,
    "req": 43,
+   "src": "wow-forever",
    "stats": {
     "sp": 22,
     "spi": 12,
@@ -5807,14 +7480,14 @@
    "ilvl": 47,
    "q": 3,
    "req": 42,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
+    "mp5": 6,
     "sp": 6,
     "sta": 7
    },
-   "unmapped": [
-    "+6 Mana Per"
-   ]
+   "unmapped": []
   },
   "274932": {
    "armor": 47,
@@ -5822,6 +7495,7 @@
    "equip": [],
    "ilvl": 38,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "sp": 6,
     "sta": 5
@@ -5835,6 +7509,7 @@
    "ilvl": 44,
    "q": 3,
    "req": 39,
+   "src": "wow-forever",
    "stats": {
     "sp": 12,
     "sta": 15
@@ -5847,6 +7522,7 @@
    "ilvl": 46,
    "q": 3,
    "req": 41,
+   "src": "wow-forever",
    "stats": {
     "agi": 4,
     "sp": 5,
@@ -5861,6 +7537,7 @@
    "ilvl": 47,
    "q": 3,
    "req": 42,
+   "src": "wow-forever",
    "stats": {
     "sp": 15,
     "spi": 21
@@ -5873,6 +7550,7 @@
    "equip": [],
    "ilvl": 44,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "sp": 15,
     "spi": 12
@@ -5885,6 +7563,7 @@
    "equip": [],
    "ilvl": 44,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "heal": 26,
     "sp": 9,
@@ -5898,6 +7577,7 @@
    "equip": [],
    "ilvl": 45,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "heal": 13,
     "sp": 5,
@@ -5911,6 +7591,7 @@
    "equip": [],
    "ilvl": 57,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "fr": 12,
     "sp": 23
@@ -5924,6 +7605,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "sp": 7,
@@ -5938,6 +7620,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 15,
@@ -5952,6 +7635,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "fr": 20,
     "int": 18,
@@ -5966,14 +7650,14 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 35,
+    "mp5": 7,
     "sp": 12,
     "sta": 18
    },
-   "unmapped": [
-    "+7 Mana Per"
-   ]
+   "unmapped": []
   },
   "276434": {
    "armor": 288,
@@ -5982,6 +7666,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 31,
     "sp": 10,
@@ -5997,6 +7682,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "nr": 10,
     "sp": 13,
@@ -6011,6 +7697,7 @@
    "ilvl": 52,
    "q": 3,
    "req": 47,
+   "src": "wow-forever",
    "stats": {
     "sp": 10,
     "spen": 3,
@@ -6027,6 +7714,7 @@
    "ilvl": 55,
    "q": 3,
    "req": 50,
+   "src": "wow-forever",
    "stats": {
     "nr": 13,
     "sp": 11
@@ -6040,6 +7728,7 @@
    "ilvl": 56,
    "q": 3,
    "req": 51,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "sp": 6,
@@ -6055,6 +7744,7 @@
    "ilvl": 56,
    "q": 3,
    "req": 51,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "sp": 7,
@@ -6069,6 +7759,7 @@
    "ilvl": 25,
    "q": 3,
    "req": 20,
+   "src": "wow-forever",
    "stats": {
     "int": 9,
     "sp": 11
@@ -6082,13 +7773,13 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
+    "holy": 15,
     "int": 10,
     "sta": 10
    },
-   "unmapped": [
-    "+15 Holy Damage"
-   ]
+   "unmapped": []
   },
   "279863": {
    "bind": "Binds when picked up",
@@ -6099,7 +7790,9 @@
    "ilvl": 43,
    "q": 3,
    "req": 38,
+   "src": "wow-forever",
    "stats": {
+    "heal": 11,
     "sta": 8,
     "str": 5
    },
@@ -6112,14 +7805,14 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
     "heal": 40,
+    "mp5": 8,
     "sp": 13,
     "sta": 17
    },
-   "unmapped": [
-    "+8 Mana Per"
-   ]
+   "unmapped": []
   },
   "280025": {
    "armor": 78,
@@ -6128,13 +7821,13 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
+    "mp5": 7,
     "sp": 22,
     "sta": 19
    },
-   "unmapped": [
-    "+7 Mana Per"
-   ]
+   "unmapped": []
   },
   "280027": {
    "armor": 657,
@@ -6143,14 +7836,14 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "heal": 40,
     "sp": 13,
     "spi": 21
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "280028": {
    "armor": 410,
@@ -6159,13 +7852,13 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
+    "holy": 18,
     "int": 14
    },
-   "unmapped": [
-    "+14 Crit Rating",
-    "+18 Holy Damage"
-   ]
+   "unmapped": []
   },
   "280045": {
    "armor": 45,
@@ -6174,13 +7867,13 @@
    "ilvl": 63,
    "q": 3,
    "req": 58,
+   "src": "wow-forever",
    "stats": {
+    "ap": 18,
     "sp": 12,
     "sta": 11
    },
-   "unmapped": [
-    "+18 Attack Power"
-   ]
+   "unmapped": []
   },
   "280057": {
    "armor": 84,
@@ -6189,6 +7882,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "hit": 18,
     "sp": 21,
@@ -6203,6 +7897,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 12,
     "sp": 16,
@@ -6217,6 +7912,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "sp": 21,
     "spi": 16,
@@ -6231,6 +7927,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "int": 16,
     "sp": 21,
@@ -6244,6 +7941,7 @@
    "ilvl": 49,
    "q": 3,
    "req": 44,
+   "src": "wow-forever",
    "stats": {
     "sp": 21,
     "str": 19
@@ -6257,6 +7955,7 @@
    "ilvl": 46,
    "q": 2,
    "req": 41,
+   "src": "wow-forever",
    "stats": {
     "sp": 16,
     "spi": 11
@@ -6270,6 +7969,7 @@
    "ilvl": 44,
    "q": 2,
    "req": 39,
+   "src": "wow-forever",
    "stats": {
     "sp": 12,
     "sta": 8
@@ -6283,6 +7983,7 @@
    "ilvl": 47,
    "q": 3,
    "req": 42,
+   "src": "wow-forever",
    "stats": {
     "sp": 11,
     "sta": 21,
@@ -6297,6 +7998,7 @@
    "ilvl": 54,
    "q": 2,
    "req": 49,
+   "src": "wow-forever",
    "stats": {
     "sp": 11,
     "spi": 12
@@ -6309,6 +8011,7 @@
    "ilvl": 56,
    "q": 2,
    "req": 51,
+   "src": "wow-forever",
    "stats": {
     "sp": 10,
     "spi": 10
@@ -6322,6 +8025,7 @@
    "ilvl": 62,
    "q": 3,
    "req": 57,
+   "src": "wow-forever",
    "stats": {
     "agi": 14,
     "sp": 16,
@@ -6337,6 +8041,7 @@
    "ilvl": 56,
    "q": 2,
    "req": 51,
+   "src": "wow-forever",
    "stats": {
     "int": 13,
     "sp": 9,
@@ -6351,6 +8056,7 @@
    "ilvl": 42,
    "q": 2,
    "req": 37,
+   "src": "wow-forever",
    "stats": {
     "sp": 8,
     "sta": 7
@@ -6364,6 +8070,7 @@
    "ilvl": 47,
    "q": 3,
    "req": 42,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 8,
@@ -6378,6 +8085,7 @@
    "ilvl": 21,
    "q": 2,
    "req": 16,
+   "src": "wow-forever",
    "stats": {
     "sp": 2,
     "spi": 4
@@ -6391,6 +8099,7 @@
    "ilvl": 27,
    "q": 2,
    "req": 22,
+   "src": "wow-forever",
    "stats": {
     "int": 5,
     "sp": 5
@@ -6403,6 +8112,7 @@
    "ilvl": 41,
    "q": 3,
    "req": 36,
+   "src": "wow-forever",
    "stats": {
     "sp": 9,
     "spi": 9
@@ -6416,6 +8126,7 @@
    "ilvl": 32,
    "q": 2,
    "req": 27,
+   "src": "wow-forever",
    "stats": {
     "sp": 5,
     "str": 5
@@ -6429,6 +8140,7 @@
    "ilvl": 46,
    "q": 2,
    "req": 41,
+   "src": "wow-forever",
    "stats": {
     "int": 13,
     "sp": 15
@@ -6441,6 +8153,7 @@
    "ilvl": 45,
    "q": 2,
    "req": 40,
+   "src": "wow-forever",
    "stats": {
     "sp": 15,
     "str": 13
@@ -6454,6 +8167,7 @@
    "ilvl": 52,
    "q": 3,
    "req": 47,
+   "src": "wow-forever",
    "stats": {
     "sp": 13,
     "sta": 12,
@@ -6468,6 +8182,7 @@
    "ilvl": 64,
    "q": 2,
    "req": 59,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "sp": 6,
@@ -6481,6 +8196,7 @@
    "ilvl": 65,
    "q": 3,
    "req": 60,
+   "src": "wow-forever",
    "stats": {
     "heal": 16,
     "sp": 5,
@@ -6496,6 +8212,7 @@
    "ilvl": 58,
    "q": 2,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
     "sp": 12,
     "spi": 8
@@ -6509,6 +8226,7 @@
    "ilvl": 60,
    "q": 2,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "agi": 9,
     "sp": 6,
@@ -6523,6 +8241,7 @@
    "ilvl": 58,
    "q": 3,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
     "int": 16,
     "sp": 20,
@@ -6537,6 +8256,7 @@
    "ilvl": 53,
    "q": 2,
    "req": 48,
+   "src": "wow-forever",
    "stats": {
     "int": 13,
     "nr": 5,
@@ -6550,6 +8270,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "frr": 10,
     "sp": 13,
@@ -6565,6 +8286,7 @@
    "ilvl": 61,
    "q": 3,
    "req": 56,
+   "src": "wow-forever",
    "stats": {
     "def": 6,
     "sp": 16,
@@ -6579,6 +8301,7 @@
    "ilvl": 54,
    "q": 2,
    "req": 49,
+   "src": "wow-forever",
    "stats": {
     "sp": 13,
     "str": 11
@@ -6592,6 +8315,7 @@
    "ilvl": 32,
    "q": 2,
    "req": 27,
+   "src": "wow-forever",
    "stats": {
     "heal": 13,
     "sp": 6,
@@ -6606,14 +8330,14 @@
    "ilvl": 29,
    "q": 3,
    "req": 24,
+   "src": "wow-forever",
    "stats": {
     "heal": 16,
+    "mp5": 3,
     "sp": 5,
     "sta": 11
    },
-   "unmapped": [
-    "+3 Mana Per"
-   ]
+   "unmapped": []
   },
   "284707": {
    "armor": 61,
@@ -6622,6 +8346,7 @@
    "ilvl": 39,
    "q": 2,
    "req": 34,
+   "src": "wow-forever",
    "stats": {
     "sp": 10,
     "sta": 7
@@ -6635,6 +8360,7 @@
    "ilvl": 50,
    "q": 2,
    "req": 45,
+   "src": "wow-forever",
    "stats": {
     "heal": 23,
     "int": 16,
@@ -6649,6 +8375,7 @@
    "ilvl": 37,
    "q": 3,
    "req": 32,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 8,
@@ -6662,6 +8389,7 @@
    "ilvl": 29,
    "q": 2,
    "req": 24,
+   "src": "wow-forever",
    "stats": {
     "sp": 4,
     "sta": 2
@@ -6675,6 +8403,7 @@
    "ilvl": 29,
    "q": 3,
    "req": 24,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 10,
@@ -6689,6 +8418,7 @@
    "ilvl": 21,
    "q": 3,
    "req": 16,
+   "src": "wow-forever",
    "stats": {
     "sp": 5,
     "sta": 6
@@ -6700,13 +8430,13 @@
    "equip": [],
    "ilvl": 58,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
+    "crit": 14,
     "sp": 18,
     "str": 22
    },
-   "unmapped": [
-    "+14 Crit Rating"
-   ]
+   "unmapped": []
   },
   "286428": {
    "bind": "Binds when picked up",
@@ -6714,6 +8444,7 @@
    "ilvl": 45,
    "q": 3,
    "req": 40,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
     "sp": 7,
@@ -6729,6 +8460,7 @@
    "ilvl": 45,
    "q": 3,
    "req": 40,
+   "src": "wow-forever",
    "stats": {
     "heal": 26,
     "sp": 9,
@@ -6743,6 +8475,7 @@
    "ilvl": 21,
    "q": 2,
    "req": 16,
+   "src": "wow-forever",
    "stats": {
     "sp": 3,
     "spi": 3
@@ -6755,6 +8488,7 @@
    "ilvl": 27,
    "q": 3,
    "req": 22,
+   "src": "wow-forever",
    "stats": {
     "sp": 6,
     "sta": 8,
@@ -6769,6 +8503,7 @@
    "ilvl": 48,
    "q": 3,
    "req": 43,
+   "src": "wow-forever",
    "stats": {
     "sp": 9,
     "spi": 14
@@ -6782,6 +8517,7 @@
    "ilvl": 51,
    "q": 2,
    "req": 46,
+   "src": "wow-forever",
    "stats": {
     "sp": 5,
     "str": 10
@@ -6794,6 +8530,7 @@
    "ilvl": 60,
    "q": 2,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 19,
     "sp": 6,
@@ -6808,6 +8545,7 @@
    "ilvl": 23,
    "q": 3,
    "req": 18,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "int": 10,
@@ -6821,6 +8559,7 @@
    "ilvl": 33,
    "q": 3,
    "req": 28,
+   "src": "wow-forever",
    "stats": {
     "sp": 14,
     "str": 12
@@ -6834,6 +8573,7 @@
    "ilvl": 34,
    "q": 3,
    "req": 29,
+   "src": "wow-forever",
    "stats": {
     "int": 13,
     "sp": 12,
@@ -6848,6 +8588,7 @@
    "ilvl": 32,
    "q": 3,
    "req": 27,
+   "src": "wow-forever",
    "stats": {
     "heal": 13,
     "sp": 4,
@@ -6863,6 +8604,7 @@
    "ilvl": 32,
    "q": 3,
    "req": 27,
+   "src": "wow-forever",
    "stats": {
     "int": 4,
     "sp": 6,
@@ -6876,6 +8618,7 @@
    "ilvl": 33,
    "q": 3,
    "req": 28,
+   "src": "wow-forever",
    "stats": {
     "sp": 6,
     "sta": 8
@@ -6888,6 +8631,7 @@
    "ilvl": 34,
    "q": 3,
    "req": 29,
+   "src": "wow-forever",
    "stats": {
     "sp": 5,
     "sta": 6
@@ -6901,6 +8645,7 @@
    "ilvl": 40,
    "q": 3,
    "req": 35,
+   "src": "wow-forever",
    "stats": {
     "sp": 10,
     "spen": 2,
@@ -6917,6 +8662,7 @@
    "ilvl": 39,
    "q": 3,
    "req": 34,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "sp": 7,
@@ -6930,6 +8676,7 @@
    "ilvl": 40,
    "q": 3,
    "req": 35,
+   "src": "wow-forever",
    "stats": {
     "int": 7,
     "sp": 4
@@ -6943,14 +8690,14 @@
    "ilvl": 44,
    "q": 3,
    "req": 39,
+   "src": "wow-forever",
    "stats": {
     "heal": 14,
+    "mp5": 4,
     "sp": 5,
     "sta": 13
    },
-   "unmapped": [
-    "+4 Mana Per"
-   ]
+   "unmapped": []
   },
   "287018": {
    "armor": 47,
@@ -6959,6 +8706,7 @@
    "ilvl": 52,
    "q": 3,
    "req": 47,
+   "src": "wow-forever",
    "stats": {
     "hit": 10,
     "sp": 11,
@@ -6973,13 +8721,13 @@
    "ilvl": 58,
    "q": 3,
    "req": 53,
+   "src": "wow-forever",
    "stats": {
+    "hp5": 14,
     "sp": 9,
     "sta": 13
    },
-   "unmapped": [
-    "+14 Health Per"
-   ]
+   "unmapped": []
   },
   "287030": {
    "armor": 153,
@@ -6988,6 +8736,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "agi": 14,
     "sp": 10,
@@ -7002,6 +8751,7 @@
    "ilvl": 57,
    "q": 3,
    "req": 52,
+   "src": "wow-forever",
    "stats": {
     "sp": 14,
     "spi": 8,
@@ -7015,6 +8765,7 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "int": 13,
     "sp": 22
@@ -7028,6 +8779,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "int": 15,
     "sp": 18,
@@ -7042,14 +8794,14 @@
    "ilvl": 59,
    "q": 3,
    "req": 54,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
+    "hp5": 18,
     "sp": 7,
     "spi": 17
    },
-   "unmapped": [
-    "+18 Health Per"
-   ]
+   "unmapped": []
   },
   "287039": {
    "armor": 74,
@@ -7058,6 +8810,7 @@
    "ilvl": 60,
    "q": 3,
    "req": 55,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "sp": 5,
@@ -7072,6 +8825,7 @@
    "equip": [],
    "ilvl": 27,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "heal": 6,
     "sp": 2,
@@ -7086,6 +8840,7 @@
    "ilvl": 26,
    "q": 2,
    "req": 21,
+   "src": "wow-forever",
    "stats": {
     "heal": 4,
     "sp": 1,
@@ -7103,6 +8858,7 @@
    "ilvl": 28,
    "q": 3,
    "req": 23,
+   "src": "wow-forever",
    "stats": {
     "agi": 2,
     "int": 8,
@@ -7116,6 +8872,7 @@
    "equip": [],
    "ilvl": 36,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 7,
@@ -7129,6 +8886,7 @@
    "equip": [],
    "ilvl": 42,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "heal": 16,
     "sp": 6,
@@ -7142,6 +8900,7 @@
    "equip": [],
    "ilvl": 40,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "int": 8,
     "sp": 9
@@ -7154,6 +8913,7 @@
    "ilvl": 21,
    "q": 3,
    "req": 16,
+   "src": "wow-forever",
    "stats": {
     "sp": 8,
     "sta": 8
@@ -7167,6 +8927,7 @@
    "ilvl": 22,
    "q": 3,
    "req": 17,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "sp": 3,
@@ -7182,6 +8943,7 @@
    "ilvl": 44,
    "q": 2,
    "req": 39,
+   "src": "wow-forever",
    "stats": {
     "sp": 13,
     "sta": 12
@@ -7195,6 +8957,7 @@
    "ilvl": 33,
    "q": 3,
    "req": 28,
+   "src": "wow-forever",
    "stats": {
     "fr": 10,
     "heal": 22,
@@ -7210,6 +8973,7 @@
    "ilvl": 25,
    "q": 2,
    "req": 20,
+   "src": "wow-forever",
    "stats": {
     "sp": 2,
     "sta": 4
@@ -7223,6 +8987,7 @@
    "ilvl": 23,
    "q": 3,
    "req": 18,
+   "src": "wow-forever",
    "stats": {
     "agi": 6,
     "sp": 7
@@ -7236,6 +9001,7 @@
    "ilvl": 24,
    "q": 3,
    "req": 19,
+   "src": "wow-forever",
    "stats": {
     "heal": 13,
     "sp": 4,
@@ -7252,6 +9018,7 @@
    "ilvl": 26,
    "q": 3,
    "req": 21,
+   "src": "wow-forever",
    "stats": {
     "sp": 7,
     "sta": 5
@@ -7267,6 +9034,7 @@
    "ilvl": 28,
    "q": 3,
    "req": 23,
+   "src": "wow-forever",
    "stats": {
     "heal": 18,
     "sp": 6,
@@ -7283,6 +9051,7 @@
    "ilvl": 28,
    "q": 3,
    "req": 23,
+   "src": "wow-forever",
    "stats": {
     "agi": 2,
     "int": 3,
@@ -7297,6 +9066,7 @@
    "ilvl": 48,
    "q": 3,
    "req": 43,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 11,
@@ -7311,6 +9081,7 @@
    "ilvl": 22,
    "q": 3,
    "req": 17,
+   "src": "wow-forever",
    "stats": {
     "heal": 9,
     "sp": 3,
@@ -7326,6 +9097,7 @@
    "ilvl": 24,
    "q": 3,
    "req": 19,
+   "src": "wow-forever",
    "stats": {
     "int": 5,
     "sp": 5
@@ -7339,6 +9111,7 @@
    "ilvl": 21,
    "q": 3,
    "req": 16,
+   "src": "wow-forever",
    "stats": {
     "sp": 3,
     "sta": 5
@@ -7351,6 +9124,7 @@
    "ilvl": 27,
    "q": 3,
    "req": 22,
+   "src": "wow-forever",
    "stats": {
     "heal": 33,
     "sp": 11
@@ -7364,6 +9138,7 @@
    "ilvl": 31,
    "q": 3,
    "req": 26,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 11,
@@ -7379,6 +9154,7 @@
    "ilvl": 32,
    "q": 3,
    "req": 27,
+   "src": "wow-forever",
    "stats": {
     "int": 11,
     "sp": 6
@@ -7392,6 +9168,7 @@
    "ilvl": 34,
    "q": 3,
    "req": 29,
+   "src": "wow-forever",
    "stats": {
     "sp": 7,
     "spi": 11,
@@ -7406,6 +9183,7 @@
    "ilvl": 35,
    "q": 3,
    "req": 30,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "sp": 5,
@@ -7419,6 +9197,7 @@
    "ilvl": 34,
    "q": 3,
    "req": 29,
+   "src": "wow-forever",
    "stats": {
     "sp": 17,
     "sta": 4
@@ -7432,6 +9211,7 @@
    "ilvl": 34,
    "q": 3,
    "req": 29,
+   "src": "wow-forever",
    "stats": {
     "agi": 3,
     "int": 11,
@@ -7444,6 +9224,7 @@
    "equip": [],
    "ilvl": 32,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "int": 5,
     "sp": 6
@@ -7457,6 +9238,7 @@
    "ilvl": 29,
    "q": 3,
    "req": 24,
+   "src": "wow-forever",
    "stats": {
     "heal": 7,
     "sp": 3,
@@ -7471,6 +9253,7 @@
    "ilvl": 28,
    "q": 3,
    "req": 23,
+   "src": "wow-forever",
    "stats": {
     "sp": 12,
     "spi": 9
@@ -7483,6 +9266,7 @@
    "ilvl": 27,
    "q": 3,
    "req": 22,
+   "src": "wow-forever",
    "stats": {
     "heal": 24,
     "sp": 8,
@@ -7497,6 +9281,7 @@
    "ilvl": 27,
    "q": 3,
    "req": 22,
+   "src": "wow-forever",
    "stats": {
     "sp": 8,
     "sta": 7
@@ -7510,14 +9295,14 @@
    "ilvl": 29,
    "q": 3,
    "req": 24,
+   "src": "wow-forever",
    "stats": {
+    "hp5": 5,
+    "mp5": 5,
     "sp": 5,
     "sta": 5
    },
-   "unmapped": [
-    "+5 Mana Per",
-    "+5 Health Per"
-   ]
+   "unmapped": []
   },
   "6911": {
    "armor": 58,
@@ -7526,6 +9311,7 @@
    "ilvl": 30,
    "q": 3,
    "req": 25,
+   "src": "wow-forever",
    "stats": {
     "sp": 12,
     "sta": 5
@@ -7538,6 +9324,7 @@
    "equip": [],
    "ilvl": 27,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "agi": 5,
     "heal": 10,
@@ -7551,6 +9338,7 @@
    "equip": [],
    "ilvl": 27,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "sp": 6,
     "sta": 5
@@ -7563,6 +9351,7 @@
    "equip": [],
    "ilvl": 26,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "heal": 7,
     "sp": 2,
@@ -7576,6 +9365,7 @@
    "ilvl": 48,
    "q": 2,
    "req": 43,
+   "src": "wow-forever",
    "stats": {
     "sp": 13
    },
@@ -7586,6 +9376,7 @@
    "equip": [],
    "ilvl": 46,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "int": 1,
     "sp": 12,
@@ -7600,13 +9391,13 @@
    "ilvl": 35,
    "q": 3,
    "req": 30,
+   "src": "wow-forever",
    "stats": {
+    "hp5": 9,
     "int": 9,
     "sp": 9
    },
-   "unmapped": [
-    "+9 Health Per"
-   ]
+   "unmapped": []
   },
   "7691": {
    "armor": 42,
@@ -7615,6 +9406,7 @@
    "ilvl": 35,
    "q": 3,
    "req": 30,
+   "src": "wow-forever",
    "stats": {
     "heal": 24,
     "sp": 8,
@@ -7630,6 +9422,7 @@
    "ilvl": 39,
    "q": 2,
    "req": 34,
+   "src": "wow-forever",
    "stats": {
     "int": 6,
     "sp": 7,
@@ -7646,6 +9439,7 @@
    "ilvl": 44,
    "q": 3,
    "req": 39,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 10,
@@ -7661,6 +9455,7 @@
    "ilvl": 44,
    "q": 3,
    "req": 39,
+   "src": "wow-forever",
    "stats": {
     "sp": 8,
     "spi": 7,
@@ -7675,6 +9470,7 @@
    "ilvl": 34,
    "q": 3,
    "req": 29,
+   "src": "wow-forever",
    "stats": {
     "int": 12,
     "sp": 9,
@@ -7688,6 +9484,7 @@
    "equip": [],
    "ilvl": 35,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "bv": 33,
     "int": 8,
@@ -7702,6 +9499,7 @@
    "ilvl": 38,
    "q": 3,
    "req": 33,
+   "src": "wow-forever",
    "stats": {
     "sp": 9,
     "sta": 12,
@@ -7716,6 +9514,7 @@
    "ilvl": 39,
    "q": 3,
    "req": 34,
+   "src": "wow-forever",
    "stats": {
     "heal": 24,
     "int": 6,
@@ -7730,6 +9529,7 @@
    "equip": [],
    "ilvl": 46,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "int": 1,
     "sp": 12,
@@ -7743,6 +9543,7 @@
    "ilvl": 50,
    "q": 3,
    "req": 45,
+   "src": "wow-forever",
    "stats": {
     "sp": 7
    },
@@ -7755,6 +9556,7 @@
    "ilvl": 27,
    "q": 3,
    "req": 22,
+   "src": "wow-forever",
    "stats": {
     "heal": 15,
     "sp": 5,
@@ -7770,6 +9572,7 @@
    "ilvl": 22,
    "q": 2,
    "req": 17,
+   "src": "wow-forever",
    "stats": {
     "sp": 6
    },
@@ -7784,6 +9587,7 @@
    "ilvl": 47,
    "q": 4,
    "req": 42,
+   "src": "wow-forever",
    "stats": {
     "heal": 33,
     "int": 24,
@@ -7798,6 +9602,7 @@
    "ilvl": 42,
    "q": 3,
    "req": 37,
+   "src": "wow-forever",
    "stats": {
     "heal": 13,
     "sp": 5,
@@ -7812,6 +9617,7 @@
    "ilvl": 42,
    "q": 3,
    "req": 37,
+   "src": "wow-forever",
    "stats": {
     "heal": 20,
     "int": 8,
@@ -7828,6 +9634,7 @@
    "ilvl": 46,
    "q": 3,
    "req": 41,
+   "src": "wow-forever",
    "stats": {
     "int": 13,
     "sp": 12,
@@ -7843,6 +9650,7 @@
    "ilvl": 47,
    "q": 3,
    "req": 42,
+   "src": "wow-forever",
    "stats": {
     "heal": 29,
     "int": 5,
@@ -7859,6 +9667,7 @@
    "ilvl": 44,
    "q": 3,
    "req": 39,
+   "src": "wow-forever",
    "stats": {
     "bv": 40,
     "int": 17,
@@ -7874,13 +9683,13 @@
    "ilvl": 45,
    "q": 3,
    "req": 40,
+   "src": "wow-forever",
    "stats": {
+    "hp5": 15,
     "sp": 12,
     "sta": 10
    },
-   "unmapped": [
-    "+15 Health Per"
-   ]
+   "unmapped": []
   },
   "9431": {
    "armor": 51,
@@ -7889,6 +9698,7 @@
    "ilvl": 43,
    "q": 3,
    "req": 38,
+   "src": "wow-forever",
    "stats": {
     "heal": 22,
     "int": 17,
@@ -7904,6 +9714,7 @@
    "ilvl": 41,
    "q": 3,
    "req": 36,
+   "src": "wow-forever",
    "stats": {
     "ar": 5,
     "fr": 5,
@@ -7920,6 +9731,7 @@
    "ilvl": 34,
    "q": 3,
    "req": 29,
+   "src": "wow-forever",
    "stats": {
     "heal": 9,
     "sp": 3,
@@ -7935,12 +9747,12 @@
    "ilvl": 34,
    "q": 3,
    "req": 29,
+   "src": "wow-forever",
    "stats": {
+    "mp5": 3,
     "sp": 9
    },
-   "unmapped": [
-    "+3 Mana Per"
-   ]
+   "unmapped": []
   },
   "9450": {
    "armor": 76,
@@ -7949,6 +9761,7 @@
    "ilvl": 34,
    "q": 3,
    "req": 29,
+   "src": "wow-forever",
    "stats": {
     "heal": 11,
     "sp": 4,
@@ -7963,6 +9776,7 @@
    "ilvl": 32,
    "q": 3,
    "req": 27,
+   "src": "wow-forever",
    "stats": {
     "int": 8,
     "nr": 5,
@@ -7978,6 +9792,7 @@
    "ilvl": 48,
    "q": 3,
    "req": 43,
+   "src": "wow-forever",
    "stats": {
     "heal": 33,
     "sp": 11,
@@ -7993,6 +9808,7 @@
    "ilvl": 49,
    "q": 3,
    "req": 44,
+   "src": "wow-forever",
    "stats": {
     "heal": 24,
     "int": 10,
@@ -8008,6 +9824,7 @@
    "ilvl": 50,
    "q": 3,
    "req": 45,
+   "src": "wow-forever",
    "stats": {
     "int": 10,
     "sp": 23,
@@ -8024,6 +9841,7 @@
    "ilvl": 36,
    "q": 3,
    "req": 31,
+   "src": "wow-forever",
    "stats": {
     "int": 8,
     "sp": 8,
@@ -8038,6 +9856,7 @@
    "ilvl": 31,
    "q": 3,
    "req": 26,
+   "src": "wow-forever",
    "stats": {
     "ar": 5,
     "int": 12,
@@ -8052,6 +9871,7 @@
    "equip": [],
    "ilvl": 38,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "bv": 40,
     "heal": 10,
@@ -8066,6 +9886,7 @@
    "equip": [],
    "ilvl": 49,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "heal": 29,
     "sp": 10,
@@ -8079,6 +9900,7 @@
    "equip": [],
    "ilvl": 32,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "int": 6,
     "sp": 4,
@@ -8092,6 +9914,7 @@
    "equip": [],
    "ilvl": 32,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "heal": 6,
     "int": 3,
@@ -8106,6 +9929,7 @@
    "equip": [],
    "ilvl": 32,
    "q": 2,
+   "src": "wow-forever",
    "stats": {
     "bv": 40,
     "sp": 5,
@@ -8119,6 +9943,7 @@
    "equip": [],
    "ilvl": 37,
    "q": 3,
+   "src": "wow-forever",
    "stats": {
     "heal": 26,
     "sp": 9,
@@ -8128,5 +9953,5 @@
    "unmapped": []
   }
  },
- "source": "wow-forever.gg"
+ "source": "wow-forever.gg + warcraftmaps.com"
 }

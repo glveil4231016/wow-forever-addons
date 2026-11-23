@@ -56,7 +56,7 @@ D:\game\World of Warcraft\_forever_\Interface\AddOns\HolyBulwark
 
 | 内容 | 来源 |
 | --- | --- |
-| 物品属性、护甲、掉率、来源、任务 ID | [The Forever Era](https://theforeverera.com)（1.60.1.70959） |
+| 物品属性、护甲、掉率、来源、任务 ID | [The Forever Era](https://theforeverera.com)（1.60.1.70959）；属性再用 [WoW Forever](https://wow-forever.gg) / [WarcraftMaps](https://warcraftmaps.com) 的 Forever 数值覆写 |
 | 中文物品名 | WoW Forever 中文客户端 `ItemSparse` |
 | 区域中文名 / 地图 ID | 客户端 `AreaTable`、QuestieDB Forever 映射 |
 | 任务中文名 | [forever.damijing.com](https://forever.damijing.com)（410 个任务） |
