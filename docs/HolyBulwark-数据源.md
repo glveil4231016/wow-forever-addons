@@ -103,6 +103,7 @@ python tools/holybulwark/fetch_forever_items.py --ids 940,14624
 - 报告：`data/forever_items_report.txt`，列出缺页、失败、以及**没认出来的属性词条**（新增词条要先补 `STAT_MAP`）。
 - 解析规则：只认页面里的 `game-tooltip` 块（`Item Level / Requires Level / +N 属性 / Equip: ...`），不解析整页。
 - 回归测试：`python tests/check_forever_parser.py`（4 个真实页面夹具，钉死数值）。
+- 重建前先看差异：`python tools/holybulwark/report_forever_diff.py`（多少件属性会变、多少件会失去 sp、哪些词条没认出来）。
 
 ### 8.2 游戏内掉落记录（B）
 
