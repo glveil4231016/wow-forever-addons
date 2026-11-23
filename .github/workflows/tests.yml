@@ -23,6 +23,3 @@ jobs:
 
       - name: Lua syntax check
         run: python tests/syntax_check.py
-
-      - name: HolyBulwark data guard
-        run: python tests/check_holybulwark_data.py

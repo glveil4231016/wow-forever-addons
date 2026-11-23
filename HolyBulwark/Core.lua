@@ -1620,12 +1620,7 @@ function ns:Init()
         self.data = { items = {} }
         return
     end
-    -- Data.lua is generated only from items the Forever client defines, but a
-    -- stale build (or a newer client that dropped ids) can still carry rows the
-    -- client cannot resolve. Prune them as a second line of defence -- and do not
-    -- gate this on a single probe item being cached: C_Item.DoesItemExist and
-    -- GetItemInfoInstant read the client's item table directly.
-    local canPrune = (C_Item and C_Item.DoesItemExist) or GetItemInfoInstant
+    local canPrune = GetItemInfoInstant and GetItemInfoInstant(6948) ~= nil
     if canPrune then
         local kept, removed = {}, 0
         for i = 1, #self.data.items do
@@ -1691,9 +1686,9 @@ function ns:Diag()
     end
     local ok, res = pcall(self.GetFiltered, self)
     local n = ok and #res or -1
-    self:Print(string.format("数据=%s items=%s count=%s loaded=%s byId=%s 已剔除=%s",
+    self:Print(string.format("数据=%s items=%s count=%s loaded=%s byId=%s",
         type(d), tostring(d and d.items and #d.items), tostring(d and d.count),
-        tostring(d and d.loaded), tostring(byIdCount), tostring(self.removedMissing or 0)))
+        tostring(d and d.loaded), tostring(byIdCount)))
     self:Print(string.format("筛选 slot=%s armor=%s sort=%s level=%s-%s tanky=%s known=%s search=%q",
         tostring(f.slot), tostring(f.armor), tostring(f.sort), tostring(f.minLevel),
         tostring(f.maxLevel), tostring(f.tanky), tostring(f.knownOnly), tostring(f.search or "")))

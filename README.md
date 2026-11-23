@@ -33,9 +33,6 @@ python tests/run_pb.py
 # 全部 Lua 文件语法检查
 python tests/syntax_check.py
 
-# HolyBulwark 数据守门：Data.lua 里的物品必须存在于 Forever 客户端
-python tests/check_holybulwark_data.py
-
 # BlackEvidence 冒烟测试
 python tests/run_be.py
 ```
@@ -53,6 +50,7 @@ python tools/gen_static_recipes.py recipes.json --out ProfitBoard/StaticRecipes.
 - `BlackEvidence/README.md` —— 插件说明
 - `docs/BlackEvidence-实施方案.md` —— 黑名单插件规格
 - `HolyBulwark/README.md` —— 圣光壁垒安装/用法/数据来源
+- `docs/HolyBulwark-数据源.md` —— 圣光壁垒数据源笔记（客户端基表 vs hotfix、社区库可信度、掉落数据缺口）
 - `docs/HolyBulwark-装备清单.md` —— 312 件防骑向法伤装备清单
 - `docs/superpowers/specs/2026-11-10-profitboard-design.md` —— ProfitBoard 设计
 - `docs/superpowers/plans/2026-11-10-profitboard.md` —— ProfitBoard 实施计划

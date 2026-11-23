@@ -1,15 +1,5 @@
 # Changelog
 
-## 1.11.0
-
-- 数据库只保留 **Forever 客户端确实定义的物品**：`Data.lua` 从 2047 件降到 786 件。
-  - 剔除 1261 件 Classic Era 残留（The Forever Era 的 fallback 行），其中 440 件原本带掉落/任务来源，集中在斯坦索姆、通灵学院、黑石塔、厄运之槌、黑石深渊。
-  - 判据不是猜的：逐条比对 `data\ItemSparse_zhCN.csv`（构建 1.60.1.71037）的 ID 集合，客户端没有的 ID 一律不写入。
-- `tools\holybulwark\build_data.ps1`：新增 `$clientIds` 门禁，缺失即跳过，并在结尾打印 `dropped (not in Forever client)` 与来源区域分布。
-- 新增 `tools\holybulwark\verify_data.ps1`：重建后校验 `Data.lua` 每个 ID 都存在于当前客户端表，异常时退出码 1。
-- 运行时剔除不再依赖「炉石（6948）能解析」这个前提（该前提在 `ADDON_LOADED` 时经常不成立，导致整段剔除被跳过）；`/spg diag` 增加「已剔除」计数。
-- `tests/syntax_check.py` 纳入 `HolyBulwark`，CI 现在覆盖本插件的语法。
-
 ## 1.10.7
 
 - 点击副本 BOSS 时不再只停在区域地图：打开入口区域后，延迟调用 DQA `ShowDungeonOnWorldMap`，强制叠加副本内部平面图。
