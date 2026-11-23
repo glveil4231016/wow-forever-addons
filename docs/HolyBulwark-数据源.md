@@ -99,8 +99,10 @@ python tools/holybulwark/fetch_forever_items.py --ids 940,14624
 ```
 
 - 结果：`tools/holybulwark/data/forever_items.json`（**建议提交**，这样别人不用重抓）。
-- 页面缓存：`data/wfg/<id>.html`（`/data/` 已 gitignore），断点续跑；`--refresh` 强制重抓。
-- 报告：`data/forever_items_report.txt`，列出缺页、失败、以及**没认出来的属性词条**（新增词条要先补 `STAT_MAP`）。
+- 双源：主源 `wow-forever.gg`（`game-tooltip` 块）；主源 404 时退回 `warcraftmaps.com`（页面同样标 `Patch 1.60.1 · Source: Game client`）。两站对同一件物品的数值已核对一致（940：+24 智力 / +33 治疗 / +11 法伤）。
+- 页面缓存：`data/wfg/<id>.html`、`data/wcm/<id>.html`（`/data/` 已 gitignore），断点续跑；`--refresh` 强制重抓。
+- 报告：`data/forever_items_report.txt`，列出缺页、失败、两个源各覆盖多少、以及**没认出来的属性词条**（新增词条要先补 `STAT_MAP`）。
+- `warcraftmaps` 对没确认的物品会写 `Stamina and Spell Power: amounts not confirmed yet`；这种记为 `statsUnconfirmed`，属性保留 TFE，只覆盖物品等级/需求等级/品质。
 - 解析规则：只认页面里的 `game-tooltip` 块（`Item Level / Requires Level / +N 属性 / Equip: ...`），不解析整页。
 - 回归测试：`python tests/check_forever_parser.py`（4 个真实页面夹具，钉死数值）。
 - 重建前先看差异：`python tools/holybulwark/report_forever_diff.py`（多少件属性会变、多少件会失去 sp、哪些词条没认出来）。

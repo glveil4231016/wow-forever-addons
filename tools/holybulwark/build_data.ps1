@@ -215,6 +215,7 @@ function Stat-Differs($before, $after) {
 
 $statsChanged = 0
 $foreverStatsSkipped = 0
+$statsUnconfirmed = 0
 
 foreach ($it in $all.Values) {
     $id = [int]$it.id
@@ -225,6 +226,7 @@ foreach ($it in $all.Values) {
         if ($null -ne $fv.req)   { Set-ItemField $it 'rl' ([int]$fv.req) }
         if ($null -ne $fv.q)     { Set-ItemField $it 'q' ([int]$fv.q) }
         if ($null -ne $fv.armor) { Set-ItemField $it 'armor' ([double]$fv.armor) }
+        if ($fv.statsUnconfirmed) { $statsUnconfirmed++ }
         if ($fv.stats -and @($fv.stats.PSObject.Properties).Count -gt 0) {
             if ($fv.unmapped -and @($fv.unmapped).Count -gt 0) {
                 # 页面里有解析器没认出的词条：属性整体保留 TFE，
@@ -513,7 +515,7 @@ $sorted | Select-Object id, name, nameEn, q, il, rl, slot, type, armor, known,
     srcCount, srcText | Export-Csv $outCsv -NoTypeInformation -Encoding UTF8
 
 "items: $($records.Count)"
-"forever overrides applied: $foreverApplied / $($forever.Count) (stats changed: $statsChanged, stats kept from TFE: $foreverStatsSkipped)"
+"forever overrides applied: $foreverApplied / $($forever.Count) (stats changed: $statsChanged, stats kept from TFE: $foreverStatsSkipped, stats unconfirmed: $statsUnconfirmed)"
 "observed sources added: $observedAdded"
 "known source: $(@($sorted | Where-Object { $_.known -eq 1 }).Count)"
 "unknown source: $(@($sorted | Where-Object { $_.known -eq 0 }).Count)"
