@@ -52,5 +52,17 @@ if not any('Mana cost' in e for e in parsed.get('equip', [])):
     fails += 1
     print('FAIL 940 equip text: %r' % (parsed.get('equip'),))
 
+# 两句最容易认错的词条：法伤长句、五回短句
+synthetic = ff.parse_lines([
+    'Equip: Increases damage and healing done by magical spells and effects by up to 7.',
+    '+3 Mana Per 5 sec',
+    '+2 Health Per 5 sec',
+    'Equip: Restores 4 mana per 5 sec.',
+])
+check('long sentence -> sp', synthetic['stats'].get('sp'), 7)
+check('mana per 5 -> mp5', synthetic['stats'].get('mp5'), 7)
+check('health per 5 -> hp5', synthetic['stats'].get('hp5'), 2)
+check('synthetic unmapped', synthetic['unmapped'], [])
+
 print('forever parser ok: %d fixtures' % len(CASES) if not fails else 'forever parser FAIL %d' % fails)
 raise SystemExit(1 if fails else 0)

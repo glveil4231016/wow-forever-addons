@@ -1,0 +1,8132 @@
+{
+ "clientBuild": "1.60.1.71037",
+ "fetchedAt": "2026-11-23",
+ "items": {
+  "10359": {
+   "armor": 35,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 38,
+   "q": 2,
+   "stats": {
+    "heal": 10,
+    "sp": 3,
+    "spi": 9
+   },
+   "unmapped": []
+  },
+  "10574": {
+   "armor": 47,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 40,
+   "q": 3,
+   "req": 35,
+   "stats": {
+    "agi": 5,
+    "int": 19,
+    "sp": 7
+   },
+   "unmapped": []
+  },
+  "10578": {
+   "armor": 38,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 38,
+   "q": 3,
+   "req": 33,
+   "stats": {
+    "heal": 13,
+    "sp": 5,
+    "spi": 13,
+    "sta": 3
+   },
+   "unmapped": []
+  },
+  "10581": {
+   "armor": 58,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 40,
+   "q": 3,
+   "req": 35,
+   "stats": {
+    "heal": 18,
+    "int": 8,
+    "sp": 6,
+    "spi": 13,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "10629": {
+   "armor": 49,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 50,
+   "q": 3,
+   "req": 45,
+   "stats": {
+    "sp": 9,
+    "spi": 18
+   },
+   "unmapped": []
+  },
+  "10630": {
+   "armor": 59,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 51,
+   "q": 3,
+   "req": 46,
+   "stats": {
+    "heal": 18,
+    "int": 25,
+    "sp": 6,
+    "sr": 5
+   },
+   "unmapped": []
+  },
+  "10632": {
+   "armor": 129,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 49,
+   "q": 3,
+   "req": 44,
+   "stats": {
+    "heal": 9,
+    "int": 4,
+    "sp": 3,
+    "spi": 13
+   },
+   "unmapped": []
+  },
+  "10751": {
+   "armor": 63,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 54,
+   "q": 3,
+   "stats": {
+    "heal": 13,
+    "int": 17,
+    "sp": 4,
+    "spi": 18,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "10764": {
+   "armor": 266,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 43,
+   "q": 3,
+   "req": 39,
+   "stats": {
+    "heal": 20,
+    "int": 9,
+    "sp": 7,
+    "spi": 15,
+    "sta": 3
+   },
+   "unmapped": []
+  },
+  "10769": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 41,
+   "q": 3,
+   "req": 36,
+   "stats": {
+    "heal": 20,
+    "int": 8,
+    "sp": 7
+   },
+   "unmapped": []
+  },
+  "10771": {
+   "armor": 33,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 41,
+   "q": 3,
+   "req": 36,
+   "stats": {
+    "int": 15,
+    "sp": 7
+   },
+   "unmapped": []
+  },
+  "10782": {
+   "armor": 54,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 51,
+   "q": 2,
+   "stats": {
+    "sp": 17,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "10802": {
+   "armor": 34,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 52,
+   "q": 2,
+   "req": 47,
+   "stats": {
+    "heal": 7,
+    "sp": 2,
+    "spi": 11
+   },
+   "unmapped": []
+  },
+  "10806": {
+   "armor": 78,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "sp": 13,
+    "spen": 3,
+    "spi": 22
+   },
+   "unmapped": []
+  },
+  "10807": {
+   "armor": 69,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "heal": 9,
+    "int": 18,
+    "sp": 3,
+    "spi": 18,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "10808": {
+   "armor": 49,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "heal": 13,
+    "sp": 4,
+    "spi": 20,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "10829": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 56,
+   "q": 3,
+   "req": 51,
+   "stats": {
+    "heal": 13,
+    "sp": 4,
+    "spi": 15
+   },
+   "unmapped": []
+  },
+  "10833": {
+   "armor": 271,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 56,
+   "q": 3,
+   "req": 51,
+   "stats": {
+    "heal": 11,
+    "int": 27,
+    "sp": 4,
+    "spi": 10
+   },
+   "unmapped": []
+  },
+  "10842": {
+   "armor": 136,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 54,
+   "q": 3,
+   "req": 49,
+   "stats": {
+    "hit": 10,
+    "sp": 8,
+    "spi": 20,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "10843": {
+   "armor": 39,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 54,
+   "q": 3,
+   "req": 49,
+   "stats": {
+    "heal": 9,
+    "sp": 3,
+    "spi": 15,
+    "sta": 4
+   },
+   "unmapped": []
+  },
+  "10919": {
+   "armor": 21,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 20,
+   "q": 2,
+   "stats": {
+    "sp": 4
+   },
+   "unmapped": [
+    "+2 Herbalism Skill"
+   ]
+  },
+  "11123": {
+   "armor": 69,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 3,
+   "stats": {
+    "heal": 18,
+    "sp": 6,
+    "spi": 26,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "11302": {
+   "bind": "Binds when equipped",
+   "equip": [
+    "2% chance when struck in melee to gain a holy shield, absorbing 216 damage for 15 sec. This chance is doubled in Wasteland and Haunted areas."
+   ],
+   "ilvl": 52,
+   "q": 3,
+   "req": 47,
+   "stats": {
+    "heal": 18,
+    "sp": 6
+   },
+   "unmapped": []
+  },
+  "11623": {
+   "armor": 37,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 52,
+   "q": 3,
+   "req": 47,
+   "stats": {
+    "int": 6,
+    "sp": 14,
+    "spi": 6,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "11624": {
+   "armor": 56,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 52,
+   "q": 3,
+   "req": 47,
+   "stats": {
+    "int": 13,
+    "sp": 14,
+    "spi": 6,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "11632": {
+   "armor": 410,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 52,
+   "q": 3,
+   "req": 47,
+   "stats": {
+    "int": 8,
+    "sp": 11,
+    "sta": 8,
+    "str": 13
+   },
+   "unmapped": []
+  },
+  "11633": {
+   "armor": 567,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 54,
+   "q": 3,
+   "req": 49,
+   "stats": {
+    "int": 13,
+    "sp": 13,
+    "sta": 14,
+    "str": 14
+   },
+   "unmapped": []
+  },
+  "11634": {
+   "armor": 48,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 54,
+   "q": 3,
+   "req": 49,
+   "stats": {
+    "heal": 11,
+    "int": 13,
+    "sp": 4,
+    "sta": 14
+   },
+   "unmapped": [
+    "+3 Mana Per"
+   ]
+  },
+  "11662": {
+   "armor": 43,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 54,
+   "q": 3,
+   "req": 49,
+   "stats": {
+    "hit": 10,
+    "int": 10,
+    "sp": 12,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "11665": {
+   "armor": 97,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 54,
+   "q": 3,
+   "req": 49,
+   "stats": {
+    "int": 10,
+    "sp": 13,
+    "spi": 10,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "11685": {
+   "armor": 118,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "int": 10,
+    "sp": 9,
+    "sta": 10,
+    "str": 11
+   },
+   "unmapped": []
+  },
+  "11747": {
+   "armor": 153,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 53,
+   "q": 3,
+   "req": 48,
+   "stats": {
+    "fr": 10,
+    "int": 4,
+    "sp": 20,
+    "spi": 16,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "11783": {
+   "armor": 190,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 57,
+   "q": 3,
+   "req": 52,
+   "stats": {
+    "frr": 10,
+    "heal": 18,
+    "int": 16,
+    "sp": 6,
+    "spi": 7
+   },
+   "unmapped": []
+  },
+  "11819": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Restores 63 Mana every 1 sec for 10 sec. This effect is doubled in Mountainous areas."
+   ],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "heal": 15,
+    "sp": 5
+   },
+   "unmapped": []
+  },
+  "11822": {
+   "armor": 58,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "int": 12,
+    "sp": 20,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "11823": {
+   "armor": 147,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "int": 20,
+    "sp": 22,
+    "spi": 8,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "11824": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 54,
+   "q": 3,
+   "req": 49,
+   "stats": {
+    "int": 7,
+    "sp": 9,
+    "spi": 4,
+    "sta": 8,
+    "str": 4
+   },
+   "unmapped": []
+  },
+  "11841": {
+   "armor": 69,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "heal": 37,
+    "int": 7,
+    "sp": 12,
+    "spi": 18,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "11842": {
+   "armor": 246,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "int": 14,
+    "sp": 15,
+    "spi": 9
+   },
+   "unmapped": []
+  },
+  "11924": {
+   "armor": 85,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 12,
+    "sp": 18,
+    "spen": 2,
+    "spi": 10,
+    "sta": 19
+   },
+   "unmapped": []
+  },
+  "11962": {
+   "armor": 34,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 3,
+   "stats": {
+    "int": 15,
+    "sp": 7
+   },
+   "unmapped": []
+  },
+  "12038": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 54,
+   "q": 2,
+   "stats": {
+    "int": 7,
+    "sp": 8,
+    "spi": 7
+   },
+   "unmapped": []
+  },
+  "12083": {
+   "armor": 42,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 2,
+   "stats": {
+    "fr": 6,
+    "sp": 17,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "12108": {
+   "armor": 313,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 2,
+   "stats": {
+    "sp": 14,
+    "spi": 12,
+    "sta": 10,
+    "str": 8
+   },
+   "unmapped": []
+  },
+  "12109": {
+   "armor": 56,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 2,
+   "stats": {
+    "int": 15,
+    "sp": 9
+   },
+   "unmapped": []
+  },
+  "12110": {
+   "armor": 38,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 2,
+   "stats": {
+    "heal": 16,
+    "sp": 5,
+    "spi": 7
+   },
+   "unmapped": [
+    "+7 Crit Rating"
+   ]
+  },
+  "12462": {
+   "armor": 86,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 4,
+   "req": 50,
+   "stats": {
+    "heal": 33,
+    "int": 10,
+    "nr": 10,
+    "sp": 11,
+    "spi": 30
+   },
+   "unmapped": []
+  },
+  "12464": {
+   "armor": 96,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 53,
+   "q": 3,
+   "req": 48,
+   "stats": {
+    "fr": 15,
+    "int": 5,
+    "sp": 12,
+    "spi": 9
+   },
+   "unmapped": []
+  },
+  "12465": {
+   "armor": 38,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 53,
+   "q": 3,
+   "req": 48,
+   "stats": {
+    "sp": 9,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "12466": {
+   "armor": 43,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 53,
+   "q": 3,
+   "req": 48,
+   "stats": {
+    "heal": 18,
+    "int": 19,
+    "sp": 6
+   },
+   "unmapped": []
+  },
+  "12542": {
+   "armor": 73,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 51,
+   "q": 3,
+   "req": 46,
+   "stats": {
+    "fr": 10,
+    "heal": 26,
+    "int": 13,
+    "sp": 9,
+    "sta": 13
+   },
+   "unmapped": []
+  },
+  "12543": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "stats": {
+    "int": 7,
+    "sp": 18,
+    "spen": 2
+   },
+   "unmapped": []
+  },
+  "12545": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "stats": {
+    "int": 7,
+    "sp": 18,
+    "spen": 2
+   },
+   "unmapped": []
+  },
+  "12546": {
+   "armor": 34,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 54,
+   "q": 3,
+   "req": 49,
+   "stats": {
+    "heal": 11,
+    "int": 15,
+    "sp": 4
+   },
+   "unmapped": []
+  },
+  "12547": {
+   "armor": 100,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 56,
+   "q": 3,
+   "req": 51,
+   "stats": {
+    "heal": 22,
+    "int": 10,
+    "sp": 7,
+    "spi": 8,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "12554": {
+   "armor": 52,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "heal": 31,
+    "int": 13,
+    "sp": 10,
+    "spi": 12
+   },
+   "unmapped": []
+  },
+  "12589": {
+   "armor": 49,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 17,
+    "sp": 9,
+    "spen": 3,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "12606": {
+   "armor": 97,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 19,
+    "sp": 13,
+    "spi": 6,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "12608": {
+   "armor": 41,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "req": 53,
+   "stats": {
+    "heal": 9,
+    "sp": 3,
+    "spi": 15,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "12626": {
+   "armor": 37,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "heal": 18,
+    "int": 14,
+    "sp": 6,
+    "sr": 7
+   },
+   "unmapped": []
+  },
+  "12929": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "fr": 7,
+    "sp": 6,
+    "sta": 8
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "12930": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases damage and healing done by magical spells and effects by up to 15. This effect is doubled in Marsh and Swamp areas.",
+    "Briarwood Reed",
+    "Briarwood Reed"
+   ],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {},
+   "unmapped": []
+  },
+  "12945": {
+   "armor": 349,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 4,
+   "stats": {
+    "ar": 5,
+    "fr": 5,
+    "frr": 5,
+    "heal": 44,
+    "int": 16,
+    "nr": 5,
+    "sp": 15,
+    "spi": 19,
+    "sr": 5,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "12960": {
+   "armor": 137,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "heal": 33,
+    "int": 15,
+    "sp": 11,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "12965": {
+   "armor": 78,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "int": 16,
+    "sp": 19,
+    "spi": 16,
+    "sta": 13
+   },
+   "unmapped": []
+  },
+  "12998": {
+   "armor": 32,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 25,
+   "q": 3,
+   "req": 20,
+   "stats": {
+    "int": 9,
+    "sp": 5
+   },
+   "unmapped": []
+  },
+  "13001": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 7,
+    "sp": 18,
+    "spi": 6
+   },
+   "unmapped": []
+  },
+  "13013": {
+   "armor": 60,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 56,
+   "q": 3,
+   "req": 51,
+   "stats": {
+    "int": 20,
+    "sp": 11
+   },
+   "unmapped": []
+  },
+  "13101": {
+   "armor": 58,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "int": 11,
+    "sp": 13,
+    "spi": 11,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "13102": {
+   "armor": 55,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 47,
+   "q": 3,
+   "req": 42,
+   "stats": {
+    "heal": 44,
+    "sp": 15,
+    "spi": 9,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "13141": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "heal": 15,
+    "int": 11,
+    "sp": 5,
+    "sta": 7
+   },
+   "unmapped": [
+    "+3 Mana Per"
+   ]
+  },
+  "13168": {
+   "armor": 627,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 14,
+    "sp": 18,
+    "sta": 15,
+    "str": 12
+   },
+   "unmapped": []
+  },
+  "13169": {
+   "armor": 148,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 14,
+    "sp": 19,
+    "spi": 15,
+    "sta": 13
+   },
+   "unmapped": []
+  },
+  "13170": {
+   "armor": 75,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 12,
+    "sp": 30,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "13178": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "heal": 24,
+    "sp": 8
+   },
+   "unmapped": [
+    "+6 Mana Per"
+   ]
+  },
+  "13179": {
+   "armor": 155,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 8,
+    "sp": 8,
+    "sta": 10
+   },
+   "unmapped": [
+    "+4 Mana Per"
+   ]
+  },
+  "13184": {
+   "armor": 107,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "heal": 20,
+    "int": 12,
+    "sp": 7,
+    "spi": 11,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "13185": {
+   "armor": 65,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 17,
+    "sp": 8,
+    "spen": 3,
+    "spi": 11,
+    "sta": 4
+   },
+   "unmapped": []
+  },
+  "13205": {
+   "armor": 2089,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 14,
+    "sp": 12,
+    "spi": 7
+   },
+   "unmapped": []
+  },
+  "13206": {
+   "armor": 76,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "heal": 26,
+    "nr": 10,
+    "sp": 9,
+    "spi": 25,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "13208": {
+   "armor": 75,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "heal": 15,
+    "int": 9,
+    "sp": 5,
+    "spi": 14
+   },
+   "unmapped": []
+  },
+  "13216": {
+   "armor": 64,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 2,
+   "stats": {
+    "heal": 10,
+    "int": 20,
+    "sp": 3
+   },
+   "unmapped": [
+    "+6 Mana Per"
+   ]
+  },
+  "13244": {
+   "armor": 221,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "heal": 22,
+    "int": 10,
+    "sp": 7,
+    "sta": 14
+   },
+   "unmapped": [
+    "+4 Mana Per"
+   ]
+  },
+  "13253": {
+   "armor": 53,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 9,
+    "sp": 23,
+    "spi": 8
+   },
+   "unmapped": []
+  },
+  "13282": {
+   "armor": 58,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "heal": 26,
+    "int": 13,
+    "sp": 9,
+    "spi": 13
+   },
+   "unmapped": []
+  },
+  "13314": {
+   "armor": 96,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 4,
+   "req": 57,
+   "stats": {
+    "int": 20,
+    "sp": 23,
+    "spen": 5,
+    "sta": 20
+   },
+   "unmapped": []
+  },
+  "13344": {
+   "armor": 231,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "int": 11,
+    "sp": 19,
+    "spi": 9,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "13345": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "int": 17,
+    "sp": 8
+   },
+   "unmapped": []
+  },
+  "13346": {
+   "armor": 89,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "heal": 40,
+    "int": 8,
+    "sp": 13,
+    "spi": 25
+   },
+   "unmapped": []
+  },
+  "13376": {
+   "armor": 42,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "int": 16,
+    "sp": 5,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "13383": {
+   "armor": 301,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "req": 53,
+   "stats": {
+    "heal": 15,
+    "int": 10,
+    "sp": 5,
+    "sta": 12
+   },
+   "unmapped": [
+    "+10 Mana Per"
+   ]
+  },
+  "13384": {
+   "armor": 341,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "req": 53,
+   "stats": {
+    "agi": 8,
+    "sp": 12,
+    "spi": 8,
+    "sta": 10,
+    "str": 10
+   },
+   "unmapped": []
+  },
+  "13388": {
+   "armor": 87,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 20,
+    "sp": 18,
+    "spi": 10,
+    "sta": 13
+   },
+   "unmapped": []
+  },
+  "13389": {
+   "armor": 76,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 20,
+    "sp": 13,
+    "spi": 15,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "13390": {
+   "armor": 70,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 25,
+    "sp": 15,
+    "spi": 10,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "13391": {
+   "armor": 60,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 15,
+    "sp": 9,
+    "spi": 6,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "13392": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 3,
+    "sp": 13,
+    "spi": 12,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "13398": {
+   "armor": 120,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "int": 10,
+    "sp": 12,
+    "spen": 2,
+    "sr": 10,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "13403": {
+   "armor": 48,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "heal": 11,
+    "int": 18,
+    "sp": 4,
+    "spi": 10,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "13525": {
+   "armor": 55,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 18,
+    "int": 12,
+    "sp": 6,
+    "sr": 20
+   },
+   "unmapped": []
+  },
+  "13954": {
+   "armor": 120,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 38,
+    "sp": 33
+   },
+   "unmapped": [
+    "+5 Mana Per"
+   ]
+  },
+  "13958": {
+   "armor": 37,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "stats": {
+    "heal": 20,
+    "sp": 7,
+    "spi": 15
+   },
+   "unmapped": []
+  },
+  "13960": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "heal": 22,
+    "sp": 7,
+    "spi": 10,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "13961": {
+   "armor": 127,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "stats": {
+    "ar": 5,
+    "int": 19,
+    "sp": 15
+   },
+   "unmapped": []
+  },
+  "13969": {
+   "armor": 157,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "heal": 29,
+    "int": 7,
+    "sp": 10,
+    "sta": 6
+   },
+   "unmapped": [
+    "+3 Mana Per"
+   ]
+  },
+  "13986": {
+   "armor": 73,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "stats": {
+    "frr": 15,
+    "heal": 15,
+    "int": 15,
+    "sp": 5,
+    "spi": 20,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "1443": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 60,
+   "q": 4,
+   "req": 55,
+   "stats": {
+    "heal": 18,
+    "int": 18,
+    "sp": 6,
+    "spi": 10
+   },
+   "unmapped": []
+  },
+  "14522": {
+   "armor": 320,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 22,
+    "int": 20,
+    "sp": 8,
+    "spi": 10,
+    "sta": 20
+   },
+   "unmapped": []
+  },
+  "14528": {
+   "armor": 2121,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 15,
+    "int": 12,
+    "sp": 5,
+    "sr": 7,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "14545": {
+   "armor": 152,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "int": 18,
+    "sp": 15,
+    "sta": 10
+   },
+   "unmapped": [
+    "+8 Mana Per"
+   ]
+  },
+  "14548": {
+   "armor": 274,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 26,
+    "sp": 9,
+    "spi": 13,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "14552": {
+   "armor": 472,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 55,
+   "q": 4,
+   "req": 50,
+   "stats": {
+    "def": 10,
+    "sp": 12,
+    "sta": 20
+   },
+   "unmapped": []
+  },
+  "14553": {
+   "armor": 105,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 61,
+   "q": 4,
+   "req": 56,
+   "stats": {
+    "heal": 53,
+    "sp": 18,
+    "spi": 12,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "14558": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 64,
+   "q": 4,
+   "req": 59,
+   "stats": {
+    "int": 19,
+    "sp": 11,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "14626": {
+   "armor": 87,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 12,
+    "sp": 15,
+    "spi": 12,
+    "sta": 22
+   },
+   "unmapped": []
+  },
+  "14629": {
+   "armor": 38,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 11,
+    "sp": 6,
+    "spi": 4,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "14631": {
+   "armor": 60,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 10,
+    "sp": 13,
+    "spi": 9,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "14632": {
+   "armor": 76,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 18,
+    "sp": 8,
+    "spi": 12,
+    "sta": 21
+   },
+   "unmapped": []
+  },
+  "14633": {
+   "armor": 65,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 11,
+    "sp": 9,
+    "spi": 9,
+    "sta": 17
+   },
+   "unmapped": []
+  },
+  "1486": {
+   "armor": 44,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 26,
+   "q": 3,
+   "req": 21,
+   "stats": {
+    "bv": 60,
+    "sp": 13
+   },
+   "unmapped": []
+  },
+  "15421": {
+   "armor": 45,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "stats": {
+    "int": 10,
+    "sp": 12,
+    "spi": 7,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "15824": {
+   "armor": 76,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 2,
+   "stats": {
+    "int": 20,
+    "sp": 10,
+    "spi": 10
+   },
+   "unmapped": []
+  },
+  "15827": {
+   "armor": 317,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 2,
+   "stats": {
+    "heal": 15,
+    "sp": 5,
+    "sta": 23
+   },
+   "unmapped": []
+  },
+  "15858": {
+   "armor": 48,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 2,
+   "stats": {
+    "heal": 20,
+    "sp": 7,
+    "spi": 14
+   },
+   "unmapped": [
+    "+2 Mana Per"
+   ]
+  },
+  "15859": {
+   "armor": 179,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 2,
+   "stats": {
+    "sp": 9,
+    "spi": 13,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "16058": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "stats": {
+    "heal": 37,
+    "int": 6,
+    "sp": 12,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "16666": {
+   "armor": 370,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "int": 20,
+    "sp": 23,
+    "spen": 2,
+    "sta": 13
+   },
+   "unmapped": []
+  },
+  "16667": {
+   "armor": 297,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "int": 23,
+    "sp": 12,
+    "spi": 12,
+    "sta": 13,
+    "str": 7
+   },
+   "unmapped": []
+  },
+  "16668": {
+   "armor": 315,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 15,
+    "sp": 14,
+    "spen": 2,
+    "spi": 20,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "16670": {
+   "armor": 240,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "agi": 9,
+    "sp": 14,
+    "spi": 17
+   },
+   "unmapped": []
+  },
+  "16671": {
+   "armor": 148,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 57,
+   "q": 3,
+   "req": 52,
+   "stats": {
+    "hit": 3,
+    "int": 8,
+    "sp": 5,
+    "spi": 10,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "16672": {
+   "armor": 218,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "hit": 9,
+    "int": 10,
+    "sp": 6,
+    "spi": 16,
+    "sta": 4
+   },
+   "unmapped": []
+  },
+  "16682": {
+   "armor": 58,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "int": 14,
+    "sp": 9,
+    "spi": 14,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "16684": {
+   "armor": 52,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "int": 14,
+    "sp": 7,
+    "spi": 14,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "16685": {
+   "armor": 46,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "req": 53,
+   "stats": {
+    "int": 21,
+    "sp": 7,
+    "spen": 1,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "16686": {
+   "armor": 71,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "int": 30,
+    "sp": 11,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "16687": {
+   "armor": 76,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "hit": 9,
+    "int": 15,
+    "sp": 7,
+    "spi": 21,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "16688": {
+   "armor": 89,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "int": 28,
+    "sp": 12,
+    "spi": 8,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "16689": {
+   "armor": 64,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 22,
+    "sp": 8,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "16690": {
+   "armor": 89,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "heal": 20,
+    "int": 24,
+    "sp": 7,
+    "spi": 15,
+    "sta": 13
+   },
+   "unmapped": []
+  },
+  "16691": {
+   "armor": 58,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "heal": 11,
+    "int": 10,
+    "sp": 4,
+    "spi": 17,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "16692": {
+   "armor": 52,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "heal": 15,
+    "int": 10,
+    "sp": 5,
+    "spi": 17,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "16693": {
+   "armor": 71,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 20,
+    "int": 24,
+    "sp": 7,
+    "spi": 15,
+    "sta": 13
+   },
+   "unmapped": []
+  },
+  "16694": {
+   "armor": 76,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "heal": 24,
+    "int": 15,
+    "sp": 8,
+    "spi": 23,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "16695": {
+   "armor": 64,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "heal": 11,
+    "int": 21,
+    "sp": 4,
+    "spi": 9,
+    "sta": 4
+   },
+   "unmapped": []
+  },
+  "16696": {
+   "armor": 46,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "req": 53,
+   "stats": {
+    "heal": 11,
+    "int": 20,
+    "sp": 4,
+    "spi": 9,
+    "sta": 4
+   },
+   "unmapped": []
+  },
+  "16697": {
+   "armor": 35,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 57,
+   "q": 3,
+   "req": 52,
+   "stats": {
+    "heal": 11,
+    "int": 8,
+    "sp": 4,
+    "spi": 10,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "16698": {
+   "armor": 71,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "int": 23,
+    "sp": 14,
+    "spi": 12,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "16699": {
+   "armor": 76,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 14,
+    "sp": 12,
+    "spi": 21,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "16701": {
+   "armor": 64,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 15,
+    "sp": 11,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "16702": {
+   "armor": 46,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "req": 53,
+   "stats": {
+    "int": 14,
+    "sp": 9,
+    "spen": 1,
+    "spi": 9,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "16703": {
+   "armor": 35,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 57,
+   "q": 3,
+   "req": 52,
+   "stats": {
+    "int": 11,
+    "sp": 5,
+    "spi": 5,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "16704": {
+   "armor": 58,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "int": 7,
+    "sp": 9,
+    "spi": 10,
+    "sta": 17
+   },
+   "unmapped": []
+  },
+  "16706": {
+   "armor": 176,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "heal": 11,
+    "int": 20,
+    "sp": 4,
+    "spi": 20,
+    "sta": 13
+   },
+   "unmapped": []
+  },
+  "16714": {
+   "armor": 71,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 57,
+   "q": 3,
+   "req": 52,
+   "stats": {
+    "heal": 9,
+    "int": 15,
+    "sp": 3,
+    "str": 5
+   },
+   "unmapped": []
+  },
+  "16715": {
+   "armor": 115,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "heal": 11,
+    "int": 9,
+    "sp": 4,
+    "spi": 17,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "16716": {
+   "armor": 93,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "req": 53,
+   "stats": {
+    "heal": 11,
+    "int": 17,
+    "sp": 4,
+    "spi": 10,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "16717": {
+   "armor": 105,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "heal": 11,
+    "int": 9,
+    "sp": 4,
+    "spi": 21
+   },
+   "unmapped": []
+  },
+  "16718": {
+   "armor": 127,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "heal": 20,
+    "int": 18,
+    "sp": 7,
+    "spi": 8,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "16719": {
+   "armor": 150,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "heal": 24,
+    "int": 14,
+    "sp": 8,
+    "spi": 14,
+    "sta": 14,
+    "str": 12
+   },
+   "unmapped": []
+  },
+  "16720": {
+   "armor": 141,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 15,
+    "int": 20,
+    "sp": 5,
+    "spi": 20,
+    "sta": 10,
+    "str": 6
+   },
+   "unmapped": []
+  },
+  "16723": {
+   "armor": 341,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "req": 53,
+   "stats": {
+    "hit": 5,
+    "int": 15,
+    "sp": 7,
+    "sta": 9,
+    "str": 10
+   },
+   "unmapped": []
+  },
+  "17007": {
+   "armor": 209,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 51,
+   "q": 4,
+   "req": 46,
+   "stats": {
+    "int": 7,
+    "sp": 9,
+    "sta": 11,
+    "str": 20
+   },
+   "unmapped": []
+  },
+  "17043": {
+   "armor": 50,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 38,
+   "q": 2,
+   "stats": {
+    "int": 7,
+    "sp": 11,
+    "spi": 7
+   },
+   "unmapped": []
+  },
+  "17045": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "stats": {
+    "int": 10,
+    "sp": 12,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "1716": {
+   "armor": 58,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 40,
+   "q": 3,
+   "req": 35,
+   "stats": {
+    "int": 6,
+    "sp": 22,
+    "spi": 5
+   },
+   "unmapped": []
+  },
+  "17508": {
+   "armor": 1078,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 40,
+   "q": 3,
+   "stats": {
+    "heal": 18,
+    "sp": 6,
+    "spi": 8,
+    "sta": 4
+   },
+   "unmapped": []
+  },
+  "17695": {
+   "armor": 31,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 28,
+   "q": 2,
+   "stats": {
+    "sp": 5,
+    "sta": 3
+   },
+   "unmapped": []
+  },
+  "17707": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 54,
+   "q": 3,
+   "req": 49,
+   "stats": {
+    "heal": 15,
+    "int": 9,
+    "sp": 5,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "17718": {
+   "armor": 1835,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 53,
+   "q": 3,
+   "req": 48,
+   "stats": {
+    "heal": 13,
+    "int": 10,
+    "sp": 5
+   },
+   "unmapped": [
+    "+4 Mana Per"
+   ]
+  },
+  "17732": {
+   "armor": 57,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 53,
+   "q": 3,
+   "req": 48,
+   "stats": {
+    "int": 18,
+    "sp": 13
+   },
+   "unmapped": []
+  },
+  "17740": {
+   "armor": 122,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 52,
+   "q": 3,
+   "req": 47,
+   "stats": {
+    "int": 15,
+    "sp": 23,
+    "spi": 8,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "17741": {
+   "armor": 73,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 51,
+   "q": 3,
+   "req": 46,
+   "stats": {},
+   "unmapped": [
+    "+8 Mana Per",
+    "+29 Holy Damage",
+    "+29 Nature Damage"
+   ]
+  },
+  "17748": {
+   "armor": 50,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 51,
+   "q": 3,
+   "req": 46,
+   "stats": {
+    "heal": 18,
+    "int": 9,
+    "nr": 12,
+    "sp": 6,
+    "spi": 10
+   },
+   "unmapped": []
+  },
+  "17751": {
+   "armor": 130,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 51,
+   "q": 3,
+   "req": 46,
+   "stats": {
+    "int": 7,
+    "nr": 10,
+    "sp": 23,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "17755": {
+   "armor": 40,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 50,
+   "q": 3,
+   "req": 45,
+   "stats": {
+    "int": 10,
+    "sp": 14,
+    "sr": 10,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "17768": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 49,
+   "q": 2,
+   "stats": {
+    "int": 10,
+    "sp": 6
+   },
+   "unmapped": []
+  },
+  "17773": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 44,
+   "q": 2,
+   "stats": {
+    "sp": 9,
+    "sr": 6
+   },
+   "unmapped": []
+  },
+  "17775": {
+   "armor": 64,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 49,
+   "q": 2,
+   "stats": {
+    "int": 15,
+    "sp": 14
+   },
+   "unmapped": []
+  },
+  "18022": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "stats": {
+    "heal": 22,
+    "sp": 7,
+    "spi": 8,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "18083": {
+   "armor": 43,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 48,
+   "q": 3,
+   "req": 43,
+   "stats": {
+    "heal": 18,
+    "int": 7,
+    "sp": 6,
+    "sta": 10
+   },
+   "unmapped": [
+    "+4 Mana Per"
+   ]
+  },
+  "18102": {
+   "armor": 61,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "fr": 8,
+    "int": 16,
+    "sp": 18,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "18304": {
+   "armor": 313,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 2,
+   "req": 53,
+   "stats": {
+    "heal": 26,
+    "int": 17,
+    "sp": 9,
+    "spi": 9
+   },
+   "unmapped": []
+  },
+  "18309": {
+   "armor": 105,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "heal": 31,
+    "int": 12,
+    "sp": 10,
+    "sta": 13
+   },
+   "unmapped": []
+  },
+  "18312": {
+   "armor": 617,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "int": 12,
+    "sp": 15,
+    "sta": 20,
+    "str": 13
+   },
+   "unmapped": []
+  },
+  "18317": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "req": 53,
+   "stats": {
+    "heal": 7,
+    "int": 6,
+    "sp": 2,
+    "spi": 6
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "18318": {
+   "armor": 240,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "heal": 20,
+    "int": 14,
+    "sp": 7,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "18322": {
+   "armor": 114,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "req": 53,
+   "stats": {
+    "int": 8,
+    "sp": 22,
+    "spi": 9
+   },
+   "unmapped": []
+  },
+  "18327": {
+   "armor": 47,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "heal": 29,
+    "int": 9,
+    "sp": 10
+   },
+   "unmapped": [
+    "+6 Mana Per"
+   ]
+  },
+  "18346": {
+   "armor": 75,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "sp": 46,
+    "sta": 18
+   },
+   "unmapped": []
+  },
+  "18350": {
+   "armor": 43,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "sp": 15,
+    "spi": 14
+   },
+   "unmapped": []
+  },
+  "18369": {
+   "armor": 53,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "stats": {
+    "heal": 20,
+    "sp": 7,
+    "spi": 10,
+    "sta": 10
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "18373": {
+   "armor": 174,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "int": 20,
+    "sp": 23,
+    "spi": 6,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "18378": {
+   "armor": 320,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "agi": 6,
+    "int": 16,
+    "sp": 18,
+    "spen": 2,
+    "spi": 10,
+    "sta": 16
+   },
+   "unmapped": []
+  },
+  "18385": {
+   "armor": 88,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "int": 13,
+    "sp": 27,
+    "spi": 5,
+    "sr": 7,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "18386": {
+   "armor": 76,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "heal": 37,
+    "int": 20,
+    "sp": 12
+   },
+   "unmapped": [
+    "+7 Mana Per"
+   ]
+  },
+  "18389": {
+   "armor": 44,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 20,
+    "int": 14,
+    "sp": 7,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "18390": {
+   "armor": 150,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 29,
+    "sp": 10,
+    "spi": 19,
+    "sta": 12
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "18391": {
+   "armor": 98,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 31,
+    "int": 18,
+    "sp": 10,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "18395": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 15,
+    "int": 12,
+    "sp": 5,
+    "spi": 8,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "18397": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "ar": 10,
+    "int": 10,
+    "sp": 7,
+    "spi": 7
+   },
+   "unmapped": []
+  },
+  "18424": {
+   "armor": 121,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "stats": {
+    "heal": 20,
+    "int": 11,
+    "nr": 5,
+    "sp": 7,
+    "sr": 5,
+    "sta": 18
+   },
+   "unmapped": []
+  },
+  "18458": {
+   "armor": 141,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 2,
+   "req": 55,
+   "stats": {
+    "int": 10,
+    "sp": 12
+   },
+   "unmapped": []
+  },
+  "18459": {
+   "armor": 249,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 2,
+   "req": 55,
+   "stats": {
+    "heal": 22,
+    "int": 10,
+    "sp": 7
+   },
+   "unmapped": []
+  },
+  "18472": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Restores 9 Mana per 5 sec in Haunted areas."
+   ],
+   "ilvl": 62,
+   "q": 3,
+   "stats": {
+    "heal": 22,
+    "nr": 15,
+    "sp": 7
+   },
+   "unmapped": []
+  },
+  "18475": {
+   "armor": 44,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 2,
+   "req": 55,
+   "stats": {
+    "sp": 16,
+    "sta": 13
+   },
+   "unmapped": []
+  },
+  "18477": {
+   "armor": 135,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 2,
+   "req": 55,
+   "stats": {
+    "int": 19,
+    "sp": 13
+   },
+   "unmapped": [
+    "+4 Mana Per"
+   ]
+  },
+  "18479": {
+   "armor": 262,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 2,
+   "req": 55,
+   "stats": {
+    "hit": 10,
+    "sp": 18,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "18480": {
+   "armor": 463,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 2,
+   "req": 55,
+   "stats": {
+    "heal": 22,
+    "int": 17,
+    "sp": 7,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "18490": {
+   "armor": 139,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "heal": 24,
+    "int": 15,
+    "sp": 8,
+    "spi": 9,
+    "sta": 12
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "18494": {
+   "armor": 266,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 10,
+    "sp": 18,
+    "spi": 10,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "18497": {
+   "armor": 37,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 10,
+    "sp": 12,
+    "spi": 6,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "18507": {
+   "armor": 60,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 26,
+    "int": 12,
+    "sp": 9,
+    "spi": 11,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "18525": {
+   "armor": 77,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "heal": 22,
+    "int": 10,
+    "sp": 7,
+    "spi": 5,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "18527": {
+   "armor": 231,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "heal": 33,
+    "int": 10,
+    "sp": 11,
+    "spi": 10,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "18528": {
+   "armor": 129,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 11,
+    "sp": 14,
+    "spi": 9,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "18532": {
+   "armor": 88,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 20,
+    "int": 13,
+    "sp": 7,
+    "sta": 12
+   },
+   "unmapped": [
+    "+10 Mana Per"
+   ]
+  },
+  "18535": {
+   "armor": 2026,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "stats": {
+    "bv": 90,
+    "heal": 15,
+    "sp": 5,
+    "sta": 7
+   },
+   "unmapped": [
+    "+15 Health Per"
+   ]
+  },
+  "18681": {
+   "armor": 65,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 16,
+    "sp": 20,
+    "sta": 4
+   },
+   "unmapped": []
+  },
+  "18682": {
+   "armor": 150,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "heal": 44,
+    "int": 8,
+    "sp": 15,
+    "spi": 9,
+    "sta": 20
+   },
+   "unmapped": []
+  },
+  "18692": {
+   "armor": 424,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "int": 11,
+    "sp": 11,
+    "sta": 11,
+    "str": 11
+   },
+   "unmapped": []
+  },
+  "18696": {
+   "armor": 2121,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "bv": 23,
+    "sp": 6,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "18702": {
+   "armor": 353,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "heal": 33,
+    "int": 14,
+    "sp": 11,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "18718": {
+   "armor": 534,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "spi": 10,
+    "sr": 10,
+    "sta": 16,
+    "str": 16
+   },
+   "unmapped": [
+    "+17 Holy Damage"
+   ]
+  },
+  "18720": {
+   "armor": 67,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "int": 16,
+    "sp": 7,
+    "spi": 8
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "18721": {
+   "armor": 202,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 8,
+    "sp": 23,
+    "spi": 6,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "18723": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 33,
+    "sp": 11,
+    "spi": 7,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "18727": {
+   "armor": 68,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "int": 10,
+    "sp": 30,
+    "spi": 10,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "18730": {
+   "armor": 53,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 15,
+    "sp": 11,
+    "sr": 12
+   },
+   "unmapped": [
+    "+3 Mana Per"
+   ]
+  },
+  "18739": {
+   "armor": 557,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 20,
+    "sta": 20
+   },
+   "unmapped": [
+    "+5 Mana Per",
+    "+7 Holy Damage"
+   ]
+  },
+  "18740": {
+   "armor": 49,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 12,
+    "sp": 12,
+    "spi": 11,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "18741": {
+   "armor": 279,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "heal": 15,
+    "int": 12,
+    "sp": 5,
+    "spi": 11
+   },
+   "unmapped": []
+  },
+  "18743": {
+   "armor": 42,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "heal": 7,
+    "int": 7,
+    "sp": 3
+   },
+   "unmapped": [
+    "+6 Mana Per"
+   ]
+  },
+  "18745": {
+   "armor": 71,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 57,
+   "q": 3,
+   "req": 52,
+   "stats": {
+    "int": 19,
+    "sp": 14,
+    "spi": 12,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "1929": {
+   "armor": 31,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 18,
+   "q": 3,
+   "req": 13,
+   "stats": {
+    "agi": 5,
+    "sp": 7
+   },
+   "unmapped": []
+  },
+  "19507": {
+   "armor": 46,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 42,
+   "q": 3,
+   "req": 37,
+   "stats": {
+    "heal": 22,
+    "int": 13,
+    "sp": 7
+   },
+   "unmapped": []
+  },
+  "20006": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 52,
+   "q": 3,
+   "stats": {
+    "sr": 6
+   },
+   "unmapped": [
+    "+21 Holy Damage"
+   ]
+  },
+  "20037": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 52,
+   "q": 3,
+   "stats": {
+    "int": 6,
+    "sp": 16
+   },
+   "unmapped": []
+  },
+  "2034": {
+   "armor": 43,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 25,
+   "q": 3,
+   "req": 20,
+   "stats": {
+    "sp": 3,
+    "spi": 12
+   },
+   "unmapped": []
+  },
+  "20504": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 52,
+   "q": 3,
+   "req": 47,
+   "stats": {
+    "sta": 12,
+    "str": 12
+   },
+   "unmapped": [
+    "+5 All Resistances",
+    "+17 Holy Damage"
+   ]
+  },
+  "20505": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 52,
+   "q": 3,
+   "stats": {
+    "heal": 18,
+    "int": 7,
+    "sp": 6,
+    "sta": 7,
+    "str": 7
+   },
+   "unmapped": []
+  },
+  "20512": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Restores 319 to 361 Mana. This effect is doubled in Wasteland and Haunted areas."
+   ],
+   "ilvl": 52,
+   "q": 3,
+   "stats": {
+    "sp": 15
+   },
+   "unmapped": []
+  },
+  "220814": {
+   "armor": 369,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 51,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "int": 7,
+    "sp": 9,
+    "sta": 12,
+    "str": 11
+   },
+   "unmapped": []
+  },
+  "220815": {
+   "armor": 557,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 53,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "int": 11,
+    "sp": 15,
+    "sta": 15,
+    "str": 13
+   },
+   "unmapped": []
+  },
+  "220816": {
+   "armor": 487,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 53,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "int": 11,
+    "sp": 15,
+    "sta": 15,
+    "str": 13
+   },
+   "unmapped": []
+  },
+  "220817": {
+   "armor": 336,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 51,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "sp": 7,
+    "sta": 10,
+    "str": 7
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "220818": {
+   "armor": 433,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "int": 10,
+    "sp": 12,
+    "sta": 11,
+    "str": 11
+   },
+   "unmapped": []
+  },
+  "220819": {
+   "armor": 469,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "int": 12,
+    "sp": 15,
+    "sta": 15,
+    "str": 14
+   },
+   "unmapped": []
+  },
+  "22208": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "req": 53,
+   "stats": {
+    "int": 12,
+    "sp": 20,
+    "sta": 14,
+    "str": 13
+   },
+   "unmapped": []
+  },
+  "22223": {
+   "armor": 469,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "int": 11,
+    "sp": 14,
+    "sta": 14,
+    "str": 15
+   },
+   "unmapped": []
+  },
+  "22225": {
+   "armor": 69,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 15,
+    "sp": 18,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "22231": {
+   "armor": 60,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "hit": 10,
+    "int": 18,
+    "sp": 4,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "22234": {
+   "armor": 57,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 53,
+   "q": 3,
+   "req": 48,
+   "stats": {
+    "heal": 26,
+    "int": 11,
+    "sp": 9,
+    "sta": 5
+   },
+   "unmapped": [
+    "+4 Mana Per"
+   ]
+  },
+  "22240": {
+   "armor": 218,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 53,
+   "q": 3,
+   "req": 48,
+   "stats": {
+    "hit": 10,
+    "int": 10,
+    "sp": 11,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "22242": {
+   "armor": 187,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 56,
+   "q": 3,
+   "req": 51,
+   "stats": {
+    "agi": 7,
+    "int": 8,
+    "sp": 11,
+    "sta": 8,
+    "str": 8
+   },
+   "unmapped": []
+  },
+  "22245": {
+   "armor": 55,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 56,
+   "q": 3,
+   "req": 51,
+   "stats": {
+    "heal": 20,
+    "int": 9,
+    "sp": 7,
+    "spi": 14,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "22247": {
+   "armor": 61,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "heal": 24,
+    "int": 12,
+    "sp": 8,
+    "spi": 12,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "22256": {
+   "armor": 51,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 57,
+   "q": 3,
+   "req": 52,
+   "stats": {
+    "int": 11,
+    "sp": 16,
+    "spi": 7,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "22257": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Reduces the hit chance of Bleed effects against you by 10%."
+   ],
+   "ilvl": 57,
+   "q": 3,
+   "req": 52,
+   "stats": {
+    "heal": 15,
+    "int": 8,
+    "sp": 5,
+    "spi": 6,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "22267": {
+   "armor": 73,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 60,
+   "stats": {
+    "hit": 10,
+    "sp": 33,
+    "spi": 13
+   },
+   "unmapped": []
+  },
+  "22270": {
+   "armor": 397,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "def": 3,
+    "int": 10,
+    "sp": 7,
+    "sta": 10,
+    "str": 11
+   },
+   "unmapped": []
+  },
+  "22271": {
+   "armor": 142,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 57,
+   "q": 3,
+   "req": 52,
+   "stats": {
+    "int": 15,
+    "sp": 16,
+    "sta": 15
+   },
+   "unmapped": [
+    "+4 Mana Per"
+   ]
+  },
+  "22272": {
+   "armor": 151,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 52,
+   "q": 3,
+   "stats": {
+    "heal": 44,
+    "int": 9,
+    "sp": 15,
+    "spi": 8
+   },
+   "unmapped": [
+    "+6 Mana Per"
+   ]
+  },
+  "22275": {
+   "armor": 112,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 57,
+   "q": 3,
+   "req": 52,
+   "stats": {
+    "heal": 20,
+    "int": 18,
+    "sp": 7,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "22327": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "heal": 15,
+    "int": 10,
+    "sp": 5,
+    "spi": 8,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "22334": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "heal": 31,
+    "int": 7,
+    "sp": 10,
+    "spi": 6,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "22336": {
+   "armor": 2153,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "sp": 18,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "22339": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "ar": 7,
+    "hit": 10,
+    "sp": 13,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "22403": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "hit": 10,
+    "int": 8,
+    "sp": 9,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "22405": {
+   "armor": 65,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "heal": 20,
+    "int": 12,
+    "sp": 7,
+    "spi": 12,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "22407": {
+   "armor": 139,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 14,
+    "sp": 23,
+    "spi": 12,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "22409": {
+   "armor": 176,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "int": 12,
+    "sp": 15,
+    "spi": 11,
+    "sta": 14
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "22412": {
+   "armor": 67,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "int": 18,
+    "sp": 15,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "22433": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "sp": 11,
+    "sta": 10
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "226973": {
+   "armor": 684,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 4,
+   "stats": {
+    "int": 17,
+    "sp": 18,
+    "sta": 17,
+    "str": 16
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "226975": {
+   "armor": 393,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 4,
+   "stats": {
+    "int": 10,
+    "sp": 9,
+    "sta": 10,
+    "str": 9
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "226976": {
+   "armor": 556,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 4,
+   "stats": {
+    "int": 17,
+    "sp": 14,
+    "sta": 17,
+    "str": 16
+   },
+   "unmapped": [
+    "+14 Crit Rating",
+    "+2 Mana Per"
+   ]
+  },
+  "226981": {
+   "armor": 556,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 4,
+   "stats": {
+    "heal": 33,
+    "int": 17,
+    "sp": 11,
+    "spi": 16,
+    "sta": 16
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "226982": {
+   "armor": 393,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 4,
+   "stats": {
+    "heal": 24,
+    "int": 11,
+    "sp": 8,
+    "spi": 18,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "226984": {
+   "armor": 684,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 4,
+   "stats": {
+    "heal": 37,
+    "int": 16,
+    "sp": 12,
+    "spi": 15,
+    "sta": 23
+   },
+   "unmapped": []
+  },
+  "226997": {
+   "armor": 556,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 4,
+   "stats": {
+    "int": 17,
+    "sp": 14,
+    "spi": 12,
+    "sta": 17,
+    "str": 16
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "226998": {
+   "armor": 393,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 4,
+   "stats": {
+    "int": 10,
+    "sp": 11,
+    "sta": 10,
+    "str": 9
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "226999": {
+   "armor": 470,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 4,
+   "stats": {
+    "int": 12,
+    "sp": 12,
+    "spi": 10,
+    "sta": 13,
+    "str": 12
+   },
+   "unmapped": [
+    "+4 Mana Per"
+   ]
+  },
+  "227000": {
+   "armor": 684,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 4,
+   "stats": {
+    "int": 17,
+    "sp": 14,
+    "spi": 12,
+    "sta": 17,
+    "str": 16
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "227142": {
+   "armor": 706,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 68,
+   "q": 3,
+   "req": 60,
+   "stats": {
+    "sp": 25,
+    "sta": 27,
+    "str": 16
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "227143": {
+   "armor": 618,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 68,
+   "q": 3,
+   "req": 60,
+   "stats": {
+    "sp": 25,
+    "sta": 26,
+    "str": 17
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "227144": {
+   "armor": 598,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 71,
+   "q": 3,
+   "req": 60,
+   "stats": {
+    "hit": 10,
+    "sp": 26,
+    "sta": 29,
+    "str": 20
+   },
+   "unmapped": []
+  },
+  "227145": {
+   "armor": 552,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 71,
+   "q": 3,
+   "req": 60,
+   "stats": {
+    "int": 8,
+    "sp": 20,
+    "sta": 21,
+    "str": 14
+   },
+   "unmapped": []
+  },
+  "227146": {
+   "armor": 472,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 66,
+   "q": 3,
+   "req": 60,
+   "stats": {
+    "sp": 12,
+    "sta": 18,
+    "str": 12
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "227808": {
+   "armor": 75,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 15,
+    "sp": 27
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "228190": {
+   "armor": 56,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "hit": 10,
+    "int": 22,
+    "sp": 25
+   },
+   "unmapped": []
+  },
+  "231639": {
+   "armor": 703,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 71,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 34,
+    "int": 20,
+    "sp": 17,
+    "sta": 46
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "231640": {
+   "armor": 679,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 74,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 30,
+    "int": 21,
+    "sp": 16,
+    "sta": 40
+   },
+   "unmapped": [
+    "+14 Crit Rating",
+    "+3 Mana Per"
+   ]
+  },
+  "231641": {
+   "armor": 835,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 74,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 30,
+    "int": 21,
+    "sp": 16,
+    "sta": 40
+   },
+   "unmapped": [
+    "+14 Crit Rating",
+    "+3 Mana Per"
+   ]
+  },
+  "231643": {
+   "armor": 502,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases the critical strike chance of your Holy Shock by 2%."
+   ],
+   "ilvl": 71,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 17,
+    "int": 18,
+    "sp": 9,
+    "sta": 25
+   },
+   "unmapped": [
+    "+14 Crit Rating",
+    "the critical strike chance of your Holy Shock by 2"
+   ]
+  },
+  "231645": {
+   "armor": 626,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 74,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 28,
+    "int": 16,
+    "sp": 14,
+    "sta": 39
+   },
+   "unmapped": []
+  },
+  "231646": {
+   "armor": 552,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 71,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 22,
+    "int": 16,
+    "sp": 11,
+    "sta": 43
+   },
+   "unmapped": []
+  },
+  "231647": {
+   "armor": 703,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 71,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 20,
+    "sp": 27,
+    "sta": 30,
+    "str": 20
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "231648": {
+   "armor": 679,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 74,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 15,
+    "sp": 21,
+    "sta": 39,
+    "str": 22
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "231649": {
+   "armor": 835,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 74,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 14,
+    "sp": 23,
+    "sta": 39,
+    "str": 22
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "231651": {
+   "armor": 626,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 74,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 15,
+    "sp": 12,
+    "sta": 30,
+    "str": 21
+   },
+   "unmapped": []
+  },
+  "231652": {
+   "armor": 552,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 71,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 14,
+    "sp": 13,
+    "sta": 31,
+    "str": 18
+   },
+   "unmapped": []
+  },
+  "234016": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases the casting speed of your spells by 2% per piece of Timeworn armor equipped."
+   ],
+   "ilvl": 60,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "hit": 10,
+    "int": 7,
+    "sp": 21,
+    "sta": 6
+   },
+   "unmapped": [
+    "the casting speed of your spells by 2"
+   ]
+  },
+  "234019": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases the effectiveness of your healing and shielding spells by 2% per piece of Timeworn armor equipped."
+   ],
+   "ilvl": 60,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 28,
+    "int": 7,
+    "sp": 14,
+    "sta": 6
+   },
+   "unmapped": [
+    "+3 Mana Per"
+   ]
+  },
+  "234020": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases the casting speed of your spells by 2% per piece of Timeworn armor equipped."
+   ],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "hit": 10,
+    "int": 8,
+    "sp": 22,
+    "sta": 7
+   },
+   "unmapped": [
+    "the casting speed of your spells by 2"
+   ]
+  },
+  "234023": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases the effectiveness of your healing and shielding spells by 2% per piece of Timeworn armor equipped."
+   ],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 30,
+    "int": 8,
+    "sp": 14,
+    "sta": 7
+   },
+   "unmapped": [
+    "+3 Mana Per"
+   ]
+  },
+  "234024": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases the casting speed of your spells by 2% per piece of Timeworn armor equipped."
+   ],
+   "ilvl": 70,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "hit": 10,
+    "int": 8,
+    "sp": 25,
+    "sta": 8
+   },
+   "unmapped": [
+    "the casting speed of your spells by 2"
+   ]
+  },
+  "234025": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases the effectiveness of your healing and shielding spells by 2% per piece of Timeworn armor equipped."
+   ],
+   "ilvl": 70,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 32,
+    "int": 8,
+    "sp": 16,
+    "sta": 8
+   },
+   "unmapped": [
+    "+4 Mana Per"
+   ]
+  },
+  "234028": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases the casting speed of your spells by 2% per piece of Timeworn armor equipped."
+   ],
+   "ilvl": 75,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "hit": 10,
+    "int": 8,
+    "sp": 26,
+    "sta": 8
+   },
+   "unmapped": [
+    "the casting speed of your spells by 2"
+   ]
+  },
+  "234029": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases the effectiveness of your healing and shielding spells by 2% per piece of Timeworn armor equipped."
+   ],
+   "ilvl": 75,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 34,
+    "int": 8,
+    "sp": 16,
+    "sta": 8
+   },
+   "unmapped": [
+    "+4 Mana Per"
+   ]
+  },
+  "234032": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases the casting speed of your spells by 2% per piece of Timeworn armor equipped."
+   ],
+   "ilvl": 80,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "hit": 10,
+    "int": 9,
+    "sp": 28,
+    "sta": 8
+   },
+   "unmapped": [
+    "the casting speed of your spells by 2"
+   ]
+  },
+  "234033": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases the effectiveness of your healing and shielding spells by 2% per piece of Timeworn armor equipped."
+   ],
+   "ilvl": 80,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 37,
+    "int": 9,
+    "sp": 18,
+    "sta": 8
+   },
+   "unmapped": [
+    "+5 Mana Per"
+   ]
+  },
+  "234546": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "This effect cannot be combined from multiple sources."
+   ],
+   "ilvl": 80,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 20,
+    "sp": 16,
+    "sta": 42,
+    "str": 27
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "234568": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "This effect cannot be combined from multiple sources."
+   ],
+   "ilvl": 80,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 20,
+    "sp": 16,
+    "sta": 42,
+    "str": 27
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "235473": {
+   "armor": 3000,
+   "bind": "Binds when picked up",
+   "equip": [
+    "This effect cannot be combined from multiple sources."
+   ],
+   "ilvl": 80,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 20,
+    "int": 10,
+    "sp": 24,
+    "sta": 26
+   },
+   "unmapped": []
+  },
+  "235474": {
+   "armor": 3000,
+   "bind": "Binds when picked up",
+   "equip": [
+    "This effect cannot be combined from multiple sources."
+   ],
+   "ilvl": 80,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 20,
+    "int": 10,
+    "sp": 24,
+    "sta": 26
+   },
+   "unmapped": []
+  },
+  "237815": {
+   "armor": 104,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 78,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "bv": 100,
+    "int": 10,
+    "sp": 32,
+    "sta": 39
+   },
+   "unmapped": [
+    "+28 Crit Rating"
+   ]
+  },
+  "237817": {
+   "armor": 201,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 78,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "bv": 100,
+    "int": 10,
+    "sp": 32,
+    "sta": 39
+   },
+   "unmapped": [
+    "+28 Crit Rating"
+   ]
+  },
+  "237820": {
+   "armor": 104,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 78,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "bv": 100,
+    "int": 10,
+    "sp": 32,
+    "sta": 39
+   },
+   "unmapped": [
+    "+28 Crit Rating"
+   ]
+  },
+  "237821": {
+   "armor": 201,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 78,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "bv": 100,
+    "int": 10,
+    "sp": 32,
+    "sta": 39
+   },
+   "unmapped": [
+    "+28 Crit Rating"
+   ]
+  },
+  "240020": {
+   "armor": 954,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 98,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "haste": 10,
+    "heal": 66,
+    "int": 24,
+    "sp": 33,
+    "sta": 17
+   },
+   "unmapped": [
+    "+42 Crit Rating"
+   ]
+  },
+  "240021": {
+   "armor": 818,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 98,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "haste": 20,
+    "heal": 42,
+    "int": 14,
+    "sp": 22,
+    "sta": 13
+   },
+   "unmapped": [
+    "+28 Crit Rating"
+   ]
+  },
+  "240022": {
+   "armor": 749,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 98,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "haste": 20,
+    "heal": 45,
+    "int": 15,
+    "sp": 23,
+    "sta": 13
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "240039": {
+   "armor": 1090,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 98,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "haste": 20,
+    "heal": 73,
+    "int": 20,
+    "sp": 37,
+    "sta": 19
+   },
+   "unmapped": [
+    "+28 Crit Rating"
+   ]
+  },
+  "240040": {
+   "armor": 886,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 98,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "haste": 20,
+    "heal": 71,
+    "int": 19,
+    "sp": 35,
+    "sta": 19
+   },
+   "unmapped": [
+    "+28 Crit Rating"
+   ]
+  },
+  "240041": {
+   "armor": 681,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 98,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "haste": 30,
+    "heal": 46,
+    "int": 15,
+    "sp": 24,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "240042": {
+   "armor": 477,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 98,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "haste": 30,
+    "heal": 22,
+    "int": 13,
+    "sp": 11,
+    "sta": 13
+   },
+   "unmapped": []
+  },
+  "240043": {
+   "armor": 613,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 98,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "haste": 30,
+    "heal": 36,
+    "int": 15,
+    "sp": 19,
+    "sta": 14
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "251962": {
+   "armor": 27,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 36,
+   "q": 2,
+   "stats": {
+    "int": 9,
+    "sp": 6
+   },
+   "unmapped": []
+  },
+  "2620": {
+   "armor": 42,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 39,
+   "q": 2,
+   "req": 34,
+   "stats": {
+    "int": 10,
+    "sp": 11,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "270003": {
+   "armor": 71,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 18,
+   "q": 2,
+   "stats": {
+    "heal": 2,
+    "sp": 1,
+    "spi": 2
+   },
+   "unmapped": []
+  },
+  "270016": {
+   "armor": 71,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 22,
+   "q": 2,
+   "stats": {
+    "int": 6,
+    "sp": 2
+   },
+   "unmapped": []
+  },
+  "270025": {
+   "armor": 118,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 27,
+   "q": 2,
+   "stats": {
+    "heal": 9,
+    "sp": 3,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "270029": {
+   "armor": 26,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 28,
+   "q": 2,
+   "stats": {
+    "int": 7,
+    "sp": 3
+   },
+   "unmapped": []
+  },
+  "270030": {
+   "armor": 26,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 28,
+   "q": 2,
+   "stats": {
+    "heal": 9,
+    "sp": 3,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "270031": {
+   "armor": 88,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 29,
+   "q": 3,
+   "stats": {
+    "sp": 14,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "270036": {
+   "armor": 41,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 29,
+   "q": 3,
+   "stats": {
+    "int": 13,
+    "sp": 7
+   },
+   "unmapped": []
+  },
+  "270059": {
+   "armor": 33,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 40,
+   "q": 2,
+   "stats": {
+    "heal": 11,
+    "sp": 4,
+    "spi": 8,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "270081": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 44,
+   "q": 3,
+   "stats": {
+    "int": 12,
+    "sp": 5
+   },
+   "unmapped": []
+  },
+  "270099": {
+   "armor": 57,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 49,
+   "q": 3,
+   "stats": {
+    "sp": 18
+   },
+   "unmapped": [
+    "+8 Mana Per"
+   ]
+  },
+  "270123": {
+   "armor": 117,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 2,
+   "stats": {
+    "hit": 5,
+    "sp": 20,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "270126": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "stats": {
+    "int": 7,
+    "sp": 13,
+    "spi": 5,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "270127": {
+   "armor": 65,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 57,
+   "q": 2,
+   "stats": {
+    "int": 13,
+    "sp": 14
+   },
+   "unmapped": [
+    "+5 Mana Per"
+   ]
+  },
+  "270261": {
+   "armor": 35,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 18,
+   "q": 3,
+   "req": 13,
+   "stats": {
+    "sp": 8,
+    "spi": 4
+   },
+   "unmapped": []
+  },
+  "271096": {
+   "armor": 15,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 18,
+   "q": 3,
+   "req": 13,
+   "stats": {
+    "bv": 30,
+    "sp": 3
+   },
+   "unmapped": []
+  },
+  "271202": {
+   "armor": 37,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 20,
+   "q": 3,
+   "req": 15,
+   "stats": {
+    "agi": 4,
+    "sp": 5
+   },
+   "unmapped": []
+  },
+  "271210": {
+   "armor": 22,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 21,
+   "q": 3,
+   "req": 16,
+   "stats": {
+    "sp": 6,
+    "spi": 5
+   },
+   "unmapped": []
+  },
+  "271214": {
+   "armor": 29,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 24,
+   "q": 3,
+   "req": 19,
+   "stats": {
+    "heal": 15,
+    "sp": 5,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "271950": {
+   "armor": 260,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "bv": 100,
+    "int": 21,
+    "sp": 16,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "271951": {
+   "armor": 223,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 4,
+   "req": 50,
+   "stats": {
+    "bv": 80,
+    "int": 17,
+    "sp": 13,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "271953": {
+   "armor": 75,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 27,
+    "sp": 12,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "271954": {
+   "armor": 148,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 27,
+    "sp": 12,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "271957": {
+   "armor": 553,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 37,
+    "sp": 12,
+    "sta": 24
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "2721": {
+   "armor": 40,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 32,
+   "q": 3,
+   "req": 27,
+   "stats": {
+    "heal": 33,
+    "sp": 11,
+    "spi": 6
+   },
+   "unmapped": []
+  },
+  "272101": {
+   "armor": 260,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "bv": 100,
+    "int": 21,
+    "sp": 16,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "272102": {
+   "armor": 223,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 55,
+   "q": 4,
+   "req": 50,
+   "stats": {
+    "bv": 80,
+    "int": 17,
+    "sp": 13,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "272103": {
+   "armor": 75,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 27,
+    "sp": 12,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "272104": {
+   "armor": 148,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 27,
+    "sp": 12,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "272107": {
+   "armor": 553,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "heal": 37,
+    "sp": 12,
+    "sta": 24
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "272411": {
+   "armor": 46,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 3,
+   "req": 60,
+   "stats": {
+    "hit": 10,
+    "int": 8,
+    "sp": 16
+   },
+   "unmapped": []
+  },
+  "272957": {
+   "armor": 312,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 27,
+    "sp": 16,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "272958": {
+   "armor": 312,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 4,
+   "req": 60,
+   "stats": {
+    "int": 27,
+    "sp": 16,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "273024": {
+   "armor": 33,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 31,
+   "q": 3,
+   "req": 26,
+   "stats": {
+    "sp": 7,
+    "spi": 6,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "273030": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 33,
+   "q": 3,
+   "req": 28,
+   "stats": {
+    "sp": 6
+   },
+   "unmapped": [
+    "+3 Mana Per"
+   ]
+  },
+  "273031": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 32,
+   "q": 3,
+   "req": 27,
+   "stats": {
+    "heal": 9,
+    "int": 6,
+    "sp": 3,
+    "spi": 6
+   },
+   "unmapped": []
+  },
+  "273036": {
+   "armor": 21,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 31,
+   "q": 3,
+   "req": 26,
+   "stats": {
+    "sp": 5,
+    "str": 6
+   },
+   "unmapped": [
+    "+2 Mana Per"
+   ]
+  },
+  "273039": {
+   "armor": 28,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 34,
+   "q": 3,
+   "req": 29,
+   "stats": {
+    "int": 10,
+    "sp": 7
+   },
+   "unmapped": [
+    "+5 Health Per"
+   ]
+  },
+  "273044": {
+   "armor": 49,
+   "bind": "Binds when picked up",
+   "equip": [
+    "When damaged, has a chance to reduce threat level on all enemies by a small amount for 10 sec."
+   ],
+   "ilvl": 32,
+   "q": 3,
+   "req": 27,
+   "stats": {
+    "int": 15,
+    "sp": 9
+   },
+   "unmapped": []
+  },
+  "273289": {
+   "armor": 35,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 22,
+   "q": 3,
+   "req": 17,
+   "stats": {
+    "heal": 18,
+    "sp": 6,
+    "sta": 6,
+    "str": 4
+   },
+   "unmapped": []
+  },
+  "273806": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 26,
+   "q": 3,
+   "req": 21,
+   "stats": {
+    "sp": 6,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "273807": {
+   "armor": 57,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 29,
+   "q": 3,
+   "req": 24,
+   "stats": {
+    "sp": 9,
+    "str": 8
+   },
+   "unmapped": []
+  },
+  "273808": {
+   "armor": 20,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 29,
+   "q": 3,
+   "req": 24,
+   "stats": {
+    "fr": 7,
+    "heal": 9,
+    "sp": 3
+   },
+   "unmapped": []
+  },
+  "273811": {
+   "armor": 661,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 30,
+   "q": 3,
+   "req": 25,
+   "stats": {
+    "sp": 7,
+    "str": 6
+   },
+   "unmapped": []
+  },
+  "273825": {
+   "armor": 24,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 31,
+   "q": 3,
+   "req": 26,
+   "stats": {
+    "heal": 9,
+    "sp": 3
+   },
+   "unmapped": [
+    "+3 Mana Per"
+   ]
+  },
+  "273841": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Blasts a target for 70 Nature damage."
+   ],
+   "ilvl": 28,
+   "q": 3,
+   "req": 23,
+   "stats": {
+    "sp": 12
+   },
+   "unmapped": []
+  },
+  "274149": {
+   "armor": 24,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 30,
+   "q": 3,
+   "req": 25,
+   "stats": {
+    "sp": 7,
+    "spi": 6
+   },
+   "unmapped": []
+  },
+  "274155": {
+   "armor": 84,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 30,
+   "q": 3,
+   "req": 25,
+   "stats": {
+    "heal": 13,
+    "sp": 4,
+    "spi": 14
+   },
+   "unmapped": []
+  },
+  "274290": {
+   "armor": 738,
+   "bind": "Binds when picked up",
+   "equip": [
+    "17% chance when struck in combat to gain 12 mana per 5 sec for 10 sec."
+   ],
+   "ilvl": 34,
+   "q": 3,
+   "req": 29,
+   "stats": {
+    "heal": 13,
+    "sp": 5,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "274294": {
+   "armor": 35,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 39,
+   "q": 2,
+   "req": 34,
+   "stats": {
+    "heal": 13,
+    "int": 9,
+    "sp": 5
+   },
+   "unmapped": []
+  },
+  "274295": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 42,
+   "q": 3,
+   "req": 37,
+   "stats": {
+    "heal": 18,
+    "sp": 6,
+    "spen": 3
+   },
+   "unmapped": []
+  },
+  "274605": {
+   "armor": 33,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 40,
+   "q": 3,
+   "req": 35,
+   "stats": {
+    "bv": 30,
+    "heal": 26,
+    "int": 9,
+    "sp": 9
+   },
+   "unmapped": []
+  },
+  "274610": {
+   "armor": 79,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 42,
+   "q": 3,
+   "req": 37,
+   "stats": {
+    "agi": 13,
+    "sp": 8,
+    "spi": 6
+   },
+   "unmapped": []
+  },
+  "274613": {
+   "armor": 29,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 40,
+   "q": 3,
+   "req": 35,
+   "stats": {
+    "heal": 11,
+    "int": 9,
+    "sp": 4
+   },
+   "unmapped": [
+    "+4 Mana Per"
+   ]
+  },
+  "274638": {
+   "armor": 213,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 47,
+   "q": 3,
+   "req": 42,
+   "stats": {
+    "int": 7,
+    "sp": 15,
+    "spi": 11
+   },
+   "unmapped": []
+  },
+  "274652": {
+   "armor": 1676,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 48,
+   "q": 3,
+   "req": 43,
+   "stats": {
+    "sp": 14
+   },
+   "unmapped": [
+    "+3 Mana Per"
+   ]
+  },
+  "274653": {
+   "armor": 163,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 48,
+   "q": 3,
+   "req": 43,
+   "stats": {
+    "heal": 16,
+    "sp": 6,
+    "spi": 12,
+    "str": 11
+   },
+   "unmapped": []
+  },
+  "274654": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 47,
+   "q": 3,
+   "req": 43,
+   "stats": {
+    "heal": 47,
+    "sp": 16
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "274657": {
+   "armor": 124,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 48,
+   "q": 3,
+   "req": 43,
+   "stats": {
+    "sp": 22,
+    "spi": 12,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "274659": {
+   "armor": 281,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 47,
+   "q": 3,
+   "req": 42,
+   "stats": {
+    "heal": 18,
+    "sp": 6,
+    "sta": 7
+   },
+   "unmapped": [
+    "+6 Mana Per"
+   ]
+  },
+  "274932": {
+   "armor": 47,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 38,
+   "q": 2,
+   "stats": {
+    "sp": 6,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "274997": {
+   "armor": 152,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 44,
+   "q": 3,
+   "req": 39,
+   "stats": {
+    "sp": 12,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "275004": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 46,
+   "q": 3,
+   "req": 41,
+   "stats": {
+    "agi": 4,
+    "sp": 5,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "275010": {
+   "armor": 55,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 47,
+   "q": 3,
+   "req": 42,
+   "stats": {
+    "sp": 15,
+    "spi": 21
+   },
+   "unmapped": []
+  },
+  "275021": {
+   "armor": 40,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 44,
+   "q": 3,
+   "stats": {
+    "sp": 15,
+    "spi": 12
+   },
+   "unmapped": []
+  },
+  "275023": {
+   "armor": 56,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 44,
+   "q": 3,
+   "stats": {
+    "heal": 26,
+    "sp": 9,
+    "spi": 13
+   },
+   "unmapped": []
+  },
+  "275041": {
+   "armor": 33,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 45,
+   "q": 2,
+   "stats": {
+    "heal": 13,
+    "sp": 5,
+    "spi": 11
+   },
+   "unmapped": []
+  },
+  "275721": {
+   "armor": 129,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 57,
+   "q": 2,
+   "stats": {
+    "fr": 12,
+    "sp": 23
+   },
+   "unmapped": []
+  },
+  "276072": {
+   "armor": 43,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "heal": 20,
+    "sp": 7,
+    "spi": 12,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "276073": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 11,
+    "sp": 15,
+    "spi": 6
+   },
+   "unmapped": []
+  },
+  "276394": {
+   "armor": 84,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "fr": 20,
+    "int": 18,
+    "sp": 17
+   },
+   "unmapped": []
+  },
+  "276399": {
+   "armor": 627,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "heal": 35,
+    "sp": 12,
+    "sta": 18
+   },
+   "unmapped": [
+    "+7 Mana Per"
+   ]
+  },
+  "276434": {
+   "armor": 288,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "heal": 31,
+    "sp": 10,
+    "spi": 18,
+    "sta": 19
+   },
+   "unmapped": []
+  },
+  "276456": {
+   "armor": 2057,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "nr": 10,
+    "sp": 13,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "276736": {
+   "armor": 136,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 52,
+   "q": 3,
+   "req": 47,
+   "stats": {
+    "sp": 10,
+    "spen": 3,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "276744": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Zarla's Snack Pouch",
+    "Zarla's Snack Pouch"
+   ],
+   "ilvl": 55,
+   "q": 3,
+   "req": 50,
+   "stats": {
+    "nr": 13,
+    "sp": 11
+   },
+   "unmapped": []
+  },
+  "276879": {
+   "armor": 1930,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 56,
+   "q": 3,
+   "req": 51,
+   "stats": {
+    "heal": 18,
+    "sp": 6,
+    "spi": 8,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "276884": {
+   "armor": 35,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 56,
+   "q": 3,
+   "req": 51,
+   "stats": {
+    "heal": 20,
+    "sp": 7,
+    "spi": 14
+   },
+   "unmapped": []
+  },
+  "277213": {
+   "armor": 43,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 25,
+   "q": 3,
+   "req": 20,
+   "stats": {
+    "int": 9,
+    "sp": 11
+   },
+   "unmapped": []
+  },
+  "278570": {
+   "armor": 39,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "int": 10,
+    "sta": 10
+   },
+   "unmapped": [
+    "+15 Holy Damage"
+   ]
+  },
+  "279863": {
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases healing done by up to 11 and damage done by up to 4 for all magical spells and effects. This effect is doubled in Strongholds and Cities.",
+    "Black Horn Necklace"
+   ],
+   "ilvl": 43,
+   "q": 3,
+   "req": 38,
+   "stats": {
+    "sta": 8,
+    "str": 5
+   },
+   "unmapped": []
+  },
+  "280013": {
+   "armor": 370,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "heal": 40,
+    "sp": 13,
+    "sta": 17
+   },
+   "unmapped": [
+    "+8 Mana Per"
+   ]
+  },
+  "280025": {
+   "armor": 78,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "sp": 22,
+    "sta": 19
+   },
+   "unmapped": [
+    "+7 Mana Per"
+   ]
+  },
+  "280027": {
+   "armor": 657,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "heal": 40,
+    "sp": 13,
+    "spi": 21
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "280028": {
+   "armor": 410,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "int": 14
+   },
+   "unmapped": [
+    "+14 Crit Rating",
+    "+18 Holy Damage"
+   ]
+  },
+  "280045": {
+   "armor": 45,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 63,
+   "q": 3,
+   "req": 58,
+   "stats": {
+    "sp": 12,
+    "sta": 11
+   },
+   "unmapped": [
+    "+18 Attack Power"
+   ]
+  },
+  "280057": {
+   "armor": 84,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "hit": 18,
+    "sp": 21,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "280064": {
+   "armor": 106,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 12,
+    "sp": 16,
+    "sta": 14
+   },
+   "unmapped": []
+  },
+  "280066": {
+   "armor": 76,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "sp": 21,
+    "spi": 16,
+    "sta": 20
+   },
+   "unmapped": []
+  },
+  "280072": {
+   "armor": 70,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "int": 16,
+    "sp": 21,
+    "sta": 18
+   },
+   "unmapped": []
+  },
+  "281648": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 49,
+   "q": 3,
+   "req": 44,
+   "stats": {
+    "sp": 21,
+    "str": 19
+   },
+   "unmapped": []
+  },
+  "281666": {
+   "armor": 60,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 46,
+   "q": 2,
+   "req": 41,
+   "stats": {
+    "sp": 16,
+    "spi": 11
+   },
+   "unmapped": []
+  },
+  "281896": {
+   "armor": 75,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 44,
+   "q": 2,
+   "req": 39,
+   "stats": {
+    "sp": 12,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "282008": {
+   "armor": 499,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 47,
+   "q": 3,
+   "req": 42,
+   "stats": {
+    "sp": 11,
+    "sta": 21,
+    "str": 9
+   },
+   "unmapped": []
+  },
+  "282012": {
+   "armor": 44,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 54,
+   "q": 2,
+   "req": 49,
+   "stats": {
+    "sp": 11,
+    "spi": 12
+   },
+   "unmapped": []
+  },
+  "282019": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 56,
+   "q": 2,
+   "req": 51,
+   "stats": {
+    "sp": 10,
+    "spi": 10
+   },
+   "unmapped": []
+  },
+  "282027": {
+   "armor": 365,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 62,
+   "q": 3,
+   "req": 57,
+   "stats": {
+    "agi": 14,
+    "sp": 16,
+    "sta": 18,
+    "str": 15
+   },
+   "unmapped": []
+  },
+  "282074": {
+   "armor": 41,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 56,
+   "q": 2,
+   "req": 51,
+   "stats": {
+    "int": 13,
+    "sp": 9,
+    "str": 5
+   },
+   "unmapped": []
+  },
+  "282555": {
+   "armor": 1148,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 42,
+   "q": 2,
+   "req": 37,
+   "stats": {
+    "sp": 8,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "282560": {
+   "armor": 213,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 47,
+   "q": 3,
+   "req": 42,
+   "stats": {
+    "int": 10,
+    "sp": 8,
+    "sta": 13
+   },
+   "unmapped": []
+  },
+  "282636": {
+   "armor": 22,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 21,
+   "q": 2,
+   "req": 16,
+   "stats": {
+    "sp": 2,
+    "spi": 4
+   },
+   "unmapped": []
+  },
+  "282642": {
+   "armor": 61,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 27,
+   "q": 2,
+   "req": 22,
+   "stats": {
+    "int": 5,
+    "sp": 5
+   },
+   "unmapped": []
+  },
+  "282705": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 41,
+   "q": 3,
+   "req": 36,
+   "stats": {
+    "sp": 9,
+    "spi": 9
+   },
+   "unmapped": []
+  },
+  "282716": {
+   "armor": 89,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 32,
+   "q": 2,
+   "req": 27,
+   "stats": {
+    "sp": 5,
+    "str": 5
+   },
+   "unmapped": []
+  },
+  "283545": {
+   "armor": 101,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 46,
+   "q": 2,
+   "req": 41,
+   "stats": {
+    "int": 13,
+    "sp": 15
+   },
+   "unmapped": []
+  },
+  "284063": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 45,
+   "q": 2,
+   "req": 40,
+   "stats": {
+    "sp": 15,
+    "str": 13
+   },
+   "unmapped": []
+  },
+  "284064": {
+   "armor": 410,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 52,
+   "q": 3,
+   "req": 47,
+   "stats": {
+    "sp": 13,
+    "sta": 12,
+    "str": 12
+   },
+   "unmapped": []
+  },
+  "284066": {
+   "armor": 1946,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 64,
+   "q": 2,
+   "req": 59,
+   "stats": {
+    "heal": 18,
+    "sp": 6,
+    "spi": 12
+   },
+   "unmapped": []
+  },
+  "284079": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 65,
+   "q": 3,
+   "req": 60,
+   "stats": {
+    "heal": 16,
+    "sp": 5,
+    "spi": 14,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "284104": {
+   "armor": 33,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 58,
+   "q": 2,
+   "req": 53,
+   "stats": {
+    "sp": 12,
+    "spi": 8
+   },
+   "unmapped": []
+  },
+  "284158": {
+   "armor": 181,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 60,
+   "q": 2,
+   "req": 55,
+   "stats": {
+    "agi": 9,
+    "sp": 6,
+    "str": 14
+   },
+   "unmapped": []
+  },
+  "284215": {
+   "armor": 165,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "req": 53,
+   "stats": {
+    "int": 16,
+    "sp": 20,
+    "spi": 18
+   },
+   "unmapped": []
+  },
+  "284218": {
+   "armor": 43,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 53,
+   "q": 2,
+   "req": 48,
+   "stats": {
+    "int": 13,
+    "nr": 5,
+    "sp": 6
+   },
+   "unmapped": []
+  },
+  "284257": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "frr": 10,
+    "sp": 13,
+    "sta": 18,
+    "str": 17
+   },
+   "unmapped": []
+  },
+  "284261": {
+   "armor": 557,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 61,
+   "q": 3,
+   "req": 56,
+   "stats": {
+    "def": 6,
+    "sp": 16,
+    "sta": 27
+   },
+   "unmapped": []
+  },
+  "284285": {
+   "armor": 183,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 54,
+   "q": 2,
+   "req": 49,
+   "stats": {
+    "sp": 13,
+    "str": 11
+   },
+   "unmapped": []
+  },
+  "284382": {
+   "armor": 54,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 32,
+   "q": 2,
+   "req": 27,
+   "stats": {
+    "heal": 13,
+    "sp": 6,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "284401": {
+   "armor": 38,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 29,
+   "q": 3,
+   "req": 24,
+   "stats": {
+    "heal": 16,
+    "sp": 5,
+    "sta": 11
+   },
+   "unmapped": [
+    "+3 Mana Per"
+   ]
+  },
+  "284707": {
+   "armor": 61,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 39,
+   "q": 2,
+   "req": 34,
+   "stats": {
+    "sp": 10,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "284847": {
+   "armor": 57,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 50,
+   "q": 2,
+   "req": 45,
+   "stats": {
+    "heal": 23,
+    "int": 16,
+    "sp": 7
+   },
+   "unmapped": []
+  },
+  "285177": {
+   "armor": 101,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 37,
+   "q": 3,
+   "req": 32,
+   "stats": {
+    "int": 10,
+    "sp": 8,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "285212": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 29,
+   "q": 2,
+   "req": 24,
+   "stats": {
+    "sp": 4,
+    "sta": 2
+   },
+   "unmapped": []
+  },
+  "285338": {
+   "armor": 88,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 29,
+   "q": 3,
+   "req": 24,
+   "stats": {
+    "int": 11,
+    "sp": 10,
+    "str": 4
+   },
+   "unmapped": []
+  },
+  "285345": {
+   "armor": 26,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 21,
+   "q": 3,
+   "req": 16,
+   "stats": {
+    "sp": 5,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "286408": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "stats": {
+    "sp": 18,
+    "str": 22
+   },
+   "unmapped": [
+    "+14 Crit Rating"
+   ]
+  },
+  "286428": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 45,
+   "q": 3,
+   "req": 40,
+   "stats": {
+    "heal": 22,
+    "sp": 7,
+    "spi": 5,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "286429": {
+   "armor": 37,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 45,
+   "q": 3,
+   "req": 40,
+   "stats": {
+    "heal": 26,
+    "sp": 9,
+    "spi": 9,
+    "str": 8
+   },
+   "unmapped": []
+  },
+  "286535": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 21,
+   "q": 2,
+   "req": 16,
+   "stats": {
+    "sp": 3,
+    "spi": 3
+   },
+   "unmapped": []
+  },
+  "286540": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 27,
+   "q": 3,
+   "req": 22,
+   "stats": {
+    "sp": 6,
+    "sta": 8,
+    "str": 10
+   },
+   "unmapped": []
+  },
+  "286552": {
+   "armor": 52,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 48,
+   "q": 3,
+   "req": 43,
+   "stats": {
+    "sp": 9,
+    "spi": 14
+   },
+   "unmapped": []
+  },
+  "286572": {
+   "armor": 33,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 51,
+   "q": 2,
+   "req": 46,
+   "stats": {
+    "sp": 5,
+    "str": 10
+   },
+   "unmapped": []
+  },
+  "286597": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 60,
+   "q": 2,
+   "req": 55,
+   "stats": {
+    "heal": 19,
+    "sp": 6,
+    "spi": 11
+   },
+   "unmapped": []
+  },
+  "286978": {
+   "armor": 41,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 23,
+   "q": 3,
+   "req": 18,
+   "stats": {
+    "heal": 11,
+    "int": 10,
+    "sp": 4
+   },
+   "unmapped": []
+  },
+  "286983": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 33,
+   "q": 3,
+   "req": 28,
+   "stats": {
+    "sp": 14,
+    "str": 12
+   },
+   "unmapped": []
+  },
+  "286988": {
+   "armor": 44,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 34,
+   "q": 3,
+   "req": 29,
+   "stats": {
+    "int": 13,
+    "sp": 12,
+    "spi": 5
+   },
+   "unmapped": []
+  },
+  "286991": {
+   "armor": 73,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 32,
+   "q": 3,
+   "req": 27,
+   "stats": {
+    "heal": 13,
+    "sp": 4,
+    "spi": 9,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "286993": {
+   "armor": 126,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 32,
+   "q": 3,
+   "req": 27,
+   "stats": {
+    "int": 4,
+    "sp": 6,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "286995": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 33,
+   "q": 3,
+   "req": 28,
+   "stats": {
+    "sp": 6,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "286996": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 34,
+   "q": 3,
+   "req": 29,
+   "stats": {
+    "sp": 5,
+    "sta": 6
+   },
+   "unmapped": []
+  },
+  "286997": {
+   "armor": 51,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 40,
+   "q": 3,
+   "req": 35,
+   "stats": {
+    "sp": 10,
+    "spen": 2,
+    "spi": 17
+   },
+   "unmapped": []
+  },
+  "286998": {
+   "armor": 25,
+   "bind": "Binds when equipped",
+   "equip": [
+    "Underwater Breath lasts 25% longer than normal."
+   ],
+   "ilvl": 39,
+   "q": 3,
+   "req": 34,
+   "stats": {
+    "heal": 20,
+    "sp": 7,
+    "sta": 4
+   },
+   "unmapped": []
+  },
+  "287006": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 40,
+   "q": 3,
+   "req": 35,
+   "stats": {
+    "int": 7,
+    "sp": 4
+   },
+   "unmapped": []
+  },
+  "287007": {
+   "armor": 44,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 44,
+   "q": 3,
+   "req": 39,
+   "stats": {
+    "heal": 14,
+    "sp": 5,
+    "sta": 13
+   },
+   "unmapped": [
+    "+4 Mana Per"
+   ]
+  },
+  "287018": {
+   "armor": 47,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 52,
+   "q": 3,
+   "req": 47,
+   "stats": {
+    "hit": 10,
+    "sp": 11,
+    "sta": 15
+   },
+   "unmapped": []
+  },
+  "287028": {
+   "armor": 36,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 58,
+   "q": 3,
+   "req": 53,
+   "stats": {
+    "sp": 9,
+    "sta": 13
+   },
+   "unmapped": [
+    "+14 Health Per"
+   ]
+  },
+  "287030": {
+   "armor": 153,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "agi": 14,
+    "sp": 10,
+    "spi": 6
+   },
+   "unmapped": []
+  },
+  "287032": {
+   "armor": 336,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 57,
+   "q": 3,
+   "req": 52,
+   "stats": {
+    "sp": 14,
+    "spi": 8,
+    "str": 16
+   },
+   "unmapped": []
+  },
+  "287035": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "int": 13,
+    "sp": 22
+   },
+   "unmapped": []
+  },
+  "287037": {
+   "armor": 85,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "int": 15,
+    "sp": 18,
+    "spi": 15
+   },
+   "unmapped": []
+  },
+  "287038": {
+   "armor": 58,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 59,
+   "q": 3,
+   "req": 54,
+   "stats": {
+    "heal": 22,
+    "sp": 7,
+    "spi": 17
+   },
+   "unmapped": [
+    "+18 Health Per"
+   ]
+  },
+  "287039": {
+   "armor": 74,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 60,
+   "q": 3,
+   "req": 55,
+   "stats": {
+    "heal": 15,
+    "sp": 5,
+    "sta": 13,
+    "str": 8
+   },
+   "unmapped": []
+  },
+  "3324": {
+   "armor": 30,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 27,
+   "q": 2,
+   "stats": {
+    "heal": 6,
+    "sp": 2,
+    "spi": 6
+   },
+   "unmapped": []
+  },
+  "3569": {
+   "armor": 40,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 26,
+   "q": 2,
+   "req": 21,
+   "stats": {
+    "heal": 4,
+    "sp": 1,
+    "spi": 7,
+    "sta": 3
+   },
+   "unmapped": []
+  },
+  "3748": {
+   "armor": 34,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Safe Fall 05"
+   ],
+   "ilvl": 28,
+   "q": 3,
+   "req": 23,
+   "stats": {
+    "agi": 2,
+    "int": 8,
+    "sp": 4
+   },
+   "unmapped": []
+  },
+  "4197": {
+   "armor": 39,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 36,
+   "q": 3,
+   "stats": {
+    "int": 10,
+    "sp": 7,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "4746": {
+   "armor": 55,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 42,
+   "q": 2,
+   "stats": {
+    "heal": 16,
+    "sp": 6,
+    "spi": 18
+   },
+   "unmapped": []
+  },
+  "4980": {
+   "armor": 69,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 40,
+   "q": 2,
+   "stats": {
+    "int": 8,
+    "sp": 9
+   },
+   "unmapped": []
+  },
+  "5187": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 21,
+   "q": 3,
+   "req": 16,
+   "stats": {
+    "sp": 8,
+    "sta": 8
+   },
+   "unmapped": []
+  },
+  "5202": {
+   "armor": 40,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 22,
+   "q": 3,
+   "req": 17,
+   "stats": {
+    "heal": 11,
+    "sp": 3,
+    "spi": 8,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "5608": {
+   "armor": 47,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 44,
+   "q": 2,
+   "req": 39,
+   "stats": {
+    "sp": 13,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "5819": {
+   "armor": 185,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 33,
+   "q": 3,
+   "req": 28,
+   "stats": {
+    "fr": 10,
+    "heal": 22,
+    "sp": 8,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "5943": {
+   "armor": 80,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 25,
+   "q": 2,
+   "req": 20,
+   "stats": {
+    "sp": 2,
+    "sta": 4
+   },
+   "unmapped": []
+  },
+  "5970": {
+   "armor": 25,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 23,
+   "q": 3,
+   "req": 18,
+   "stats": {
+    "agi": 6,
+    "sp": 7
+   },
+   "unmapped": []
+  },
+  "6226": {
+   "armor": 42,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 24,
+   "q": 3,
+   "req": 19,
+   "stats": {
+    "heal": 13,
+    "sp": 4,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "6319": {
+   "armor": 54,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Increases your effective stealth detection level by 1."
+   ],
+   "ilvl": 26,
+   "q": 3,
+   "req": 21,
+   "stats": {
+    "sp": 7,
+    "sta": 5
+   },
+   "unmapped": [
+    "effective stealth detection level by 1"
+   ]
+  },
+  "6324": {
+   "armor": 46,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 28,
+   "q": 3,
+   "req": 23,
+   "stats": {
+    "heal": 18,
+    "sp": 6,
+    "spi": 6,
+    "sr": 8,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "6392": {
+   "armor": 26,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 28,
+   "q": 3,
+   "req": 23,
+   "stats": {
+    "agi": 2,
+    "int": 3,
+    "sp": 9,
+    "spi": 5
+   },
+   "unmapped": []
+  },
+  "6440": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 48,
+   "q": 3,
+   "req": 43,
+   "stats": {
+    "int": 10,
+    "sp": 11,
+    "spi": 5
+   },
+   "unmapped": []
+  },
+  "6465": {
+   "armor": 40,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 22,
+   "q": 3,
+   "req": 17,
+   "stats": {
+    "heal": 9,
+    "sp": 3,
+    "spi": 10,
+    "str": 3
+   },
+   "unmapped": []
+  },
+  "6630": {
+   "armor": 547,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 24,
+   "q": 3,
+   "req": 19,
+   "stats": {
+    "int": 5,
+    "sp": 5
+   },
+   "unmapped": []
+  },
+  "6632": {
+   "armor": 19,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 21,
+   "q": 3,
+   "req": 16,
+   "stats": {
+    "sp": 3,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "6641": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 27,
+   "q": 3,
+   "req": 22,
+   "stats": {
+    "heal": 33,
+    "sp": 11
+   },
+   "unmapped": []
+  },
+  "6682": {
+   "armor": 48,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 31,
+   "q": 3,
+   "req": 26,
+   "stats": {
+    "heal": 20,
+    "int": 11,
+    "sp": 7,
+    "sta": 4
+   },
+   "unmapped": []
+  },
+  "6685": {
+   "armor": 37,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 32,
+   "q": 3,
+   "req": 27,
+   "stats": {
+    "int": 11,
+    "sp": 6
+   },
+   "unmapped": []
+  },
+  "6688": {
+   "armor": 89,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 34,
+   "q": 3,
+   "req": 29,
+   "stats": {
+    "sp": 7,
+    "spi": 11,
+    "sta": 11
+   },
+   "unmapped": []
+  },
+  "6694": {
+   "armor": 757,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 35,
+   "q": 3,
+   "req": 30,
+   "stats": {
+    "heal": 15,
+    "sp": 5,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "6695": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 34,
+   "q": 3,
+   "req": 29,
+   "stats": {
+    "sp": 17,
+    "sta": 4
+   },
+   "unmapped": []
+  },
+  "6697": {
+   "armor": 38,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 34,
+   "q": 3,
+   "req": 29,
+   "stats": {
+    "agi": 3,
+    "int": 11,
+    "sp": 6
+   },
+   "unmapped": []
+  },
+  "6750": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 32,
+   "q": 2,
+   "stats": {
+    "int": 5,
+    "sp": 6
+   },
+   "unmapped": []
+  },
+  "6901": {
+   "armor": 23,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 29,
+   "q": 3,
+   "req": 24,
+   "stats": {
+    "heal": 7,
+    "sp": 3,
+    "spi": 8
+   },
+   "unmapped": []
+  },
+  "6903": {
+   "armor": 40,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 28,
+   "q": 3,
+   "req": 23,
+   "stats": {
+    "sp": 12,
+    "spi": 9
+   },
+   "unmapped": []
+  },
+  "6905": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 27,
+   "q": 3,
+   "req": 22,
+   "stats": {
+    "heal": 24,
+    "sp": 8,
+    "str": 8
+   },
+   "unmapped": []
+  },
+  "6908": {
+   "armor": 25,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 27,
+   "q": 3,
+   "req": 22,
+   "stats": {
+    "sp": 8,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "6910": {
+   "armor": 41,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 29,
+   "q": 3,
+   "req": 24,
+   "stats": {
+    "sp": 5,
+    "sta": 5
+   },
+   "unmapped": [
+    "+5 Mana Per",
+    "+5 Health Per"
+   ]
+  },
+  "6911": {
+   "armor": 58,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 30,
+   "q": 3,
+   "req": 25,
+   "stats": {
+    "sp": 12,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "6998": {
+   "armor": 28,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 27,
+   "q": 2,
+   "stats": {
+    "agi": 5,
+    "heal": 10,
+    "sp": 3
+   },
+   "unmapped": []
+  },
+  "7000": {
+   "armor": 50,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 27,
+   "q": 2,
+   "stats": {
+    "sp": 6,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "7004": {
+   "armor": 20,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 26,
+   "q": 2,
+   "stats": {
+    "heal": 7,
+    "sp": 2,
+    "spi": 3
+   },
+   "unmapped": []
+  },
+  "7553": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 48,
+   "q": 2,
+   "req": 43,
+   "stats": {
+    "sp": 13
+   },
+   "unmapped": []
+  },
+  "7673": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 46,
+   "q": 3,
+   "stats": {
+    "int": 1,
+    "sp": 12,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "7684": {
+   "armor": 38,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 35,
+   "q": 3,
+   "req": 30,
+   "stats": {
+    "int": 9,
+    "sp": 9
+   },
+   "unmapped": [
+    "+9 Health Per"
+   ]
+  },
+  "7691": {
+   "armor": 42,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 35,
+   "q": 3,
+   "req": 30,
+   "stats": {
+    "heal": 24,
+    "sp": 8,
+    "spi": 12,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "7712": {
+   "armor": 39,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 39,
+   "q": 2,
+   "req": 34,
+   "stats": {
+    "int": 6,
+    "sp": 7,
+    "spi": 8
+   },
+   "unmapped": []
+  },
+  "7720": {
+   "armor": 52,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Reduces the cast time of spells and effects that revive targets by 20%."
+   ],
+   "ilvl": 44,
+   "q": 3,
+   "req": 39,
+   "stats": {
+    "heal": 20,
+    "int": 10,
+    "sp": 7,
+    "spi": 12,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "7722": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 44,
+   "q": 3,
+   "req": 39,
+   "stats": {
+    "sp": 8,
+    "spi": 7,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "7728": {
+   "armor": 50,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 34,
+   "q": 3,
+   "req": 29,
+   "stats": {
+    "int": 12,
+    "sp": 9,
+    "spi": 8
+   },
+   "unmapped": []
+  },
+  "7750": {
+   "armor": 35,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 35,
+   "q": 2,
+   "stats": {
+    "bv": 33,
+    "int": 8,
+    "sp": 3
+   },
+   "unmapped": []
+  },
+  "7759": {
+   "armor": 245,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 38,
+   "q": 3,
+   "req": 33,
+   "stats": {
+    "sp": 9,
+    "sta": 12,
+    "str": 12
+   },
+   "unmapped": []
+  },
+  "7760": {
+   "armor": 105,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 39,
+   "q": 3,
+   "req": 34,
+   "stats": {
+    "heal": 24,
+    "int": 6,
+    "sp": 8,
+    "spi": 14,
+    "str": 5
+   },
+   "unmapped": []
+  },
+  "7888": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 46,
+   "q": 3,
+   "stats": {
+    "int": 1,
+    "sp": 12,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "862": {
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 50,
+   "q": 3,
+   "req": 45,
+   "stats": {
+    "sp": 7
+   },
+   "unmapped": []
+  },
+  "888": {
+   "armor": 61,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 27,
+   "q": 3,
+   "req": 22,
+   "stats": {
+    "heal": 15,
+    "sp": 5,
+    "sta": 4,
+    "str": 4
+   },
+   "unmapped": []
+  },
+  "892": {
+   "armor": 22,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 22,
+   "q": 2,
+   "req": 17,
+   "stats": {
+    "sp": 6
+   },
+   "unmapped": []
+  },
+  "940": {
+   "armor": 74,
+   "bind": "Binds when equipped",
+   "equip": [
+    "Reduces the Mana cost of all spells by 200 for 12 sec."
+   ],
+   "ilvl": 47,
+   "q": 4,
+   "req": 42,
+   "stats": {
+    "heal": 33,
+    "int": 24,
+    "sp": 11
+   },
+   "unmapped": []
+  },
+  "9403": {
+   "armor": 1287,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 42,
+   "q": 3,
+   "req": 37,
+   "stats": {
+    "heal": 13,
+    "sp": 5,
+    "spi": 10
+   },
+   "unmapped": []
+  },
+  "9407": {
+   "armor": 53,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 42,
+   "q": 3,
+   "req": 37,
+   "stats": {
+    "heal": 20,
+    "int": 8,
+    "sp": 7,
+    "spi": 12,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "9411": {
+   "armor": 209,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 46,
+   "q": 3,
+   "req": 41,
+   "stats": {
+    "int": 13,
+    "sp": 12,
+    "spi": 6,
+    "str": 3
+   },
+   "unmapped": []
+  },
+  "9415": {
+   "armor": 68,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 47,
+   "q": 3,
+   "req": 42,
+   "stats": {
+    "heal": 29,
+    "int": 5,
+    "sp": 10,
+    "spi": 14,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "9429": {
+   "armor": 52,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 44,
+   "q": 3,
+   "req": 39,
+   "stats": {
+    "bv": 40,
+    "int": 17,
+    "sp": 12,
+    "sta": 7
+   },
+   "unmapped": []
+  },
+  "9430": {
+   "armor": 205,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 45,
+   "q": 3,
+   "req": 40,
+   "stats": {
+    "sp": 12,
+    "sta": 10
+   },
+   "unmapped": [
+    "+15 Health Per"
+   ]
+  },
+  "9431": {
+   "armor": 51,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 43,
+   "q": 3,
+   "req": 38,
+   "stats": {
+    "heal": 22,
+    "int": 17,
+    "sp": 8,
+    "spi": 9
+   },
+   "unmapped": []
+  },
+  "9434": {
+   "armor": 59,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 41,
+   "q": 3,
+   "req": 36,
+   "stats": {
+    "ar": 5,
+    "fr": 5,
+    "frr": 5,
+    "nr": 5,
+    "sp": 21,
+    "sr": 5
+   },
+   "unmapped": []
+  },
+  "9447": {
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 34,
+   "q": 3,
+   "req": 29,
+   "stats": {
+    "heal": 9,
+    "sp": 3,
+    "spi": 7,
+    "sta": 4
+   },
+   "unmapped": []
+  },
+  "9448": {
+   "armor": 22,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 34,
+   "q": 3,
+   "req": 29,
+   "stats": {
+    "sp": 9
+   },
+   "unmapped": [
+    "+3 Mana Per"
+   ]
+  },
+  "9450": {
+   "armor": 76,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 34,
+   "q": 3,
+   "req": 29,
+   "stats": {
+    "heal": 11,
+    "sp": 4,
+    "sta": 12
+   },
+   "unmapped": []
+  },
+  "9454": {
+   "armor": 34,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 32,
+   "q": 3,
+   "req": 27,
+   "stats": {
+    "int": 8,
+    "nr": 5,
+    "sp": 5,
+    "spi": 4
+   },
+   "unmapped": []
+  },
+  "9469": {
+   "armor": 290,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 48,
+   "q": 3,
+   "req": 43,
+   "stats": {
+    "heal": 33,
+    "sp": 11,
+    "spi": 16,
+    "sta": 10
+   },
+   "unmapped": []
+  },
+  "9474": {
+   "armor": 126,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 49,
+   "q": 3,
+   "req": 44,
+   "stats": {
+    "heal": 24,
+    "int": 10,
+    "sp": 8,
+    "spi": 19
+   },
+   "unmapped": []
+  },
+  "9484": {
+   "armor": 63,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 50,
+   "q": 3,
+   "req": 45,
+   "stats": {
+    "int": 10,
+    "sp": 23,
+    "sta": 9
+   },
+   "unmapped": []
+  },
+  "9492": {
+   "armor": 43,
+   "bind": "Binds when picked up",
+   "equip": [
+    "Channels a bolt of lightning and hurls it towards all enemies in front of the caster causing 152 to 172 Nature damage. The caster is then surrounded by a barrier of electricity for 5 min."
+   ],
+   "ilvl": 36,
+   "q": 3,
+   "req": 31,
+   "stats": {
+    "int": 8,
+    "sp": 8,
+    "spi": 9
+   },
+   "unmapped": []
+  },
+  "9508": {
+   "armor": 48,
+   "bind": "Binds when equipped",
+   "equip": [],
+   "ilvl": 31,
+   "q": 3,
+   "req": 26,
+   "stats": {
+    "ar": 5,
+    "int": 12,
+    "sp": 8,
+    "sta": 5
+   },
+   "unmapped": []
+  },
+  "9522": {
+   "armor": 711,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 38,
+   "q": 2,
+   "stats": {
+    "bv": 40,
+    "heal": 10,
+    "sp": 3,
+    "sta": 4
+   },
+   "unmapped": []
+  },
+  "9534": {
+   "armor": 117,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 49,
+   "q": 3,
+   "stats": {
+    "heal": 29,
+    "sp": 10,
+    "spi": 22
+   },
+   "unmapped": []
+  },
+  "9536": {
+   "armor": 33,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 32,
+   "q": 2,
+   "stats": {
+    "int": 6,
+    "sp": 4,
+    "sta": 1
+   },
+   "unmapped": []
+  },
+  "9605": {
+   "armor": 22,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 32,
+   "q": 2,
+   "stats": {
+    "heal": 6,
+    "int": 3,
+    "sp": 2,
+    "spi": 5
+   },
+   "unmapped": []
+  },
+  "9609": {
+   "armor": 28,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 32,
+   "q": 2,
+   "stats": {
+    "bv": 40,
+    "sp": 5,
+    "spi": 6
+   },
+   "unmapped": []
+  },
+  "9623": {
+   "armor": 54,
+   "bind": "Binds when picked up",
+   "equip": [],
+   "ilvl": 37,
+   "q": 3,
+   "stats": {
+    "heal": 26,
+    "sp": 9,
+    "spi": 12,
+    "sta": 7
+   },
+   "unmapped": []
+  }
+ },
+ "source": "wow-forever.gg"
+}

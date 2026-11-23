@@ -112,6 +112,8 @@ def match_stat(name):
     low = name.lower().strip()
     low = re.sub(r'\b(your|the|all|of)\b', ' ', low)
     low = re.sub(r'\s+', ' ', low).strip()
+    if 'stealth detection' in low or 'invisibility detection' in low:
+        return None
     for needle, key in STAT_MAP:
         if needle in low:
             return key
@@ -147,6 +149,12 @@ def parse_lines(lines, quality=None):
             body = mm.group(1).strip()
             if not body.startswith('+'):
                 out['equip'].append(body)
+
+        # "+5 Mana Per 5 sec" 这类先单独抽掉，否则会被当成未知的 "+N Mana Per"
+        for pattern, key in ((r'\+(\d+)\s+Mana per 5', 'mp5'), (r'\+(\d+)\s+Health per 5', 'hp5')):
+            for sm in list(re.finditer(pattern, body, re.I)):
+                out['stats'][key] = out['stats'].get(key, 0) + float(sm.group(1))
+            body = re.sub(pattern, '', body, flags=re.I)
 
         for sm in STAT_LINE_RE.finditer(body):
             key = match_stat(sm.group(2))

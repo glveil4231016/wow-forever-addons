@@ -228,9 +228,20 @@ foreach ($it in $all.Values) {
         if ($null -ne $fv.armor) { Set-ItemField $it 'armor' ([double]$fv.armor) }
         if ($fv.statsUnconfirmed) { $statsUnconfirmed++ }
         if ($fv.stats -and @($fv.stats.PSObject.Properties).Count -gt 0) {
+            $oldSp = 0.0; $oldHoly = 0.0
+            if ($beforeStats.ContainsKey('sp')) { $oldSp = $beforeStats['sp'] }
+            if ($beforeStats.ContainsKey('holy')) { $oldHoly = $beforeStats['holy'] }
+            $newSp = 0.0; $newHoly = 0.0
+            if ($fv.stats.PSObject.Properties['sp']) { $newSp = [double]$fv.stats.sp }
+            if ($fv.stats.PSObject.Properties['holy']) { $newHoly = [double]$fv.stats.holy }
+
             if ($fv.unmapped -and @($fv.unmapped).Count -gt 0) {
                 # 页面里有解析器没认出的词条：属性整体保留 TFE，
                 # 否则可能把 sp 抹成 0 导致整件物品被后面的过滤丢掉。
+                $foreverStatsSkipped++
+            } elseif ((($oldSp + $oldHoly) -gt 0) -and (($newSp + $newHoly) -le 0)) {
+                # TFE 有法伤、Forever 页面却没解析出法伤：多半是词条没认出来，
+                # 不要因此把物品踢出库（真的被移除的话实测/来源那边会体现）。
                 $foreverStatsSkipped++
             } else {
                 Set-ItemField $it 'stats' $fv.stats

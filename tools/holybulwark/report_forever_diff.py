@@ -27,8 +27,13 @@ def load_items():
         'function(src) local f=assert((loadstring or load)(src)); local ns={}; f({}, ns); return ns.data.items end'
     )
     with io.open(DATA_LUA, encoding='utf-8') as fh:
-        items = loader(fh.read())
-    return [list(row.values()) for row in items.values()]
+        table = loader(fh.read())
+    items = []
+    for i in range(1, len(table) + 1):
+        row = table[i]
+        # 直接取 1..15：有 nil 洞（armor/dmg）时 Lua 的 # 会截断，不能用它
+        items.append([row[j] for j in range(1, 16)])
+    return items
 
 
 def stats_of(table):
@@ -46,14 +51,18 @@ def main():
     lost_sp = []
     unmapped = []
     missing_page = 0
+    unconfirmed_count = 0
     for it in items:
-        item_id, name, ilvl, req, stats = str(it[1]), it[2], it[3], it[4], it[9]
+        item_id, name, ilvl, req, stats = str(int(it[0])), it[1], it[3], it[4], it[8]
         fv = forever.get(item_id)
         if not fv:
             missing_page += 1
             continue
         if fv.get('unmapped'):
             unmapped.append((item_id, name, fv['unmapped']))
+            continue
+        if fv.get('statsUnconfirmed'):
+            unconfirmed_count += 1
             continue
         old = stats_of(stats)
         new = {k: float(v) for k, v in (fv.get('stats') or {}).items()}
@@ -77,6 +86,7 @@ def main():
     print('属性会变化: %d' % len(changed))
     print('会失去 sp/holy（可能被过滤掉）: %d' % len(lost_sp))
     print('解析器有未识别词条（属性保留 TFE）: %d' % len(unmapped))
+    print('属性未确认（只覆盖 ilvl/req）: %d' % unconfirmed_count)
     if changed:
         print('\n变化最大的 15 件：')
         for item_id, name, diffs in changed[:15]:
